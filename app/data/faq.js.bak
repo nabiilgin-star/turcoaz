@@ -1,0 +1,32 @@
+export const faqs = [
+  {
+    question: "Care este timpul de livrare pentru produse?",
+    answer:
+      "Timpul standard de livrare este de 24-48 de ore pentru produsele aflate în stoc. Pentru comenzile speciale sau produsele care nu sunt în stoc, termenul poate varia între 5 și 10 zile lucrătoare.",
+  },
+  {
+    question: "Oferă servicii de montaj?",
+    answer:
+      "Da, oferim servicii de montaj profesional pentru toate sistemele noastre de feronerie și sticlă. Echipa noastră de experți se poate deplasa la locația dvs. pentru evaluare și instalare.",
+  },
+  {
+    question: "Ce garanție oferă produsele dvs.?",
+    answer:
+      "Toate produsele noastre beneficiază de o garanție standard de 24 de luni. Pentru anumite sisteme premium, perioada de garanție poate fi extinsă până la 5 ani.",
+  },
+  {
+    question: "Pot solicita mostre sau consultanță tehnică?",
+    answer:
+      "Desigur! Oferim consultanță tehnică gratuită pentru alegerea soluției optime. De asemenea, puteți solicita mostre de materiale pentru a verifica calitatea și finisajul produselor.",
+  },
+  {
+    question: "Care sunt metodele de plată acceptate?",
+    answer:
+      "Acceptăm plata cu cardul online, transfer bancar (OP) sau plata ramburs la livrare pentru comenzi de până la 5000 RON.",
+  },
+  {
+    question: "Puteți realiza proiecte personalizate?",
+    answer:
+      "Absolut. Suntem specializați în soluții custom. Contactați-ne cu detaliile proiectului dvs. și inginerii noștri vor proiecta sistemul perfect pentru nevoile specifice ale construcției.",
+  },
+];

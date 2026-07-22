@@ -1,0 +1,65 @@
+export const products = [
+  {
+    id: 1,
+    title: "Cală așezare 28x15x9 mm, șină Economy - poliamidă albă",
+    slug: "cala-asezare-economy",
+    image: "https://qualmont.ro/wp-content/uploads/2025/07/28.15.9-cps.webp",
+    hasVariants: false,
+  },
+  {
+    id: 2,
+    title: "Capac lateral profil perimetral",
+    slug: "capac-lateral-profil",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/25.4195.541.24-034-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 3,
+    title: "Clemă șină",
+    slug: "clema-sina",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/74.4191.010.99-038-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 4,
+    title: "Corp șină perimetrală Comfort + cleme fixe",
+    slug: "corp-sina-perimetrala-comfort",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/10.MCPC_.510.20-003-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 5,
+    title: "Corp șină perimetrală Economy + cleme fixe",
+    slug: "corp-sina-perimetrala-economy",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/10.MCPE_.508.20-093-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 6,
+    title:
+      "Corp șină perimetrală Economy, fără cleme - aluminiu nefinisat - L=5000 mm",
+    slug: "corp-sina-economy-nefinisat",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/10.MCPE_.508.20-006_1-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 7,
+    title: "Set 2 capace capăt șină perimetrală MCPE/MCPC",
+    slug: "set-capace-capat-sina",
+    image:
+      "https://qualmont.ro/wp-content/uploads/2025/07/25.MC4E.810.24-cps.webp",
+    hasVariants: true,
+  },
+  {
+    id: 8,
+    title: "Șurub cu cap înecat și locaș hexagonal",
+    slug: "surub-cap-inecat",
+    image: "https://qualmont.ro/wp-content/uploads/2025/07/M6X20-site.jpg.webp",
+    hasVariants: true,
+  },
+];

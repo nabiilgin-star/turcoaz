@@ -1,0 +1,119 @@
+:root {
+  --pd-x: 4vw;
+
+  /* ==========================================================================
+     Turcoaz Aluminiu Renk Paleti (KAHE Mavisinden Dönüşüm)
+     ========================================================================== */
+  --color-primary: #00b4d8;         /* Ana Renk: Canlı Alüminyum Turkuazı */
+  --color-primary-dark: #0077b6;    /* Derin Turkuaz (Hover durumları için) */
+  --color-aluminum-light: #f1f5f9;  /* Parlak Alüminyum Yüzey */
+  --color-aluminum-dark: #64748b;   /* Fırçalanmış Metalik Gri */
+  
+  --color-footer-bg: #dae3e8;
+
+  /* Font Boyutları */
+  --fs-display: 3.5rem; 
+  --fs-1: 3rem; 
+  --fs-2: 2.25rem; 
+  --fs-3: 1.5rem; 
+  --fs-4: 1.125rem; 
+  --fs-5: 1rem; 
+  --fs-body-sm: 0.95rem;
+  --fs-dropdown: 0.925rem;
+  --fs-6: 0.875rem; 
+  --fs-xs: 0.825rem;
+
+  --max-width: 1440px;
+
+  /* Yuvarlatma Değerleri */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+}
+
+.container-max {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: 2.5rem; 
+    --fs-1: 2.25rem; 
+    --fs-2: 1.75rem; 
+    --fs-3: 1.25rem; 
+    --fs-4: 1.05rem; 
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ==========================================================================
+   KUTULARI KARE HALE GETİRME VE YAZILARI DÜZELTME
+   ========================================================================== */
+
+/* 1. Grid yapısını ve satır aralarını koru */
+div[class*="subcategory-grid"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 32px 24px !important;
+  width: 100% !important;
+}
+
+/* 2. SADECE resim içeren kart alanını yakala ve oranla */
+div[class*="subcategory-grid"] > div:has(img),
+div[class*="subcategory-grid"] [class*="card"] {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important; 
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+
+/* 3. Next.js resim sarmalayıcısını kitle */
+div[class*="subcategory-grid"] span:has(img),
+.card-image-wrapper {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* 4. Resimleri tam ortala ve kırp */
+div[class*="subcategory-grid"] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* 5. YAZI BAŞLIĞINI ESKİ YERİNE VE BOYUTUNA GETİR */
+div[class*="subcategory-grid"] h3,
+div[class*="subcategory-grid"] [class*="title"],
+div[class*="subcategory-grid"] p {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  font-size: 1.125rem !important; /* Başlık boyutunu ideal ölçüye çektik */
+  text-align: left !important;    /* Sola hizaladık (Eğer ortalamak istersen center yapabilirsin) */
+  margin-top: 12px !important;    /* Resim kutusu ile yazı arasına boşluk verdik */
+  padding: 0 !important;
+  transform: none !important;     /* Kaymayı sıfırladık */
+}
+
+/* Mobil cihazlar için alt alta düzen */
+@media (max-width: 768px) {
+  div[class*="subcategory-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}

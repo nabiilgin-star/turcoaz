@@ -1,0 +1,211 @@
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 0.5rem; 
+  border: 1px solid #e5e7eb; 
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.thead {
+  background-color: #f9fafb; 
+}
+
+.th {
+  padding: 0.75rem 1.5rem; 
+  text-align: left;
+  font-size: 0.75rem; 
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; 
+  color: #6b7280; 
+}
+
+.thOrd {
+  width: 60px;
+  padding: 0.75rem 0.5rem 0.75rem 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.thImage {
+  width: 100px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.thRight {
+  padding: 0.75rem 1.5rem;
+  text-align: right;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  width: 140px;
+}
+
+.tbody {
+  background-color: white;
+  border-top: 1px solid #e5e7eb; 
+}
+
+.tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.td {
+  padding: 1rem 1.5rem; 
+  white-space: nowrap;
+  font-size: 0.875rem; 
+  color: #6b7280; 
+}
+
+.tdOrd {
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  width: 60px;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .thOrd,
+  .tdOrd {
+    display: none;
+  }
+}
+
+.tdImage {
+  padding: 1rem 1.5rem;
+  width: 100px;
+  vertical-align: middle;
+}
+
+.tdPrimary {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tdActions {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+  text-align: right;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 140px;
+}
+
+.image {
+  height: 2.5rem; 
+  width: 2.5rem; 
+  border-radius: 0.25rem; 
+  object-fit: cover;
+}
+
+.noImage {
+  display: flex;
+  height: 2.5rem; 
+  width: 2.5rem; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem; 
+  background-color: #f3f4f6; 
+  color: #9ca3af; 
+  font-size: 0.75rem; 
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem; 
+}
+
+.actionButton {
+  padding: 0.25rem;
+  color: #2563eb; 
+  transition: color 0.15s;
+  background: transparent;
+  border: 0;
+}
+
+.actionButton:hover {
+  color: #1e3a8a; 
+}
+
+.deleteButton {
+  padding: 0.25rem;
+  color: #dc2626; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.deleteButton:hover {
+  color: #7f1d1d; 
+}
+
+.emptyState {
+  padding: 1.5rem; 
+  text-align: center;
+  color: #6b7280; 
+}
+
+.dragHandle {
+  cursor: grab;
+  color: #9ca3af; 
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dragHandle:hover {
+  color: #4b5563; 
+}
+
+.categoryGroupHeader {
+  padding: 1rem;
+  background-color: #f9fafb; 
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  user-select: none;
+}
+
+.categoryGroupCount {
+  font-weight: 400;
+  color: #6b7280;
+  margin-left: 0.5rem;
+}
+
+.categoryGroupWrapper {
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: white;
+  overflow: hidden;
+}

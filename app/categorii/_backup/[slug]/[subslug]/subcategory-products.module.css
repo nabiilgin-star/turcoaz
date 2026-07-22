@@ -1,0 +1,116 @@
+.subcategory-products-section {
+  padding: 4rem var(--pd-x); 
+  background-color: #f2f3f4;
+  min-height: 60vh;
+}
+
+.subcategory-header {
+  margin-bottom: 4rem;
+}
+
+.subcategory-title {
+  font-size: var(--fs-2);
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .subcategory-products-section {
+    padding: 4rem var(--pd-x);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+:global(.product-card) {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: box-shadow 0.2s;
+  text-decoration: none; 
+}
+
+:global(.product-card:hover) {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+:global(.product-image-container) {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 1rem;
+  background: #f9fafb;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+:global(.product-image) {
+  object-fit: contain;
+}
+
+:global(.product-info) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+:global(.product-title) {
+  font-size: var(--fs-body-sm);
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+:global(.variant-label) {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: auto;
+}
+
+:global(.product-action) {
+  margin-top: 1rem;
+}
+
+:global(.btn-details) {
+  width: 100%;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s;
+}
+
+:global(.btn-details:hover) {
+  background-color: #e5e7eb;
+}

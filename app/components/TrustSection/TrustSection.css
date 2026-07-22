@@ -1,0 +1,337 @@
+.about-premium-section {
+  padding: 8rem var(--pd-x);
+  background-color: #fff;
+  width: 100%;
+}
+
+.section-block {
+  width: 100%;
+  display: block;
+}
+
+/* Grile Aliniere */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.grid-2col.alignment-top {
+  align-items: flex-start;
+}
+
+/* Badge-uri & Titluri similare cu prima pagina */
+.section-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #008080; /* Accentul Turcoaz */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: var(--fs-2); /* Folosește mărimea din prima pagină */
+  font-weight: 400;
+  color: #111;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 3.5rem;
+}
+
+/* Fonturi & Spacings text */
+.paragraph-lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.paragraph-normal {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Imagini structură curată */
+.premium-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #f7fafc;
+}
+
+.premium-img {
+  object-fit: cover;
+}
+
+/* Delimitări discrete */
+.premium-divider {
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin: 6rem 0;
+}
+
+/* Portofoliu Produse Grid */
+.products-detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.portfolio-card {
+  background: #fafafa;
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #f0f0f0;
+}
+
+.portfolio-card h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+/* ==========================================
+   GÜNCELLENEN KART SPLIT VE MAKSİMUM GENİŞLİK AYARI
+   ========================================== */
+
+.card-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem; /* Metin ve resim arasındaki premium boşluk */
+  width: 100%;
+}
+
+/* Sol taraftaki metin alanı kartın %55'ini kaplasın */
+.split-text {
+  flex: 1 1 55%;
+}
+
+/* Sağ taraftaki resim alanı kartın %45'ini kaplayarak genişlesin */
+.split-image {
+  position: relative;
+  flex: 0 0 45%;         /* Sabit piksel yerine %45 genişlik (Çok daha geniş) */
+  max-width: 440px;      /* Çok devasa ekranlarda aşırı büyümemesi için üst sınır */
+  height: 340px;         /* Yüksekliği 220px'ten 340px'e çıkardık (Dikey kataloglar için ideal) */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 5px;          /* Görselin maksimum boyuta ulaşması için iç boşluğu azalttık */
+}
+
+/* Orantılı tam sığdırma kuralı */
+.split-image .premium-img {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  object-fit: contain !important; /* Resimlerin oranını bozmadan kutuya maksimum genişlikte sığdırır */
+}
+
+/* Mobil / Tablet Ayarları */
+@media (max-width: 1024px) {
+  .card-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  
+  .split-image {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Liste de Bullets premium */
+.premium-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.premium-bullet-list.row-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.premium-bullet-list.row-layout li {
+  background: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #008080;
+  border: 1px solid #e2e8f0;
+}
+
+.premium-bullet-list.grid-2col-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.premium-bullet-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.premium-bullet-list li svg {
+  color: #008080;
+}
+
+.premium-bullet-list.variant-clean li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.premium-bullet-list.variant-clean li span {
+  color: #374151;
+}
+
+.with-icon {
+  gap: 0.75rem !important;
+  margin-bottom: 0.75rem;
+}
+
+.icon-teal {
+  color: #008080;
+}
+
+/* Helpers utilitare */
+.margin-top-sm { margin-top: 0.75rem; }
+.margin-top-md { margin-top: 1.25rem; }
+.margin-y-sm { margin: 1.25rem 0; }
+.italic-text { font-style: italic; color: #718096; }
+.text-highlight { font-weight: 500; color: #111; font-size: 0.95rem; }
+.text-muted { font-size: 0.9rem; color: #718096; }
+
+.border-left-box {
+  border-left: 2px solid #008080;
+  padding-left: 1.25rem;
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+/* Ce oferim / Cum lucram */
+.features-box-dark {
+  background: #111;
+  color: #fff;
+  padding: 3.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.features-box-dark .box-title {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.box-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.box-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: #e2e8f0;
+}
+
+.box-list li svg {
+  color: #008080;
+}
+
+.features-box-light {
+  padding: 3.5rem;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box-title-light {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Responsive / Adaptabilitate */
+@media (max-width: 1024px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .card-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+  .split-image {
+    flex: none;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-detailed-grid {
+    grid-template-columns: 1fr;
+  }
+  .span-2, .span-2-desktop {
+    grid-column: span 1;
+  }
+  .premium-bullet-list.grid-2col-list {
+    grid-template-columns: 1fr;
+  }
+  .about-premium-section {
+    padding: 5rem var(--pd-x);
+  }
+}
