@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Kahe - Feronerie și Sticlă",
+  title: "Turcoaz Aluminiu & Alufab",
   description: "Soluții premium pentru feronerie și sticlă.",
 };
 
