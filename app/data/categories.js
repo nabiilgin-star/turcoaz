@@ -296,20 +296,7 @@ export const categories = [
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     description: `### Avantajele Panoului Compozit
 Panoul compozit reprezintă soluția modernă și eficientă pentru fațade premium, oferind un echilibru ideal între estetică, performanță și costuri pe termen lung.
-
-- **Libertate în design** — permite realizarea unor fațade moderne, creative și personalizate.
-- **Greutate redusă** — ușor de manipulat și montat, fără a încărca structura clădirii.
-- **Rezistență metalică** — oferă durabilitate ridicată în ciuda grosimii reduse.
-- **Planeitate perfectă** — asigură o imagine impecabilă a fațadei.
-- **Gamă variată de culori** — ideal pentru proiecte care cer identitate vizuală distinctă.
-- **Transport și montaj facil** — reduce timpul de execuție și costurile de instalare.
-- **Acoperirea imperfecțiunilor** — oferă un aspect uniform chiar și pe suprafețe deteriorate.
-- **Fără rugină sau degradare** — material stabil, ideal pentru utilizare îndelungată.
-- **Siguranță seismică** — nu adaugă greutate suplimentară și contribuie la protecția clădirii.
-- **Prietenos cu mediul** — nu conține substanțe nocive și permite reciclarea.
-- **Timp redus de montaj** — soluție rapidă pentru proiecte cu termene strânse.
-- **Eficiență economică** — investiție avantajoasă datorită durabilitasii și costurilor minime de întreținere.
-
+Panoul compozit oferă design flexibil, greutate redusă și rezistență ridicată. Asigură planeitate perfectă, gamă variată de culori și montaj rapid. Acoperă imperfecțiunile, nu ruginește, este sigur seismic, ecologic și economic pe termen lung.,
 
 4. **Rallbond**`,
     pdfUrl: "/pdf/bond.pdf",
