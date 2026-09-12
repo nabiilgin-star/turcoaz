@@ -12,6 +12,9 @@ import ProductView from "./ProductView";
 import { categories as localCategories } from "@/app/data/categories"; 
 import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 
+// Yeni eklenen statik olmayan sayfaların (örn. yeni kompozit panel) 404 vermesini engeller
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   return await getAllSlugsForStaticGeneration();
 }
@@ -46,7 +49,6 @@ export default async function CatchAllCategoryPage({ params }) {
         const targetSub = targetLocalCategory.subcategories?.find(s => s.slug === subSlug);
 
         if (targetSub) {
-          // KONTROL: Eğer eleman 'products' dizisi içermeyip kendisi 'detailImage'/'description' taşıyorsa (Örn: Glafuri)
           const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
 
           if (isDirectProduct) {
@@ -60,7 +62,6 @@ export default async function CatchAllCategoryPage({ params }) {
               }
             };
           } else {
-            // Standart Alt Kategori Görünümü
             const mappedProducts = (targetSub.products || []).map((prod, index) => ({
               ...prod,
               id: prod.id || `local-prod-${index}`,
@@ -80,7 +81,7 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       }
       else {
-        // 3. Üç veya daha fazla kademeli derinlik (Ürün Görünümü - Örn: Glisante S28)
+        // 3. Üç veya daha fazla kademeli derinlik (Ürün Görünümü)
         const prodSlug = pathSegments[pathSegments.length - 1];
         const subSlug = pathSegments[pathSegments.length - 2];
 
