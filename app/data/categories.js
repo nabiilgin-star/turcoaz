@@ -295,16 +295,40 @@ export const categories = [
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     description: "Avantajele Panoului Compozit\nPanoul compozit reprezintă soluția modernă și eficientă pentru fațade premium, oferind un echilibru ideal între estetică, performanță și costuri pe termen lung.\nPanoul compozit oferă design flexibil, greutate redusă și rezistență ridicată. Asigură planeitate perfectă, gamă variată de culori și montaj rapid. Acoperă imperfecțiunile, nu ruginește, este sigur seismic, ecologic și economic pe termen lung.",
-    pdfUrl: "/pdf/bond.pdf",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg"
     ],
-    brands: [
-      { name: "Primebond Plus", description: "Calitate superioară pentru fațade arhitecturale moderne." },
-      { name: "Primebond", description: "Soluția standard fiabilă pentru placări exterioare și interioare." },
-      { name: "Durabond", description: "Rezistență sporită la intemperii și durabilitate pe termen lung." },
-      { name: "Rallbond", description: "Gamă variată de culori RAL pentru proiecte cu identitate distinctă." }
+    // Her markanın altında kendine ait PDF kataloğu olacak şekilde düzenlendi:
+    products: [
+      {
+        name: "Primebond Plus",
+        slug: "primebond-plus",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+        description: "Calitate superioară pentru fațade arhitecturale moderne.",
+        pdfUrl: "/pdf/primebond-plus.pdf"
+      },
+      {
+        name: "Primebond",
+        slug: "primebond",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+        description: "Soluția standard fiabilă pentru placări exterioare și interioare.",
+        pdfUrl: "/pdf/primebond.pdf"
+      },
+      {
+        name: "Durabond",
+        slug: "durabond",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+        description: "Rezistență sporită la intemperii și durabilitate pe termen lung.",
+        pdfUrl: "/pdf/durabond.pdf"
+      },
+      {
+        name: "Rallbond",
+        slug: "rallbond",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+        description: "Gamă variată de culori RAL pentru proiecte cu identitate distinctă.",
+        pdfUrl: "/pdf/rallbond.pdf"
+      }
     ],
     subcategories: []
   }
