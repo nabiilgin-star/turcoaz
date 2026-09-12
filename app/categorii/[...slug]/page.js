@@ -37,11 +37,24 @@ export default async function CatchAllCategoryPage({ params }) {
 
     if (targetLocalCategory) {
       if (pathSegments.length === 1) {
-        // 1. Ana Kategori Görünümü
-        result = {
-          type: "category",
-          data: targetLocalCategory
-        };
+        // Eğer ana kategorinin detailImage veya description'ı varsa doğrudan detay/tek sayfa olarak aç
+        if (targetLocalCategory.detailImage || (targetLocalCategory.description && (!targetLocalCategory.subcategories || targetLocalCategory.subcategories.length === 0))) {
+          result = {
+            type: "product",
+            data: {
+              ...targetLocalCategory,
+              title: targetLocalCategory.name,
+              category: targetLocalCategory,
+              subcategory: null
+            }
+          };
+        } else {
+          // 1. Normal Ana Kategori Görünümü
+          result = {
+            type: "category",
+            data: targetLocalCategory
+          };
+        }
       } 
       else if (pathSegments.length === 2) {
         // 2. İki kademeli derinlik (Alt Kategori VEYA Doğrudan Ürün)
