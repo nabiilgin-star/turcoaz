@@ -14,9 +14,9 @@ const categoryImages = [
   "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png", // Balustrade
   "https://res.cloudinary.com/oivvupgw/image/upload/v1784465092/accesorii_tfoc70.jpg",         // Feronerie
   "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",    // Închidere terase / Fațade
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg",     // Cabine duș / KAHE
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",         // Alte produse
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464708/AKPA-LOGO_wctiyh.jpg",         // AKPA Logo
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg",    // Cabine duș / KAHE
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",        // Alte produse
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464708/AKPA-LOGO_wctiyh.jpg",        // AKPA Logo
 ];
 
 export const categories = [
@@ -147,7 +147,6 @@ export const categories = [
           },
         ],
       },
-     
       {
         name: "Glafuri din Aluminiu",
         slug: "glafuri-din-aluminiu",
@@ -161,7 +160,7 @@ export const categories = [
           "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
         ],
       },
-       {
+      {
         name: "Perete Cortina",
         slug: "perete-cortina",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
@@ -183,7 +182,7 @@ export const categories = [
       },
     ],
   },
- {
+  {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
     name: "Sisteme Balustradă",
@@ -218,33 +217,32 @@ export const categories = [
         pdfUrl: "/pdf/balustrada-modulara.pdf"
       },
       {
-            id: "balustrada-fereastra-franceza-din-aluminiu",
-            slug: "balustrada-fereastra-franceza-din-aluminiu",
-            name: "Balustradă fereastră franceză din aluminiu",
-          image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
-            description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
-            pdfUrl: "/pdf/fereastra-franceza.pdf"
-          },
+        id: "balustrada-fereastra-franceza-din-aluminiu",
+        slug: "balustrada-fereastra-franceza-din-aluminiu",
+        name: "Balustradă fereastră franceză din aluminiu",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
+        description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
+        pdfUrl: "/pdf/fereastra-franceza.pdf"
+      },
       {
         id: "balustrada-de-sticla",
         slug: "balustrada-de-sticla",
         name: "Balustradă de sticlă",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
         products: [
-          
           {
             id: "m115",
             slug: "m115",
             name: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
-            description: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium, proiectat pentru cei care caută siguranță, eleganță și durabilitate în amenajările moderne. Profilul din aluminiu AKPA M115 Premium oferă o rezistență certificată de 3 kN/ml, fiind ideal atât pentru balcoanele clădinilor rezidențiale cu regim mare de înălțime, cât și pentru proiectele rezidențiale private. ",        pdfUrl: "/pdf/m115.pdf",
-             gallery: [
+            description: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium, proiectat pentru cei care caută siguranță, eleganță și durabilitate în amenajările moderne. Profilul din aluminiu AKPA M115 Premium oferă o rezistență certificată de 3 kN/ml, fiind ideal atât pentru balcoanele clădinilor rezidențiale cu regim mare de înălțime, cât și pentru proiectele rezidențiale private.",
+            pdfUrl: "/pdf/m115.pdf",
+            gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784676831/AkpaM115premium_may3aq.png",
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784672556/BalustradaM115_rdls45.png",
-          
-        ],
+              "https://res.cloudinary.com/oivvupgw/image/upload/v1784672556/BalustradaM115_rdls45.png",
+            ],
           },
           {
             id: "m115f",
@@ -286,7 +284,11 @@ export const categories = [
             description: "Profil din aluminiu pentru balustradă de sticlă M115.",
             pdfUrl: "/pdf/m100.pdf"
           },
-          {
+        ]
+      }
+    ],
+  },
+  {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
@@ -297,7 +299,7 @@ export const categories = [
         slug: "panouri-compozite-bond",
         name: "Panouri Compozite Aluminiu (Bond)",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epv9m.png",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
         description: "Panouri compozite din aluminiu (Bond) pentru placări fațade și proiecte arhitecturale moderne. Oferă o rezistență deosebită la intemperii, izolație și un design elegant.\n\nSTOC: Diverse culori RAL și finisaje speciale.",
         pdfUrl: "/pdf/bond.pdf",
         gallery: [
@@ -307,5 +309,4 @@ export const categories = [
       }
     ]
   }
-    
-  ];
+];
