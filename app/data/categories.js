@@ -285,9 +285,27 @@ export const categories = [
             detailImage: "/images/m115.jpg",
             description: "Profil din aluminiu pentru balustradă de sticlă M115.",
             pdfUrl: "/pdf/m100.pdf"
-          }
+          },
+          {
+    name: "ACP Aluminiu Compozit Panel (Bond)",
+    slug: "acp-aluminiu-compozit-panel-bond",
+    icon: Layers,
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
+    subcategories: [
+      {
+        id: "panouri-compozite-bond",
+        slug: "panouri-compozite-bond",
+        name: "Panouri Compozite Aluminiu (Bond)",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epv9m.png",
+        description: "Panouri compozite din aluminiu (Bond) pentru placări fațade și proiecte arhitecturale moderne. Oferă o rezistență deosebită la intemperii, izolație și un design elegant.\n\nSTOC: Diverse culori RAL și finisaje speciale.",
+        pdfUrl: "/pdf/bond.pdf",
+        gallery: [
+          "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
+          "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"
         ]
       }
     ]
   }
+    
   ];
