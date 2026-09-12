@@ -12,7 +12,7 @@ export const metadata = {
   title: "Turcoaz Aluminiu & Alufab | Profile Aluminiu, Balustrade Sticlă și Bond",
   description: "Turcoaz & Alufab - Gama completă de profile din aluminiu, sisteme pentru balustrade din sticlă securizată și panouri compozite (bond). Depozit Popești-Leordeni.",
   verification: {
-    google: "google955aae56204d0058",
+    google: "99WUIU-knQT64obdDg7tY_iKjVa3Yn2p8COGa5n25eo",
   },
 };
 
