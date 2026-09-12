@@ -310,7 +310,8 @@ Panoul compozit reprezintă soluția modernă și eficientă pentru fațade prem
 - **Timp redus de montaj** — soluție rapidă pentru proiecte cu termene strânse.
 - **Eficiență economică** — investiție avantajoasă datorită durabilitasii și costurilor minime de întreținere.
 
-,
+
+4. **Rallbond**`,
     pdfUrl: "/pdf/bond.pdf",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
