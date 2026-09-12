@@ -310,28 +310,7 @@ Panoul compozit reprezintă soluția modernă și eficientă pentru fațade prem
 - **Timp redus de montaj** — soluție rapidă pentru proiecte cu termene strânse.
 - **Eficiență economică** — investiție avantajoasă datorită durabilitasii și costurilor minime de întreținere.
 
----
-
-### 🔹 Specificații Tehnice de Producție
-| Parametru | Valoare / Descriere |
-| :--- | :--- |
-| **Dimensiune standard (mm)** | 4 × 1250 × 3200 |
-| **Grosime (mm)** | 2 · 3 · 4 · 6 |
-| **Lățime (mm)** | 1000 / 1250 / 1500 |
-| **Lungime (mm)** | până la 6000 mm – dimensiuni speciale la cerere |
-| **Foaie de aluminiu** | EN AW 3005 (Al Mn1 Mg 0.5) / H42–H46 |
-| **Suprafața exterioară** | PVDF / HDP / PE |
-| **Suprafața interioară** | Grund protector |
-| **Material de umplere** | Polietilenă cu densitate redusă (LDPE) |
-
----
-
-### 🏛️ Branduri de Top Disponibile
-Portofoliul nostru include cele mai apreciate mărci de panouri compozite din aluminiu, recunoscute pentru calitatea lor superioară:
-1. **Primebond Plus**
-2. **Primebond**
-3. **Durabond**
-4. **Rallbond**`,
+,
     pdfUrl: "/pdf/bond.pdf",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
