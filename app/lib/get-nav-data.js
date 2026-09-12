@@ -1,77 +1,83 @@
-export const resolvePath = unstable_cache(
-  async (pathSegments) => {
-    if (!pathSegments || pathSegments.length === 0) return null;
+export const getAllSlugsForStaticGeneration = unstable_cache(
+  async () => {
+    const { data: categories } = await supabaseAdmin
+      .from("categories")
+      .select("slug");
+    const categoryPaths = categories?.map((c) => ({ slug: [c.slug] })) || [];
 
-    const lastSlug = pathSegments[pathSegments.length - 1];
-
-    if (pathSegments.length === 1) {
-      const { data: category } = await supabaseAdmin
-        .from("categories")
-        .select("*, subcategories(*)")
-        .eq("slug", pathSegments[0])
-        .order("display_order", {
-          foreignTable: "subcategories",
-          ascending: true,
-        })
-        .single();
-      if (category) return { type: "category", data: category };
-    }
-
-    const { data: product } = await supabaseAdmin
-      .from("products")
-      .select(
-        "*, subcategories(*, categories(*)), categories(*), product_documents(*)",
-      )
-      .eq("slug", lastSlug)
-      .single();
-
-    if (product) {
-      if (product.subcategories) {
-        return {
-          type: "product",
-          data: {
-            ...product,
-            subcategory: product.subcategories,
-            category: product.subcategories.categories,
-          },
-        };
-      } else if (product.categories) {
-        return {
-          type: "product",
-          data: {
-            ...product,
-            subcategory: null,
-            category: product.categories,
-          },
-        };
-      }
-    }
-
-    const { data: subcategory } = await supabaseAdmin
+    const { data: allSubs } = await supabaseAdmin
       .from("subcategories")
-      .select("*, categories(*), products(*), subcategories(*)") 
-      .eq("slug", lastSlug)
-      .order("display_order", { foreignTable: "products", ascending: true })
-      .order("display_order", {
-        foreignTable: "subcategories",
-        ascending: true,
-      })
-      .single();
+      .select("*");
+    const subMap = {};
+    allSubs?.forEach((s) => (subMap[s.id] = s));
 
-    if (subcategory) {
-      return {
-        type: "subcategory",
-        data: {
-          category: subcategory.categories,
-          subcategory: subcategory,
-          products: subcategory.products || [],
-          subcategories: subcategory.subcategories || [],
-        },
-      };
-    }
+    const { data: fullSubcategories } = await supabaseAdmin
+      .from("subcategories")
+      .select("id, slug, parent_id, category_id, categories(slug)");
 
-    return null;
+    const subMap2 = {};
+    fullSubcategories?.forEach((s) => (subMap2[s.id] = s));
+
+    const subcategoryPaths =
+      fullSubcategories?.map((s) => {
+        let path = [s.slug];
+        let curr = s;
+        while (curr.parent_id && subMap2[curr.parent_id]) {
+          curr = subMap2[curr.parent_id];
+          path.unshift(curr.slug);
+        }
+        path.unshift(curr.categories?.slug);
+        return { slug: path.filter(Boolean) };
+      }) || [];
+
+    const catMap = {};
+    categories?.forEach((c) => (catMap[c.id] = c));
+
+    const { data: products } = await supabaseAdmin
+      .from("products")
+      .select("slug, subcategory_id, category_id");
+
+    const productPaths =
+      products?.map((p) => {
+        let path = [p.slug];
+        if (p.subcategory_id) {
+          let currSub = subMap2[p.subcategory_id];
+          while (currSub) {
+            path.unshift(currSub.slug);
+            if (currSub.parent_id) {
+              currSub = subMap2[currSub.parent_id];
+            } else {
+              path.unshift(currSub.categories?.slug);
+              break;
+            }
+          }
+        } else if (p.category_id) {
+          const cat = catMap[p.category_id];
+          if (cat) {
+            path.unshift(cat.slug);
+          }
+        }
+        return { slug: path.filter(Boolean) };
+      }) || [];
+
+    // Yerel kategorileri de statik yollara dahil ediyoruz
+    const localPaths = [];
+    localCategories?.forEach((cat) => {
+      localPaths.push({ slug: [cat.slug] });
+      cat.subcategories?.forEach((sub) => {
+        localPaths.push({ slug: [cat.slug, sub.slug] });
+        sub.products?.forEach((prod) => {
+          localPaths.push({ slug: [cat.slug, sub.slug, prod.slug] });
+        });
+      });
+    });
+
+    const allPaths = [...categoryPaths, ...subcategoryPaths, ...productPaths, ...localPaths];
+    const uniquePaths = Array.from(new Set(allPaths.map(p => JSON.stringify(p)))).map(p => JSON.parse(p));
+    uniquePaths.categorySlugs = categoryPaths; 
+    
+    return uniquePaths;
   },
-  ["resolve-path"],
-  { revalidate: 3600, tags: ["categories", "subcategories", "products"] },
+  ["all-slugs-catchall"],
+  { tags: ["categories", "subcategories", "products"] },
 );
