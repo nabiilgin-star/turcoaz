@@ -1,13 +1,45 @@
 "use client";
 
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Send, MapPin, Phone, Mail, Clock } from "lucide-react";
 import Image from "next/image";
 import "./Contact.css";
 
 export default function ContactForm({ className = "", contactImage }) {
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Mesaj trimis! (Simulare)");
+    setLoading(true);
+    setStatusMessage("");
+
+    const formData = {
+      from_name: e.target.name.value,
+      company: e.target.company.value || "Nespecificat",
+      phone: e.target.phone.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
+    try {
+      // Buradaki ID'leri EmailJS panelinden alacağın kendi ID'lerinle değiştireceksin
+      await emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        formData,
+        "YOUR_PUBLIC_KEY"
+      );
+
+      setStatusMessage("Mesajul a fost trimis cu succes!");
+      e.target.reset();
+    } catch (error) {
+      console.error("Erore la trimitere:", error);
+      setStatusMessage("A apărut o eroare. Vă rugăm să încercați din nou.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const imageUrl =
@@ -47,7 +79,6 @@ export default function ContactForm({ className = "", contactImage }) {
         <div className="contact-container">
           <h2 className="contact-title">Contactați-ne</h2>
 
-          {/* Üst Kısım: 3 Depo/Lokasyon Kartları */}
           <div className="locations-grid">
             {locations.map((loc, index) => (
               <div className="location-card" key={index}>
@@ -73,10 +104,7 @@ export default function ContactForm({ className = "", contactImage }) {
             ))}
           </div>
 
-          {/* Alt Kısım: Görsel ve Form Layout (Orijinal Yapı) */}
           <div className="contact-split-layout">
-            
-            {/* Sol Sütun: Görsel ve Çalışma Saatleri */}
             <div className="contact-left-col">
               <div className="contact-image-col">
                 <Image
@@ -103,12 +131,10 @@ export default function ContactForm({ className = "", contactImage }) {
               </div>
             </div>
 
-            {/* Sağ Sütun: Form Kutusu */}
             <div className="contact-form-col">
               <div className="contact-card">
                 <form onSubmit={handleSubmit}>
                   <div className="form-grid">
-                    
                     <div className="form-group">
                       <label htmlFor="name" className="form-label">
                         Nume complet *
@@ -173,10 +199,16 @@ export default function ContactForm({ className = "", contactImage }) {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn-submit">
+                  <button type="submit" className="btn-submit" disabled={loading}>
                     <Send size={18} />
-                    Trimite mesajul
+                    {loading ? "Se trimite..." : "Trimite mesajul"}
                   </button>
+
+                  {statusMessage && (
+                    <p style={{ marginTop: "1rem", textAlign: "center", fontWeight: "500" }}>
+                      {statusMessage}
+                    </p>
+                  )}
                 </form>
               </div>
             </div>
