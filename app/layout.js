@@ -9,8 +9,11 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Turcoaz Aluminiu & Alufab",
-  description: "Soluții premium pentru feronerie și sticlă.",
+  title: "Turcoaz Aluminiu & Alufab | Profile Aluminiu, Balustrade Sticlă și Bond",
+  description: "Turcoaz & Alufab - Gama completă de profile din aluminiu, sisteme pentru balustrade din sticlă securizată și panouri compozite (bond). Depozit Popești-Leordeni.",
+  verification: {
+    google: "google955aae56204d0058",
+  },
 };
 
 export default function RootLayout({ children }) {
