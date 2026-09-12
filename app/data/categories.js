@@ -294,12 +294,26 @@ export const categories = [
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-    description: "Avantajele Panoului Compozit\nPanoul compozit reprezintă soluția modernă și eficientă pentru fațade premium, oferind un echilibru ideal între estetică, performanță și costuri pe termen lung.\nPanoul compozit oferă design flexibil, greutate redusă și rezistență ridicată. Asigură planeitate perfectă, gamă variată de culori și montaj rapid. Acoperă imperfecțiunile, nu ruginește, este sigur seismic, ecologic și economic pe termen lung.",
+    description: `Avantajele Panoului Compozit
+Panoul compozit reprezintă soluția modernă și eficientă pentru fațade premium, oferind un echilibru ideal între estetică, performanță și costuri pe termen lung.
+Panoul compozit oferă design flexibil, greutate redusă și rezistență ridicată. Asigură planeitate perfectă, gamă variată de culori și montaj rapid. Acoperă imperfecțiunile, nu ruginește, este sigur seismic, ecologic și economic pe termen lung.
+
+### 🔹 Specificații Tehnice de Producție
+| Parametru | Valoare / Descriere |
+| :--- | :--- |
+| **Dimensiune standard (mm)** | 4 × 1250 × 3200 |
+| **Grosime (mm)** | 2 · 3 · 4 · 6 |
+| **Lățime (mm)** | 1000 / 1250 / 1500 |
+| **Lungime (mm)** | până la 6000 mm – dimensiuni speciale la cerere |
+| **Foaie de aluminiu** | EN AW 3005 (Al Mn1 Mg 0.5) / H42–H46 |
+| **Suprafața exterioară** | PVDF / HDP / PE |
+| **Suprafața interioară** | Grund protector |
+| **Material de umplere** | Polietilenă cu densitate redusă (LDPE) |`,
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg"
     ],
-    // Her markanın altında kendine ait PDF kataloğu olacak şekilde düzenlendi:
+    // En altta yer alacak 4 marka ve altlarında PDF katalogları:
     products: [
       {
         name: "Primebond Plus",
