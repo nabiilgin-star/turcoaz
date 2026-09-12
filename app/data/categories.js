@@ -292,12 +292,49 @@ export const categories = [
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249178/bond_banner_iw1yl6.jpg",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-    description: "SISTEME MODERNE DE PLĂCI DIN ALUMINIU COMPOZIT (BOND)\n- Utilizate pe scară largă în România pentru placarea fațadelor ventilate la clădiri comerciale, blocuri rezidențiale și sedii de companii.\n- Oferă o planeitate perfectă a suprafeței, rezistență deosebită la intemperii, raze UV și variații extreme de temperatură.\n- Greutate redusă, ușor de prelucrat și montat pe substructură.\n- Gamă variată de culori RAL, finisaje metalice, aspect oglindă sau texturi imitație lemn și piatră.\n- Soluția ideală pentru un design arhitectural modern, elegant și durabil pe termen lung.",
+    description: `### Avantajele Panoului Compozit
+Panoul compozit reprezintă soluția modernă și eficientă pentru fațade premium, oferind un echilibru ideal între estetică, performanță și costuri pe termen lung.
+
+- **Libertate în design** — permite realizarea unor fațade moderne, creative și personalizate.
+- **Greutate redusă** — ușor de manipulat și montat, fără a încărca structura clădirii.
+- **Rezistență metalică** — oferă durabilitate ridicată în ciuda grosimii reduse.
+- **Planeitate perfectă** — asigură o imagine impecabilă a fațadei.
+- **Gamă variată de culori** — ideal pentru proiecte care cer identitate vizuală distinctă.
+- **Transport și montaj facil** — reduce timpul de execuție și costurile de instalare.
+- **Acoperirea imperfecțiunilor** — oferă un aspect uniform chiar și pe suprafețe deteriorate.
+- **Fără rugină sau degradare** — material stabil, ideal pentru utilizare îndelungată.
+- **Siguranță seismică** — nu adaugă greutate suplimentară și contribuie la protecția clădirii.
+- **Prietenos cu mediul** — nu conține substanțe nocive și permite reciclarea.
+- **Timp redus de montaj** — soluție rapidă pentru proiecte cu termene strânse.
+- **Eficiență economică** — investiție avantajoasă datorită durabilitasii și costurilor minime de întreținere.
+
+---
+
+### 🔹 Specificații Tehnice de Producție
+| Parametru | Valoare / Descriere |
+| :--- | :--- |
+| **Dimensiune standard (mm)** | 4 × 1250 × 3200 |
+| **Grosime (mm)** | 2 · 3 · 4 · 6 |
+| **Lățime (mm)** | 1000 / 1250 / 1500 |
+| **Lungime (mm)** | până la 6000 mm – dimensiuni speciale la cerere |
+| **Foaie de aluminiu** | EN AW 3005 (Al Mn1 Mg 0.5) / H42–H46 |
+| **Suprafața exterioară** | PVDF / HDP / PE |
+| **Suprafața interioară** | Grund protector |
+| **Material de umplere** | Polietilenă cu densitate redusă (LDPE) |
+
+---
+
+### 🏛️ Branduri de Top Disponibile
+Portofoliul nostru include cele mai apreciate mărci de panouri compozite din aluminiu, recunoscute pentru calitatea lor superioară:
+1. **Primebond Plus**
+2. **Primebond**
+3. **Durabond**
+4. **Rallbond**`,
     pdfUrl: "/pdf/bond.pdf",
     gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1789249178/bond_banner_iw1yl6.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg"
     ],
     subcategories: []
