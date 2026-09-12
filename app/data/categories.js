@@ -288,25 +288,19 @@ export const categories = [
       }
     ],
   },
-  {
+ {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-    subcategories: [
-      {
-        id: "panouri-compozite-bond",
-        slug: "panouri-compozite-bond",
-        name: "Panouri Compozite Aluminiu (Bond)",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-        description: "Panouri compozite din aluminiu (Bond) pentru placări fațade și proiecte arhitecturale moderne. Oferă o rezistență deosebită la intemperii, izolație și un design elegant.\n\nSTOC: Diverse culori RAL și finisaje speciale.",
-        pdfUrl: "/pdf/bond.pdf",
-        gallery: [
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"
-        ]
-      }
-    ]
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249178/bond_banner_iw1yl6.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+    description: "SISTEME MODERNE DE PLĂCI DIN ALUMINIU COMPOZIT (BOND)\n- Utilizate pe scară largă în România pentru placarea fațadelor ventilate la clădiri comerciale, blocuri rezidențiale și sedii de companii.\n- Oferă o planeitate perfectă a suprafeței, rezistență deosebită la intemperii, raze UV și variații extreme de temperatură.\n- Greutate redusă, ușor de prelucrat și montat pe substructură.\n- Gamă variată de culori RAL, finisaje metalice, aspect oglindă sau texturi imitație lemn și piatră.\n- Soluția ideală pentru un design arhitectural modern, elegant și durabil pe termen lung.",
+    pdfUrl: "/pdf/bond.pdf",
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789249178/bond_banner_iw1yl6.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg"
+    ],
+    subcategories: []
   }
 ];
+    
