@@ -10,22 +10,22 @@ export default function SubcategoryView({
   products,
   subcategories,
 }) {
-  // Eğer local veri veya api verisiyse güvenli path oluşturma
   const categorySlug = category?.slug || "";
   const subcategorySlug = subcategory?.slug || "";
 
-  // Filtreleme: Alt kategoriler listelenirken, şu an içinde bulunduğumuz alt kategoriyi listeden çıkartıyoruz.
-  // Böylece "Sisteme Tamplarie" içerisindeyken kendisi bir daha menü olarak aşağıda türemez.
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
   );
 
+  const hasContent = (products && products.length > 0) || (filteredSubcategories.length > 0);
+  const hasDescriptionOrDetail = subcategory?.description || subcategory?.detailImage || (subcategory?.gallery && subcategory.gallery.length > 0);
+
   return (
     <section className={styles["subcategory-products-section"]}>
-      <div className="container-max">
+      <div className="container-max" style={{ width: "100%" }}>
         <div className={styles["subcategory-header"]}>
           <h1 className={styles["subcategory-title"]}>
-            {subcategory?.name || ""}{" "}
+            {subcategory?.name || category?.name || ""}{" "}
             {products && products.length > 0 && (
               <span style={{ color: "#667085", fontWeight: "300", fontSize: "1.5rem" }}>
                 ({products.length})
@@ -43,7 +43,6 @@ export default function SubcategoryView({
             {filteredSubcategories.map((sub, index) => (
               <Link
                 key={index}
-                // Düzeltilen URL: Kategori -> Yeni tıklanan alt kategori şeklinde temiz yönlendirme
                 href={`/categorii/${categorySlug}/${sub.slug}`}
                 className={catStyles["subcategory-card"]}
               >
@@ -67,33 +66,64 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* 4 ADET ÜRÜNÜN LİSTELENDİĞİ YER (ProductCard) */}
+        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (ProductCard) */}
         {products && products.length > 0 && (
           <div className={styles["products-grid"]}>
             {products.map((product) => (
               <ProductCard
                 key={product.id || product.slug}
                 product={product}
-                // Ürün detayı için doğru base URL yapısı
                 baseUrl={`/categorii/${categorySlug}/${subcategorySlug}`}
               />
             ))}
           </div>
         )}
 
-        {/* EĞER BOMBOŞSA GÖSTERİLECEK ALAN */}
-        {(!products || products.length === 0) &&
-          (filteredSubcategories.length === 0) && (
-            <div
-              style={{
-                textAlign: "center",
-                padding: "4rem 0",
-                color: "#667085",
-              }}
-            >
-              Nu există produse sau subcategorii în această secțiune.
-            </div>
-          )}
+        {/* EĞER ÜRÜN YOKSA FAKAT AÇIKLAMA / DETAY GÖRSELİ / GALERİ VARSA (Örn: Glafuri din Aluminiu) */}
+        {!hasContent && hasDescriptionOrDetail && (
+          <div style={{
+            background: "#FFFFFF",
+            borderRadius: "16px",
+            border: "1px solid #E2E8F0",
+            padding: "32px",
+            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+            marginTop: "20px"
+          }}>
+            {subcategory?.detailImage && (
+              <div style={{ width: "100%", maxHeight: "380px", overflow: "hidden", borderRadius: "12px", marginBottom: "24px", backgroundColor: "#f8fafc", position: "relative" }}>
+                <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              </div>
+            )}
+            
+            {subcategory?.description && (
+              <div style={{ fontSize: "15px", color: "#334155", lineHeight: "1.7", marginBottom: "30px" }} dangerouslySetInnerHTML={{ __html: subcategory.description }} />
+            )}
+
+            {/* Galeri Resimleri */}
+            {subcategory?.gallery && subcategory.gallery.length > 0 && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px", marginTop: "24px" }}>
+                {subcategory.gallery.map((galleryImg, gIdx) => (
+                  <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "10px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)" }}>
+                    <img src={galleryImg} alt={`${subcategory.name} galeri ${gIdx + 1}`} style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "8px" }} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* EĞER TAMAMEN BOMBOŞSA GÖSTERİLECEK ALAN */}
+        {!hasContent && !hasDescriptionOrDetail && (
+          <div
+            style={{
+              textAlign: "center",
+              padding: "4rem 0",
+              color: "#667085",
+            }}
+          >
+            Nu există produse sau subcategorii în această secțiune.
+          </div>
+        )}
       </div>
     </section>
   );
