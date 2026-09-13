@@ -87,7 +87,7 @@ export default async function CatchAllCategoryPage({ params }) {
                 category: targetLocalCategory,
                 subcategory: targetSub,
                 products: mappedProducts,
-                subcategories: [] 
+                subcategories: targetLocalCategory.subcategories || [] 
               }
             };
           }
@@ -149,7 +149,7 @@ export default async function CatchAllCategoryPage({ params }) {
     breadcrumbItems.push({ label: data.title || data.name, href: "#" });
   }
 
-return (
+  return (
     <main className="page">
       <TrackView
         table={
@@ -171,18 +171,19 @@ return (
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* Saf Flexbox ile Yan Menü ve İçerik Düzeni (Bozulma İhtimali Sıfır) */}
+      {/* Kusursuz Yan Yana Flexbox Yerleşimi */}
       <div className="container-max" style={{ paddingBottom: "4rem", paddingTop: "1.5rem" }}>
-        <div style={{ display: "flex", gap: "2rem", alignItems: "flex-start", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "2.5rem", alignItems: "flex-start", width: "100%" }}>
           
-          {/* SOL TARAF: Sabit Yan Menü (%25 Genişlik) */}
-          <aside style={{ flex: "1 1 240px", minWidth: "240px", background: "#ffffff", padding: "1.25rem", borderRadius: "0.75rem", border: "1px solid #f3f4f6", boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
+          {/* SOL TARAF: Hiyerarşik Yan Menü (Ana Kategoriler + Alt Kategoriler) */}
+          <aside style={{ width: "280px", flexShrink: 0, background: "#ffffff", padding: "1.25rem", borderRadius: "0.75rem", border: "1px solid #f3f4f6", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", position: "sticky", top: "100px" }}>
             <h3 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#111827", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid #f3f4f6" }}>
               CATEGORII PRODUSE
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {(navData.categories || localCategories).map((cat) => {
-                const isActive = data?.slug === cat.slug || data?.category?.slug === cat.slug;
+                const isCatActive = data?.slug === cat.slug || data?.category?.slug === cat.slug;
+                
                 return (
                   <li key={cat.slug || cat.id}>
                     <a
@@ -190,27 +191,56 @@ return (
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "between",
+                        justifyContent: "space-between",
                         padding: "0.5rem 0.75rem",
                         borderRadius: "0.5rem",
                         fontSize: "0.9rem",
                         textDecoration: "none",
-                        backgroundColor: isActive ? "#eff6ff" : "transparent",
-                        color: isActive ? "#1d4ed8" : "#4b5563",
-                        fontWeight: isActive ? "600" : "400",
+                        backgroundColor: isCatActive ? "#e0f2fe" : "transparent",
+                        color: isCatActive ? "#0369a1" : "#1f2937",
+                        fontWeight: isCatActive ? "600" : "500",
                         transition: "all 0.2s"
                       }}
                     >
                       <span>{cat.name || cat.title}</span>
                     </a>
+
+                    {/* Aktif olan veya alt kırılımları bulunan kategorinin alt menülerini listele */}
+                    {cat.subcategories && cat.subcategories.length > 0 && (
+                      <ul style={{ listStyle: "none", paddingLeft: "1rem", marginTop: "0.3rem", display: "flex", flexDirection: "column", gap: "0.25rem", borderLeft: "2px solid #f3f4f6" }}>
+                        {cat.subcategories.map((sub) => {
+                          const isSubActive = data?.subcategory?.slug === sub.slug || data?.slug === sub.slug;
+                          return (
+                            <li key={sub.slug}>
+                              <a
+                                href={`/categorii/${cat.slug}/${sub.slug}`}
+                                style={{
+                                  display: "block",
+                                  padding: "0.35rem 0.5rem",
+                                  borderRadius: "0.375rem",
+                                  fontSize: "0.85rem",
+                                  textDecoration: "none",
+                                  color: isSubActive ? "#0284c7" : "#4b5563",
+                                  fontWeight: isSubActive ? "600" : "400",
+                                  backgroundColor: isSubActive ? "#f0f9ff" : "transparent",
+                                  transition: "all 0.2s"
+                                }}
+                              >
+                                • {sub.name}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                   </li>
                 );
               })}
             </ul>
           </aside>
 
-          {/* SAĞ TARAF: İçerik Alanı (%75 Genişlik) */}
-          <div style={{ flex: "1 1 650px", minWidth: "0" }}>
+          {/* SAĞ TARAF: İçerik Alanı */}
+          <div style={{ flex: 1, minWidth: 0 }}>
             {type === "category" && <CategoryView category={data} />}
             {type === "subcategory" && (
               <SubcategoryView
