@@ -8,11 +8,10 @@ import CategoryView from "./CategoryView";
 import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
 
-// Local veri dosyası
+// Local veri dosyası (Garantili kaynak)
 import { categories as localCategories } from "@/app/data/categories"; 
 import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 
-// Yeni eklenen statik olmayan sayfaların (örn. yeni kompozit panel) 404 vermesini engeller
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
@@ -22,7 +21,6 @@ export async function generateStaticParams() {
 export default async function CatchAllCategoryPage({ params }) {
   const { slug: pathSegments } = await params;
 
-  // Backend/API verilerini ve resolve işlemini başlatıyoruz
   const [navData, apiResult] = await Promise.all([
     getNavbarData(),
     resolvePath(pathSegments).catch(() => null),
@@ -30,14 +28,12 @@ export default async function CatchAllCategoryPage({ params }) {
 
   let result = apiResult;
 
-  // LOCAL VERİDE ARAMA VE EŞLEŞTİRME MEKANİZMASI
   if (!result && pathSegments && pathSegments.length > 0) {
     const firstSlug = pathSegments[0];
     const targetLocalCategory = localCategories.find(c => c.slug === firstSlug);
 
     if (targetLocalCategory) {
       if (pathSegments.length === 1) {
-        // Eğer ana kategorinin detailImage veya description'ı varsa doğrudan detay/tek sayfa olarak aç
         if (targetLocalCategory.detailImage || (targetLocalCategory.description && (!targetLocalCategory.subcategories || targetLocalCategory.subcategories.length === 0))) {
           result = {
             type: "product",
@@ -49,7 +45,6 @@ export default async function CatchAllCategoryPage({ params }) {
             }
           };
         } else {
-          // 1. Normal Ana Kategori Görünümü
           result = {
             type: "category",
             data: targetLocalCategory
@@ -57,7 +52,6 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       } 
       else if (pathSegments.length === 2) {
-        // 2. İki kademeli derinlik (Alt Kategori VEYA Doğrudan Ürün)
         const subSlug = pathSegments[1];
         const targetSub = targetLocalCategory.subcategories?.find(s => s.slug === subSlug);
 
@@ -94,10 +88,8 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       }
       else {
-        // 3. Üç veya daha fazla kademeli derinlik (Ürün Görünümü)
         const prodSlug = pathSegments[pathSegments.length - 1];
         const subSlug = pathSegments[pathSegments.length - 2];
-
         const targetSub = targetLocalCategory.subcategories?.find(s => s.slug === subSlug);
 
         if (targetSub) {
@@ -119,7 +111,6 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  // Eğer hiçbir eşleşme bulunamadıysa 404
   if (!result) {
     notFound();
   }
@@ -175,13 +166,13 @@ export default async function CatchAllCategoryPage({ params }) {
       <div className="container-max" style={{ paddingBottom: "4rem", paddingTop: "1.5rem" }}>
         <div style={{ display: "flex", gap: "2.5rem", alignItems: "flex-start", width: "100%" }}>
           
-          {/* SOL TARAF: Hiyerarşik Yan Menü (Ana Kategoriler + Alt Kategoriler) */}
+          {/* SOL TARAF: Kesin Garantili Hiyerarşik Yan Menü */}
           <aside style={{ width: "280px", flexShrink: 0, background: "#ffffff", padding: "1.25rem", borderRadius: "0.75rem", border: "1px solid #f3f4f6", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", position: "sticky", top: "100px" }}>
             <h3 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#111827", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid #f3f4f6" }}>
               CATEGORII PRODUSE
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {(navData.categories || localCategories).map((cat) => {
+              {localCategories.map((cat) => {
                 const isCatActive = data?.slug === cat.slug || data?.category?.slug === cat.slug;
                 
                 return (
@@ -205,7 +196,7 @@ export default async function CatchAllCategoryPage({ params }) {
                       <span>{cat.name || cat.title}</span>
                     </a>
 
-                    {/* Aktif olan veya alt kırılımları bulunan kategorinin alt menülerini listele */}
+                    {/* Aktif veya alt kırılımları olan kategorinin alt menülerini listele */}
                     {cat.subcategories && cat.subcategories.length > 0 && (
                       <ul style={{ listStyle: "none", paddingLeft: "1rem", marginTop: "0.3rem", display: "flex", flexDirection: "column", gap: "0.25rem", borderLeft: "2px solid #f3f4f6" }}>
                         {cat.subcategories.map((sub) => {
