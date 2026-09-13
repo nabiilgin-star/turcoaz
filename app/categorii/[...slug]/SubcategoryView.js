@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProductCard from "@/app/components/BestSellers/ProductCard";
 import styles from "./subcategory-products.module.css";
 import catStyles from "./subcategory.module.css";
 
@@ -195,7 +196,7 @@ export default function SubcategoryView({
           </>
         )}
 
-        {/* BİLGİ / AÇIKLAMA SAYFALARI (S28 Stili: Solda Yazı, Sağda Büyük Görsel) */}
+        {/* BİLGİ / AÇIKLAMA AĞIRLIKLI SAYFALAR (Örn: Glafuri din Aluminiu, ACP Bond) -> DİKEY AKIŞ (Üst Resim, Alt Yazı ve Alt Alta Galeriler) */}
         {!hasContent && hasDescriptionOrDetail && (
           <div style={{
             background: "#FFFFFF",
@@ -212,49 +213,28 @@ export default function SubcategoryView({
               {subcategory?.name || category?.name || ""}
             </h1>
 
-            {/* S28 Benzeri İki Sütunlu Yapı: Sol Açıklama, Sağ Büyük Görsel */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 420px",
-              gap: "40px",
-              alignItems: "start"
-            }} className="s28-layout-grid">
-              
-              {/* Sol Sütun: Açıklama / Avantajlar / Teknik Özellikler */}
-              {subcategory?.description && (
-                <div style={{ fontSize: "15px", color: "#334155", lineHeight: "1.7" }} dangerouslySetInnerHTML={{ __html: subcategory.description }} />
-              )}
+            {/* Üst Kısım: Büyük Detay Görseli (Tam Genişlik) */}
+            {subcategory?.detailImage && (
+              <div style={{ width: "100%", maxHeight: "420px", overflow: "hidden", borderRadius: "12px", backgroundColor: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px", border: "1px solid #E2E8F0" }}>
+                <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", height: "100%", maxHeight: "380px", objectFit: "contain" }} />
+              </div>
+            )}
+            
+            {/* Orta Kısım: Alt Yazı ve Açıklamalar (Dikey Akış) */}
+            {subcategory?.description && (
+              <div style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }} dangerouslySetInnerHTML={{ __html: subcategory.description }} />
+            )}
 
-              {/* Sağ Sütun: Büyük Detay Görseli (S28 Stili Sabit Kutu) */}
-              {subcategory?.detailImage && (
-                <div style={{
-                  background: "#FFFFFF",
-                  borderRadius: "16px",
-                  border: "1px solid #E2E8F0",
-                  padding: "24px",
-                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  position: "sticky",
-                  top: "100px",
-                  minHeight: "350px"
-                }}>
-                  <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", maxHeight: "380px", objectFit: "contain" }} />
-                </div>
-              )}
-            </div>
-
-            {/* Alt Kısım: Galeri Fotoğrafları (Tam Genişlik Alt Alta) */}
+            {/* Alt Kısım: Galeri Fotoğrafları (Dikey / Alt Alta Sıralı Akış) */}
             {subcategory?.gallery && subcategory.gallery.length > 0 && (
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "20px", borderTop: "1px solid #E2E8F0", paddingTop: "32px" }}>
-                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", margin: 0 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "12px" }}>
+                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", borderBottom: "2px solid #E2E8F0", paddingBottom: "10px", margin: 0 }}>
                   Galerie Foto & Detalii Tehnice
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                   {subcategory.gallery.map((galleryImg, gIdx) => (
                     <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "16px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <img src={galleryImg} alt={`${subcategory.name} galeri ${gIdx + 1}`} style={{ width: "100%", maxHeight: "480px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }} />
+                      <img src={galleryImg} alt={`${subcategory.name} galeri ${gIdx + 1}`} style={{ width: "100%", maxHeight: "450px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }} />
                     </div>
                   ))}
                 </div>
