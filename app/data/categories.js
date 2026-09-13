@@ -99,7 +99,7 @@ export const categories = [
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
             description: `Sistem S28 – avantaje:\n- Sistem utilizat pentru executia de usi si ferestre glisante\n- Sistem economic de tamplarie din aluminiu, tip glisante\n- Sistem fara ruperea puntii termice\n- Posibilitatea executarii unei game largi de tipologii de constructie\n- Inchidere cu garnituri perie si garnituri EPDM\n\nSTOC:\nAlb - RAL 9016, Maro - RAL8014, Gri antracit 7016Mat, STEJAR AURIU`,
-            pdfUrl: "/pdf/S28-Glisanta.pdf",
+            pdfUrl: "/pdf/s28-glisanta.pdf",
             gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784566277/AKPA_S28_RO_HD_e3xt4u.jpg",
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784481536/S28-4_s27r0e.jpg",
