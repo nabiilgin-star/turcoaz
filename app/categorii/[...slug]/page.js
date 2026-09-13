@@ -57,7 +57,6 @@ export default async function CatchAllCategoryPage({ params }) {
     } 
     else if (pathSegments.length === 2) {
       const subSlug = pathSegments[1]?.toLowerCase().trim();
-      // SADECE ve SADECE bu ana kategoriye ait alt kategoriler taranır (Çakışma önlenir)
       const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === subSlug);
 
       if (targetSub) {
@@ -115,7 +114,6 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  // Eşleşme yoksa veya alt kategori ebeveyne ait değilse 404
   if (!result) {
     notFound();
   }
@@ -179,7 +177,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ */}
+        {/* SOL FİLTRE PANELİ - Temizlenmiş ve Karışıklığı Giderilmiş Menü */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -229,7 +227,7 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* Sadece aktif ana kategorinin alt kırılımları listelenir */}
+                  {/* Sadece aktif ana kategorinin alt kırılımları listelenir, linkler doğru ana kategori köküne bağlanır */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
