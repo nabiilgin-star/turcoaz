@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import ProductCard from "@/app/components/BestSellers/ProductCard";
 import styles from "./subcategory-products.module.css";
 import catStyles from "./subcategory.module.css";
 
@@ -92,7 +91,7 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (Örn: S28, WD37 vb.) */}
+        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (Örn: S28 listeleri vb.) */}
         {products && products.length > 0 && (
           <>
             <div style={{
@@ -196,7 +195,7 @@ export default function SubcategoryView({
           </>
         )}
 
-        {/* BİLGİ / AÇIKLAMA AĞIRLIKLI SAYFALAR (Örn: Glafuri din Aluminiu, ACP Bond) -> DİKEY AKIŞ (Üst Resim, Alt Yazı ve Alt Alta Galeriler) */}
+        {/* BİLGİ / DETAY SAYFALARI (DİKEY SIRALI: Üstte Başlık ve Tam Genişlikte Resim, Altta Metin ve Galeriler) */}
         {!hasContent && hasDescriptionOrDetail && (
           <div style={{
             background: "#FFFFFF",
@@ -208,33 +207,54 @@ export default function SubcategoryView({
             flexDirection: "column",
             gap: "32px"
           }}>
-            {/* Sayfa Başlığı */}
+            {/* 1. Başlık */}
             <h1 style={{ fontSize: "32px", fontWeight: "800", color: "#0F172A", margin: 0, lineHeight: "1.2" }}>
               {subcategory?.name || category?.name || ""}
             </h1>
 
-            {/* Üst Kısım: Büyük Detay Görseli (Tam Genişlik) */}
+            {/* 2. Üst Kısım: Tam Genişlikte Büyük Detay / Tablo Görseli */}
             {subcategory?.detailImage && (
-              <div style={{ width: "100%", maxHeight: "420px", overflow: "hidden", borderRadius: "12px", backgroundColor: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px", border: "1px solid #E2E8F0" }}>
-                <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", height: "100%", maxHeight: "380px", objectFit: "contain" }} />
+              <div style={{
+                width: "100%",
+                background: "#FFFFFF",
+                borderRadius: "12px",
+                border: "1px solid #E2E8F0",
+                padding: "20px",
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.03)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}>
+                <img
+                  src={subcategory.detailImage}
+                  alt={subcategory.name}
+                  style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px" }}
+                />
               </div>
             )}
             
-            {/* Orta Kısım: Alt Yazı ve Açıklamalar (Dikey Akış) */}
+            {/* 3. Alt Kısım: Açıklamalar ve Teknik Yazılar (Dikey Akış) */}
             {subcategory?.description && (
-              <div style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }} dangerouslySetInnerHTML={{ __html: subcategory.description }} />
+              <div
+                style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
+                dangerouslySetInnerHTML={{ __html: subcategory.description }}
+              />
             )}
 
-            {/* Alt Kısım: Galeri Fotoğrafları (Dikey / Alt Alta Sıralı Akış) */}
+            {/* 4. En Alt Kısım: Alt Alta Sıralı Galeri Fotoğrafları */}
             {subcategory?.gallery && subcategory.gallery.length > 0 && (
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "12px" }}>
-                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", borderBottom: "2px solid #E2E8F0", paddingBottom: "10px", margin: 0 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "16px", borderTop: "1px solid #E2E8F0", paddingTop: "32px" }}>
+                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", margin: 0 }}>
                   Galerie Foto & Detalii Tehnice
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                   {subcategory.gallery.map((galleryImg, gIdx) => (
                     <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "16px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <img src={galleryImg} alt={`${subcategory.name} galeri ${gIdx + 1}`} style={{ width: "100%", maxHeight: "450px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }} />
+                      <img
+                        src={galleryImg}
+                        alt={`${subcategory.name} galeri ${gIdx + 1}`}
+                        style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }}
+                      />
                     </div>
                   ))}
                 </div>
