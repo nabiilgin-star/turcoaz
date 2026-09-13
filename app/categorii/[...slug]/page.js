@@ -195,14 +195,14 @@ export default async function CatchAllCategoryPage({ params }) {
           }}>
             Categorii Produse
           </h3>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
             {localCategories.map((cat) => {
               const currentSlug = activeCategorySlug?.toLowerCase().trim();
               const catSlug = cat.slug?.toLowerCase().trim();
               const isActive = currentSlug === catSlug;
               
               return (
-                <li key={cat.slug || cat.id}>
+                <li key={cat.slug || cat.id} style={{ marginBottom: "4px" }}>
                   <a
                     href={`/categorii/${cat.slug}`}
                     style={{
@@ -225,10 +225,10 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* SADECE VE SADECE aktif olan ana kategorinin alt kırılımlarını listele */}
+                  {/* SADECE aktif kategorinin alt kırılımları (Daha şık ve düzenli tipografi ile) */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
-                    <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
-                      {cat.subcategories.map((sub) => {
+                    <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "8px", marginBottom: "8px", display: "flex", flexDirection: "column", gap: "6px", borderLeft: "2px solid #E2E8F0" }}>
+                      {cat.subcategories.nameub?.map((sub) => {
                         const isSubActive = data?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
                         return (
                           <li key={sub.slug}>
@@ -242,7 +242,8 @@ export default async function CatchAllCategoryPage({ params }) {
                                 textDecoration: "none",
                                 color: isSubActive ? "#0088A5" : "#475569",
                                 fontWeight: isSubActive ? "700" : "500",
-                                backgroundColor: isSubActive ? "#F1F5F9" : "transparent"
+                                backgroundColor: isSubActive ? "#F1F5F9" : "transparent",
+                                textTransform: "none" // Büyük harf zorlamasını kaldırdık
                               }}
                             >
                               • {sub.name}
