@@ -306,7 +306,7 @@ export const categories = [
         slug: "primebond-plus",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebondplus_ekuawf.jpg",
         description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,47 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
-        pdfUrl: "/pdf/primebond-plus.pdf"
+        pdfUrl: "/pdf/primebond.pdf"
       },
       {
         name: "Primebond",
