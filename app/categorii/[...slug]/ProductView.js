@@ -91,7 +91,7 @@ export default function ProductView({ product }) {
           </div>
           
 
-          {/* 4. En Altta 4 Marka ve Her Birinin Altında PDF Butonu */}
+          {/* 4. En Altta 4 Marka ve Görselleri / Teknik Özellikleri */}
           {product.products && product.products.length > 0 && (
             <div style={{ marginTop: "60px" }}>
               <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", marginBottom: "30px", textAlign: "center" }}>
@@ -99,7 +99,7 @@ export default function ProductView({ product }) {
               </h2>
               <div style={{ 
                 display: "grid", 
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", 
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", 
                 gap: "25px" 
               }}>
                 {product.products.map((brand, index) => (
@@ -114,13 +114,26 @@ export default function ProductView({ product }) {
                     boxShadow: "0 4px 10px rgba(0,0,0,0.03)"
                   }}>
                     <div>
+                      {/* Markaya özel renkli çerçeve görseli */}
+                      {brand.image && (
+                        <div style={{ position: "relative", width: "100%", height: "160px", marginBottom: "15px", borderRadius: "8px", overflow: "hidden", backgroundColor: "#fff" }}>
+                          <Image 
+                            src={brand.image} 
+                            alt={brand.name} 
+                            fill 
+                            style={{ objectFit: "contain" }} 
+                          />
+                        </div>
+                      )}
+
                       <h3 style={{ fontSize: "1.2rem", fontWeight: "600", color: "#222", marginBottom: "10px" }}>
                         {brand.name}
                       </h3>
-                      <p style={{ fontSize: "0.9rem", color: "#666", lineHeight: "1.5", marginBottom: "20px" }}>
+                      <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: "1.5", marginBottom: "20px", whiteSpace: "pre-line" }}>
                         {brand.description}
                       </p>
                     </div>
+
                     {brand.pdfUrl && (
                       <a 
                         href={brand.pdfUrl} 
@@ -146,7 +159,7 @@ export default function ProductView({ product }) {
               </div>
             </div>
           )}
-
+        
         </div>
       </section>
     );
