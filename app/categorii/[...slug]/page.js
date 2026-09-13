@@ -26,10 +26,15 @@ export default async function CatchAllCategoryPage({ params }) {
   ]);
 
   let result = apiResult;
+  let matchedCategory = null;
+
+  if (pathSegments && pathSegments.length > 0) {
+    const firstSlug = pathSegments[0];
+    matchedCategory = localCategories.find(c => c.slug === firstSlug);
+  }
 
   if (!result && pathSegments && pathSegments.length > 0) {
-    const firstSlug = pathSegments[0];
-    const targetLocalCategory = localCategories.find(c => c.slug === firstSlug);
+    const targetLocalCategory = matchedCategory;
 
     if (targetLocalCategory) {
       if (pathSegments.length === 1) {
@@ -139,8 +144,8 @@ export default async function CatchAllCategoryPage({ params }) {
     breadcrumbItems.push({ label: data.title || data.name, href: "#" });
   }
 
-  // Aktif ana kategoriyi güvenli bir şekilde tespit etme
-  const activeCategorySlug = type === "category" ? data.slug : data?.category?.slug;
+  // Kesin ve net aktif kategori slug tespiti (Çakışmaları önler)
+  const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
   return (
     <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
@@ -175,7 +180,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ - Hiyerarşik Açılır/Kapanır Menü */}
+        {/* SOL FİLTRE PANELİ - Kesin Ayrıştırılmış Menü */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -195,7 +200,7 @@ export default async function CatchAllCategoryPage({ params }) {
           }}>
             Categorii Produse
           </h3>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
             {localCategories.map((cat) => {
               const currentSlug = activeCategorySlug?.toLowerCase().trim();
               const catSlug = cat.slug?.toLowerCase().trim();
@@ -225,9 +230,9 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* Sadece aktif ana kategorinin alt kırılımları açık olur */}
+                  {/* SADECE VE SADECE URL'deki aktif ana kategorinin alt kırılımlarını göster */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
-                    <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "8px", marginBottom: "8px", display: "flex", flexDirection: "column", gap: "6px", borderLeft: "2px solid #E2E8F0" }}>
+                    <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
                         const isSubActive = data?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
                         return (
