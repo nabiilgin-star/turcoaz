@@ -319,7 +319,7 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     slug: "sticla",
     name: "Sticlă Laminată Securizată",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
     description: `<strong>🛡️ Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2</strong><br>
 Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²
 
@@ -358,7 +358,6 @@ Pentru balustrade montate în profil U din aluminiu: <strong>8.8.2 este standard
 
 <strong>📦 Detalii Comerciale</strong>
 • Prețurile sunt exprimate pe m², fără TVA
-• Comenzile sub 3 m² → +10%
 • Panourile sub 0.5 m² → se facturează 0.5 m²
 • Termen execuție: 10–20 zile lucrătoare
 • Ridicare din depozit sau livrare cu auto propriu
