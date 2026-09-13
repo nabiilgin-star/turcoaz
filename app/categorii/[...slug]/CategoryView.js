@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function CategoryView({ category }) {
+  const items = category.subcategories || category.products || [];
+
   return (
     <section>
       <div className="catalog-header" style={{
@@ -18,9 +20,9 @@ export default function CategoryView({ category }) {
         <div className="catalog-title-group">
           <h1 style={{ fontSize: "26px", fontWeight: "800", color: "#0F172A", display: "flex", alignItems: "center", gap: "12px", margin: 0 }}>
             {category.name} 
-            {category.subcategories && (
+            {items.length > 0 && (
               <span style={{ background: "#E6F7FA", color: "#0088A5", fontSize: "14px", padding: "4px 12px", borderRadius: "30px", fontWeight: "700" }}>
-                {category.subcategories.length} modele
+                {items.length} modele
               </span>
             )}
           </h1>
@@ -32,7 +34,7 @@ export default function CategoryView({ category }) {
         gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
         gap: "24px"
       }}>
-         {category.subcategories?.map((sub, index) => (
+         {items.map((sub, index) => (
           <Link
             key={index}
             href={`/categorii/${category.slug}/${sub.slug}`}
@@ -62,9 +64,16 @@ export default function CategoryView({ category }) {
             </div>
             
             <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-              <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", marginBottom: "20px" }}>
-                {sub.name}
-              </span>
+              <div>
+                <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", marginBottom: "8px", display: "block" }}>
+                  {sub.name}
+                </span>
+                {sub.description && (
+                  <p style={{ fontSize: "13px", color: "#64748B", lineHeight: "1.5", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "16px" }}>
+                    {sub.description}
+                  </p>
+                )}
+              </div>
 
               <span style={{
                 display: "flex",
