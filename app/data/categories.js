@@ -315,8 +315,8 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     subcategories: []
   },
   {
-  id: "sticla-laminata-securizata",
-  slug: "sticla-laminata-securizata",
+  id: "sticla",
+  slug: "sticla",
   name: "Sticlă Laminată Securizată",
   image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
   detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg", // İstersen buraya stı̇cla görseli ekleyebilirsin
@@ -374,6 +374,6 @@ Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, t
 
 📘 Foaie de Produs – 10.10.2
 Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
-  pdfUrl: "/pdf/sticla-laminata.pdf"
+  
 }
 ];
