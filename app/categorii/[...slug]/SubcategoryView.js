@@ -7,8 +7,6 @@ export default function SubcategoryView({ category, subcategory, products, subca
   // 2. Öncelik: Eğer alt kategorinin de altında başka alt kırılımlar varsa (örn: Balustradă de sticlă altındaki M115, M125 vb.)
   const childSubcategories = subcategory?.subcategories || [];
 
-  const hasContent = displayProducts.length > 0 || childSubcategories.length > 0;
-
   return (
     <div style={{ width: "100%" }}>
       {/* Üst Başlık ve Model/Öğe Sayısı */}
@@ -34,11 +32,11 @@ export default function SubcategoryView({ category, subcategory, products, subca
           fontSize: "13px",
           fontWeight: "700"
         }}>
-          {displayProducts.length > 0 ? `${displayProducts.length} model` : `${childSubcategories.length} element`}
+          {displayProducts.length > 0 ? `${displayProducts.length} model` : childSubcategories.length > 0 ? `${childSubcategories.length} element` : "Detalii sistem"}
         </span>
       </div>
 
-      {/* DURUM A: Eğer ürünler varsa (Sisteme Tâmplărie vb.) ürünleri grid olarak listele */}
+      {/* DURUM A: Eğer ürünler varsa ürünleri grid olarak listele */}
       {displayProducts.length > 0 ? (
         <div style={{
           display: "grid",
@@ -162,8 +160,8 @@ export default function SubcategoryView({ category, subcategory, products, subca
           boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)"
         }}>
           {subcategory?.detailImage && (
-            <div style={{ width: "100%", maxHeight: "350px", overflow: "hidden", borderRadius: "12px", marginBottom: "24px" }}>
-              <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", height: "auto", objectFit: "cover" }} />
+            <div style={{ width: "100%", maxHeight: "350px", overflow: "hidden", borderRadius: "12px", marginBottom: "24px", backgroundColor: "#f8fafc" }}>
+              <img src={subcategory.detailImage} alt={subcategory.name} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
             </div>
           )}
           <div style={{ fontSize: "15px", color: "#334155", lineHeight: "1.7" }} dangerouslySetInnerHTML={{ __html: subcategory?.description || "Informații detaliate despre acest sistem." }} />

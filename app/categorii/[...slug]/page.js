@@ -44,49 +44,47 @@ export default async function CatchAllCategoryPage({ params }) {
         data: targetCat
       };
     } 
-    else if (pathSegments.length >= 2) {
+    else if (pathSegments.length === 2) {
       const secondSlug = pathSegments[1]?.toLowerCase().trim();
-      let targetSub = targetCat.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
 
-      // Derin arama: Alt kategorilerin içindeki ürünler veya alt-alt kırılımlar
-      if (!targetSub && targetCat.subcategories) {
-        for (const sub of targetCat.subcategories) {
-          if (sub.products) {
-            const foundInSubProd = sub.products.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
-            if (foundInSubProd) {
-              targetSub = sub;
-              break;
-            }
+      // 1. Önce bu ana kategorinin doğrudan kendi ürünleri arasında arayalım (Örn: ACP Bond altındaki Primebond vb.)
+      const targetProd = targetCat.products?.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
+
+      if (targetProd) {
+        result = {
+          type: "product",
+          data: {
+            ...targetProd,
+            title: targetProd.name || targetProd.title,
+            category: targetCat,
+            subcategory: null
           }
-          if (sub.subcategories) {
-            const foundInSubSub = sub.subcategories.find(ss => ss.slug?.toLowerCase().trim() === secondSlug);
-            if (foundInSubSub) {
-              targetSub = foundInSubSub;
-              break;
+        };
+      } else {
+        // 2. Ürün bulunamadıysa alt kategori olarak arayalım (Örn: Glafuri din Aluminiu)
+        let targetSub = targetCat.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
+
+        // Derin arama: Alt kategorilerin içindeki ürünler veya alt-alt kırılımlar
+        if (!targetSub && targetCat.subcategories) {
+          for (const sub of targetCat.subcategories) {
+            if (sub.products) {
+              const foundInSubProd = sub.products.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
+              if (foundInSubProd) {
+                targetSub = sub;
+                break;
+              }
+            }
+            if (sub.subcategories) {
+              const foundInSubSub = sub.subcategories.find(ss => ss.slug?.toLowerCase().trim() === secondSlug);
+              if (foundInSubSub) {
+                targetSub = foundInSubSub;
+                break;
+              }
             }
           }
         }
-      }
 
-      // ACP veya diğer ana kategorilerin doğrudan ürünleri için kontrol
-      if (!targetSub && targetCat.products && pathSegments.length === 2) {
-        const prodSlug = pathSegments[1]?.toLowerCase().trim();
-        const targetProd = targetCat.products.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
-        if (targetProd) {
-          result = {
-            type: "product",
-            data: {
-              ...targetProd,
-              title: targetProd.name || targetProd.title,
-              category: targetCat,
-              subcategory: null
-            }
-          };
-        }
-      }
-
-      if (targetSub) {
-        if (pathSegments.length === 2) {
+        if (targetSub) {
           result = {
             type: "subcategory",
             data: {
@@ -96,22 +94,40 @@ export default async function CatchAllCategoryPage({ params }) {
               subcategories: targetSub.subcategories || []
             }
           };
-        } else if (pathSegments.length >= 3) {
-          const thirdSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
-          const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === thirdSlug || p.id?.toLowerCase().trim() === thirdSlug) ||
-                             targetSub.subcategories?.find(s => s.slug?.toLowerCase().trim() === thirdSlug);
+        }
+      }
+    } 
+    else if (pathSegments.length >= 3) {
+      const secondSlug = pathSegments[1]?.toLowerCase().trim();
+      let targetSub = targetCat.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
 
-          if (targetProd) {
-            result = {
-              type: "product",
-              data: {
-                ...targetProd,
-                title: targetProd.name || targetProd.title,
-                category: targetCat,
-                subcategory: targetSub
-              }
-            };
+      if (!targetSub && targetCat.subcategories) {
+        for (const sub of targetCat.subcategories) {
+          if (sub.subcategories) {
+            const foundSubSub = sub.subcategories.find(ss => ss.slug?.toLowerCase().trim() === secondSlug);
+            if (foundSubSub) {
+              targetSub = foundSubSub;
+              break;
+            }
           }
+        }
+      }
+
+      if (targetSub) {
+        const thirdSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
+        const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === thirdSlug || p.id?.toLowerCase().trim() === thirdSlug) ||
+                           targetSub.subcategories?.find(s => s.slug?.toLowerCase().trim() === thirdSlug);
+
+        if (targetProd) {
+          result = {
+            type: "product",
+            data: {
+              ...targetProd,
+              title: targetProd.name || targetProd.title,
+              category: targetCat,
+              subcategory: targetSub
+            }
+          };
         }
       }
     }
