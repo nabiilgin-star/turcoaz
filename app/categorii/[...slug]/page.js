@@ -164,7 +164,7 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* Test Sayfasıyla Birebir Aynı .page-container Grid Düzeni */}
+      {/* Sayfa Düzeni */}
       <div style={{
         maxWidth: "1320px",
         margin: "30px auto 60px",
@@ -175,7 +175,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ (.sidebar-card) */}
+        {/* SOL FİLTRE PANELİ - Hiyerarşik Açılır/Kapanır Menü */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -225,10 +225,10 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* SADECE aktif kategorinin alt kırılımları (Daha şık ve düzenli tipografi ile) */}
+                  {/* Sadece aktif ana kategorinin alt kırılımları açık olur */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "8px", marginBottom: "8px", display: "flex", flexDirection: "column", gap: "6px", borderLeft: "2px solid #E2E8F0" }}>
-                      {cat.subcategories.nameub?.map((sub) => {
+                      {cat.subcategories.map((sub) => {
                         const isSubActive = data?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
                         return (
                           <li key={sub.slug}>
@@ -243,7 +243,7 @@ export default async function CatchAllCategoryPage({ params }) {
                                 color: isSubActive ? "#0088A5" : "#475569",
                                 fontWeight: isSubActive ? "700" : "500",
                                 backgroundColor: isSubActive ? "#F1F5F9" : "transparent",
-                                textTransform: "none" // Büyük harf zorlamasını kaldırdık
+                                textTransform: "none"
                               }}
                             >
                               • {sub.name}
