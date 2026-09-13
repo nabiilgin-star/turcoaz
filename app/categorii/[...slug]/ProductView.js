@@ -9,9 +9,9 @@ export default function ProductView({ product }) {
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
-        {/* 1. En Üst Tam Genişlik Banner Görseli */}
+       {/* 1. En Üst Tam Genişlik Banner Görseli (%25 küçültüldü) */}
         {product.image && (
-          <div style={{ width: "100%", height: "350px", position: "relative", marginBottom: "40px", backgroundColor: "#111" }}>
+          <div style={{ width: "100%", height: "260px", position: "relative", marginBottom: "40px", backgroundColor: "#111" }}>
             <Image 
               src={product.image} 
               alt={product.name} 
@@ -21,7 +21,6 @@ export default function ProductView({ product }) {
             />
           </div>
         )}
-
         <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 20px" }}>
           
           {/* Başlık */}
