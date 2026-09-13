@@ -129,8 +129,7 @@ export default function SubcategoryView({
           }}>
             {products.map((product) => {
               const productUrl = `/categorii/${categorySlug}/${subcategorySlug}/${product.slug || product.id}`;
-              const prodImg = product.detailImage || product.image || subcategory?.image || category?.image;
-
+              const prodImg = product.image || product.detailImage || subcategory?.image || category?.image;
               return (
                 <Link
                   key={product.id || product.slug}
