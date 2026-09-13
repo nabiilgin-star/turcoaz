@@ -9,7 +9,7 @@ export default function ProductView({ product }) {
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
-        {/* 1. En Üst Tam Genişlik Banner Görseli */}
+  {/* 1. En Üst Tam Genişlik Banner Görseli (Kesilmeden tam sığacak şekilde) */}
         {product.image && (
           <div style={{ width: "100%", height: "280px", position: "relative", marginBottom: "30px", backgroundColor: "#fcfcfc" }}>
             <Image 
@@ -52,7 +52,7 @@ export default function ProductView({ product }) {
             )}
           </div>
 
-          {/* 3. İkinci Bölüm: Sol Tablo - Sağ Renk/Detay Görseli */}
+          {/* 3. İkinci Bölüm: Sol Tablo - Sağ Renk/Detay Görseli (İstediğin yeni görsel ile) */}
           <div style={{ 
             display: "grid", 
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
@@ -90,37 +90,33 @@ export default function ProductView({ product }) {
             </div>
           </div>
           
-          {/* 4. En Altta Markalar - Modern Kart ve Mavi Buton Standardı */}
+
+          {/* 4. En Altta 4 Marka ve Görselleri / Teknik Özellikleri */}
           {product.products && product.products.length > 0 && (
             <div style={{ marginTop: "60px" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "30px", flexWrap: "wrap", gap: "10px" }}>
-                <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>
-                  Mărci Disponibile
-                </h2>
-                <span style={{ backgroundColor: "#e0f2fe", color: "#0369a1", padding: "6px 14px", borderRadius: "20px", fontSize: "0.85rem", fontWeight: "600" }}>
-                  {product.products.length} modele
-                </span>
-              </div>
+              <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", marginBottom: "30px", textAlign: "center" }}>
+                Mărci Disponibile
+              </h2>
               <div style={{ 
                 display: "grid", 
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", 
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", 
                 gap: "25px" 
               }}>
                 {product.products.map((brand, index) => (
                   <div key={index} style={{ 
-                    background: "#ffffff",
-                    border: "1px solid #e5e7eb", 
+                    border: "1px solid #eaeaea", 
                     borderRadius: "12px", 
                     padding: "20px", 
+                    backgroundColor: "#fafafa",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
-                    boxShadow: "0 4px 15px rgba(0,0,0,0.04)",
-                    transition: "all 0.2s ease"
+                    boxShadow: "0 4px 10px rgba(0,0,0,0.03)"
                   }}>
                     <div>
+                      {/* Markaya özel renkli çerçeve görseli */}
                       {brand.image && (
-                        <div style={{ position: "relative", width: "100%", height: "160px", marginBottom: "15px", borderRadius: "8px", overflow: "hidden", backgroundColor: "#f9fafb" }}>
+                        <div style={{ position: "relative", width: "100%", height: "160px", marginBottom: "15px", borderRadius: "8px", overflow: "hidden", backgroundColor: "#fff" }}>
                           <Image 
                             src={brand.image} 
                             alt={brand.name} 
@@ -130,10 +126,10 @@ export default function ProductView({ product }) {
                         </div>
                       )}
 
-                      <h3 style={{ fontSize: "1.15rem", fontWeight: "600", color: "#1f2937", marginBottom: "10px" }}>
+                      <h3 style={{ fontSize: "1.2rem", fontWeight: "600", color: "#222", marginBottom: "10px" }}>
                         {brand.name}
                       </h3>
-                      <p style={{ fontSize: "0.85rem", color: "#4b5563", lineHeight: "1.5", marginBottom: "20px", whiteSpace: "pre-line" }}>
+                      <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: "1.5", marginBottom: "20px", whiteSpace: "pre-line" }}>
                         {brand.description}
                       </p>
                     </div>
@@ -145,20 +141,17 @@ export default function ProductView({ product }) {
                         rel="noopener noreferrer"
                         style={{ 
                           textDecoration: "none", 
-                          backgroundColor: "#0ea5e9", 
+                          backgroundColor: "#c5a491", 
                           color: "#fff", 
-                          padding: "0.6rem 1rem", 
-                          borderRadius: "0.5rem", 
+                          padding: "10px 15px", 
+                          borderRadius: "6px", 
                           textAlign: "center", 
                           fontWeight: "500",
                           fontSize: "0.9rem",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "8px"
+                          display: "block"
                         }}
                       >
-                        Vezi Detalii →
+                        Catalog PDF
                       </a>
                     )}
                   </div>
@@ -166,13 +159,13 @@ export default function ProductView({ product }) {
               </div>
             </div>
           )}
-          
+        
         </div>
       </section>
     );
   }
 
-  // DİĞER NORMAL ÜRÜNLER İÇİN STANDART GÖRÜNÜM:
+  // DİĞER NORMAL ÜRÜNLER İÇİN MEVCUT STANDART GÖRÜNÜM:
   const mainDisplayImage = product.detailImage || product.image;
 
   return (
@@ -181,11 +174,9 @@ export default function ProductView({ product }) {
         <div>
           <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: "0 0 15px 0" }}>{product.name}</h1>
           <div style={{ fontSize: "0.95rem", color: "#666", lineHeight: "1.6", whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: product.description }} />
-          {product.pdfUrl && (
-            <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", marginTop: "20px", display: "inline-block" }}>
-              <div style={{ backgroundColor: "#0ea5e9", color: "#fff", padding: "10px 25px", borderRadius: "8px", fontWeight: "500" }}>Vezi Detalii →</div>
-            </a>
-          )}
+          <a href={product.pdfUrl || "#"} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", marginTop: "20px", display: "inline-block" }}>
+            <div style={{ backgroundColor: "#c5a491", color: "#fff", padding: "10px 25px", borderRadius: "8px", fontWeight: "500" }}>Catalog</div>
+          </a>
         </div>
         <div style={{ position: "relative", width: "100%", height: "300px", borderRadius: "15px", overflow: "hidden", boxShadow: "0 5px 15px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9" }}>
           <Image src={mainDisplayImage} alt={product.name} fill style={{ objectFit: "contain", padding: "15px" }} />
