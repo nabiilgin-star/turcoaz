@@ -165,43 +165,7 @@ export const categories = [
     icon: Building2,
     image: categoryImages[0],
     subcategories: [
-      {
-        id: "sistem-balustrada-patrat",
-        slug: "sistem-balustrada-patrat",
-        name: "Sistem Balustradă Pătrat",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592793/balustradeQ40_tlo5tc.png",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
-        description: "Sistem modern de balustradă din aluminiu cu profil pătrat.",
-        pdfUrl: "/pdf/balustrada-patrat.pdf"
-      },
-      {
-        id: "sistem-balustrada-rotund",
-        slug: "sistem-balustrada-rotund",
-        name: "Sistem Balustradă Rotund",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592793/balustrada-rotund-p-1_kggcuh.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
-        description: "Sistem clasic și elegant de balustradă din aluminiu cu profil rotund.",
-        pdfUrl: "/pdf/balustrada-rotund.pdf"
-      },
-      {
-        id: "balustrada-modulara",
-        slug: "balustrada-modulara",
-        name: "Balustradă Modulară",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592792/Balustrada-Modulara_ljlsyi.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
-        description: "Sistem modular versatil pentru balustrade din aluminiu.",
-        pdfUrl: "/pdf/balustrada-modulara.pdf"
-      },
-      {
-        id: "balustrada-fereastra-franceza-din-aluminiu",
-        slug: "balustrada-fereastra-franceza-din-aluminiu",
-        name: "Balustradă fereastră franceză din aluminiu",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
-        description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
-        pdfUrl: "/pdf/fereastra-franceza.pdf"
-      },
-      {
+        {
         id: "balustrada-de-sticla",
         slug: "balustrada-de-sticla",
         name: "Balustradă de sticlă",
@@ -264,6 +228,43 @@ export const categories = [
       }
     ],
   },
+      {
+        id: "sistem-balustrada-patrat",
+        slug: "sistem-balustrada-patrat",
+        name: "Sistem Balustradă Pătrat",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592793/balustradeQ40_tlo5tc.png",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
+        description: "Sistem modern de balustradă din aluminiu cu profil pătrat.",
+        pdfUrl: "/pdf/balustrada-patrat.pdf"
+      },
+      {
+        id: "sistem-balustrada-rotund",
+        slug: "sistem-balustrada-rotund",
+        name: "Sistem Balustradă Rotund",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592793/balustrada-rotund-p-1_kggcuh.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
+        description: "Sistem clasic și elegant de balustradă din aluminiu cu profil rotund.",
+        pdfUrl: "/pdf/balustrada-rotund.pdf"
+      },
+      {
+        id: "balustrada-modulara",
+        slug: "balustrada-modulara",
+        name: "Balustradă Modulară",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592792/Balustrada-Modulara_ljlsyi.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
+        description: "Sistem modular versatil pentru balustrade din aluminiu.",
+        pdfUrl: "/pdf/balustrada-modulara.pdf"
+      },
+      {
+        id: "balustrada-fereastra-franceza-din-aluminiu",
+        slug: "balustrada-fereastra-franceza-din-aluminiu",
+        name: "Balustradă fereastră franceză din aluminiu",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
+        description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
+        pdfUrl: "/pdf/fereastra-franceza.pdf"
+      },
+    
   {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
