@@ -28,93 +28,94 @@ export default async function CatchAllCategoryPage({ params }) {
   let result = apiResult;
   let matchedCategory = null;
 
+  // 1. Kesin ve hatasız ana kategori tespiti
   if (pathSegments && pathSegments.length > 0) {
-    const firstSlug = pathSegments[0];
-    matchedCategory = localCategories.find(c => c.slug === firstSlug);
+    const firstSlug = pathSegments[0]?.toLowerCase().trim();
+    matchedCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
   }
 
-  if (!result && pathSegments && pathSegments.length > 0) {
+  if (!result && matchedCategory) {
     const targetLocalCategory = matchedCategory;
 
-    if (targetLocalCategory) {
-      if (pathSegments.length === 1) {
-        if (targetLocalCategory.detailImage || (targetLocalCategory.description && (!targetLocalCategory.subcategories || targetLocalCategory.subcategories.length === 0))) {
+    if (pathSegments.length === 1) {
+      if (targetLocalCategory.detailImage || (targetLocalCategory.description && (!targetLocalCategory.subcategories || targetLocalCategory.subcategories.length === 0))) {
+        result = {
+          type: "product",
+          data: {
+            ...targetLocalCategory,
+            title: targetLocalCategory.name,
+            category: targetLocalCategory,
+            subcategory: null
+          }
+        };
+      } else {
+        result = {
+          type: "category",
+          data: targetLocalCategory
+        };
+      }
+    } 
+    else if (pathSegments.length === 2) {
+      const subSlug = pathSegments[1]?.toLowerCase().trim();
+      // SADECE ve SADECE bu ana kategoriye ait alt kategoriler taranır (Çakışma önlenir)
+      const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === subSlug);
+
+      if (targetSub) {
+        const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
+
+        if (isDirectProduct) {
           result = {
             type: "product",
             data: {
-              ...targetLocalCategory,
-              title: targetLocalCategory.name,
+              ...targetSub,
+              title: targetSub.name,
               category: targetLocalCategory,
-              subcategory: null
+              subcategory: targetSub
             }
           };
         } else {
+          const mappedProducts = (targetSub.products || []).map((prod, index) => ({
+            ...prod,
+            id: prod.id || `local-prod-${index}`,
+            title: prod.name || prod.title,
+          }));
+
           result = {
-            type: "category",
-            data: targetLocalCategory
+            type: "subcategory",
+            data: {
+              category: targetLocalCategory,
+              subcategory: targetSub,
+              products: mappedProducts,
+              subcategories: targetLocalCategory.subcategories || [] 
+            }
           };
         }
-      } 
-      else if (pathSegments.length === 2) {
-        const subSlug = pathSegments[1];
-        const targetSub = targetLocalCategory.subcategories?.find(s => s.slug === subSlug);
-
-        if (targetSub) {
-          const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
-
-          if (isDirectProduct) {
-            result = {
-              type: "product",
-              data: {
-                ...targetSub,
-                title: targetSub.name,
-                category: targetLocalCategory,
-                subcategory: targetSub
-              }
-            };
-          } else {
-            const mappedProducts = (targetSub.products || []).map((prod, index) => ({
-              ...prod,
-              id: prod.id || `local-prod-${index}`,
-              title: prod.name || prod.title,
-            }));
-
-            result = {
-              type: "subcategory",
-              data: {
-                category: targetLocalCategory,
-                subcategory: targetSub,
-                products: mappedProducts,
-                subcategories: targetLocalCategory.subcategories || [] 
-              }
-            };
-          }
-        }
       }
-      else {
-        const prodSlug = pathSegments[pathSegments.length - 1];
-        const subSlug = pathSegments[pathSegments.length - 2];
-        const targetSub = targetLocalCategory.subcategories?.find(s => s.slug === subSlug);
+    }
+    else if (pathSegments.length >= 3) {
+      const prodSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
+      const subSlug = pathSegments[pathSegments.length - 2]?.toLowerCase().trim();
+      const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === subSlug);
 
-        if (targetSub) {
-          const targetProd = targetSub.products?.find(p => p.slug === prodSlug || p.id === prodSlug);
+      if (targetSub) {
+        const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id === prodSlug);
 
-          if (targetProd) {
-            result = {
-              type: "product",
-              data: {
-                ...targetProd,
-                title: targetProd.name || targetProd.title,
-                category: targetLocalCategory,
-                subcategory: targetSub
-              }
-            };
-          }
+        if (targetProd) {
+          result = {
+            type: "product",
+            data: {
+              ...targetProd,
+              title: targetProd.name || targetProd.title,
+              category: targetLocalCategory,
+              subcategory: targetSub
+            }
+          };
         }
       }
     }
   }
 
+  // Eşleşme yoksa veya alt kategori ebeveyne ait değilse 404
   if (!result) {
     notFound();
   }
@@ -144,7 +145,6 @@ export default async function CatchAllCategoryPage({ params }) {
     breadcrumbItems.push({ label: data.title || data.name, href: "#" });
   }
 
-  // Kesin ve net aktif kategori slug tespiti (Çakışmaları önler)
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
   return (
@@ -169,7 +169,6 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* Sayfa Düzeni */}
       <div style={{
         maxWidth: "1320px",
         margin: "30px auto 60px",
@@ -180,7 +179,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ - Kesin Ayrıştırılmış Menü */}
+        {/* SOL FİLTRE PANELİ */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -230,7 +229,7 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* SADECE VE SADECE URL'deki aktif ana kategorinin alt kırılımlarını göster */}
+                  {/* Sadece aktif ana kategorinin alt kırılımları listelenir */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
