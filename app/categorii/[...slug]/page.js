@@ -8,7 +8,6 @@ import CategoryView from "./CategoryView";
 import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
 
-// Local veri dosyası (Garantili kaynak)
 import { categories as localCategories } from "@/app/data/categories"; 
 import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 
@@ -140,8 +139,11 @@ export default async function CatchAllCategoryPage({ params }) {
     breadcrumbItems.push({ label: data.title || data.name, href: "#" });
   }
 
+  // Aktif ana kategoriyi bulma
+  const activeCategorySlug = type === "category" ? data.slug : data?.category?.slug;
+
   return (
-    <main className="page">
+    <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh" }}>
       <TrackView
         table={
           type === "product"
@@ -158,98 +160,121 @@ export default async function CatchAllCategoryPage({ params }) {
         announcement={navData.announcement}
       />
 
-      <div className="container-max" style={{ paddingTop: "2rem" }}>
+      <div style={{ maxWidth: "1320px", margin: "20px auto 0", padding: "0 24px" }}>
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* Kusursuz Yan Yana Flexbox Yerleşimi */}
-      <div className="container-max" style={{ paddingBottom: "4rem", paddingTop: "1.5rem" }}>
-        <div style={{ display: "flex", gap: "2.5rem", alignItems: "flex-start", width: "100%" }}>
-          
-          {/* SOL TARAF: Kesin Garantili Hiyerarşik Yan Menü */}
-          <aside style={{ width: "280px", flexShrink: 0, background: "#ffffff", padding: "1.25rem", borderRadius: "0.75rem", border: "1px solid #f3f4f6", boxShadow: "0 1px 3px rgba(0,0,0,0.05)", position: "sticky", top: "100px" }}>
-            <h3 style={{ fontSize: "1.1rem", fontWeight: "700", color: "#111827", marginBottom: "1rem", paddingBottom: "0.5rem", borderBottom: "1px solid #f3f4f6" }}>
-              CATEGORII PRODUSE
-            </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {localCategories.map((cat) => {
-                const isCatActive = data?.slug === cat.slug || data?.category?.slug === cat.slug;
-                
-                return (
-                  <li key={cat.slug || cat.id}>
-                    <a
-                      href={`/categorii/${cat.slug}`}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        padding: "0.5rem 0.75rem",
-                        borderRadius: "0.5rem",
-                        fontSize: "0.9rem",
-                        textDecoration: "none",
-                        backgroundColor: isCatActive ? "#e0f2fe" : "transparent",
-                        color: isCatActive ? "#0369a1" : "#1f2937",
-                        fontWeight: isCatActive ? "600" : "500",
-                        transition: "all 0.2s"
-                      }}
-                    >
-                      <span>{cat.name || cat.title}</span>
-                    </a>
-
-                    {/* Aktif veya alt kırılımları olan kategorinin alt menülerini listele */}
-                    {cat.subcategories && cat.subcategories.length > 0 && (
-                      <ul style={{ listStyle: "none", paddingLeft: "1rem", marginTop: "0.3rem", display: "flex", flexDirection: "column", gap: "0.25rem", borderLeft: "2px solid #f3f4f6" }}>
-                        {cat.subcategories.map((sub) => {
-                          const isSubActive = data?.subcategory?.slug === sub.slug || data?.slug === sub.slug;
-                          return (
-                            <li key={sub.slug}>
-                              <a
-                                href={`/categorii/${cat.slug}/${sub.slug}`}
-                                style={{
-                                  display: "block",
-                                  padding: "0.35rem 0.5rem",
-                                  borderRadius: "0.375rem",
-                                  fontSize: "0.85rem",
-                                  textDecoration: "none",
-                                  color: isSubActive ? "#0284c7" : "#4b5563",
-                                  fontWeight: isSubActive ? "600" : "400",
-                                  backgroundColor: isSubActive ? "#f0f9ff" : "transparent",
-                                  transition: "all 0.2s"
-                                }}
-                              >
-                                • {sub.name}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
+      {/* Test HTML Sayfasındaki .page-container Düzeni */}
+      <div style={{
+        maxWidth: "1320px",
+        margin: "30px auto 60px",
+        padding: "0 24px",
+        display: "grid",
+        gridTemplateColumns: "280px 1fr",
+        gap: "32px",
+        alignItems: "start"
+      }}>
+        
+        {/* SOL FİLTRE PANELİ (.sidebar-card) */}
+        <aside style={{
+          background: "#FFFFFF",
+          borderRadius: "16px",
+          border: "1px solid #E2E8F0",
+          padding: "24px",
+          boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+          position: "sticky",
+          top: "100px"
+        }}>
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "800",
+            color: "#0F172A",
+            marginBottom: "20px",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}>
+            Categorii Produse
+          </h3>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
+            {localCategories.map((cat) => {
+              const isActive = activeCategorySlug === cat.slug;
+              
+              return (
+                <li key={cat.slug || cat.id}>
+                  <a
+                    href={`/categorii/${cat.slug}`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "12px 14px",
+                      borderRadius: "10px",
+                      textDecoration: "none",
+                      color: isActive ? "#0088A5" : "#64748B",
+                      fontWeight: "600",
+                      fontSize: "14px",
+                      backgroundColor: isActive ? "#E6F7FA" : "transparent",
+                      transition: "all 0.2s"
+                    }}
+                  >
+                    <span>{cat.name || cat.title}</span>
+                    {cat.subcategories && (
+                      <span style={{ fontSize: "12px", opacity: 0.8 }}>({cat.subcategories.length})</span>
                     )}
-                  </li>
-                );
-              })}
-            </ul>
-          </aside>
+                  </a>
 
-          {/* SAĞ TARAF: İçerik Alanı */}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            {type === "category" && <CategoryView category={data} />}
-            {type === "subcategory" && (
-              <SubcategoryView
-                category={data.category}
-                subcategory={data.subcategory}
-                products={data.products}
-                subcategories={data.subcategories}
-              />
-            )}
-            {type === "product" && (
-              <ProductView 
-                product={data} 
-                subcategoryName={data.subcategory?.name} 
-              />
-            )}
-          </div>
+                  {/* Sadece aktif olan ana kategorinin alt kırılımlarını göster (3. resimdeki temiz görünüm) */}
+                  {isActive && cat.subcategories && cat.subcategories.length > 0 && (
+                    <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
+                      {cat.subcategories.map((sub) => {
+                        const isSubActive = data?.subcategory?.slug === sub.slug;
+                        return (
+                          <li key={sub.slug}>
+                            <a
+                              href={`/categorii/${cat.slug}/${sub.slug}`}
+                              style={{
+                                display: "block",
+                                padding: "8px 10px",
+                                borderRadius: "8px",
+                                fontSize: "13px",
+                                textDecoration: "none",
+                                color: isSubActive ? "#0088A5" : "#475569",
+                                fontWeight: isSubActive ? "700" : "500",
+                                backgroundColor: isSubActive ? "#F1F5F9" : "transparent"
+                              }}
+                            >
+                              • {sub.name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
 
+        {/* SAĞ KATALOG ALANI */}
+        <div style={{ minWidth: 0 }}>
+          {type === "category" && <CategoryView category={data} />}
+          {type === "subcategory" && (
+            <SubcategoryView
+              category={data.category}
+              subcategory={data.subcategory}
+              products={data.products}
+              subcategories={data.subcategories}
+            />
+          )}
+          {type === "product" && (
+            <ProductView 
+              product={data} 
+              subcategoryName={data.subcategory?.name} 
+            />
+          )}
         </div>
+
       </div>
 
       <Footer
