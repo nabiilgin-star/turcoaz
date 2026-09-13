@@ -319,7 +319,7 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
   slug: "sticla",
   name: "Sticlă Laminată Securizată",
   image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
-  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg", // İstersen buraya stı̇cla görseli ekleyebilirsin
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333410/Sticla_Securizat_Laminat_oqzt4b.png", // İstersen buraya stı̇cla görseli ekleyebilirsin
   description: `🛡️ Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2
 Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²
 
