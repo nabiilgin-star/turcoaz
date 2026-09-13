@@ -158,14 +158,14 @@ export const categories = [
       },
     ],
   },
-  {
+ {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
     name: "Sisteme Balustradă",
     icon: Building2,
     image: categoryImages[0],
     subcategories: [
-        {
+      {
         id: "balustrada-de-sticla",
         slug: "balustrada-de-sticla",
         name: "Balustradă de sticlă",
@@ -225,9 +225,7 @@ export const categories = [
             pdfUrl: "/pdf/m100.pdf"
           },
         ]
-      }
-    ],
-  },
+      },
       {
         id: "sistem-balustrada-patrat",
         slug: "sistem-balustrada-patrat",
@@ -263,7 +261,9 @@ export const categories = [
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
         description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
         pdfUrl: "/pdf/fereastra-franceza.pdf"
-      },
+      }
+    ],
+  },
     
   {
     name: "ACP Aluminiu Compozit Panel (Bond)",
