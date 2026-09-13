@@ -171,21 +171,56 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {type === "category" && <CategoryView category={data} />}
-      {type === "subcategory" && (
-        <SubcategoryView
-          category={data.category}
-          subcategory={data.subcategory}
-          products={data.products}
-          subcategories={data.subcategories}
-        />
-      )}
-      {type === "product" && (
-        <ProductView 
-          product={data} 
-          subcategoryName={data.subcategory?.name} 
-        />
-      )}
+      <div className="container-max" style={{ paddingBottom: "4rem" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+          
+          {/* SOL TARAF: Sabit Yan Menü */}
+          <aside className="hidden lg:block lg:col-span-1 bg-white p-5 rounded-xl border border-gray-100 shadow-sm sticky top-24">
+            <h3 className="font-bold text-lg text-gray-900 mb-4 pb-2 border-b border-gray-100">
+              CATEGORII PRODUSE
+            </h3>
+            <ul className="space-y-2">
+              {(navData.categories || localCategories).map((cat) => {
+                const isActive = data?.slug === cat.slug || data?.category?.slug === cat.slug;
+                return (
+                  <li key={cat.slug || cat.id}>
+                    <a
+                      href={`/categorii/${cat.slug}`}
+                      className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
+                        isActive
+                          ? "bg-cyan-50 text-cyan-700 font-semibold"
+                          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                      }`}
+                    >
+                      <span>{cat.name || cat.title}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
+
+          {/* SAĞ TARAF: İçerik Alanı */}
+          <div className="lg:col-span-3 w-full">
+            {type === "category" && <CategoryView category={data} />}
+            {type === "subcategory" && (
+              <SubcategoryView
+                category={data.category}
+                subcategory={data.subcategory}
+                products={data.products}
+                subcategories={data.subcategories}
+              />
+            )}
+            {type === "product" && (
+              <ProductView 
+                product={data} 
+                subcategoryName={data.subcategory?.name} 
+              />
+            )}
+          </div>
+
+        </div>
+      </div>
 
       <Footer
         categories={navData.categories}

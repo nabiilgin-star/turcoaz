@@ -10,12 +10,9 @@ export default function SubcategoryView({
   products,
   subcategories,
 }) {
-  // Eğer local veri veya api verisiyse güvenli path oluşturma
   const categorySlug = category?.slug || "";
   const subcategorySlug = subcategory?.slug || "";
 
-  // Filtreleme: Alt kategoriler listelenirken, şu an içinde bulunduğumuz alt kategoriyi listeden çıkartıyoruz.
-  // Böylece "Sisteme Tamplarie" içerisindeyken kendisi bir daha menü olarak aşağıda türemez.
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
   );
@@ -34,7 +31,7 @@ export default function SubcategoryView({
           </h1>
         </div>
 
-        {/* DİĞER ALT KATEGORİLER (Menü Elemanları) */}
+        {/* DİĞER ALT KATEGORİLER (Butonlu Modern Kart Tasarımı) */}
         {filteredSubcategories.length > 0 && (
           <div
             className={catStyles["subcategory-grid"]}
@@ -43,9 +40,19 @@ export default function SubcategoryView({
             {filteredSubcategories.map((sub, index) => (
               <Link
                 key={index}
-                // Düzeltilen URL: Kategori -> Yeni tıklanan alt kategori şeklinde temiz yönlendirme
                 href={`/categorii/${categorySlug}/${sub.slug}`}
                 className={catStyles["subcategory-card"]}
+                style={{
+                  background: "#ffffff",
+                  borderRadius: "0.75rem",
+                  overflow: "hidden",
+                  border: "1px solid #f3f4f6",
+                  display: "flex",
+                  flexDirection: "column",
+                  textDecoration: "none",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  cursor: "pointer"
+                }}
               >
                 <div className={catStyles["subcategory-image-wrapper"]}>
                   <Image
@@ -57,31 +64,53 @@ export default function SubcategoryView({
                     width={500}
                     height={500}
                     className={catStyles["subcategory-image"]}
+                    style={{ width: "100%", height: "220px", objectFit: "cover" }}
                   />
                 </div>
-                <span className={catStyles["subcategory-name"]}>
-                  {sub.name}
-                </span>
+
+                <div style={{ padding: "1.25rem", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
+                  <span 
+                    className={catStyles["subcategory-name"]}
+                    style={{ fontSize: "1.1rem", fontWeight: "600", color: "#1f2937", marginBottom: "1rem" }}
+                  >
+                    {sub.name}
+                  </span>
+
+                  <span 
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "#0ea5e9",
+                      color: "#ffffff",
+                      padding: "0.6rem 1rem",
+                      borderRadius: "0.5rem",
+                      fontWeight: "500",
+                      fontSize: "0.9rem",
+                      textAlign: "center"
+                    }}
+                  >
+                    Vezi Detalii →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         )}
 
-        {/* 4 ADET ÜRÜNÜN LİSTELENDİĞİ YER (ProductCard) */}
+        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (ProductCard) */}
         {products && products.length > 0 && (
           <div className={styles["products-grid"]}>
             {products.map((product) => (
               <ProductCard
                 key={product.id || product.slug}
                 product={product}
-                // Ürün detayı için doğru base URL yapısı
                 baseUrl={`/categorii/${categorySlug}/${subcategorySlug}`}
               />
             ))}
           </div>
         )}
 
-        {/* EĞER BOMBOŞSA GÖSTERİLECEK ALAN */}
         {(!products || products.length === 0) &&
           (filteredSubcategories.length === 0) && (
             <div
