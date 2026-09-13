@@ -321,58 +321,57 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
     description: `<strong>🛡️ Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2</strong><br>
-Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²<br><br>
+Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²
 
-<strong>⭐ Avantajele Noastre</strong><br>
-• Import direct Turcia → prețuri fără intermediari<br>
-• Calitate premium certificată EN 12600<br>
-• Preț de la 50 € + TVA / m²<br>
-• Debitare la comandă + canturi finisate profesional<br>
-• Consultanță tehnică pentru balustrade, trepte și fațade<br>
-• Livrare rapidă în toată România (Popești-Leordeni + Iași)<br>
-• Stoc permanent pentru 6.6.2 / 8.8.2 / 10.10.2<br><br>
+<strong>⭐ Avantajele Noastre</strong>
+• Import direct Turcia → prețuri fără intermediari
+• Calitate premium certificată EN 12600
+• Preț de la 50 € + TVA / m²
+• Debitare la comandă + canturi finisate profesional
+• Consultanță tehnică pentru balustrade, trepte și fațade
+• Livrare rapidă în toată România (Popești-Leordeni + Iași)
+• Stoc permanent pentru 6.6.2 / 8.8.2 / 10.10.2
 
-<strong>🔍 Ce este Sticla Laminată Securizată?</strong><br>
-Sticla laminată securizată (numită și duplex) este formată din două foi de sticlă securizată unite cu folie PVB. În caz de impact, fragmentele rămân lipite de folie — nu se prăbușește, nu cade, nu produce accidente.<br><br>
+<strong>🔍 Ce este Sticla Laminată Securizată?</strong>
+Sticla laminată securizată (numită și duplex) este formată din două foi de sticlă securizată unite cu folie PVB. În caz de impact, fragmentele rămân lipite de folie — nu se prăbușește, nu cade, nu produce accidente.
 
-<strong>📏 Configurații Disponibile</strong><br>
-• <strong>6.6.2 (≈12.76 mm)</strong> – două foi de 6 mm + 2 folii PVB<br>
-• <strong>8.8.2 (≈17.52 mm)</strong> – două foi de 8 mm + 2 folii PVB<br>
-• <strong>10.10.2 (≈21.52 mm)</strong> – două foi de 10 mm + 2 folii PVB<br>
-<em>Explicație simplă: 8.8.2 = 8 mm + 8 mm + 2 folii PVB → panou de ~17.5 mm, ideal pentru balustrade.</em><br><br>
+<strong>📏 Configurații Disponibile</strong>
+• <strong>6.6.2 (≈12.76 mm)</strong> – două foi de 6 mm + 2 folii PVB
+• <strong>8.8.2 (≈17.52 mm)</strong> – două foi de 8 mm + 2 folii PVB
+• <strong>10.10.2 (≈21.52 mm)</strong> – două foi de 10 mm + 2 folii PVB
+<em>Explicație simplă: 8.8.2 = 8 mm + 8 mm + 2 folii PVB → panou de ~17.5 mm, ideal pentru balustrade.</em>
 
-<strong>🏗️ Utilizări Recomandate</strong><br>
-• Balustrade interioare → 6.6.2 / 8.8.2<br>
-• Balustrade exterioare → 8.8.2 / 10.10.2<br>
-• Trepte din sticlă → 10.10.2 / 12.12.2<br>
-• Fațade, copertine, vitraje mari → 8.8.2 / 10.10.2<br><br>
+<strong>🏗️ Utilizări Recomandate</strong>
+• Balustrade interioare → 6.6.2 / 8.8.2
+• Balustrade exterioare → 8.8.2 / 10.10.2
+• Trepte din sticlă → 10.10.2 / 12.12.2
+• Fațade, copertine, vitraje mari → 8.8.2 / 10.10.2
 
-<strong>🥇 Recomandarea Tehnică</strong><br>
-Pentru balustrade montate în profil U din aluminiu: <strong>8.8.2 este standardul de aur</strong>. Nu vibrează, nu flexează, rezistă la vânt și se potrivește perfect în profilele AKPA M115.<br><br>
+<strong>🥇 Recomandarea Tehnică</strong>
+Pentru balustrade montate în profil U din aluminiu: <strong>8.8.2 este standardul de aur</strong>. Nu vibrează, nu flexează, rezistă la vânt și se potrivește perfect în profilele AKPA M115.
 
-<strong>💰 Prețuri (SEO + Conversie)</strong><br>
-• 6.6.2 → de la 50 € + TVA / m²<br>
-• 8.8.2 → de la 70 € + TVA / m²<br>
-• 10.10.2 → de la 85 € + TVA / m²<br>
-<em>*(Prețurile pot varia în funcție de cantitate, finisaje și complexitatea proiectului.)*</em><br><br>
+<strong>💰 Prețuri (SEO + Conversie)</strong>
+• 6.6.2 → de la 50 € + TVA / m²
+• 8.8.2 → de la 70 € + TVA / m²
+• 10.10.2 → de la 85 € + TVA / m²
+<em>*(Prețurile pot varia în funcție de cantitate, finisaje și complexitatea proiectului.)*</em>
 
-<strong>📦 Detalii Comerciale</strong><br>
-• Prețurile sunt exprimate pe m², fără TVA<br>
-• Comenzile sub 3 m² → +10%<br>
-• Panourile sub 0.5 m² → se facturează 0.5 m²<br>
-• Termen execuție: 10–20 zile lucrătoare<br>
-• Ridicare din depozit sau livrare cu auto propriu<br>
-• Dimensiunile se transmit în scris: L x H x nr. bucăți<br>
-• Responsabilitatea dimensiunilor aparține clientului<br><br>
+<strong>📦 Detalii Comerciale</strong>
+• Prețurile sunt exprimate pe m², fără TVA
+• Comenzile sub 3 m² → +10%
+• Panourile sub 0.5 m² → se facturează 0.5 m²
+• Termen execuție: 10–20 zile lucrătoare
+• Ridicare din depozit sau livrare cu auto propriu
+• Dimensiunile se transmit în scris: L x H x nr. bucăți
+• Responsabilitatea dimensiunilor aparține clientului
 
-<strong>📘 Foaie de Produs – 6.6.2</strong><br>
-Clar + Clar – canturi finisate. Ideală pentru balustrade rezidențiale, copertine mici, uși interioare cu cerințe de siguranță.<br><br>
+<strong>📘 Foaie de Produs – 6.6.2</strong>
+Clar + Clar – canturi finisate. Ideală pentru balustrade rezidențiale, copertine mici, uși interioare cu cerințe de siguranță.
 
-<strong>📘 Foaie de Produs – 8.8.2</strong><br>
-Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, terase, scări, spații publice.<br><br>
+<strong>📘 Foaie de Produs – 8.8.2</strong>
+Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, terase, scări, spații publice.
 
-<strong>📘 Foaie de Produs – 10.10.2</strong><br>
+<strong>📘 Foaie de Produs – 10.10.2</strong>
 Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
-
   }
 ];
