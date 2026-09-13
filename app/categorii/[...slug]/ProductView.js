@@ -9,14 +9,14 @@ export default function ProductView({ product }) {
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
-       {/* 1. En Üst Tam Genişlik Banner Görseli (%25 küçültüldü) */}
+  {/* 1. En Üst Tam Genişlik Banner Görseli (Kesilmeden tam sığacak şekilde) */}
         {product.image && (
-          <div style={{ width: "100%", height: "260px", position: "relative", marginBottom: "40px", backgroundColor: "#111" }}>
+          <div style={{ width: "100%", height: "280px", position: "relative", marginBottom: "30px", backgroundColor: "#fcfcfc" }}>
             <Image 
               src={product.image} 
               alt={product.name} 
               fill 
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain" }}
               priority
             />
           </div>
@@ -52,45 +52,44 @@ export default function ProductView({ product }) {
             )}
           </div>
 
-          {/* 3. İkinci Bölüm: Sol Tablo - Sağ Renk/Detay Görseli (Gallery'deki 2. resim) */}
-          {product.gallery && product.gallery.length > 1 && (
-            <div style={{ 
-              display: "grid", 
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
-              gap: "40px", 
-              alignItems: "center",
-              marginBottom: "60px"
-            }}>
-              <div style={{ overflowX: "auto" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem", textAlign: "left" }}>
-                  <thead>
-                    <tr style={{ backgroundColor: "#fdf8f5", borderBottom: "2px solid #e5d8d0" }}>
-                      <th style={{ padding: "12px", fontWeight: "600", color: "#333" }}>Parametru</th>
-                      <th style={{ padding: "12px", fontWeight: "600", color: "#333" }}>Valoare / Descriere</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Dimensiune standard (mm)</td><td style={{ padding: "10px", color: "#666" }}>4 × 1250 × 3200</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Grosime (mm)</td><td style={{ padding: "10px", color: "#666" }}>2 · 3 · 4 · 6</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Lățime (mm)</td><td style={{ padding: "10px", color: "#666" }}>1000 / 1250 / 1500</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Lungime (mm)</td><td style={{ padding: "10px", color: "#666" }}>până la 6000 mm – speciale la cerere</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Foaie de aluminiu</td><td style={{ padding: "10px", color: "#666" }}>EN AW 3005 / H42–H46</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Suprafața exterioară</td><td style={{ padding: "10px", color: "#666" }}>PVDF / HDP / PE</td></tr>
-                    <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Suprafața interioară</td><td style={{ padding: "10px", color: "#666" }}>Grund protector</td></tr>
-                    <tr><td style={{ padding: "10px", fontWeight: "500" }}>Material de umplere</td><td style={{ padding: "10px", color: "#666" }}>Polietilenă (LDPE)</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div style={{ position: "relative", width: "100%", height: "320px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9" }}>
-                <Image 
-                  src={product.gallery[1]} 
-                  alt="ACP Renkler ve Detay" 
-                  fill 
-                  style={{ objectFit: "cover" }} 
-                />
-              </div>
+          {/* 3. İkinci Bölüm: Sol Tablo - Sağ Renk/Detay Görseli (İstediğin yeni görsel ile) */}
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
+            gap: "40px", 
+            alignItems: "center",
+            marginBottom: "60px"
+          }}>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem", textAlign: "left" }}>
+                <thead>
+                  <tr style={{ backgroundColor: "#fdf8f5", borderBottom: "2px solid #e5d8d0" }}>
+                    <th style={{ padding: "12px", fontWeight: "600", color: "#333" }}>Parametru</th>
+                    <th style={{ padding: "12px", fontWeight: "600", color: "#333" }}>Valoare / Descriere</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Dimensiune standard (mm)</td><td style={{ padding: "10px", color: "#666" }}>4 × 1250 × 3200</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Grosime (mm)</td><td style={{ padding: "10px", color: "#666" }}>2 · 3 · 4 · 6</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Lățime (mm)</td><td style={{ padding: "10px", color: "#666" }}>1000 / 1250 / 1500</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Lungime (mm)</td><td style={{ padding: "10px", color: "#666" }}>până la 6000 mm – speciale la cerere</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Foaie de aluminiu</td><td style={{ padding: "10px", color: "#666" }}>EN AW 3005 / H42–H46</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Suprafața exterioară</td><td style={{ padding: "10px", color: "#666" }}>PVDF / HDP / PE</td></tr>
+                  <tr style={{ borderBottom: "1px solid #eee" }}><td style={{ padding: "10px", fontWeight: "500" }}>Suprafața interioară</td><td style={{ padding: "10px", color: "#666" }}>Grund protector</td></tr>
+                  <tr><td style={{ padding: "10px", fontWeight: "500" }}>Material de umplere</td><td style={{ padding: "10px", color: "#666" }}>Polietilenă (LDPE)</td></tr>
+                </tbody>
+              </table>
             </div>
-          )}
+            <div style={{ position: "relative", width: "100%", height: "320px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9" }}>
+              <Image 
+                src="https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/Bond_Color_t7va5t.jpg" 
+                alt="ACP Renkler ve Detay" 
+                fill 
+                style={{ objectFit: "cover" }} 
+              />
+            </div>
+          </div>
+          
 
           {/* 4. En Altta 4 Marka ve Her Birinin Altında PDF Butonu */}
           {product.products && product.products.length > 0 && (

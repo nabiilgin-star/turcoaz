@@ -304,29 +304,29 @@ export const categories = [
       {
         name: "Primebond Plus",
         slug: "primebond-plus",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-        description: "Calitate superioară pentru fațade arhitecturale moderne.",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebondplus_ekuawf.jpg",
+        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,47 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/primebond-plus.pdf"
       },
       {
         name: "Primebond",
         slug: "primebond",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-        description: "Soluția standard fiabilă pentru placări exterioare și interioare.",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebond_uz2s35.jpg",
+        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,40 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/primebond.pdf"
       },
       {
         name: "Durabond",
         slug: "durabond",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-        description: "Rezistență sporită la intemperii și durabilitate pe termen lung.",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287063/durabond_pl0dgq.jpg",
+        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,30 mm + HDP\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 15 ani.\n• Poate fi fabricat în categoriile de rezistență la foc FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/durabond.pdf"
       },
       {
         name: "Rallbond",
         slug: "rallbond",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-        description: "Gamă variată de culori RAL pentru proiecte cu identitate distinctă.",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/rallbond_lapj2g.jpg",
+        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,20 mm + PE\n• Acesta este material publicitar și nu trebuie utilizat pe fațadele exterioare.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/rallbond.pdf"
       }
     ],
