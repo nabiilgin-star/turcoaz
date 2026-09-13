@@ -139,7 +139,7 @@ export default async function CatchAllCategoryPage({ params }) {
     breadcrumbItems.push({ label: data.title || data.name, href: "#" });
   }
 
-  // Aktif ana kategoriyi bulma
+  // Aktif ana kategoriyi güvenli bir şekilde tespit etme
   const activeCategorySlug = type === "category" ? data.slug : data?.category?.slug;
 
   return (
@@ -164,7 +164,7 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* Test HTML Sayfasındaki .page-container Düzeni */}
+      {/* Test Sayfasıyla Birebir Aynı .page-container Grid Düzeni */}
       <div style={{
         maxWidth: "1320px",
         margin: "30px auto 60px",
@@ -197,7 +197,9 @@ export default async function CatchAllCategoryPage({ params }) {
           </h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
             {localCategories.map((cat) => {
-              const isActive = activeCategorySlug === cat.slug;
+              const currentSlug = activeCategorySlug?.toLowerCase().trim();
+              const catSlug = cat.slug?.toLowerCase().trim();
+              const isActive = currentSlug === catSlug;
               
               return (
                 <li key={cat.slug || cat.id}>
@@ -223,11 +225,11 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* Sadece aktif olan ana kategorinin alt kırılımlarını göster (3. resimdeki temiz görünüm) */}
+                  {/* SADECE VE SADECE aktif olan ana kategorinin alt kırılımlarını listele */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
-                        const isSubActive = data?.subcategory?.slug === sub.slug;
+                        const isSubActive = data?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
                         return (
                           <li key={sub.slug}>
                             <a
