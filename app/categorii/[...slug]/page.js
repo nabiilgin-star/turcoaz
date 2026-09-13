@@ -28,7 +28,6 @@ export default async function CatchAllCategoryPage({ params }) {
   let result = apiResult;
   let matchedCategory = null;
 
-  // 1. Kesin ve hatasız ana kategori tespiti
   if (pathSegments && pathSegments.length > 0) {
     const firstSlug = pathSegments[0]?.toLowerCase().trim();
     matchedCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
@@ -177,7 +176,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ - Temizlenmiş ve Karışıklığı Giderilmiş Menü */}
+        {/* SOL FİLTRE PANELİ - Sadece doğru hiyerarşiyi gösteren temiz menü */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -227,7 +226,7 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* Sadece aktif ana kategorinin alt kırılımları listelenir, linkler doğru ana kategori köküne bağlanır */}
+                  {/* Sadece aktif ana kategorinin alt kırılımları açık ve düzgün listelenir */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
