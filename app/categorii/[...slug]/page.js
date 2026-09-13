@@ -30,7 +30,21 @@ export default async function CatchAllCategoryPage({ params }) {
 
   if (pathSegments && pathSegments.length > 0) {
     const firstSlug = pathSegments[0]?.toLowerCase().trim();
+
+    // 1. Önce gerçekten kök (root) olan ana kategoriler arasında ara
     matchedCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
+
+    // 2. KRİTİK DÜZELTME: Eğer 1 segment girilmişse ve bu slug kök kategorilerde yoksa, 
+    // fakat başka bir kategorinin alt kategorisi (subcategory) ise, asla ana kategori gibi açma (404 ver).
+    if (!matchedCategory && pathSegments.length === 1) {
+      const isActuallyASubcategory = localCategories.some(cat => 
+        cat.subcategories?.some(sub => sub.slug?.toLowerCase().trim() === firstSlug)
+      );
+
+      if (isActuallyASubcategory) {
+        notFound();
+      }
+    }
   }
 
   if (!result && matchedCategory) {
@@ -176,7 +190,7 @@ export default async function CatchAllCategoryPage({ params }) {
         alignItems: "start"
       }}>
         
-        {/* SOL FİLTRE PANELİ - Sadece doğru hiyerarşiyi gösteren temiz menü */}
+        {/* SOL FİLTRE PANELİ */}
         <aside style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -226,7 +240,7 @@ export default async function CatchAllCategoryPage({ params }) {
                     )}
                   </a>
 
-                  {/* Sadece aktif ana kategorinin alt kırılımları açık ve düzgün listelenir */}
+                  {/* Sadece aktif olan ana kategorinin alt kırılımları açılır */}
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
