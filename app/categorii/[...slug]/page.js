@@ -20,11 +20,12 @@ export async function generateStaticParams() {
 export default async function CatchAllCategoryPage({ params }) {
   const { slug: pathSegments } = await params;
 
-  const [navData] = await Promise.all([
+  const [navData, apiResult] = await Promise.all([
     getNavbarData(),
+    resolvePath(pathSegments).catch(() => null),
   ]);
 
-  let result = null;
+  let result = apiResult;
   let matchedCategory = null;
 
   if (pathSegments && pathSegments.length > 0) {
@@ -32,24 +33,22 @@ export default async function CatchAllCategoryPage({ params }) {
     matchedCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
   }
 
-  if (matchedCategory) {
+  // Eğer standart resolvePath boş döndüyse ama yerel kategorilerde eşleşme varsa, 
+  // sistemi çöktürmeden yerel veriden güvenli bir şekilde çözümlüyoruz (Fallback Mechanism).
+  if (!result && matchedCategory) {
     const targetCat = matchedCategory;
 
-    // 1. Durum: Ana Kategori (Örn: /categorii/sisteme-aluminiu-akpa)
     if (pathSegments.length === 1) {
       result = {
         type: "category",
         data: targetCat
       };
     } 
-    // 2. Durum: Alt Kategori veya Ürün (Örn: /categorii/sisteme-aluminiu-akpa/sisteme-tamplarie VEYA /categorii/sisteme-balustrada/balustrada-de-sticla/m115)
     else if (pathSegments.length >= 2) {
       const secondSlug = pathSegments[1]?.toLowerCase().trim();
-      
-      // Önce doğrudan 1. seviye alt kategorilerde ara
       let targetSub = targetCat.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
 
-      // Eğer 1. seviye alt kategorilerde bulunamadıysa ve alt kategorilerin de alt kategorileri/ürünleri taranacaksa (Derin arama)
+      // Derin arama: Alt kategorilerin içindeki ürünler veya alt-alt kırılımlar
       if (!targetSub && targetCat.subcategories) {
         for (const sub of targetCat.subcategories) {
           if (sub.products) {
@@ -69,27 +68,35 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       }
 
-      if (targetSub) {
-        // Eğer 2 segment varsa ve bu alt kategorinin kendi ürünleri varsa -> SubcategoryView
-        if (pathSegments.length === 2) {
-          const mappedProducts = (targetSub.products || []).map((prod, index) => ({
-            ...prod,
-            id: prod.id || `local-prod-${index}`,
-            title: prod.name || prod.title,
-          }));
+      // ACP veya diğer ana kategorilerin doğrudan ürünleri için kontrol
+      if (!targetSub && targetCat.products && pathSegments.length === 2) {
+        const prodSlug = pathSegments[1]?.toLowerCase().trim();
+        const targetProd = targetCat.products.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
+        if (targetProd) {
+          result = {
+            type: "product",
+            data: {
+              ...targetProd,
+              title: targetProd.name || targetProd.title,
+              category: targetCat,
+              subcategory: null
+            }
+          };
+        }
+      }
 
+      if (targetSub) {
+        if (pathSegments.length === 2) {
           result = {
             type: "subcategory",
             data: {
               category: targetCat,
               subcategory: targetSub,
-              products: mappedProducts,
-              subcategories: targetCat.subcategories || []
+              products: targetSub.products || [],
+              subcategories: targetSub.subcategories || []
             }
           };
-        } 
-        // Eğer 3 segment varsa -> Ürün Detay Sayfası (Örn: akpa/sisteme-tamplarie/glisante-s28 veya balustrada-de-sticla/m115/...)
-        else if (pathSegments.length >= 3) {
+        } else if (pathSegments.length >= 3) {
           const thirdSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
           const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === thirdSlug || p.id?.toLowerCase().trim() === thirdSlug) ||
                              targetSub.subcategories?.find(s => s.slug?.toLowerCase().trim() === thirdSlug);
@@ -105,23 +112,6 @@ export default async function CatchAllCategoryPage({ params }) {
               }
             };
           }
-        }
-      }
-
-      // Alternatif Düz Arama (Doğrudan ana kategorinin altındaki ürünler için)
-      if (!result && pathSegments.length === 2) {
-        const prodSlug = pathSegments[1]?.toLowerCase().trim();
-        const targetProd = targetCat.products?.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
-        if (targetProd) {
-          result = {
-            type: "product",
-            data: {
-              ...targetProd,
-              title: targetProd.name || targetProd.title,
-              category: targetCat,
-              subcategory: null
-            }
-          };
         }
       }
     }
