@@ -1,22 +1,12 @@
 import { Building2, Settings, Home, ShowerHead, Sparkles, Layers } from "lucide-react";
 
-// Tümü senin güvenli Cloudinary (oivvupgw) hesabına yönlendirildi
-const productImages = [
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg",
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784465915/EXENplast-Logo_zc4i40.png",
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784465092/accesorii_tfoc70.jpg",
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
-];
-
 const categoryImages = [
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png", // Balustrade
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784465092/accesorii_tfoc70.jpg",         // Feronerie
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",    // Închidere terase / Fațade
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg",    // Cabine duș / KAHE
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",        // Alte produse
-  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464708/AKPA-LOGO_wctiyh.jpg",        // AKPA Logo
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png", 
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784465092/accesorii_tfoc70.jpg",         
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",     
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg",     
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png",         
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1784464708/AKPA-LOGO_wctiyh.jpg",         
 ];
 
 export const categories = [
@@ -91,7 +81,7 @@ export const categories = [
         slug: "glafuri-din-aluminiu",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-      description: "Sisteme Premium de Glafuri din Aluminiu Extrudat | Pervazuri Profesionale pentru Ferestre.<br>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Caracteristici Tehnice & Finisaje Disponibile</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Culori & Finisaje Populare</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Dimensiuni & Grosime Robuste</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui cuprinsă între 1,4 mm și 2,5 mm în funcție de configurație.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Lungimi Extinse & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Protecție Împotriva Infiltrațiilor</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</span>",
+        description: "Sisteme Premium de Glafuri din Aluminiu Extrudat | Pervazuri Profesionale pentru Ferestre.<br>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Caracteristici Tehnice & Finisaje Disponibile</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Culori & Finisaje Populare</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Dimensiuni & Grosime Robuste</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui cuprinsă între 1,4 mm și 2,5 mm în funcție de configurație.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Lungimi Extinse & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Protecție Împotriva Infiltrațiilor</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</span>",
         gallery: [
           "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
           "https://res.cloudinary.com/oivvupgw/image/upload/v1784589195/PERVAZ-TP2_gnubk0.png",
@@ -223,7 +213,7 @@ export const categories = [
             name: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
-description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M115 – Sistem Premium.<br>Căutați profile din aluminiu pentru balustradă din sticlă, profil U continuu sau sisteme complete de balustradă în România? S.C. Turcoaz Aluminiu S.R.L. oferă sistemul premium AKPA M115, proiectat pentru siguranță, eleganță și durabilitate. Disponibil cu stoc permanent în depozitul din Popești‑Leordeni și în filiala regională Alufab Iași, asigurând distribuție rapidă la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Performanță & Avantaje Tehnice – AKPA M115</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Rezistență Certificată 3 kN/ml</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— profilul AKPA M115 Premium oferă rezistență structurală superioară, ideal pentru balcoane rezidențiale cu regim mare de înălțime și proiecte private.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Profil U pentru Balustradă Continuă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— sistem bazat pe profil U din aluminiu, pentru montaj curat, fixare stabilă și transparență arhitecturală maximă, fără montanți verticali.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Siguranță & Estetică Modernă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— compatibil cu sticlă securizată și stratificată, oferind un design minimalist, elegant și durabil pentru fațade și terase.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în Popești‑Leordeni și prin filiala Alufab Iași, pentru întreaga rețea de parteneri și distribuitori.</span>",
+            description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M115 – Sistem Premium.<br>Căutați profile din aluminiu pentru balustradă din sticlă, profil U continuu sau sisteme complete de balustradă în România? S.C. Turcoaz Aluminiu S.R.L. oferă sistemul premium AKPA M115, proiectat pentru siguranță, eleganță și durabilitate. Disponibil cu stoc permanent în depozitul din Popești‑Leordeni și în filiala regională Alufab Iași, asigurând distribuție rapidă la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Performanță & Avantaje Tehnice – AKPA M115</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Rezistență Certificată 3 kN/ml</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— profilul AKPA M115 Premium oferă rezistență structurală superioară, ideal pentru balcoane rezidențiale cu regim mare de înălțime și proiecte private.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Profil U pentru Balustradă Continuă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— sistem bazat pe profil U din aluminiu, pentru montaj curat, fixare stabilă și transparență arhitecturală maximă, fără montanți verticali.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Siguranță & Estetică Modernă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— compatibil cu sticlă securizată și stratificată, oferind un design minimalist, elegant și durabil pentru fațade și terase.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în Popești‑Leordeni și prin filiala Alufab Iași, pentru întreaga rețea de parteneri și distribuitori.</span>",
             pdfUrl: "/pdf/m115.pdf",
             gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784676831/AkpaM115premium_may3aq.png",
@@ -274,18 +264,23 @@ description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M115 – Si
       }
     ],
   },
- {
+  {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-   gallery: [
-    "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
-    "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
-  ],
-  description: "Panouri Compozit (Bond) pentru Fațade – Calitate Superioară și Avantaje Majore în România.<br>Căutați plăci compozit, profile aluminiu și sisteme pentru fațade de înaltă calitate în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții moderne pentru fațade arhitecturale ventilate, placări exterioare și interioare, cu stoc permanent disponibil în depozit.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Avantaje Majore & Certificări</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Agrement Tehnic în România</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— produse certificate oficial și agrement tehnic pentru proiecte civile și industriale, conforme cu standardele naționale pentru profile aluminiu și tâmplărie.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Primebond – Aluminiu Hydro Norvegia</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— panourile compozit sunt fabricate cu aluminiu premium de la Hydro Norvegia, oferind <strong>durabilitate maximă</strong>, <strong>stabilitate structurală</strong> și <strong>finisaje PVDF/HDP de top</strong>, standardul de referință în fațade moderne și placări.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Preț Competitiv & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— costuri avantajoase față de Geplast și alte alternative, cu o rețea extinsă de distribuție în toată țara, menținând calitatea superioară.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Livrare Rapidă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în depozit pentru panouri compozit, profile aluminiu și accesorii pentru balustrade și tâmplărie.</span>",
-    // En altta yer alacak 4 marka ve altlarında PDF katalogları:
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+    ],
+    description: `Panouri Compozit (Bond) și Plăci Compozit pentru Fațade – Calitate Superioară și Avantaje Majore în România.
+Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațade de înaltă calitate în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții moderne pentru fațade arhitecturale ventilate, placări exterioare și interioare, cu stoc permanent disponibil în depozit.
+
+🏆 De ce să alegi panourile noastre compozit (Bond)?
+• Agrement Tehnic în România — produse certificate oficial și dețin agrement tehnic complet pentru proiecte civile și industriale conforme cu standardele naționale.
+• Primebond – Aluminiu Hydro Norvegia — panourile compozit sunt fabricate cu aluminiu premium importat din Norvegia (Hydro), oferind durabilitate maximă, stabilitate structurală și finisaje PVDF/HDP de top.
+• Preț Avantajos & Stoc Disponibil — costuri mai avantajoase comparativ cu competitori precum Geplast, livrare rapidă din stoc prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.`,
     products: [
       {
         name: "Primebond Plus",
@@ -319,4 +314,3 @@ description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M115 – Si
     subcategories: []
   }
 ];
-    
