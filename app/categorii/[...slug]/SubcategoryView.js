@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProductCard from "@/app/components/BestSellers/ProductCard";
 import styles from "./subcategory-products.module.css";
 import catStyles from "./subcategory.module.css";
 
@@ -12,7 +13,6 @@ export default function SubcategoryView({
   const categorySlug = category?.slug || "";
   const subcategorySlug = subcategory?.slug || "";
 
-  // Filtreleme: Alt kategoriler listelenirken, şu an içinde bulunduğumuz alt kategoriyi listeden çıkartıyoruz.
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
   );
@@ -51,7 +51,7 @@ export default function SubcategoryView({
           )}
         </div>
 
-        {/* DİĞER ALT KATEGORİLER (3. Resimdeki Stil Kartlar - Resme ve Butona Tıklanabilir) */}
+        {/* DİĞER ALT KATEGORİLER */}
         {filteredSubcategories.length > 0 && (
           <div
             style={{
@@ -77,8 +77,8 @@ export default function SubcategoryView({
                   transition: "all 0.3s ease"
                 }}
               >
-                {/* Resim Alanı (Tıklanabilir) */}
-                <div style={{ width: "100%", height: "200px", background: "#F1F5F9", overflow: "hidden", position: "relative" }}>
+                {/* Resim Kutusu (İçeride Küçültülmüş ve Orantılı) */}
+                <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Image
                     src={
                       sub.image ||
@@ -86,13 +86,12 @@ export default function SubcategoryView({
                       "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
                     }
                     alt={sub.name}
-                    width={500}
-                    height={500}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    width={400}
+                    height={400}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </div>
                 
-                {/* İçerik ve Buton Alanı */}
                 <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
                   <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", marginBottom: "20px" }}>
                     {sub.name}
@@ -121,7 +120,7 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (3. Resimdeki Stil Kartlar) */}
+        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (Resimler Küçültülmüş ve Kutunun İçine Oturtulmuş) */}
         {products && products.length > 0 && (
           <div style={{
             display: "grid",
@@ -148,20 +147,19 @@ export default function SubcategoryView({
                     transition: "all 0.3s ease"
                   }}
                 >
-                  {/* Resim Alanı (Tıklanabilir) */}
-                  <div style={{ width: "100%", height: "200px", background: "#F1F5F9", overflow: "hidden", position: "relative" }}>
+                  {/* Resim Kutusu (objectFit: contain ve padding ile taşma engellendi) */}
+                  <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {prodImg ? (
                       <img
                         src={prodImg}
                         alt={product.name || product.title}
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
                       />
                     ) : (
                       <div style={{ width: "100%", height: "100%", backgroundColor: "#e2e8f0" }} />
                     )}
                   </div>
 
-                  {/* İçerik ve Buton Alanı */}
                   <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
                     <div>
                       <h3 style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", marginBottom: "8px" }}>
@@ -199,7 +197,6 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* EĞER ÜRÜN YOKSA FAKAT AÇIKLAMA / DETAY GÖRSELİ / GALERİ VARSA */}
         {!hasContent && hasDescriptionOrDetail && (
           <div style={{
             background: "#FFFFFF",
@@ -231,15 +228,8 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* EĞER TAMAMEN BOMBOŞSA */}
         {!hasContent && !hasDescriptionOrDetail && (
-          <div
-            style={{
-              textAlign: "center",
-              padding: "4rem 0",
-              color: "#667085",
-            }}
-          >
+          <div style={{ textAlign: "center", padding: "4rem 0", color: "#667085" }}>
             Nu există produse sau subcategorii în această secțiune.
           </div>
         )}
