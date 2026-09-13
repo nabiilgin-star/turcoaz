@@ -1,129 +1,112 @@
-import Image from "next/image";
-import Link from "next/link";
-import ProductCard from "@/app/components/BestSellers/ProductCard";
-import styles from "./subcategory-products.module.css";
-import catStyles from "./subcategory.module.css";
+import React from "react";
 
-export default function SubcategoryView({
-  category,
-  subcategory,
-  products,
-  subcategories,
-}) {
-  const categorySlug = category?.slug || "";
-  const subcategorySlug = subcategory?.slug || "";
-
-  const filteredSubcategories = (subcategories || []).filter(
-    (sub) => sub.slug !== subcategorySlug
-  );
+export default function SubcategoryView({ category, subcategory, products }) {
+  // Sadece bu alt kategorinin kendi içindeki ürünleri (products) alıyoruz. 
+  // Eğer ürün yoksa boş dizi kalır, asla yan kategori kartları araya sızmaz.
+  const displayProducts = subcategory?.products || products || [];
 
   return (
-    <section className={styles["subcategory-products-section"]}>
-      <div className="container-max">
-        <div className={styles["subcategory-header"]}>
-          <h1 className={styles["subcategory-title"]}>
-            {subcategory?.name || ""}{" "}
-            {products && products.length > 0 && (
-              <span style={{ color: "#667085", fontWeight: "300", fontSize: "1.5rem" }}>
-                ({products.length})
-              </span>
-            )}
-          </h1>
-        </div>
-
-        {/* DİĞER ALT KATEGORİLER (Butonlu Modern Kart Tasarımı) */}
-        {filteredSubcategories.length > 0 && (
-          <div
-            className={catStyles["subcategory-grid"]}
-            style={{ marginBottom: "3rem" }}
-          >
-            {filteredSubcategories.map((sub, index) => (
-              <Link
-                key={index}
-                href={`/categorii/${categorySlug}/${sub.slug}`}
-                className={catStyles["subcategory-card"]}
-                style={{
-                  background: "#ffffff",
-                  borderRadius: "0.75rem",
-                  overflow: "hidden",
-                  border: "1px solid #f3f4f6",
-                  display: "flex",
-                  flexDirection: "column",
-                  textDecoration: "none",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  cursor: "pointer"
-                }}
-              >
-                <div className={catStyles["subcategory-image-wrapper"]}>
-                  <Image
-                    src={
-                      sub.image ||
-                      "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
-                    }
-                    alt={sub.name}
-                    width={500}
-                    height={500}
-                    className={catStyles["subcategory-image"]}
-                    style={{ width: "100%", height: "220px", objectFit: "cover" }}
-                  />
-                </div>
-
-                <div style={{ padding: "1.25rem", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-                  <span 
-                    className={catStyles["subcategory-name"]}
-                    style={{ fontSize: "1.1rem", fontWeight: "600", color: "#1f2937", marginBottom: "1rem" }}
-                  >
-                    {sub.name}
-                  </span>
-
-                  <span 
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backgroundColor: "#0ea5e9",
-                      color: "#ffffff",
-                      padding: "0.6rem 1rem",
-                      borderRadius: "0.5rem",
-                      fontWeight: "500",
-                      fontSize: "0.9rem",
-                      textAlign: "center"
-                    }}
-                  >
-                    Vezi Detalii →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (ProductCard) */}
-        {products && products.length > 0 && (
-          <div className={styles["products-grid"]}>
-            {products.map((product) => (
-              <ProductCard
-                key={product.id || product.slug}
-                product={product}
-                baseUrl={`/categorii/${categorySlug}/${subcategorySlug}`}
-              />
-            ))}
-          </div>
-        )}
-
-        {(!products || products.length === 0) &&
-          (filteredSubcategories.length === 0) && (
-            <div
-              style={{
-                textAlign: "center",
-                padding: "4rem 0",
-                color: "#667085",
-              }}
-            >
-              Nu există produse sau subcategorii în această secțiune.
-            </div>
-          )}
+    <div style={{ width: "100%" }}>
+      {/* Üst Başlık ve Model Sayısı */}
+      <div style={{
+        background: "#FFFFFF",
+        borderRadius: "16px",
+        border: "1px solid #E2E8F0",
+        padding: "24px 32px",
+        marginBottom: "24px",
+        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between"
+      }}>
+        <h1 style={{ fontSize: "24px", fontWeight: "800", color: "#0F172A", margin: 0 }}>
+          {subcategory?.name || category?.name}
+        </h1>
+        <span style={{
+          backgroundColor: "#E6F7FA",
+          color: "#0088A5",
+          padding: "6px 14px",
+          borderRadius: "20px",
+          fontSize: "13px",
+          fontWeight: "700"
+        }}>
+          {displayProducts.length} model
+        </span>
       </div>
-    </section>
+
+      {/* SADECE ÜRÜNLERİN LİSTELENDİĞİ ALAN (0 model hatası ve yanlış kartlar burada tamamen engellenir) */}
+      {displayProducts.length > 0 ? (
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+          gap: "24px"
+        }}>
+          {displayProducts.map((prod) => (
+            <div key={prod.slug || prod.id} style={{
+              background: "#FFFFFF",
+              borderRadius: "16px",
+              border: "1px solid #E2E8F0",
+              overflow: "hidden",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+              display: "flex",
+              flexDirection: "column"
+            }}>
+              {/* Ürün Görseli */}
+              <div style={{ width: "100%", height: "200px", backgroundColor: "#F1F5F9", position: "relative", overflow: "hidden" }}>
+                <img
+                  src={prod.detailImage || prod.image || subcategory?.image || category?.image}
+                  alt={prod.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+
+              {/* Ürün Detayları ve Buton */}
+              <div style={{ padding: "20px", display: "flex", flexDirection: "column", flex: 1, justifyContent: "space-between" }}>
+                <div>
+                  <h3 style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", marginBottom: "8px" }}>
+                    {prod.name}
+                  </h3>
+                  <p style={{ fontSize: "13px", color: "#64748B", lineHeight: "1.5", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                    {prod.description}
+                  </p>
+                </div>
+
+                <a
+                  href={`/categorii/${category.slug}/${subcategory.slug}/${prod.slug}`}
+                  style={{
+                    marginTop: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#0088A5",
+                    color: "#FFFFFF",
+                    padding: "10px 16px",
+                    borderRadius: "10px",
+                    textDecoration: "none",
+                    fontSize: "14px",
+                    fontWeight: "600"
+                  }}
+                >
+                  Vezi detalii →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div style={{
+          background: "#FFFFFF",
+          borderRadius: "16px",
+          border: "1px solid #E2E8F0",
+          padding: "40px",
+          textAlign: "center",
+          color: "#64748B",
+          fontSize: "15px",
+          fontWeight: "500"
+        }}>
+          Bu kategoride henüz ürün bulunmamaktadır.
+        </div>
+      )}
+    </div>
   );
 }
