@@ -241,48 +241,37 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       `}</style>
 
-      {/* CLIENT-SIDE SCRIPT: MOBİLDE MENÜNÜN AÇILIP KAPANMASINI SAĞLAR */}
+      {/* SAF JAVASCRIPT ETKİLEŞİM SCRIPTI (Build hatasını engeller) */}
       <script dangerouslySetInnerHTML={{ __html: `
-        function toggleSidebar() {
+        document.addEventListener('DOMContentLoaded', function() {
+          var toggleBtn = document.getElementById('mobileMenuToggleBtn');
           var sidebar = document.getElementById('categorySidebar');
-          var btn = document.getElementById('toggleBtnText');
-          if (sidebar.style.display === 'block' || sidebar.classList.contains('show-mobile')) {
-            sidebar.style.display = 'none';
-            sidebar.classList.remove('show-mobile');
-            btn.innerText = '📁 Meniu Produse (Arată)';
-          } else {
-            sidebar.style.display = 'block';
-            sidebar.classList.add('show-mobile');
-            btn.innerText = '📁 Meniu Produse (Ascunde)';
+          var btnText = document.getElementById('toggleBtnText');
+          
+          if (toggleBtn && sidebar && btnText) {
+            toggleBtn.addEventListener('click', function() {
+              if (sidebar.style.display === 'block' || sidebar.classList.contains('show-mobile')) {
+                sidebar.style.display = 'none';
+                sidebar.classList.remove('show-mobile');
+                btnText.innerText = '📁 Meniu Produse (Arată)';
+              } else {
+                sidebar.style.display = 'block';
+                sidebar.classList.add('show-mobile');
+                btnText.innerText = '📁 Meniu Produse (Ascunde)';
+              }
+            });
           }
-        }
+        });
       `}} />
 
       <div className="catalog-container">
         
-        {/* MOBİL İÇİN AÇ/KAPA BUTONU */}
+        {/* MOBİL İÇİN AÇ/KAPA BUTONU (Hatsız normal button) */}
         <div style={{ gridColumn: "1 / -1", width: "100%" }}>
           <button 
             type="button" 
-            className="mobile-sidebar-toggle" 
-            onClick={() => {
-              // Client tarafında fonksiyon tetiklenmesi için
-              if (typeof window !== 'undefined') {
-                const sb = document.getElementById('categorySidebar');
-                const btn = document.getElementById('toggleBtnText');
-                if (sb) {
-                  if (sb.style.display === 'block' || sb.classList.contains('show-mobile')) {
-                    sb.style.display = 'none';
-                    sb.classList.remove('show-mobile');
-                    if (btn) btn.innerText = '📁 Meniu Produse (Arată)';
-                  } else {
-                    sb.style.display = 'block';
-                    sb.classList.add('show-mobile');
-                    if (btn) btn.innerText = '📁 Meniu Produse (Ascunde)';
-                  }
-                }
-              }
-            }}
+            id="mobileMenuToggleBtn"
+            className="mobile-sidebar-toggle"
           >
             <span id="toggleBtnText">📁 Meniu Produse (Categorii)</span>
             <span>▼</span>
@@ -374,7 +363,7 @@ export default async function CatchAllCategoryPage({ params }) {
           </ul>
         </aside>
 
-        {/* SAĞ KATALOG ALANI (Tablolar ve Görseller Taşırmayacak Şekilde Kısıtlandı) */}
+        {/* SAĞ KATALOG ALANI */}
         <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
           {type === "category" && <CategoryView category={data} />}
           {type === "subcategory" && (
