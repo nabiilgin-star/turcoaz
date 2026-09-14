@@ -7,7 +7,7 @@ import TrackView from "@/app/components/TrackView";
 import CategoryView from "./CategoryView";
 import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
-import MobileMenuToggle from "./MobileMenuToggle"; // <-- YENİ İTHALAT
+import MobileMenuToggle from "./MobileMenuToggle";
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -242,32 +242,7 @@ export default async function CatchAllCategoryPage({ params }) {
         }
       `}</style>
 
-      {/* SAF JAVASCRIPT ETKİLEŞİM SCRIPTI (Build hatasını engeller) */}
-      <script dangerouslySetInnerHTML={{ __html: `
-        document.addEventListener('DOMContentLoaded', function() {
-          var toggleBtn = document.getElementById('mobileMenuToggleBtn');
-          var sidebar = document.getElementById('categorySidebar');
-          var btnText = document.getElementById('toggleBtnText');
-          
-          if (toggleBtn && sidebar && btnText) {
-            toggleBtn.addEventListener('click', function() {
-              if (sidebar.style.display === 'block' || sidebar.classList.contains('show-mobile')) {
-                sidebar.style.display = 'none';
-                sidebar.classList.remove('show-mobile');
-                btnText.innerText = '📁 Meniu Produse (Arată)';
-              } else {
-                sidebar.style.display = 'block';
-                sidebar.classList.add('show-mobile');
-                btnText.innerText = '📁 Meniu Produse (Ascunde)';
-              }
-            });
-          }
-        });
-      `}} />
-
       <div className="catalog-container">
-        
-       <div className="catalog-container">
         
         {/* MOBİL İÇİN AÇ/KAPA BUTONU (Client Component) */}
         <div style={{ gridColumn: "1 / -1", width: "100%" }}>
@@ -275,7 +250,7 @@ export default async function CatchAllCategoryPage({ params }) {
         </div>
 
         {/* SOL FİLTRE PANELİ (Sidebar) */}
-        <aside id="categorySidebar" className="sidebar-aside" style={{ 
+        <aside id="categorySidebar" className="sidebar-aside" style={{
           background: "#FFFFFF",
           borderRadius: "16px",
           border: "1px solid #E2E8F0",
