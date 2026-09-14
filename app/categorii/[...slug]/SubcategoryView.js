@@ -170,11 +170,7 @@ export default function SubcategoryView({
                         <h3 style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", marginBottom: "8px" }}>
                           {product.name || product.title}
                         </h3>
-                        {product.description && (
-  <p style={{ fontSize: "13px", color: "#64748B", lineHeight: "1.5", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "15px" }}>
-    {product.description}
-  </p>
-)}
+                       
                       </div>
 
                       <span style={{
