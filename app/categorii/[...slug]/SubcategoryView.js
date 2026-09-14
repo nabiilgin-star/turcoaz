@@ -255,11 +255,11 @@ export default function SubcategoryView({
             )}
             
             {subcategory?.description && (
-              <div
-                style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
-                dangerouslySetInnerHTML={{ __html: subcategory.description }}
-              />
-            )}
+  <div
+    style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
+    dangerouslySetInnerHTML={{ __html: subcategory.description }}
+  />
+)}
 
             {subcategory?.gallery && subcategory.gallery.length > 0 && (
               <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "16px", borderTop: "1px solid #E2E8F0", paddingTop: "32px" }}>
