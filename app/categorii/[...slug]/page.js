@@ -7,6 +7,7 @@ import TrackView from "@/app/components/TrackView";
 import CategoryView from "./CategoryView";
 import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
+import MobileMenuToggle from "./MobileMenuToggle"; // <-- YENİ İTHALAT
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -266,20 +267,15 @@ export default async function CatchAllCategoryPage({ params }) {
 
       <div className="catalog-container">
         
-        {/* MOBİL İÇİN AÇ/KAPA BUTONU (Hatsız normal button) */}
+       <div className="catalog-container">
+        
+        {/* MOBİL İÇİN AÇ/KAPA BUTONU (Client Component) */}
         <div style={{ gridColumn: "1 / -1", width: "100%" }}>
-          <button 
-            type="button" 
-            id="mobileMenuToggleBtn"
-            className="mobile-sidebar-toggle"
-          >
-            <span id="toggleBtnText">📁 Meniu Produse (Categorii)</span>
-            <span>▼</span>
-          </button>
+          <MobileMenuToggle />
         </div>
 
         {/* SOL FİLTRE PANELİ (Sidebar) */}
-        <aside id="categorySidebar" className="sidebar-aside" style={{
+        <aside id="categorySidebar" className="sidebar-aside" style={{ 
           background: "#FFFFFF",
           borderRadius: "16px",
           border: "1px solid #E2E8F0",
