@@ -33,61 +33,84 @@ export default function SubcategoryView({
               marginBottom: "3rem"
             }}
           >
-            {filteredSubcategories.map((sub, index) => (
-              <Link
-                key={index}
-                href={`/categorii/${categorySlug}/${sub.slug}`}
-                style={{
-                  background: "#FFFFFF",
-                  borderRadius: "16px",
-                  border: "1px solid #E2E8F0",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  textDecoration: "none",
-                  boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-                  transition: "all 0.3s ease"
-                }}
-              >
-                <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Image
-                    src={
-                      sub.image ||
-                      sub.detailImage ||
-                      "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
-                    }
-                    alt={sub.name}
-                    width={400}
-                    height={400}
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                  />
-                </div>
-                
-                <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", marginBottom: "20px" }}>
-                    {sub.name}
-                  </span>
+            {filteredSubcategories.map((sub, index) => {
+              // Sisteme Tâmplarie veya istenmeyen sayfalarda kart içi yazıyı gizle
+              const showDescription = sub.slug !== "sisteme-tamplarie" && sub.description;
 
-                  <span style={{
+              return (
+                <Link
+                  key={index}
+                  href={`/categorii/${categorySlug}/${sub.slug}`}
+                  style={{
+                    background: "#FFFFFF",
+                    borderRadius: "16px",
+                    border: "1px solid #E2E8F0",
+                    overflow: "hidden",
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "10px",
-                    width: "100%",
-                    padding: "12px",
-                    background: "#00A8CC",
-                    color: "#FFFFFF",
-                    borderRadius: "10px",
-                    fontWeight: "700",
-                    fontSize: "13px",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px"
-                  }}>
-                    VEZI DETALII →
-                  </span>
-                </div>
-              </Link>
-            ))}
+                    flexDirection: "column",
+                    textDecoration: "none",
+                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Image
+                      src={
+                        sub.image ||
+                        sub.detailImage ||
+                        "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
+                      }
+                      alt={sub.name}
+                      width={400}
+                      height={400}
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    />
+                  </div>
+                  
+                  <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
+                    <div>
+                      <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", display: "block", marginBottom: showDescription ? "10px" : "20px" }}>
+                        {sub.name}
+                      </span>
+
+                      {/* HTML Etiketleri Temizlenmiş ve 2 Satırla Sınırlandırılmış Açıklama */}
+                      {showDescription && (
+                        <p style={{ 
+                          fontSize: "13px", 
+                          color: "#64748B", 
+                          lineHeight: "1.5", 
+                          display: "-webkit-box", 
+                          WebkitLineClamp: 2, 
+                          WebkitBoxOrient: "vertical", 
+                          overflow: "hidden", 
+                          marginBottom: "20px" 
+                        }}>
+                          {sub.description.replace(/<[^>]*>?/gm, '')}
+                        </p>
+                      )}
+                    </div>
+
+                    <span style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      width: "100%",
+                      padding: "12px",
+                      background: "#00A8CC",
+                      color: "#FFFFFF",
+                      borderRadius: "10px",
+                      fontWeight: "700",
+                      fontSize: "13px",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px"
+                    }}>
+                      VEZI DETALII →
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         )}
 
@@ -195,7 +218,7 @@ export default function SubcategoryView({
           </>
         )}
 
-        {/* BİLGİ / DETAY SAYFALARI (DİKEY SIRALI: Üstte Başlık ve Tam Genişlikte Resim, Altta Metin ve Galeriler) */}
+        {/* BİLGİ / DETAY SAYFALARI (DİKEY SIRALI) */}
         {!hasContent && hasDescriptionOrDetail && (
           <div style={{
             background: "#FFFFFF",
@@ -207,12 +230,10 @@ export default function SubcategoryView({
             flexDirection: "column",
             gap: "32px"
           }}>
-            {/* 1. Başlık */}
             <h1 style={{ fontSize: "32px", fontWeight: "800", color: "#0F172A", margin: 0, lineHeight: "1.2" }}>
               {subcategory?.name || category?.name || ""}
             </h1>
 
-            {/* 2. Üst Kısım: Tam Genişlikte Büyük Detay / Tablo Görseli */}
             {subcategory?.detailImage && (
               <div style={{
                 width: "100%",
@@ -233,7 +254,6 @@ export default function SubcategoryView({
               </div>
             )}
             
-            {/* 3. Alt Kısım: Açıklamalar ve Teknik Yazılar (Dikey Akış) */}
             {subcategory?.description && (
               <div
                 style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
@@ -241,7 +261,6 @@ export default function SubcategoryView({
               />
             )}
 
-            {/* 4. En Alt Kısım: Alt Alta Sıralı Galeri Fotoğrafları */}
             {subcategory?.gallery && subcategory.gallery.length > 0 && (
               <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "16px", borderTop: "1px solid #E2E8F0", paddingTop: "32px" }}>
                 <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", margin: 0 }}>
@@ -263,7 +282,6 @@ export default function SubcategoryView({
           </div>
         )}
 
-        {/* EĞER TAMAMEN BOMBOŞSA */}
         {!hasContent && !hasDescriptionOrDetail && (
           <div style={{ textAlign: "center", padding: "4rem 0", color: "#667085" }}>
             Nu există produse sau subcategorii în această secțiune.
