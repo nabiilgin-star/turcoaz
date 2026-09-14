@@ -173,7 +173,7 @@ export default async function CatchAllCategoryPage({ params }) {
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
   return (
-    <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%" }}>
+    <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
       <TrackView
         table={
           type === "product"
@@ -194,9 +194,9 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* MOBİL İÇİN AÇILIR MENÜ STİLLERİ VE RESPONSİVE YERLEŞİM */}
+      {/* MOBİL UYUMLU ÖZEL CSS STİLLERİ */}
       <style>{`
-        .catalog-layout {
+        .catalog-container {
           max-width: 1320px;
           margin: 30px auto 60px;
           padding: 0 24px;
@@ -205,69 +205,92 @@ export default async function CatchAllCategoryPage({ params }) {
           gap: 32px;
           align-items: start;
           box-sizing: border-box;
+          width: 100%;
         }
-        .mobile-menu-toggle {
+        .mobile-sidebar-toggle {
           display: none;
           width: 100%;
           background: #00A8CC;
-          color: #fff;
+          color: #ffffff;
           border: none;
           padding: 14px 20px;
           border-radius: 12px;
           font-weight: 700;
           font-size: 15px;
           cursor: pointer;
-          align-items: center;
-          justify-content: space-between;
           margin-bottom: 20px;
           box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+          align-items: center;
+          justify-content: space-between;
         }
         @media (max-width: 900px) {
-          .catalog-layout {
+          .catalog-container {
             grid-template-columns: 1fr !important;
             padding: 0 16px !important;
           }
-          .mobile-menu-toggle {
+          .mobile-sidebar-toggle {
             display: flex !important;
           }
-          .sidebar-container {
+          .sidebar-aside {
             display: none;
             margin-bottom: 24px;
           }
-          .sidebar-container.open {
+          .sidebar-aside.show-mobile {
             display: block !important;
           }
         }
       `}</style>
 
-      {/* CLIENT-SIDE TOGGLE SCRIPT İÇİN BASİT CHECKBOX VEYA DETAILS ALTERNATİFİ YERNE KÜÇÜK BİR SCRIPTVIEW */}
+      {/* CLIENT-SIDE SCRIPT: MOBİLDE MENÜNÜN AÇILIP KAPANMASINI SAĞLAR */}
       <script dangerouslySetInnerHTML={{ __html: `
-        function toggleMobileMenu() {
-          var sidebar = document.getElementById('productSidebar');
-          var btnText = document.getElementById('menuBtnText');
-          if (sidebar.style.display === 'block' || sidebar.classList.contains('open')) {
+        function toggleSidebar() {
+          var sidebar = document.getElementById('categorySidebar');
+          var btn = document.getElementById('toggleBtnText');
+          if (sidebar.style.display === 'block' || sidebar.classList.contains('show-mobile')) {
             sidebar.style.display = 'none';
-            sidebar.classList.remove('open');
-            btnText.innerText = '📁 Meniu Produse (Arată)';
+            sidebar.classList.remove('show-mobile');
+            btn.innerText = '📁 Meniu Produse (Arată)';
           } else {
             sidebar.style.display = 'block';
-            sidebar.classList.add('open');
-            btnText.innerText = '📁 Meniu Produse (Ascunde)';
+            sidebar.classList.add('show-mobile');
+            btn.innerText = '📁 Meniu Produse (Ascunde)';
           }
         }
       `}} />
 
-      <div className="catalog-layout">
+      <div className="catalog-container">
         
-        {/* MOBİL MENÜ BUTONU */}
-        <div style={{ gridColumn: "1 / -1", display: "none" }} className="mobile-toggle-wrapper">
-          <button type="button" className="mobile-menu-toggle" onClick={() => {}} ontouchstart="" id="menuToggleBtn" 
-            dangerouslySetInnerHTML={{ __html: `<span>📁 Meniu Produse</span><span>▼</span>` }}
-          />
+        {/* MOBİL İÇİN AÇ/KAPA BUTONU */}
+        <div style={{ gridColumn: "1 / -1", width: "100%" }}>
+          <button 
+            type="button" 
+            className="mobile-sidebar-toggle" 
+            onClick={() => {
+              // Client tarafında fonksiyon tetiklenmesi için
+              if (typeof window !== 'undefined') {
+                const sb = document.getElementById('categorySidebar');
+                const btn = document.getElementById('toggleBtnText');
+                if (sb) {
+                  if (sb.style.display === 'block' || sb.classList.contains('show-mobile')) {
+                    sb.style.display = 'none';
+                    sb.classList.remove('show-mobile');
+                    if (btn) btn.innerText = '📁 Meniu Produse (Arată)';
+                  } else {
+                    sb.style.display = 'block';
+                    sb.classList.add('show-mobile');
+                    if (btn) btn.innerText = '📁 Meniu Produse (Ascunde)';
+                  }
+                }
+              }
+            }}
+          >
+            <span id="toggleBtnText">📁 Meniu Produse (Categorii)</span>
+            <span>▼</span>
+          </button>
         </div>
 
         {/* SOL FİLTRE PANELİ (Sidebar) */}
-        <aside id="productSidebar" className="sidebar-container" style={{
+        <aside id="categorySidebar" className="sidebar-aside" style={{
           background: "#FFFFFF",
           borderRadius: "16px",
           border: "1px solid #E2E8F0",
@@ -275,23 +298,19 @@ export default async function CatchAllCategoryPage({ params }) {
           boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
           position: "sticky",
           top: "100px",
-          boxSizing: "border-box"
+          boxSizing: "border-box",
+          width: "100%"
         }}>
-          
-          {/* Mobil Aç/Kapat Butonu İçeride */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-            <h3 style={{
-              fontSize: "16px",
-              fontWeight: "800",
-              color: "#0F172A",
-              margin: 0,
-              textTransform: "uppercase",
-              letterSpacing: "0.5px"
-            }}>
-              Categorii Produse
-            </h3>
-          </div>
-
+          <h3 style={{
+            fontSize: "16px",
+            fontWeight: "800",
+            color: "#0F172A",
+            marginBottom: "20px",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px"
+          }}>
+            Categorii Produse
+          </h3>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
             {localCategories.map((cat) => {
               const currentSlug = activeCategorySlug?.toLowerCase().trim();
@@ -355,43 +374,8 @@ export default async function CatchAllCategoryPage({ params }) {
           </ul>
         </aside>
 
-        {/* SAĞ KATALOG ALANI */}
-        <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box" }}>
-          {/* Mobilde Menüyü Açan Buton (Header üstü için pratik çözüm) */}
-          <div className="mobile-only-btn-wrapper" style={{ display: "none", marginBottom: "20px" }}>
-            <button 
-              onClick={() => {
-                const sb = document.getElementById('productSidebar');
-                sb.style.display = sb.style.display === 'block' ? 'none' : 'block';
-              }}
-              style={{
-                width: "100%",
-                backgroundColor: "#00A8CC",
-                color: "#ffffff",
-                border: "none",
-                padding: "14px",
-                borderRadius: "12px",
-                fontWeight: "700",
-                fontSize: "15px",
-                cursor: "pointer",
-                boxShadow: "0 4px 6px -1px rgba(0,0,0,0.05)"
-              }}
-            >
-              📂 Meniu Produse (Categorii)
-            </button>
-          </div>
-
-          <style>{`
-            @media (max-width: 900px) {
-              .mobile-only-btn-wrapper {
-                display: block !important;
-              }
-              #productSidebar {
-                display: none;
-              }
-            }
-          `}</style>
-
+        {/* SAĞ KATALOG ALANI (Tablolar ve Görseller Taşırmayacak Şekilde Kısıtlandı) */}
+        <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
           {type === "category" && <CategoryView category={data} />}
           {type === "subcategory" && (
             <SubcategoryView
