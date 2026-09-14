@@ -10,7 +10,7 @@ export default function SubcategoryView({
   subcategories,
 }) {
   const categorySlug = category?.slug || "";
-  const subcategorySlug = false;
+  const subcategorySlug = subcategory?.slug || ""; // <-- BURASI ESKİ HALİ OLMALI (string olmalı)
 
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
@@ -34,8 +34,8 @@ export default function SubcategoryView({
             }}
           >
             {filteredSubcategories.map((sub, index) => {
-              // Sisteme Tâmplarie veya istenmeyen sayfalarda kart içi yazıyı gizle
-              const showDescription = sub.slug !== "sisteme-tamplarie" && sub.description;
+              // BURASI ÇOK ÖNEMLİ: Kart içindeki açıklamaları tamamen kapatıyoruz
+              const showDescription = false; 
 
               return (
                 <Link
@@ -69,25 +69,10 @@ export default function SubcategoryView({
                   
                   <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
                     <div>
-                      <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", display: "block", marginBottom: showDescription ? "10px" : "20px" }}>
+                      {/* Sadece Başlık kalıyor, altındaki açıklama tamamen kaldırıldı */}
+                      <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", display: "block", marginBottom: "20px" }}>
                         {sub.name}
                       </span>
-
-                      {/* HTML Etiketleri Temizlenmiş ve 2 Satırla Sınırlandırılmış Açıklama */}
-                      {showDescription && (
-                        <p style={{ 
-                          fontSize: "13px", 
-                          color: "#64748B", 
-                          lineHeight: "1.5", 
-                          display: "-webkit-box", 
-                          WebkitLineClamp: 2, 
-                          WebkitBoxOrient: "vertical", 
-                          overflow: "hidden", 
-                          marginBottom: "20px" 
-                        }}>
-                          {sub.description.replace(/<[^>]*>?/gm, '')}
-                        </p>
-                      )}
                     </div>
 
                     <span style={{
@@ -113,7 +98,7 @@ export default function SubcategoryView({
             })}
           </div>
         )}
-
+        
         {/* ÜRÜNLERİN LİSTELENDİĞİ YER (Örn: S28 listeleri vb.) */}
         {products && products.length > 0 && (
           <>
