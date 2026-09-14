@@ -10,7 +10,7 @@ export default function SubcategoryView({
   subcategories,
 }) {
   const categorySlug = category?.slug || "";
-  const subcategorySlug = subcategory?.slug || "";
+  const subcategorySlug = false;
 
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
