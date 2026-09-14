@@ -65,14 +65,10 @@ export default function CategoryView({ category }) {
             
             <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
               <div>
+                {/* Açıklama alanı tamamen kaldırıldı, sadece başlık bırakıldı */}
                 <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", marginBottom: "8px", display: "block" }}>
                   {sub.name}
                 </span>
-                {sub.description && (
-                  <p style={{ fontSize: "13px", color: "#64748B", lineHeight: "1.5", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", marginBottom: "16px" }}>
-                    {sub.description}
-                  </p>
-                )}
               </div>
 
               <span style={{
