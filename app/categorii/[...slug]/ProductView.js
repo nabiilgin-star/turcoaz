@@ -29,6 +29,11 @@ export default function ProductView({ product }) {
             {product.name}
           </h1>
 
+          {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
+          <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
+            ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunăr)
+          </div>
+
           {/* 2. Bölüm: Üstte Açıklama, Altta Teknik Kesit Resmi (Dikey Akış) */}
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }}>
             <div 
@@ -162,6 +167,11 @@ export default function ProductView({ product }) {
         {/* Başlık */}
         <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.name}</h1>
         
+        {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
+        <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
+          ✓ Agrement Tehnic • Cel mai bun preț direct de la importator (Import 150t+/lunăr)
+        </div>
+
         {/* Üstte Büyük Ana Görsel */}
         {mainDisplayImage && (
           <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9", border: "1px solid #eaeaea" }}>

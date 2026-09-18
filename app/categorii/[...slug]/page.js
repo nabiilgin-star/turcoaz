@@ -13,12 +13,136 @@ import MobileMenuToggle from "./MobileMenuToggle";
 import { categories as localCategories } from "@/app/data/categories"; 
 import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 
+// ----------------------------------------------------------------------
+// 1. DİNAMİK SEO METADATA OLUSTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
+// ----------------------------------------------------------------------
+export async function generateMetadata({ params }) {
+  const { slug: pathSegments } = await params;
+
+  if (!pathSegments || pathSegments.length === 0) {
+    return {
+      title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
+      description: "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
+      robots: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    };
+  }
+
+  const [apiResult] = await Promise.all([
+    resolvePath(pathSegments).catch(() => null),
+  ]);
+
+  let result = apiResult;
+
+  // Local veri eşleştirme (Fallback)
+  if (!result && pathSegments && pathSegments.length > 0) {
+    const firstSlug = pathSegments[0]?.toLowerCase().trim();
+    const targetLocalCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
+
+    if (targetLocalCategory) {
+      if (pathSegments.length === 1) {
+        if (targetLocalCategory.products && targetLocalCategory.products.length > 0) {
+          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.name } };
+        } else if (targetLocalCategory.detailImage || targetLocalCategory.description) {
+          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.name } };
+        } else {
+          result = { type: "category", data: targetLocalCategory };
+        }
+      } else if (pathSegments.length === 2) {
+        const secondSlug = pathSegments[1]?.toLowerCase().trim();
+        const targetProd = targetLocalCategory.products?.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
+
+        if (targetProd) {
+          result = { type: "product", data: { ...targetProd, title: targetProd.name || targetProd.title } };
+        } else {
+          const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
+          if (targetSub) {
+            const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
+            if (isDirectProduct) {
+              result = { type: "product", data: { ...targetSub, title: targetSub.name } };
+            } else {
+              result = { type: "subcategory", data: { category: targetLocalCategory, subcategory: targetSub } };
+            }
+          }
+        }
+      } else {
+        const prodSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
+        const subSlug = pathSegments[pathSegments.length - 2]?.toLowerCase().trim();
+        const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === subSlug);
+
+        if (targetSub) {
+          const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
+          if (targetProd) {
+            result = { type: "product", data: { ...targetProd, title: targetProd.name || targetProd.title } };
+          }
+        }
+      }
+    }
+  }
+
+  if (!result) {
+    return {
+      title: "Pagina nu a fost găsită | Turcoaz Aluminiu",
+      robots: { index: false, follow: true },
+    };
+  }
+
+  const { type, data } = result;
+  let title = "Turcoaz Aluminiu";
+  let description = "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare și accesorii de calitate superioară.";
+
+  if (type === "category") {
+    title = `${data.name || data.title} | Turcoaz Aluminiu`;
+    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.name || data.title}. Calitate superioară și livrare din stoc.`;
+  } else if (type === "subcategory") {
+    title = `${data.subcategory.name} - ${data.category.name || data.category.title} | Turcoaz`;
+    description = data.subcategory.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory.name}. Comandă online la preț de distribuitor.`;
+  } else if (type === "product") {
+    title = `${data.title || data.name} | Turcoaz Aluminiu`;
+    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `${data.title || data.name} - Sistem din aluminiu și sticlă de înaltă rezistență cu certificat de calitate.`;
+  }
+
+  const canonicalUrl = `https://turcoaz.com/categorii/${pathSegments.join('/')}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "Turcoaz Aluminiu",
+      locale: "ro_RO",
+      type: "website",
+    },
+  };
+}
+
+// ----------------------------------------------------------------------
+// 2. STATİK SAYFA VE DİNAMİK PARAMETRE YAPILANDIRMASI
+// ----------------------------------------------------------------------
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
   return await getAllSlugsForStaticGeneration();
 }
 
+// ----------------------------------------------------------------------
+// 3. ANA SAYFA COMPONENT'I
+// ----------------------------------------------------------------------
 export default async function CatchAllCategoryPage({ params }) {
   const { slug: pathSegments } = await params;
 
@@ -173,8 +297,71 @@ export default async function CatchAllCategoryPage({ params }) {
 
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
+  // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (JSON-LD)
+  const productSchema = type === "product" ? {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": data.title || data.name,
+    "description": data.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
+    "brand": {
+      "@type": "Brand",
+      "name": "Turcoaz Aluminiu"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RON",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "S.C. Turcoaz Aluminiu S.R.L."
+      }
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Capacitate producție și import",
+        "value": "150+ tone/lună"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Certificare",
+        "value": "Agrement Tehnic"
+      }
+    ]
+  } : null;
+
+  // 2. KATEGORİ SAYFALARI İÇİN DİNAMİK FAQ SCHEMA (GOOGLE RICH RESULTS DOKUNUŞU)
+  const faqSchema = (data?.faqs && data.faqs.length > 0) ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>?/gm, '')
+      }
+    }))
+  } : null;
+
   return (
     <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
+      {/* Product JSON-LD Şeması */}
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
+
+      {/* FAQ JSON-LD Şeması */}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <TrackView
         table={
           type === "product"
@@ -244,7 +431,7 @@ export default async function CatchAllCategoryPage({ params }) {
 
       <div className="catalog-container">
         
-        {/* MOBİL İÇİN AÇ/KAPA BUTONU (Client Component) */}
+        {/* MOBİL İÇİN AÇ/KAPA BUTONU */}
         <div style={{ gridColumn: "1 / -1", width: "100%" }}>
           <MobileMenuToggle />
         </div>

@@ -24,7 +24,10 @@ const TrustSection = () => {
             <span className="section-badge">Prezentare Companie</span>
             <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
             <p className="paragraph-lead">
-              Turcoaz Aluminiu SRL face parte dintr-un grup de companii cu tradiție în industria aluminiului și a sistemelor pentru construcții, fondat în anul 2002. Cu o experiență cumulată de peste 24 de ani, acționariatul a construit o reputație solidă bazată pe profesionalism, inovație și parteneriate durabile.
+              Turcoaz Aluminiu SRL face parte dintr-un grup de companii cu o vastă experiență 
+  în industria aluminiului și a sistemelor pentru construcții, activând pe piață încă 
+  din anul 2002. Cu o experiență cumulată de peste 24 de ani în domeniu, acționariatul 
+  a construit o reputație solidă bazată pe profesionalism, inovație și parteneriate durabile.
             </p>
             <p className="paragraph-normal">
               Astăzi, compania este un furnizor de referință pe piața materialelor pentru fațade, tâmplărie, sisteme din sticlă și soluții arhitecturale premium, oferind clienților o gamă completă de produse certificate și servicii specializate.
@@ -51,7 +54,14 @@ const TrustSection = () => {
               <div className="card-split">
                 <div className="split-text">
                   <h3>Profile din Aluminiu AKPA – Distribuitor Unic în România</h3>
-                  <p>Oferim profile din aluminiu marca AKPA, recunoscute pentru rezistență, precizie și versatilitate. Gama include profile pentru aplicații industriale, comerciale și rezidențiale, precum și sisteme pentru ferestre și uși Exen Plast.</p>
+<p>
+  Suntem importator și distribuitor unic de profile din aluminiu marca AKPA, 
+  cu vânzări lunare de peste 150 de tone și un stoc permanent de peste 200 de tone 
+  în depozitele noastre. Oferim o gamă completă de glafuri și pervaze din aluminiu 
+  extrudat, sisteme pentru ferestre și ușile din aluminiu, panouri compozite (Bond) 
+  și accesorii pentru tâmplărie. Asigurăm calitate, precizie și livrare rapidă 
+  pentru proiecte rezidențiale, comerciale și industriale.
+</p>
                 </div>
                 <div className="split-image">
                   <Image src={imgAkpa} alt="Profile din Aluminiu AKPA" fill className="premium-img" />
@@ -63,8 +73,14 @@ const TrustSection = () => {
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
-                  <h3>Panouri Compozite din Aluminiu</h3>
-                  <p>Pentru proiecte arhitecturale moderne, punem la dispoziție panouri compozite premium:</p>
+                  <h3>Panouri Compozite din Aluminiu (Bond)</h3>
+<p>
+  Pentru proiecte arhitecturale moderne, punem la dispoziție panouri compozite 
+  premium (AKPA Bond, Primebond, Durabond) fabricate cu tablă din aluminiu de înaltă 
+  calitate Hydro Norvegia. Deținem stocuri permanente într-o gamă variată de 
+  culori și finisaje, toate produsele fiind însoțite de Agrement Tehnic pentru 
+  conformitate și siguranță în construcții.
+</p>
                   <ul className="premium-bullet-list row-layout">
                     <li><span>AKPA Bond</span></li>
                     <li><span>PrimeBond</span></li>
@@ -106,7 +122,7 @@ const TrustSection = () => {
               <div className="card-split">
                 <div className="split-text">
                   <h3>Profile PVC – Distribuitor Unic în România</h3>
-                  <p>Suntem distribuitor unic pentru profile PVC destinate realizării ferestrelor și ușilor, oferind produse conforme standardelor europene și cerințelor actuale ale pieței.</p>
+                  <p>Suntem distribuitor unic pentru EXEMplast - profile PVC destinate realizării ferestrelor și ușilor, oferind produse conforme standardelor europene și cerințelor actuale ale pieței.</p>
                 </div>
                 <div className="split-image">
                   <Image src={imgPvc} alt="Profile PVC Exen Plast" fill className="premium-img" />
@@ -131,8 +147,14 @@ const TrustSection = () => {
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
-                  <h3>Balustrade din Aluminiu</h3>
-                  <p>Comercializăm balustrade din aluminiu în diverse culori și configurații, împreună cu toate accesoriile necesare montajului.</p>
+                  <h3>Sisteme și Balustrade din Aluminiu & Sticlă</h3>
+<p>
+  Comercializăm sisteme complete de balustrade din aluminiu, însoțite de Agrement 
+  Tehnic și toate accesoriile necesare pentru un montaj sigur. Deținem în stoc 
+  permanent finisajele premium cele mai solicitate: Eloxat Argintiu, Eloxat Maro 
+  și Gri Antracit (RAL 7016), oferind și posibilitatea executării de culori speciale 
+  la comandă. Asigurăm livrare rapidă în toată România direct din depozitele noastre.
+</p>
                 </div>
                 <div className="split-image">
                   <Image src={imgBalustrade} alt="Balustrade din Aluminiu" fill className="premium-img" />
@@ -154,6 +176,7 @@ const TrustSection = () => {
             <h2 className="section-title">Certificări Internaționale</h2>
             <p>Deținem certificările:</p>
             <ul className="premium-bullet-list margin-y-sm">
+              <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>Agrement Tehnic</strong>– Conformitate și siguranță în construcții</span></li>
               <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>ISO 9001:2015</strong> – Managementul calității</span></li>
               <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>ISO 14001:2015</strong> – Managementul mediului</span></li>
             </ul>
@@ -188,6 +211,7 @@ const TrustSection = () => {
           <div className="features-box-dark">
             <h3 className="box-title">Ce Oferim</h3>
             <ul className="box-list">
+              <li><CheckCircle2 size={16} /> Stoc permanent de peste 200 de tone pentru livrare imediată</li>
               <li><CheckCircle2 size={16} /> Soluții personalizate pentru fiecare proiect</li>
               <li><CheckCircle2 size={16} /> Consultanță tehnică de specialitate</li>
               <li><CheckCircle2 size={16} /> Transport la cerere</li>
@@ -201,7 +225,9 @@ const TrustSection = () => {
             <span className="section-badge">Filozofia Noastră</span>
             <h3 className="box-title-light">Cum Lucrăm</h3>
             <p className="paragraph-lead">
-              Promovăm o comunicare constantă cu partenerii noștri și oferim consultanță dedicată, astfel încât produsele și serviciile noastre să depășească așteptările clienților.
+              Promovăm o comunicare transparentă și promptă cu partenerii noștri, oferind 
+    suport tehnic dedicat pentru ca fiecare proiect să se realizeze rapid, 
+    eficient și în cele mai bune condiții economice.
             </p>
           </div>
 
