@@ -10,7 +10,7 @@ export default function SubcategoryView({
   subcategories,
 }) {
   const categorySlug = category?.slug || "";
-  const subcategorySlug = subcategory?.slug || ""; // <-- BURASI ESKİ HALİ OLMALI (string olmalı)
+  const subcategorySlug = subcategory?.slug || "";
 
   const filteredSubcategories = (subcategories || []).filter(
     (sub) => sub.slug !== subcategorySlug
@@ -23,7 +23,7 @@ export default function SubcategoryView({
     <section className={styles["subcategory-products-section"]}>
       <div className="container-max" style={{ width: "100%" }}>
         
-        {/* DİĞER ALT KATEGORİLER (Eğer varsa) */}
+        {/* DİĞER ALT KATEGORİLER */}
         {filteredSubcategories.length > 0 && (
           <div
             style={{
@@ -34,9 +34,6 @@ export default function SubcategoryView({
             }}
           >
             {filteredSubcategories.map((sub, index) => {
-              // BURASI ÇOK ÖNEMLİ: Kart içindeki açıklamaları tamamen kapatıyoruz
-              const showDescription = false; 
-
               return (
                 <Link
                   key={index}
@@ -49,11 +46,12 @@ export default function SubcategoryView({
                     display: "flex",
                     flexDirection: "column",
                     textDecoration: "none",
-                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-                    transition: "all 0.3s ease"
+                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.03)",
+                    transition: "all 0.2s ease"
                   }}
                 >
-                  <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {/* Kompakt Resim Kutusu */}
+                  <div style={{ width: "100%", height: "150px", minHeight: "150px", maxHeight: "150px", background: "#FFFFFF", overflow: "hidden", position: "relative", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Image
                       src={
                         sub.image ||
@@ -68,27 +66,27 @@ export default function SubcategoryView({
                   </div>
                   
                   <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-                    <div>
-                      {/* Sadece Başlık kalıyor, altındaki açıklama tamamen kaldırıldı */}
-                      <span style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", lineHeight: "1.4", display: "block", marginBottom: "20px" }}>
+                    <div style={{ marginBottom: "16px" }}>
+                      <span style={{ fontSize: "16px", fontWeight: "800", color: "#0F172A", lineHeight: "1.4", display: "block" }}>
                         {sub.name}
                       </span>
                     </div>
 
+                    {/* Mavi ve Bold Buton */}
                     <span style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      gap: "10px",
+                      gap: "8px",
                       width: "100%",
                       padding: "12px",
-                      background: "#00A8CC",
+                      background: "#0096B4",
                       color: "#FFFFFF",
                       borderRadius: "10px",
-                      fontWeight: "700",
+                      fontWeight: "800",
                       fontSize: "13px",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.5px"
+                      letterSpacing: "0.5px",
+                      boxShadow: "0 4px 10px rgba(0, 150, 180, 0.3)"
                     }}>
                       VEZI DETALII →
                     </span>
@@ -99,7 +97,7 @@ export default function SubcategoryView({
           </div>
         )}
         
-        {/* ÜRÜNLERİN LİSTELENDİĞİ YER (Örn: S28 listeleri vb.) */}
+        {/* ÜRÜNLERİN LİSTELENDİĞİ YER */}
         {products && products.length > 0 && (
           <>
             <div style={{
@@ -108,18 +106,18 @@ export default function SubcategoryView({
               border: "1px solid #E2E8F0",
               padding: "24px 32px",
               marginBottom: "24px",
-              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.02)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between"
             }}>
-              <h1 style={{ fontSize: "24px", fontWeight: "800", color: "#0F172A", margin: 0 }}>
+              <h1 style={{ fontSize: "24px", fontWeight: "800", color: "#0F172A", margin: 0, letterSpacing: "-0.5px" }}>
                 {subcategory?.name || category?.name || ""}
               </h1>
               <span style={{
-                backgroundColor: "#E6F7FA",
+                backgroundColor: "#F1F5F9",
                 color: "#0088A5",
-                padding: "6px 14px",
+                padding: "4px 12px",
                 borderRadius: "20px",
                 fontSize: "13px",
                 fontWeight: "700"
@@ -149,11 +147,12 @@ export default function SubcategoryView({
                       display: "flex",
                       flexDirection: "column",
                       textDecoration: "none",
-                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
-                      transition: "all 0.3s ease"
+                      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.03)",
+                      transition: "all 0.2s ease"
                     }}
                   >
-                    <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {/* Kompakt Resim Kutusu */}
+                    <div style={{ width: "100%", height: "150px", minHeight: "150px", maxHeight: "150px", background: "#FFFFFF", overflow: "hidden", position: "relative", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {prodImg ? (
                         <img
                           src={prodImg}
@@ -166,28 +165,27 @@ export default function SubcategoryView({
                     </div>
 
                     <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-                      <div>
-                        <h3 style={{ fontSize: "16px", fontWeight: "700", color: "#0F172A", marginBottom: "8px" }}>
+                      <div style={{ marginBottom: "16px" }}>
+                        <h3 style={{ fontSize: "16px", fontWeight: "800", color: "#0F172A", margin: 0, lineHeight: "1.4" }}>
                           {product.name || product.title}
                         </h3>
-                       
                       </div>
 
+                      {/* Mavi ve Bold Buton */}
                       <span style={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        gap: "10px",
+                        gap: "8px",
                         width: "100%",
                         padding: "12px",
-                        background: "#00A8CC",
+                        background: "#0096B4",
                         color: "#FFFFFF",
                         borderRadius: "10px",
-                        fontWeight: "700",
+                        fontWeight: "800",
                         fontSize: "13px",
-                        textTransform: "uppercase",
                         letterSpacing: "0.5px",
-                        marginTop: "16px"
+                        boxShadow: "0 4px 10px rgba(0, 150, 180, 0.3)"
                       }}>
                         VEZI DETALII →
                       </span>
@@ -199,14 +197,14 @@ export default function SubcategoryView({
           </>
         )}
 
-        {/* BİLGİ / DETAY SAYFALARI (DİKEY SIRALI) */}
+        {/* BİLGİ / DETAY SAYFALARI */}
         {!hasContent && hasDescriptionOrDetail && (
           <div style={{
             background: "#FFFFFF",
             borderRadius: "16px",
             border: "1px solid #E2E8F0",
             padding: "40px",
-            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+            boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.03)",
             display: "flex",
             flexDirection: "column",
             gap: "32px"
@@ -236,24 +234,24 @@ export default function SubcategoryView({
             )}
             
             {subcategory?.description && (
-  <div
-    style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
-    dangerouslySetInnerHTML={{ __html: subcategory.description }}
-  />
-)}
+              <div
+                style={{ fontSize: "16px", color: "#334155", lineHeight: "1.8" }}
+                dangerouslySetInnerHTML={{ __html: subcategory.description }}
+              />
+            )}
 
             {subcategory?.gallery && subcategory.gallery.length > 0 && (
               <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "16px", borderTop: "1px solid #E2E8F0", paddingTop: "32px" }}>
-                <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0F172A", margin: 0 }}>
+                <h3 style={{ fontSize: "20px", fontWeight: "800", color: "#0F172A", margin: 0 }}>
                   Galerie Foto & Detalii Tehnice
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                   {subcategory.gallery.map((galleryImg, gIdx) => (
-                    <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "16px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "16px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.03)", display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <img
                         src={galleryImg}
                         alt={`${subcategory.name} galeri ${gIdx + 1}`}
-                        style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }}
+                        style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#ffffff" }}
                       />
                     </div>
                   ))}
