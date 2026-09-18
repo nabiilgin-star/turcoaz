@@ -50,20 +50,21 @@ export default function CategoryView({ category }) {
               transition: "all 0.2s ease"
             }}
           >
-            {/* Resim Kutusu - Kompakt ve Temiz */}
-            <div style={{ width: "100%", height: "170px", background: "#FFFFFF", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <Image
-                src={
-                  sub.image ||
-                  sub.detailImage ||
-                  "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
-                }
-                alt={sub.name}
-                width={400}
-                height={400}
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              />
-            </div>
+           
+           {/* Resim Kutusu - Kesin Yükseklik Sabitleme */}
+<div style={{ width: "100%", height: "150px", minHeight: "150px", maxHeight: "150px", background: "#FFFFFF", overflow: "hidden", position: "relative", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <Image
+    src={
+      sub.image ||
+      sub.detailImage ||
+      "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
+    }
+    alt={sub.name}
+    width={400}
+    height={400}
+    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+  />
+</div>
             
             {/* İçerik ve Tam Boy Mavi Buton */}
             <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
