@@ -230,7 +230,7 @@ export const categories = [
         id: "sistem-balustrada-patrat",
         slug: "sistem-balustrada-patrat",
         name: "Sistem Balustradă Pătrat",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592793/balustradeQ40_tlo5tc.png",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789762874/Balustrada_Patrat_dqgkae.png",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
         description: "Sistem modern de balustradă din aluminiu cu profil pătrat.",
         pdfUrl: "/pdf/balustrada-patrat.pdf"
