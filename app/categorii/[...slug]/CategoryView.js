@@ -48,20 +48,20 @@ export default function CategoryView({ category }) {
               transition: "all 0.3s ease"
             }}
           >
-            {/* Resim Kutusu (İçeride Küçültülmüş ve Orantılı) */}
-            <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <Image
-                src={
-                  sub.image ||
-                  sub.detailImage ||
-                  "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
-                }
-                alt={sub.name}
-                width={400}
-                height={400}
-                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-              />
-            </div>
+            {/* Resim Kutusu - Daha kompakt ve temiz görünüm */}
+<div style={{ width: "100%", height: "170px", background: "#FFFFFF", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <Image
+    src={
+      sub.image ||
+      sub.detailImage ||
+      "https://images.unsplash.com/photo-1631626244439-d349340623bd?auto=format&fit=crop&w=500&q=60"
+    }
+    alt={sub.name}
+    width={400}
+    height={400}
+    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+  />
+</div>
             
             <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
               <div>
