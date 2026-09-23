@@ -26,7 +26,7 @@ export default function CategoriesSection({ className = '' }) {
       id: 2,
       title: 'Glafuri din Aluminiu',
       slug: 'glafuri-din-aluminiu',
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
       subcategories: ['Lățimi: 75 mm - 380 mm', 'RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe', 'Debitare la Dimensiune', 'Stoc permanent de peste 200 de tone pentru livrare imediată']
     },
     {
