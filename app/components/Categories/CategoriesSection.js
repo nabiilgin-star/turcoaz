@@ -24,6 +24,13 @@ export default function CategoriesSection({ className = '' }) {
     },
     {
       id: 2,
+      title: 'Glafuri din Aluminiu',
+      slug: 'glafuri-din-aluminiu',
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
+      subcategories: ['Lățimi: 75 mm - 380 mm', 'RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe', 'Debitare la Dimensiune', 'Stoc permanent de peste 200 de tone pentru livrare imediată']
+    },
+    {
+      id: 3,
       title: 'Sisteme Balustradă',
       slug: 'sisteme-balustrada',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800',
@@ -37,21 +44,21 @@ export default function CategoriesSection({ className = '' }) {
       subcategories: ['Ușă din Sticlă cu Toc', 'Ușă din Sticlă fără Toc', 'Sisteme Cabină de Duș', 'Compartimentare Sticlă']
     },
     {
-      id: 4,
+      id: 5,
       title: 'Panouri Compozite ACP (Bond)',
       slug: 'acp-aluminiu-compozit-panel-bond',
       image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800',
       subcategories: ['PrimeBond Plus', 'PrimeBond', 'DuraBond', 'RallBond']
     },
     {
-      id: 5,
+      id: 6,
       title: 'Profile PVC',
       slug: 'profile-pvc',
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800',
       subcategories: ['Profile Fereastră Containere', 'Glafuri PVC', 'Sistem Glisant PVC', 'BLANCOPLAST', 'Exenplast']
     },
     {
-      id: 6,
+      id: 7,
       title: 'Sticlă Specială',
       slug: 'sticla',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800',
