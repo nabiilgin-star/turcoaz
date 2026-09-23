@@ -75,19 +75,20 @@ const TrustSection = () => {
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
-                  <h3>Glafuri din Aluminiu Extrudat & Pervazuri Exterioare</h3>
+                 <h3>Glafuri exterior premium din aluminiu pentru ferestre</h3>
                   <p>
-                    Oferim o gamă completă de glafuri exterioare din aluminiu extrudat de înaltă calitate, rezistente la intemperii și raze UV. Asigurăm debitare la dimensiune, picurător optim pentru protecția fațadei și stocuri permanente în nuanțe populare precum Gri Antracit (RAL 7016), Alb (RAL 9016) ve Maro.
+                    Oferim o gamă completă de glafuri exterioare din aluminiu extrudat de înaltă calitate, rezistente la intemperii și raze UV. Asigurăm debitare la dimensiune, picurător optim pentru protecția fațadei și stocuri permanente în nuanțe populare precum Gri Antracit (RAL 7016), Alb (RAL 9016) , Maro (Ral 8014) Stejar A., Nuc si Wenghe.
                   </p>
                   <ul className="premium-bullet-list row-layout margin-top-sm">
-                    <li><span>Glafuri Extrudate</span></li>
-                    <li><span>RAL 7016 / 9016</span></li>
+                    <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
+                    <li><span>Lățimi: 75 mm - 380 mm</span></li>
+                    <li><span>RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe </span></li>
                     <li><span>Debitare la Dimensiune</span></li>
-                    <li><span>Livrare Rapidă</span></li>
+                    <li><span>Stoc permanent de peste 200 de tone pentru livrare imediată</span></li>
                   </ul>
                 </div>
                 <div className="split-image">
-                  <Image src={imgAkpa} alt="Glafuri din Aluminiu" fill className="premium-img" />
+                  <Image src={imgGlaf} alt="Glafuri din Aluminiu" fill className="premium-img" />
                 </div>
               </div>
             </div>
