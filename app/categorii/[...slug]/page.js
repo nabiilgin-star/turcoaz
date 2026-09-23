@@ -297,20 +297,28 @@ export default async function CatchAllCategoryPage({ params }) {
 
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
-  // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (JSON-LD)
+  // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (JSON-LD) - İYİLEŞTİRİLMİŞ
+  const productImages = data.gallery && data.gallery.length > 0 
+    ? data.gallery 
+    : [data.image || data.detailImage].filter(Boolean);
+
   const productSchema = type === "product" ? {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": data.title || data.name,
+    "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
     "description": data.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
+    "sku": `TURCOAZ-${data.slug ? data.slug.toUpperCase() : 'PROD'}`,
     "brand": {
       "@type": "Brand",
-      "name": "Turcoaz Aluminiu"
+      "name": "AKPA"
     },
     "offers": {
       "@type": "Offer",
+      "url": `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
       "priceCurrency": "RON",
       "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
       "seller": {
         "@type": "Organization",
         "name": "S.C. Turcoaz Aluminiu S.R.L."
