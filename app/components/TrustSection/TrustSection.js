@@ -77,7 +77,7 @@ const TrustSection = () => {
                 <div className="split-text">
                  <h3>Glafuri exterior premium din aluminiu pentru ferestre</h3>
                   <p>
-                    Oferim o gamă completă de glafuri exterioare din aluminiu extrudat de înaltă calitate, rezistente la intemperii și raze UV. Asigurăm debitare la dimensiune, picurător optim pentru protecția fațadei și stocuri permanente în nuanțe populare precum Gri Antracit (RAL 7016), Alb (RAL 9016) , Maro (Ral 8014) Stejar A., Nuc si Wenghe.
+                    Oferim sisteme profesionale de glafuri exterioare din aluminiu extrudat, concepute pentru a asigura o protecție optimă a fațadei împotriva infiltrațiilor, intemperiilor și razelor UV. Produsele noastre asigură o estetică premium și sunt compatibile cu orice tip de tâmplărie termoizolantă.
                   </p>
                   <ul className="premium-bullet-list row-layout margin-top-sm">
                     <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
@@ -146,7 +146,7 @@ const TrustSection = () => {
               <div className="card-split">
                 <div className="split-text">
                   <h3>Profile PVC – Distribuitor Unic în România</h3>
-                  <p>Suntem distribuitor unic pentru EXEMplast - profile PVC destinate realizării ferestrelor și ușilor, oferind produse conforme standardelor europene și cerințelor actuale ale pieței.</p>
+                  <p>Suntem distribuitor unic pentru EXENplast - profile PVC destinate realizării ferestrelor și ușilor, oferind produse conforme standardelor europene și cerințelor actuale ale pieței.</p>
                 </div>
                 <div className="split-image">
                   <Image src={imgPvc} alt="Profile PVC Exen Plast" fill className="premium-img" />
