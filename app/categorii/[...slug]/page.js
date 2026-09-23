@@ -297,7 +297,7 @@ export default async function CatchAllCategoryPage({ params }) {
 
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
-  // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (JSON-LD) - İYİLEŞTİRİLMİŞ
+  // // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (GOOGLE MERCHANT & PRODUCT UYUMLU)
   const productImages = data.gallery && data.gallery.length > 0 
     ? data.gallery 
     : [data.image || data.detailImage].filter(Boolean);
@@ -309,16 +309,20 @@ export default async function CatchAllCategoryPage({ params }) {
     "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
     "description": data.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
     "sku": `TURCOAZ-${data.slug ? data.slug.toUpperCase() : 'PROD'}`,
+    "mpn": `AKPA-${data.slug ? data.slug.toUpperCase() : 'PROD'}`,
     "brand": {
       "@type": "Brand",
       "name": "AKPA"
     },
     "offers": {
-      "@type": "Offer",
-      "url": `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
+      "@type": "AggregateOffer",
       "priceCurrency": "RON",
+      "lowPrice": "10.00",
+      "highPrice": "500.00",
+      "offerCount": "1",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition",
+      "url": `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
       "seller": {
         "@type": "Organization",
         "name": "S.C. Turcoaz Aluminiu S.R.L."
