@@ -8,6 +8,7 @@ const TrustSection = () => {
   
   // Ürünlerin Özel Görsel URL'leri (GÜNCELLENDİ)
   const imgAkpa = "https://res.cloudinary.com/oivvupgw/image/upload/v1784464708/AKPA-LOGO_wctiyh.jpg";
+  const imgGlaf = "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png";
   const imgBond = "https://res.cloudinary.com/oivvupgw/image/upload/v1784464498/akpa-bond_epvi9m.png";
   const imgProducts = "https://res.cloudinary.com/oivvupgw/image/upload/v1784453837/kaheaksesuar1_u17kaf.jpg"; // KAHE
   const imgPvc = "https://res.cloudinary.com/oivvupgw/image/upload/v1784465915/EXENplast-Logo_zc4i40.png";       // Exen Plast PVC Logosu Yeni!
@@ -42,7 +43,8 @@ const TrustSection = () => {
 
         <hr className="premium-divider" />
 
-        {/* SECȚIUNEA 2: Portofoliul Nostru de Produse */}
+
+        {/* SECȚIUNEA 3: Portofoliul Nostru de Produse */}
         <div className="section-block">
           <span className="section-badge">Gama Noastră</span>
           <h2 className="section-title margin-bottom-lg">Portofoliul Nostru de Produse</h2>
@@ -69,7 +71,28 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 2. Panouri Compozite */}
+{/* 2. YENİ: Glafuri din Aluminiu (AKPA Altı - PrimeBond Üstü) */}
+            <div className="portfolio-card span-2">
+              <div className="card-split">
+                <div className="split-text">
+                  <h3>Glafuri din Aluminiu Extrudat & Pervazuri Exterioare</h3>
+                  <p>
+                    Oferim o gamă completă de glafuri exterioare din aluminiu extrudat de înaltă calitate, rezistente la intemperii și raze UV. Asigurăm debitare la dimensiune, picurător optim pentru protecția fațadei și stocuri permanente în nuanțe populare precum Gri Antracit (RAL 7016), Alb (RAL 9016) ve Maro.
+                  </p>
+                  <ul className="premium-bullet-list row-layout margin-top-sm">
+                    <li><span>Glafuri Extrudate</span></li>
+                    <li><span>RAL 7016 / 9016</span></li>
+                    <li><span>Debitare la Dimensiune</span></li>
+                    <li><span>Livrare Rapidă</span></li>
+                  </ul>
+                </div>
+                <div className="split-image">
+                  <Image src={imgAkpa} alt="Glafuri din Aluminiu" fill className="premium-img" />
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Panouri Compozite */}
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
@@ -95,7 +118,7 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 3. KAHE Sticlă */}
+            {/* 4. KAHE Sticlă */}
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
@@ -117,7 +140,7 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 4. Profile PVC */}
+            {/* 5. Profile PVC */}
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
@@ -130,7 +153,7 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 5. Feronerie */}
+            {/* 6. Feronerie */}
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
@@ -143,7 +166,7 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 6. Balustrade Aluminiu */}
+            {/* 7. Balustrade Aluminiu */}
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
