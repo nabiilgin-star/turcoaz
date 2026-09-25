@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import './Categories.css'; 
+import Image from 'next/image';
 
 const IMAGE_REPLACEMENTS = {
   'sisteme-balustrada': 'https://res.cloudinary.com/oivvupgw/video/upload/v1784410358/iu5y33cfqflyttmnrjcz_vhxsmm.mp4',
@@ -120,20 +121,17 @@ export default function CategoriesSection({ className = '' }) {
                     }}
                   />
                 ) : (
-                  <img 
-                    src={finalMedia} 
-                    alt={cat.title} 
-                    className="card-image-new"
-                    style={{
-                      position: 'absolute',
-                      height: '100%',
-                      width: '100%',
-                      left: 0,
-                      top: 0,
-                      objectFit: 'cover',
-                      color: 'transparent'
-                    }}
-                  />
+                 <Image 
+  src={finalMedia} 
+  alt={cat.title} 
+  className="card-image-new"
+  fill
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  style={{
+    objectFit: 'cover',
+    color: 'transparent'
+  }}
+/>
                 )}
                 <div className={`card-overlay-new ${isActive ? 'active' : ''}`} />
               </div>
