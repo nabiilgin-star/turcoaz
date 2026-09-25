@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CategoryView({ category }) {
   const items = category.subcategories || category.products || [];
@@ -70,14 +71,16 @@ export default function CategoryView({ category }) {
                 transition: "all 0.2s ease"
               }}
             >
-              {/* Resim Kutusu - Hızlı Yüklenen <img> Altyapısı */}
-              <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <img
-                  src={imgSrc}
-                  alt={sub.name}
-                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                />
-              </div>
+             {/* Optimize Edilmiş Next.js <Image> Altyapısı */}
+<div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <Image
+    src={imgSrc}
+    alt={sub.name}
+    fill
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    style={{ objectFit: "contain" }}
+  />
+</div>
               
               {/* İçerik ve Başlık Alanı */}
               <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>

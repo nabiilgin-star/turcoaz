@@ -38,6 +38,7 @@ export default function SubcategoryView({
                 <Link
                   key={index}
                   href={`/categorii/${categorySlug}/${sub.slug}`}
+                  aria-label={sub.name} // <-- BUNU EKLEDİK
                   style={{
                     background: "#FFFFFF",
                     borderRadius: "16px",
@@ -136,6 +137,7 @@ export default function SubcategoryView({
                   <Link
                     key={product.id || product.slug}
                     href={productUrl}
+                    aria-label={product.name || product.title} // <-- SEO Link Hatası Çözümü
                     style={{
                       background: "#FFFFFF",
                       borderRadius: "16px",
@@ -219,11 +221,13 @@ export default function SubcategoryView({
                 alignItems: "center",
                 justifyContent: "center"
               }}>
-                <img
-                  src={subcategory.detailImage}
-                  alt={subcategory.name}
-                  style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px" }}
-                />
+               <Image
+  src={subcategory.detailImage}
+  alt={subcategory.name}
+  width={800}
+  height={500}
+  style={{ width: "100%", height: "auto", maxHeight: "500px", objectFit: "contain", borderRadius: "8px" }}
+/>
               </div>
             )}
             
@@ -242,11 +246,13 @@ export default function SubcategoryView({
                 <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                   {subcategory.gallery.map((galleryImg, gIdx) => (
                     <div key={gIdx} style={{ background: "#FFFFFF", borderRadius: "12px", border: "1px solid #E2E8F0", overflow: "hidden", padding: "16px", boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <img
-                        src={galleryImg}
-                        alt={`${subcategory.name} galeri ${gIdx + 1}`}
-                        style={{ width: "100%", maxHeight: "500px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }}
-                      />
+                      <Image
+  src={galleryImg}
+  alt={`${subcategory.name} galeri ${gIdx + 1}`}
+  width={800}
+  height={500}
+  style={{ width: "100%", height: "auto", maxHeight: "500px", objectFit: "contain", borderRadius: "8px", backgroundColor: "#f8fafc" }}
+/>
                     </div>
                   ))}
                 </div>

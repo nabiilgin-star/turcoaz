@@ -1,5 +1,6 @@
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false, 
   images: {
     remotePatterns: [
       {
@@ -11,12 +12,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "qualmont.ro",
         port: "",
         pathname: "/**",
       },
