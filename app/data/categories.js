@@ -148,6 +148,7 @@ export const categories = [
     name: "INCHIDERE TERASA",
     slug: "inchidere-terasa",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+    description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.", // <-- BU SATIRI EKLEYİN
     products: [
       {
         id: "glisant-geam-simplu-sc100",
