@@ -1,102 +1,104 @@
 // cornier.js dosyasının içeriği
-export const cornierData = [
+
+const cornierData = [
+  // --- İLK TABLO: Eşkenar Profiller (Sadece 'a' değeri var, b değeri a'ya eşit sayılır) ---
   // --- EŞKENAR PROFİLLER (Sadece 'a' değeri var) ---
-  { profilNo: "189", a: 15, s: 1.3, kg: 0.101, stoc: true },[cite: 6, 7]
-  { profilNo: "208", a: 15, s: 1.5, kg: 0.117, stoc: true },[cite: 6, 7]
-  { profilNo: "5723", a: 20, s: 1, kg: 0.105, stoc: true },[cite: 6, 7]
-  { profilNo: "4645", a: 20, s: 1.1, kg: 0.116, stoc: true },[cite: 6, 7]
-  { profilNo: "163", a: 20, s: 1.2, kg: 0.126, stoc: true },[cite: 6, 7]
-  { profilNo: "209", a: 20, s: 2, kg: 0.206, stoc: true },[cite: 6, 7]
-  { profilNo: "10020", a: 25, s: 1, kg: 0.132, stoc: true },[cite: 6, 7]
-  { profilNo: "162", a: 25, s: 1.2, kg: 0.158, stoc: true },[cite: 6, 7]
-  { profilNo: "210", a: 25, s: 2, kg: 0.26, stoc: true },[cite: 6, 7]
-  { profilNo: "4287", a: 25, s: 3, kg: 0.382, stoc: true },[cite: 6, 7]
-  { profilNo: "5722", a: 30, s: 1.1, kg: 0.175, stoc: true },[cite: 6, 7]
-  { profilNo: "8806", a: 30, s: 2, kg: 0.314, stoc: true },[cite: 6, 7]
-  { profilNo: "8800", a: 30, s: 3, kg: 0.463, stoc: true },[cite: 6, 7]
-  { profilNo: "161", a: 30, s: 1.2, kg: 0.191, stoc: true },[cite: 6, 7]
-  { profilNo: "2141", a: 40, s: 1.2, kg: 0.256, stoc: true },[cite: 6, 7]
-  { profilNo: "10015", a: 40, s: 1.5, kg: 0.318, stoc: true },[cite: 6, 7]
-  { profilNo: "2458", a: 40, s: 2, kg: 0.422, stoc: true },[cite: 6, 7]
-  { profilNo: "1533", a: 40, s: 2.7, kg: 0.566, stoc: true },[cite: 6, 7]
-  { profilNo: "3926", a: 40, s: 3, kg: 0.625, stoc: true },[cite: 6, 7]
-  { profilNo: "164", a: 40, s: 4, kg: 0.824, stoc: true },[cite: 6, 7]
-  { profilNo: "3756", a: 50, s: 1.5, kg: 0.4, stoc: true },[cite: 6, 7]
-  { profilNo: "5635", a: 50, s: 2, kg: 0.531, stoc: true },[cite: 6, 7]
-  { profilNo: "8341", a: 50, s: 3, kg: 0.788, stoc: true },[cite: 6, 7]
-  { profilNo: "270", a: 50, s: 5, kg: 1.287, stoc: true },[cite: 6, 7]
-  { profilNo: "14067", a: 50, s: 6.35, kg: 1.611, stoc: true },[cite: 6, 7]
-  { profilNo: "2200", a: 60, s: 1.5, kg: 0.482, stoc: true },[cite: 6, 7]
-  { profilNo: "2475", a: 60, s: 2, kg: 0.639, stoc: true },[cite: 6, 7]
-  { profilNo: "7705", a: 75, s: 5, kg: 1.964, stoc: true },[cite: 6, 7]
-  { profilNo: "4286", a: 75, s: 8, kg: 3.078, stoc: true },[cite: 6, 7]
-  { profilNo: "2201", a: 80, s: 1.5, kg: 0.644, stoc: true },[cite: 6, 7]
-  { profilNo: "4958", a: 80, s: 8, kg: 3.294, stoc: true },[cite: 6, 7]
-  { profilNo: "2544", a: 90, s: 15, kg: 6.696, stoc: true },[cite: 6, 7]
+  { profilNo: "189", a: 15, s: 1.3, kg: 0.101, stoc: true },
+  { profilNo: "208", a: 15, s: 1.5, kg: 0.117, stoc: true },
+  { profilNo: "5723", a: 20, s: 1, kg: 0.105, stoc: true },
+  { profilNo: "4645", a: 20, s: 1.1, kg: 0.116, stoc: true },
+  { profilNo: "163", a: 20, s: 1.2, kg: 0.126, stoc: true },
+  { profilNo: "209", a: 20, s: 2, kg: 0.206, stoc: true },
+  { profilNo: "10020", a: 25, s: 1, kg: 0.132, stoc: true },
+  { profilNo: "162", a: 25, s: 1.2, kg: 0.158, stoc: true },
+  { profilNo: "210", a: 25, s: 2, kg: 0.26, stoc: true },
+  { profilNo: "4287", a: 25, s: 3, kg: 0.382, stoc: true },
+  { profilNo: "5722", a: 30, s: 1.1, kg: 0.175, stoc: true },
+  { profilNo: "8806", a: 30, s: 2, kg: 0.314, stoc: true },
+  { profilNo: "8800", a: 30, s: 3, kg: 0.463, stoc: true },
+  { profilNo: "161", a: 30, s: 1.2, kg: 0.191, stoc: true },
+  { profilNo: "2141", a: 40, s: 1.2, kg: 0.256, stoc: true },
+  { profilNo: "10015", a: 40, s: 1.5, kg: 0.318, stoc: true },
+  { profilNo: "2458", a: 40, s: 2, kg: 0.422, stoc: true },
+  { profilNo: "1533", a: 40, s: 2.7, kg: 0.566, stoc: true },
+  { profilNo: "3926", a: 40, s: 3, kg: 0.625, stoc: true },
+  { profilNo: "164", a: 40, s: 4, kg: 0.824, stoc: true },
+  { profilNo: "3756", a: 50, s: 1.5, kg: 0.4, stoc: true },
+  { profilNo: "5635", a: 50, s: 2, kg: 0.531, stoc: true },
+  { profilNo: "8341", a: 50, s: 3, kg: 0.788, stoc: true },
+  { profilNo: "270", a: 50, s: 5, kg: 1.287, stoc: true },
+  { profilNo: "14067", a: 50, s: 6.35, kg: 1.611, stoc: true },
+  { profilNo: "2200", a: 60, s: 1.5, kg: 0.482, stoc: true },
+  { profilNo: "2475", a: 60, s: 2, kg: 0.639, stoc: true },
+  { profilNo: "7705", a: 75, s: 5, kg: 1.964, stoc: true },
+  { profilNo: "4286", a: 75, s: 8, kg: 3.078, stoc: true },
+  { profilNo: "2201", a: 80, s: 1.5, kg: 0.644, stoc: true },
+  { profilNo: "4958", a: 80, s: 8, kg: 3.294, stoc: true },
+  { profilNo: "2544", a: 90, s: 15, kg: 6.696, stoc: true },
 
   // --- ÇEŞİTKENAR PROFİLLER ('a' ve 'b' değerleri var) ---
-  { profilNo: "2203", a: 20, b: 10, s: 1.2, kg: 0.09, stoc: true },[cite: 7]
-  { profilNo: "10016", a: 20, b: 10, s: 1.4, kg: 0.11, stoc: true },[cite: 7]
-  { profilNo: "13862", a: 20, b: 10, s: 2, kg: 0.15, stoc: true },[cite: 7]
-  { profilNo: "2872", a: 25, b: 13, s: 2, kg: 0.18, stoc: true },[cite: 7]
-  { profilNo: "558", a: 25, b: 13, s: 2, kg: 0.20, stoc: true },[cite: 7]
-  { profilNo: "3772", a: 28, b: 15, s: 1.8, kg: 0.20, stoc: true },[cite: 7]
-  { profilNo: "5725", a: 30, b: 15, s: 1, kg: 0.12, stoc: true },[cite: 7]
-  { profilNo: "5724", a: 30, b: 20, s: 1, kg: 0.13, stoc: true },[cite: 7]
-  { profilNo: "519", a: 30, b: 20, s: 1.1, kg: 0.15, stoc: true },[cite: 7]
-  { profilNo: "4518", a: 30, b: 20, s: 2, kg: 0.26, stoc: true },[cite: 7]
-  { profilNo: "3774", a: 30, b: 27, s: 1.8, kg: 0.27, stoc: true },[cite: 7]
-  { profilNo: "3092", a: 31.2, b: 14.9, s: 1.2, kg: 0.15, stoc: true },[cite: 7]
-  { profilNo: "1527", a: 35, b: 18, s: 2, kg: 0.28, stoc: true },[cite: 7]
-  { profilNo: "6423", a: 40, b: 5, s: 1.2, kg: 0.14, stoc: true },[cite: 7]
-  { profilNo: "6834", a: 40, b: 10, s: 1.2, kg: 0.16, stoc: true },[cite: 7]
-  { profilNo: "261", a: 40, b: 20, s: 1.2, kg: 0.19, stoc: true },[cite: 7]
-  { profilNo: "3773", a: 40, b: 20, s: 1.8, kg: 0.28, stoc: true },[cite: 7]
-  { profilNo: "211", a: 40, b: 20, s: 2, kg: 0.32, stoc: true },[cite: 7]
-  { profilNo: "3068", a: 45, b: 20, s: 2, kg: 0.34, stoc: true },[cite: 7]
-  { profilNo: "7458", a: 50, b: 20, s: 1.1, kg: 0.21, stoc: true },[cite: 7]
-  { profilNo: "4848", a: 50, b: 30, s: 2, kg: 0.42, stoc: true },[cite: 7]
-  { profilNo: "8799", a: 50, b: 30, s: 4, kg: 0.82, stoc: true },[cite: 7]
-  { profilNo: "4519", a: 50, b: 40, s: 2, kg: 0.48, stoc: true },[cite: 7]
-  { profilNo: "6563", a: 60, b: 5, s: 1.4, kg: 0.24, stoc: true },[cite: 7]
-  { profilNo: "262", a: 60, b: 20, s: 1.4, kg: 0.30, stoc: true },[cite: 7]
-  { profilNo: "11712", a: 60, b: 15, s: 3, kg: 0.59, stoc: true },[cite: 7]
-  { profilNo: "11710", a: 60, b: 27, s: 3, kg: 0.68, stoc: true },[cite: 7]
-  { profilNo: "4520", a: 60, b: 35, s: 5, kg: 1.22, stoc: true },[cite: 7]
-  { profilNo: "8196", a: 60, b: 40, s: 1.5, kg: 0.40, stoc: true },[cite: 7]
-  { profilNo: "10845", a: 60, b: 40, s: 2, kg: 0.53, stoc: true },[cite: 7]
-  { profilNo: "557", a: 60, b: 40, s: 3, kg: 0.79, stoc: true },[cite: 7]
-  { profilNo: "862", a: 65, b: 8, s: 1.8, kg: 0.35, stoc: true },[cite: 7]
-  { profilNo: "8394", a: 65, b: 10, s: 1.5, kg: 0.30, stoc: true },[cite: 7]
-  { profilNo: "9063", a: 75, b: 20, s: 2, kg: 0.50, stoc: true },[cite: 7]
-  { profilNo: "11877", a: 75, b: 50, s: 6, kg: 1.93, stoc: true },[cite: 7]
-  { profilNo: "14068", a: 76, b: 50, s: 5, kg: 1.64, stoc: true },[cite: 7]
-  { profilNo: "517", a: 80, b: 20, s: 1.2, kg: 0.32, stoc: true },[cite: 7]
-  { profilNo: "2985", a: 80, b: 20, s: 1.4, kg: 0.37, stoc: true },[cite: 7]
-  { profilNo: "5447", a: 80, b: 60, s: 3, kg: 1.11, stoc: true },[cite: 7]
-  { profilNo: "8798", a: 80, b: 60, s: 6, kg: 2.18, stoc: true },[cite: 7]
-  { profilNo: "1354", a: 85, b: 30, s: 1.5, kg: 0.46, stoc: true },[cite: 7]
-  { profilNo: "10064", a: 90, b: 40, s: 2, kg: 0.69, stoc: true },[cite: 7]
-  { profilNo: "13699", a: 95, b: 35, s: 2, kg: 0.69, stoc: true },[cite: 7]
-  { profilNo: "2986", a: 100, b: 20, s: 1.5, kg: 0.48, stoc: true },[cite: 7]
-  { profilNo: "4521", a: 100, b: 35, s: 5, kg: 1.76, stoc: true },[cite: 7]
-  { profilNo: "8795", a: 100, b: 50, s: 3.5, kg: 1.39, stoc: true },[cite: 7]
-  { profilNo: "8796", a: 100, b: 50, s: 5, kg: 1.96, stoc: true },[cite: 7]
-  { profilNo: "7085", a: 100, b: 80, s: 6, kg: 2.83, stoc: true },[cite: 7]
-  { profilNo: "7084", a: 100, b: 80, s: 10, kg: 4.61, stoc: true },[cite: 7]
-  { profilNo: "7703", a: 100, b: 85, s: 4, kg: 1.96, stoc: true },[cite: 7]
-  { profilNo: "10147", a: 120, b: 27, s: 5, kg: 1.92, stoc: true },[cite: 7]
-  { profilNo: "11941", a: 120, b: 20, s: 1.5, kg: 0.56, stoc: true },[cite: 7]
-  { profilNo: "294", a: 120, b: 40, s: 5, kg: 2.10, stoc: true },[cite: 7]
-  { profilNo: "13679", a: 120, b: 50, s: 3, kg: 1.36, stoc: true },[cite: 7]
-  { profilNo: "8797", a: 120, b: 90, s: 8, kg: 4.38, stoc: true },[cite: 7]
-  { profilNo: "13680", a: 140, b: 50, s: 3, kg: 1.52, stoc: true },[cite: 7]
-  { profilNo: "7704", a: 140, b: 75, s: 5, kg: 2.49, stoc: true },[cite: 7]
-  { profilNo: "514", a: 150, b: 20, s: 2, kg: 0.69, stoc: true },[cite: 7]
-  { profilNo: "7314", a: 150, b: 20, s: 2, kg: 0.91, stoc: true },[cite: 7]
-  { profilNo: "13681", a: 160, b: 50, s: 3, kg: 1.68, stoc: true },[cite: 7]
-  { profilNo: "14274", a: 180, b: 50, s: 3, kg: 1.85, stoc: true },[cite: 7]
-  { profilNo: "7588", a: 180, b: 95, s: 10, kg: 7.18, stoc: true },[cite: 7]
-  { profilNo: "7312", a: 200, b: 150, s: 10, kg: 9.21, stoc: true }[cite: 7]
+  { profilNo: "2203", a: 20, b: 10, s: 1.2, kg: 0.09, stoc: true },
+  { profilNo: "10016", a: 20, b: 10, s: 1.4, kg: 0.11, stoc: true },
+  { profilNo: "13862", a: 20, b: 10, s: 2, kg: 0.15, stoc: true },
+  { profilNo: "2872", a: 25, b: 13, s: 2, kg: 0.18, stoc: true },
+  { profilNo: "558", a: 25, b: 13, s: 2, kg: 0.20, stoc: true },
+  { profilNo: "3772", a: 28, b: 15, s: 1.8, kg: 0.20, stoc: true },
+  { profilNo: "5725", a: 30, b: 15, s: 1, kg: 0.12, stoc: true },
+  { profilNo: "5724", a: 30, b: 20, s: 1, kg: 0.13, stoc: true },
+  { profilNo: "519", a: 30, b: 20, s: 1.1, kg: 0.15, stoc: true },
+  { profilNo: "4518", a: 30, b: 20, s: 2, kg: 0.26, stoc: true },
+  { profilNo: "3774", a: 30, b: 27, s: 1.8, kg: 0.27, stoc: true },
+  { profilNo: "3092", a: 31.2, b: 14.9, s: 1.2, kg: 0.15, stoc: true },
+  { profilNo: "1527", a: 35, b: 18, s: 2, kg: 0.28, stoc: true },
+  { profilNo: "6423", a: 40, b: 5, s: 1.2, kg: 0.14, stoc: true },
+  { profilNo: "6834", a: 40, b: 10, s: 1.2, kg: 0.16, stoc: true },
+  { profilNo: "261", a: 40, b: 20, s: 1.2, kg: 0.19, stoc: true },
+  { profilNo: "3773", a: 40, b: 20, s: 1.8, kg: 0.28, stoc: true },
+  { profilNo: "211", a: 40, b: 20, s: 2, kg: 0.32, stoc: true },
+  { profilNo: "3068", a: 45, b: 20, s: 2, kg: 0.34, stoc: true },
+  { profilNo: "7458", a: 50, b: 20, s: 1.1, kg: 0.21, stoc: true },
+  { profilNo: "4848", a: 50, b: 30, s: 2, kg: 0.42, stoc: true },
+  { profilNo: "8799", a: 50, b: 30, s: 4, kg: 0.82, stoc: true },
+  { profilNo: "4519", a: 50, b: 40, s: 2, kg: 0.48, stoc: true },
+  { profilNo: "6563", a: 60, b: 5, s: 1.4, kg: 0.24, stoc: true },
+  { profilNo: "262", a: 60, b: 20, s: 1.4, kg: 0.30, stoc: true },
+  { profilNo: "11712", a: 60, b: 15, s: 3, kg: 0.59, stoc: true },
+  { profilNo: "11710", a: 60, b: 27, s: 3, kg: 0.68, stoc: true },
+  { profilNo: "4520", a: 60, b: 35, s: 5, kg: 1.22, stoc: true },
+  { profilNo: "8196", a: 60, b: 40, s: 1.5, kg: 0.40, stoc: true },
+  { profilNo: "10845", a: 60, b: 40, s: 2, kg: 0.53, stoc: true },
+  { profilNo: "557", a: 60, b: 40, s: 3, kg: 0.79, stoc: true },
+  { profilNo: "862", a: 65, b: 8, s: 1.8, kg: 0.35, stoc: true },
+  { profilNo: "8394", a: 65, b: 10, s: 1.5, kg: 0.30, stoc: true },
+  { profilNo: "9063", a: 75, b: 20, s: 2, kg: 0.50, stoc: true },
+  { profilNo: "11877", a: 75, b: 50, s: 6, kg: 1.93, stoc: true },
+  { profilNo: "14068", a: 76, b: 50, s: 5, kg: 1.64, stoc: true },
+  { profilNo: "517", a: 80, b: 20, s: 1.2, kg: 0.32, stoc: true },
+  { profilNo: "2985", a: 80, b: 20, s: 1.4, kg: 0.37, stoc: true },
+  { profilNo: "5447", a: 80, b: 60, s: 3, kg: 1.11, stoc: true },
+  { profilNo: "8798", a: 80, b: 60, s: 6, kg: 2.18, stoc: true },
+  { profilNo: "1354", a: 85, b: 30, s: 1.5, kg: 0.46, stoc: true },
+  { profilNo: "10064", a: 90, b: 40, s: 2, kg: 0.69, stoc: true },
+  { profilNo: "13699", a: 95, b: 35, s: 2, kg: 0.69, stoc: true },
+  { profilNo: "2986", a: 100, b: 20, s: 1.5, kg: 0.48, stoc: true },
+  { profilNo: "4521", a: 100, b: 35, s: 5, kg: 1.76, stoc: true },
+  { profilNo: "8795", a: 100, b: 50, s: 3.5, kg: 1.39, stoc: true },
+  { profilNo: "8796", a: 100, b: 50, s: 5, kg: 1.96, stoc: true },
+  { profilNo: "7085", a: 100, b: 80, s: 6, kg: 2.83, stoc: true },
+  { profilNo: "7084", a: 100, b: 80, s: 10, kg: 4.61, stoc: true },
+  { profilNo: "7703", a: 100, b: 85, s: 4, kg: 1.96, stoc: true },
+  { profilNo: "10147", a: 120, b: 27, s: 5, kg: 1.92, stoc: true },
+  { profilNo: "11941", a: 120, b: 20, s: 1.5, kg: 0.56, stoc: true },
+  { profilNo: "294", a: 120, b: 40, s: 5, kg: 2.10, stoc: true },
+  { profilNo: "13679", a: 120, b: 50, s: 3, kg: 1.36, stoc: true },
+  { profilNo: "8797", a: 120, b: 90, s: 8, kg: 4.38, stoc: true },
+  { profilNo: "13680", a: 140, b: 50, s: 3, kg: 1.52, stoc: true },
+  { profilNo: "7704", a: 140, b: 75, s: 5, kg: 2.49, stoc: true },
+  { profilNo: "514", a: 150, b: 20, s: 2, kg: 0.69, stoc: true },
+  { profilNo: "7314", a: 150, b: 20, s: 2, kg: 0.91, stoc: true },
+  { profilNo: "13681", a: 160, b: 50, s: 3, kg: 1.68, stoc: true },
+  { profilNo: "14274", a: 180, b: 50, s: 3, kg: 1.85, stoc: true },
+  { profilNo: "7588", a: 180, b: 95, s: 10, kg: 7.18, stoc: true },
+  { profilNo: "7312", a: 200, b: 150, s: 10, kg: 9.21, stoc: true }
 ];
 export default cornierData;
