@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 // Veri dosyanızın yolunu kendi klasör yapınıza göre kontrol edin. 
 // Örneğin: '@/app/data/cornier' veya '@/data/cornier'
-import cornierData from '@/data/cornier'; 
+import cornierData from '@/app/data/cornier';
 
 // CSS dosyanızı import ediyoruz
 import styles from './product-page.module.css'; 
