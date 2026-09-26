@@ -10,6 +10,7 @@ const categoryImages = [
 ];
 
 export const categories = [
+  // 1. ANA KATEGORİ: Sisteme Aluminiu AKPA ve Alt Kategorileri
   {
     name: "Sisteme Aluminiu AKPA",
     slug: "sisteme-aluminiu-akpa",
@@ -132,77 +133,75 @@ export const categories = [
           }
         ]
       },
-        
-      
-  
-
       {
-    name: "Perete Cortina",
-    slug: "perete-cortina",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
+        name: "Perete Cortina",
+        slug: "perete-cortina",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
+        description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
+      },
+      {
+        name: "Gard",
+        slug: "gard",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+        description: "Profile și sisteme din aluminiu pentru garduri rezidențiale moderne.",
+      },
+      {
+        name: "INCHIDERE TERASA",
+        slug: "inchidere-terasa",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.",
+        products: [
+          {
+            id: "glisant-geam-simplu-sc100",
+            slug: "glisant-geam-simplu-sc100",
+            name: "Glisant Geam Simplu - SC100",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
+            pdfUrl: "/pdf/sc100.pdf"
+          },
+          {
+            id: "glisant-geam-termopan-iscb140",
+            slug: "glisant-geam-termopan-iscb140",
+            name: "Glisant Geam Termopan - ISCB140",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
+            pdfUrl: "/pdf/iscb140.pdf"
+          },
+          {
+            id: "sistem-tip-ghilotina",
+            slug: "sistem-tip-ghilotina",
+            name: "Sistem Tip Ghilotina",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            description: "Sistem tip ghilotină motorizat/manual pentru terase.",
+            pdfUrl: "/pdf/ghilotina.pdf"
+          },
+          {
+            id: "sistem-tip-acordeon",
+            slug: "sistem-tip-acordeon",
+            name: "Sistem Tip Acordeon",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            description: "Sistem tip acordeon pliabil pentru închidere spații.",
+            pdfUrl: "/pdf/acordeon.pdf"
+          },
+          {
+            id: "sistem-tip-copertina-sticla",
+            slug: "sistem-tip-copertina-sticla",
+            name: "Sistem Tip Copertina Sticla",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+            description: "Sistem copertină din sticlă pentru protecție exterioară.",
+            pdfUrl: "/pdf/copertina-sticla.pdf"
+          }
+        ]
+      }
+    ],
   },
-  {
-    name: "Gard",
-    slug: "gard",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
-  },
-  {
-    name: "INCHIDERE TERASA",
-    slug: "inchidere-terasa",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-    description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.", // <-- BU SATIRI EKLEYİN
-    products: [
-      {
-        id: "glisant-geam-simplu-sc100",
-        slug: "glisant-geam-simplu-sc100",
-        name: "Glisant Geam Simplu - SC100",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
-        pdfUrl: "/pdf/sc100.pdf"
-      },
-      {
-        id: "glisant-geam-termopan-iscb140",
-        slug: "glisant-geam-termopan-iscb140",
-        name: "Glisant Geam Termopan - ISCB140",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
-        pdfUrl: "/pdf/iscb140.pdf"
-      },
-      {
-        id: "sistem-tip-ghilotina",
-        slug: "sistem-tip-ghilotina",
-        name: "Sistem Tip Ghilotina",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        description: "Sistem tip ghilotină motorizat/manual pentru terase.",
-        pdfUrl: "/pdf/ghilotina.pdf"
-      },
-      {
-        id: "sistem-tip-acordeon",
-        slug: "sistem-tip-acordeon",
-        name: "Sistem Tip Acordeon",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        description: "Sistem tip acordeon pliabil pentru închidere spații.",
-        pdfUrl: "/pdf/acordeon.pdf"
-      },
-      {
-        id: "sistem-tip-copertina-sticla",
-        slug: "sistem-tip-copertina-sticla",
-        name: "Sistem Tip Copertina Sticla",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        description: "Sistem copertină din sticlă pentru protecție exterioară.",
-        pdfUrl: "/pdf/copertina-sticla.pdf"
- } , 
-] ,
 
-},
-
-
- 
+  // 2. ANA KATEGORİ: Sisteme Balustrada
   {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
@@ -314,6 +313,8 @@ export const categories = [
       }
     ],
   },
+
+  // 3. ANA KATEGORİ: Glafuri din Aluminiu
   {
     name: "Glafuri din Aluminiu",
     slug: "glafuri-din-aluminiu",
@@ -327,6 +328,8 @@ export const categories = [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
     ],
   }, 
+
+  // 4. ANA KATEGORİ: ACP Aluminiu Compozit Panel (Bond)
   {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
@@ -376,6 +379,8 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     ],
     subcategories: []
   },
+
+  // 5. ANA KATEGORİ: Sticla Laminata Securizata
   {
     id: "sticla",
     slug: "sticla",
