@@ -139,11 +139,56 @@ export const categories = [
           }
         ]
       },
-      {
-        name: "DIVERSE Profile Aluminiu",
-        slug: "diverse-profile-aluminiu",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Diverse-Aluminiu-1_j8s9po.png",
-      },
+      // Yeni Hali (6 ürünü de ekleyerek):
+{
+  name: "Profile Standard Aluminiu",
+  slug: "profile-standard-aluminiu",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428981/Profile_aluminiu_standard_vojgdy.jpg",
+  products: [
+    {
+      id: "cornier",
+      slug: "cornier",
+      name: "Cornier Aluminiu (Profil L)",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
+      description: "Cornier din aluminiu cu laturi egale sau inegale."
+    },
+     {
+      id: "teava-rectangulara",
+      slug: "teava-rectangulara",
+      name: "Țeavă Rectangulară Aluminiu",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg",
+      description: "Țeavă rectangulară ideală pentru structuri de rezistență și cadre."
+    },
+    {
+      id: "teava-rotunda",
+      slug: "teava-rotunda",
+      name: "Țeavă Rotundă Aluminiu",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/Profile_Teava_rotund_pwncn5.jpg", // Şimdilik ana resmi kullandım, sonra değiştirebilirsiniz
+      description: "Țeavă rotundă din aluminiu pentru diverse aplicații."
+    },
+    {
+      id: "teava-patrata",
+      slug: "teava-patrata",
+      name: "Țeavă Pătrată Aluminiu",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428503/profile_teava_aluminiu_patrata_essstr.jpg",
+      description: "Profile pătrate din aluminiu pentru construcții ușoare."
+    },
+    {
+      id: "profil-t",
+      slug: "profil-t",
+      name: "Profil T Aluminiu",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428502/Profile_T_mqh20y.png",
+      description: "Profil T pentru mascare și îmbinări panouri."
+    },
+    {
+      id: "platbanda",
+      slug: "platbanda",
+      name: "Platbandă Aluminiu (Profil Plat)",
+      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_platbanda_bjyh46.jpg",
+      description: "Platbandă din aluminiu pentru distanțiere și elemente decorative."
+    }
+  ]
+}
     ],
   },
  {

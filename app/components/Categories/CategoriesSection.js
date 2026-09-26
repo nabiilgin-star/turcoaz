@@ -21,7 +21,7 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Sisteme Aluminiu Akpa',
       slug: 'sisteme-aluminiu-akpa',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800',
-      subcategories: ['Sisteme Tâmplărie', 'Perete Cortină', 'Gard', 'Închidere Terasă', 'Diverse Profile Aluminiu', 'Glafuri din Aluminiu']
+      subcategories: ['Sisteme Tâmplărie', 'Perete Cortină', 'Gard', 'Închidere Terasă', 'Profile Standard Aluminiu', 'Glafuri din Aluminiu']
     },
     {
       id: 2,
