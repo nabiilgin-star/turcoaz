@@ -1,13 +1,12 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; // <-- BU EKLENDİ
+import Image from 'next/image';
 
-// Veri dosyanızın yolunu kendi klasör yapınıza göre kontrol edin. 
-// Örneğin: '@/app/data/cornier' veya '@/data/cornier'
+// Veri dosyanızın yolu
 import cornierData from '@/app/data/cornier';
 
-// CSS dosyanızı import ediyoruz
+// CSS dosyanız
 import styles from './product-page.module.css'; 
 
 export default function CornierView() {
@@ -16,16 +15,35 @@ export default function CornierView() {
   const [filterB, setFilterB] = useState('');
   const [filterS, setFilterS] = useState('');
 
-  // Dropdown'lar için benzersiz (unique) ölçüleri çıkarıp küçükten büyüğe sıralıyoruz
+  // 1. Latura a her zaman tüm benzersiz a değerlerini listeler
   const uniqueA = [...new Set(cornierData.map(item => item.a))].sort((a, b) => a - b);
-  // Eğer b değeri yoksa (eşkenar ise) a değerini b olarak kabul ediyoruz
-  const uniqueB = [...new Set(cornierData.map(item => item.b || item.a))].sort((a, b) => a - b);
-  const uniqueS = [...new Set(cornierData.map(item => item.s))].sort((a, b) => a - b);
+
+  // 2. Latura b, seçilen filterA'ya göre dinamik olarak daralır (Eşkenar için b = a kabul edilir)
+  const uniqueB = [...new Set(
+    cornierData
+      .filter(item => {
+        const itemB = item.b || item.a;
+        return filterA === '' || item.a.toString() === filterA;
+      })
+      .map(item => item.b || item.a)
+  )].sort((a, b) => a - b);
+
+  // 3. Grosime s, seçilen a ve b değerlerine göre dinamik olarak daralır
+  const uniqueS = [...new Set(
+    cornierData
+      .filter(item => {
+        const itemB = item.b || item.a;
+        const matchA = filterA === '' || item.a.toString() === filterA;
+        const matchB = filterB === '' || itemB.toString() === filterB;
+        return matchA && matchB;
+      })
+      .map(item => item.s)
+  )].sort((a, b) => a - b);
 
   // Tabloyu anlık filtreleme mantığı
   const filteredData = cornierData.filter(item => {
     const matchA = filterA === '' || item.a.toString() === filterA;
-    const itemB = item.b || item.a; // Eşkenar ise b değeri a'ya eşittir
+    const itemB = item.b || item.a; 
     const matchB = filterB === '' || itemB.toString() === filterB;
     const matchS = filterS === '' || item.s.toString() === filterS;
     
@@ -71,7 +89,14 @@ export default function CornierView() {
         <div className={styles.filterBar}>
           <div className={styles.filterGroup}>
             <label>Latura a (mm)</label>
-            <select value={filterA} onChange={(e) => setFilterA(e.target.value)}>
+            <select 
+              value={filterA} 
+              onChange={(e) => {
+                setFilterA(e.target.value);
+                setFilterB(''); // A değişince B sıfırlanır
+                setFilterS(''); // A değişince S sıfırlanır
+              }}
+            >
               <option value="">Toate</option>
               {uniqueA.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
@@ -79,7 +104,13 @@ export default function CornierView() {
           
           <div className={styles.filterGroup}>
             <label>Latura b (mm)</label>
-            <select value={filterB} onChange={(e) => setFilterB(e.target.value)}>
+            <select 
+              value={filterB} 
+              onChange={(e) => {
+                setFilterB(e.target.value);
+                setFilterS(''); // B değişince S sıfırlanır
+              }}
+            >
               <option value="">Toate</option>
               {uniqueB.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
@@ -87,7 +118,10 @@ export default function CornierView() {
 
           <div className={styles.filterGroup}>
             <label>Grosime s (mm)</label>
-            <select value={filterS} onChange={(e) => setFilterS(e.target.value)}>
+            <select 
+              value={filterS} 
+              onChange={(e) => setFilterS(e.target.value)}
+            >
               <option value="">Toate</option>
               {uniqueS.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
@@ -122,7 +156,6 @@ export default function CornierView() {
                     <td>{row.s} mm</td>
                     <td>{row.kg} Kg/ml</td>
                     <td>
-                      {/* JSON verinizdeki stoc durumuna göre yeşil veya sarı etiket */}
                       {row.stoc ? (
                         <span className={styles.badgeStoc}>În stoc</span>
                       ) : (

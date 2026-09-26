@@ -10,10 +10,28 @@ export default function TeavaRectangularaView() {
   const [filterB, setFilterB] = useState('');
   const [filterS, setFilterS] = useState('');
 
+  // 1. Latura a her zaman tüm benzersiz a değerlerini listeler
   const uniqueA = [...new Set(teavaData.map(item => item.a))].sort((x, y) => x - y);
-  const uniqueB = [...new Set(teavaData.map(item => item.b))].sort((x, y) => x - y);
-  const uniqueS = [...new Set(teavaData.map(item => item.s))].sort((x, y) => x - y);
 
+  // 2. Latura b, seçilen filterA'ya göre dinamik olarak daralır
+  const uniqueB = [...new Set(
+    teavaData
+      .filter(item => filterA === '' || item.a.toString() === filterA)
+      .map(item => item.b)
+  )].sort((x, y) => x - y);
+
+  // 3. Et kalınlığı s, seçilen a ve b değerlerine göre dinamik olarak daralır
+  const uniqueS = [...new Set(
+    teavaData
+      .filter(item => {
+        const matchA = filterA === '' || item.a.toString() === filterA;
+        const matchB = filterB === '' || item.b.toString() === filterB;
+        return matchA && matchB;
+      })
+      .map(item => item.s)
+  )].sort((x, y) => x - y);
+
+  // Tablo verisini filtreleme mantığı
   const filteredData = teavaData.filter(item => {
     const matchA = filterA === '' || item.a.toString() === filterA;
     const matchB = filterB === '' || item.b.toString() === filterB;
@@ -57,7 +75,14 @@ export default function TeavaRectangularaView() {
         <div className={styles.filterBar}>
           <div className={styles.filterGroup}>
             <label>Latura a (mm)</label>
-            <select value={filterA} onChange={(e) => setFilterA(e.target.value)}>
+            <select 
+              value={filterA} 
+              onChange={(e) => {
+                setFilterA(e.target.value);
+                setFilterB(''); // A değişince B sıfırlanır
+                setFilterS(''); // A değişince S sıfırlanır
+              }}
+            >
               <option value="">Toate</option>
               {uniqueA.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
@@ -65,7 +90,13 @@ export default function TeavaRectangularaView() {
           
           <div className={styles.filterGroup}>
             <label>Latura b (mm)</label>
-            <select value={filterB} onChange={(e) => setFilterB(e.target.value)}>
+            <select 
+              value={filterB} 
+              onChange={(e) => {
+                setFilterB(e.target.value);
+                setFilterS(''); // B değişince S sıfırlanır
+              }}
+            >
               <option value="">Toate</option>
               {uniqueB.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
@@ -73,7 +104,10 @@ export default function TeavaRectangularaView() {
 
           <div className={styles.filterGroup}>
             <label>Grosime s (mm)</label>
-            <select value={filterS} onChange={(e) => setFilterS(e.target.value)}>
+            <select 
+              value={filterS} 
+              onChange={(e) => setFilterS(e.target.value)}
+            >
               <option value="">Toate</option>
               {uniqueS.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
