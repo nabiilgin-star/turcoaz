@@ -31,7 +31,7 @@ export default function ProductView({ product }) {
 
           {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
           <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
-            ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunăr)
+            ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunar)
           </div>
 
           {/* 2. Bölüm: Üstte Açıklama, Altta Teknik Kesit Resmi (Dikey Akış) */}
@@ -169,7 +169,7 @@ export default function ProductView({ product }) {
         
         {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
         <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
-          ✓ Agrement Tehnic • Cel mai bun preț direct de la importator (Import 150t+/lunăr)
+          ✓ Agrement Tehnic • Cel mai bun preț direct de la importator (Import 150t+/lunar)
         </div>
 
         {/* Üstte Büyük Ana Görsel */}
