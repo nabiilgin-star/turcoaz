@@ -134,21 +134,23 @@ export const categories = [
       }
     ],
   },
-  {
+ {
     name: "Perete Cortina",
     slug: "perete-cortina",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
+    description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
   },
   {
     name: "Gard",
     slug: "gard",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+    description: "Profile și sisteme din aluminiu pentru garduri rezidențiale moderne.",
   },
   {
     name: "INCHIDERE TERASA",
     slug: "inchidere-terasa",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-    description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.", // <-- BU SATIRI EKLEYİN
+    description: "Sisteme complete de închidere terase cu sticlă și profile din aluminiu.",
     products: [
       {
         id: "glisant-geam-simplu-sc100",
