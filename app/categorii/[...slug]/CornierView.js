@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // <-- BU EKLENDİ
 
 // Veri dosyanızın yolunu kendi klasör yapınıza göre kontrol edin. 
 // Örneğin: '@/app/data/cornier' veya '@/data/cornier'
@@ -33,10 +34,16 @@ export default function CornierView() {
 
   return (
     <section className={styles.b2bProductSection}>
-      {/* 1. ÜST BÖLÜM: B2B SATIŞ VE GÜVEN */}
+     {/* 1. ÜST BÖLÜM: B2B SATIŞ VE GÜVEN */}
       <div className={styles.productHeroGrid}>
-        <div className={styles.placeholderImage}>
-          Grafic / Secțiune Cornier
+        <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
+          <Image 
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg" 
+            alt="Cornier Aluminiu Profil L"
+            fill
+            style={{ objectFit: "contain", padding: "10px" }}
+            priority
+          />
         </div>
         
         <div>
