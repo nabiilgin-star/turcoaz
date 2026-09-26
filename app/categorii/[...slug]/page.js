@@ -8,6 +8,7 @@ import CategoryView from "./CategoryView";
 import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
 import MobileMenuToggle from "./MobileMenuToggle";
+import CornierView from './CornierView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -18,6 +19,7 @@ import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 // ----------------------------------------------------------------------
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
+  const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
 
   if (!pathSegments || pathSegments.length === 0) {
     return {
@@ -84,6 +86,17 @@ export async function generateMetadata({ params }) {
     }
   }
 
+  if (!result && lastSlug === 'cornier') {
+    result = {
+      type: "product",
+      data: {
+        title: "Cornier Aluminiu",
+        name: "Cornier Aluminiu",
+        description: "Cornier din aluminiu (Profil L) disponibil în diverse dimensiuni. Peste 200 de tone în stoc permanent.",
+      }
+    }
+  }
+
   if (!result) {
     return {
       title: "Pagina nu a fost găsită | Turcoaz Aluminiu",
@@ -99,8 +112,8 @@ export async function generateMetadata({ params }) {
     title = `${data.name || data.title} | Turcoaz Aluminiu`;
     description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.name || data.title}. Calitate superioară și livrare din stoc.`;
   } else if (type === "subcategory") {
-    title = `${data.subcategory.name} - ${data.category.name || data.category.title} | Turcoaz`;
-    description = data.subcategory.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory.name}. Comandă online la preț de distribuitor.`;
+    title = `${data.subcategory?.name || 'Subcategorie'} - ${data.category?.name || data.category?.title || 'Categorie'} | Turcoaz`;
+    description = data.subcategory?.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory?.name || 'produse'}. Comandă online la preț de distribuitor.`;
   } else if (type === "product") {
     title = `${data.title || data.name} | Turcoaz Aluminiu`;
     description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `${data.title || data.name} - Sistem din aluminiu și sticlă de înaltă rezistență cu certificat de calitate.`;
@@ -145,6 +158,8 @@ export async function generateStaticParams() {
 // ----------------------------------------------------------------------
 export default async function CatchAllCategoryPage({ params }) {
   const { slug: pathSegments } = await params;
+  
+  const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
 
   const [navData, apiResult] = await Promise.all([
     getNavbarData(),
@@ -266,27 +281,37 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  if (!result) {
+  if (!result && lastSlug !== 'cornier') {
     notFound();
   }
 
-  const { type, data } = result;
+  const type = result?.type || "product";
+  const data = result?.data || { 
+    id: "cornier", 
+    title: "Cornier Aluminiu", 
+    name: "Cornier Aluminiu", 
+    slug: "cornier",
+    category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
+  };
+
   const breadcrumbItems = [{ label: "Categorii", href: "/categorii" }];
 
   if (type === "category") {
     breadcrumbItems.push({ label: data.name || data.title, href: `/categorii/${data.slug}` });
-  } else if (type === "subcategory") {
+  } else if (type === "subcategory" && data.category) {
     breadcrumbItems.push({
       label: data.category.name || data.category.title,
       href: `/categorii/${data.category.slug}`,
     });
-    breadcrumbItems.push({ label: data.subcategory.name, href: "#" });
+    breadcrumbItems.push({ label: data.subcategory?.name || 'Subcategorie', href: "#" });
   } else if (type === "product") {
-    breadcrumbItems.push({
-      label: data.category.name || data.category.title,
-      href: `/categorii/${data.category.slug}`,
-    });
-    if (data.subcategory && data.subcategory.slug !== data.slug) {
+    if (data.category) {
+      breadcrumbItems.push({
+        label: data.category.name || data.category.title,
+        href: `/categorii/${data.category.slug}`,
+      });
+    }
+    if (data.subcategory && data.subcategory.slug !== data.slug && data.category) {
       breadcrumbItems.push({
         label: data.subcategory.name,
         href: `/categorii/${data.category.slug}/${data.subcategory.slug}`,
@@ -297,7 +322,6 @@ export default async function CatchAllCategoryPage({ params }) {
 
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
 
-  // // 1. ÜRÜN SAYFALARI İÇİN DİNAMİK SEO SCHEMA (GOOGLE MERCHANT & PRODUCT UYUMLU)
   const productImages = data.gallery && data.gallery.length > 0 
     ? data.gallery 
     : [data.image || data.detailImage].filter(Boolean);
@@ -342,7 +366,6 @@ export default async function CatchAllCategoryPage({ params }) {
     ]
   } : null;
 
-  // 2. KATEGORİ SAYFALARI İÇİN DİNAMİK FAQ SCHEMA (GOOGLE RICH RESULTS DOKUNUŞU)
   const faqSchema = (data?.faqs && data.faqs.length > 0) ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -356,23 +379,24 @@ export default async function CatchAllCategoryPage({ params }) {
     }))
   } : null;
 
+  const productSchemaJson = productSchema ? JSON.stringify(productSchema) : "";
+  const faqSchemaJson = faqSchema ? JSON.stringify(faqSchema) : "";
+
   return (
     <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
-      {/* Product JSON-LD Şeması */}
-      {productSchema && (
+      {productSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+          dangerouslySetInnerHTML={{ __html: productSchemaJson }}
         />
-      )}
+      ) : null}
 
-      {/* FAQ JSON-LD Şeması */}
-      {faqSchema && (
+      {faqSchema ? (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: faqSchemaJson }}
         />
-      )}
+      ) : null}
 
       <TrackView
         table={
@@ -394,7 +418,6 @@ export default async function CatchAllCategoryPage({ params }) {
         <Breadcrumb items={breadcrumbItems} />
       </div>
 
-      {/* MOBİL UYUMLU ÖZEL CSS STİLLERİ */}
       <style>{`
         .catalog-container {
           max-width: 1320px;
@@ -443,12 +466,10 @@ export default async function CatchAllCategoryPage({ params }) {
 
       <div className="catalog-container">
         
-        {/* MOBİL İÇİN AÇ/KAPA BUTONU */}
         <div style={{ gridColumn: "1 / -1", width: "100%" }}>
           <MobileMenuToggle />
         </div>
 
-        {/* SOL FİLTRE PANELİ (Sidebar) */}
         <aside id="categorySidebar" className="sidebar-aside" style={{
           background: "#FFFFFF",
           borderRadius: "16px",
@@ -535,21 +556,29 @@ export default async function CatchAllCategoryPage({ params }) {
 
         {/* SAĞ KATALOG ALANI */}
         <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
-          {type === "category" && <CategoryView category={data} />}
-          {type === "subcategory" && (
-            <SubcategoryView
-              category={data.category}
-              subcategory={data.subcategory}
-              products={data.products}
-              subcategories={data.subcategories}
-            />
+          
+          {lastSlug === "cornier" ? (
+            <CornierView />
+          ) : (
+            <>
+              {type === "category" && <CategoryView category={data} />}
+              {type === "subcategory" && (
+                <SubcategoryView
+                  category={data.category}
+                  subcategory={data.subcategory}
+                  products={data.products}
+                  subcategories={data.subcategories}
+                />
+              )}
+              {type === "product" && (
+                <ProductView 
+                  product={data} 
+                  subcategoryName={data.subcategory?.name} 
+                />
+              )}
+            </>
           )}
-          {type === "product" && (
-            <ProductView 
-              product={data} 
-              subcategoryName={data.subcategory?.name} 
-            />
-          )}
+
         </div>
 
       </div>

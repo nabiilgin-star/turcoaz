@@ -210,3 +210,41 @@
     align-items: center;
   }
 }
+
+.b2bProductSection { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+.productHeroGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+.placeholderImage { background: #f4f4f5; height: 350px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #a1a1aa; border: 2px dashed #e4e4e7; font-weight: 500; }
+.productTitle { font-size: 2.2rem; color: #18181b; margin-bottom: 0.5rem; font-weight: 700; }
+.priceTag { font-size: 1.8rem; font-weight: 800; color: #0284c7; margin-bottom: 2rem; }
+.trustBadges { list-style: none; padding: 0; margin-bottom: 2.5rem; }
+.trustBadges li { margin-bottom: 0.75rem; font-size: 1.05rem; }
+.stockIn { color: #16a34a; font-weight: 600; }
+.shippingNote { color: #3f3f46; font-weight: 500; }
+.taxNote { color: #71717a; font-style: italic; font-size: 0.9rem; }
+.actionButtons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btnCalculator, .btnQuote { padding: 0.85rem 1.5rem; border-radius: 6px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; border: none; transition: all 0.2s ease; }
+.btnCalculator { background: #f4f4f5; color: #18181b; border: 1px solid #e4e4e7; }
+.btnCalculator:hover { background: #e4e4e7; }
+.btnQuote { background: #0284c7; color: white; }
+.btnQuote:hover { background: #0369a1; }
+.technicalTableSection h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #18181b; }
+.filterBar { display: flex; gap: 1.5rem; margin-bottom: 2rem; background: #f8fafc; padding: 1.5rem; border-radius: 8px; align-items: flex-end; border: 1px solid #e2e8f0; }
+.filterGroup { display: flex; flex-direction: column; gap: 0.5rem; }
+.filterGroup label { font-size: 0.875rem; font-weight: 600; color: #475569; }
+.filterGroup select { padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 6px; min-width: 140px; font-family: inherit; font-size: 0.95rem; }
+.btnClearFilters { padding: 0.6rem 1.2rem; background: transparent; color: #ef4444; border: 1px solid #ef4444; border-radius: 6px; cursor: pointer; height: fit-content; font-weight: 500; transition: all 0.2s; }
+.btnClearFilters:hover { background: #fef2f2; }
+.tableResponsive { overflow-x: auto; border-radius: 8px; border: 1px solid #e2e8f0; }
+.b2bTable { width: 100%; border-collapse: collapse; text-align: left; }
+.b2bTable th, .b2bTable td { padding: 1rem 1.5rem; border-bottom: 1px solid #e2e8f0; }
+.b2bTable th { background: #f1f5f9; font-weight: 600; color: #334155; white-space: nowrap; }
+.b2bTable tbody tr:hover { background: #f8fafc; }
+.badgeStoc { background: #dcfce7; color: #166534; padding: 0.35rem 0.75rem; border-radius: 99px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
+.badgeComanda { background: #fef9c3; color: #854d0e; padding: 0.35rem 0.75rem; border-radius: 99px; font-size: 0.85rem; font-weight: 600; display: inline-block; }
+.textCenter { text-align: center; }
+
+@media (max-width: 768px) { 
+  .productHeroGrid { grid-template-columns: 1fr; gap: 2rem; } 
+  .filterBar { flex-direction: column; align-items: stretch; }
+  .btnClearFilters { width: 100%; }
+}
