@@ -132,8 +132,11 @@ export const categories = [
           }
         ]
       },
+        
+      },
   
-  {
+
+      {
     name: "Perete Cortina",
     slug: "perete-cortina",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
@@ -193,9 +196,13 @@ export const categories = [
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
         description: "Sistem copertină din sticlă pentru protecție exterioară.",
         pdfUrl: "/pdf/copertina-sticla.pdf"
-      }
-    ]
-  },
+ } , 
+] ,
+
+},
+
+
+ 
   {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
