@@ -1,5 +1,6 @@
-export const teavaRectangularaData = [
-  // Sol Sütun Verileri
+// cornier.js dosyasının içeriği
+
+const teavaRectangularaData = [
   { profilNo: "3892", a: 12.4, b: 10, s: 1.0, kg: 0.108, stoc: true },
   { profilNo: "3716", a: 15, b: 12.5, s: 1.2, kg: 0.162, stoc: true },
   { profilNo: "4923", a: 18.2, b: 10.9, s: 1.2, kg: 0.174, stoc: true },
@@ -101,3 +102,4 @@ export const teavaRectangularaData = [
   { profilNo: "12611", a: 300, b: 60, s: 3.0, kg: 5.756, stoc: true },
   { profilNo: "14733", a: 380, b: 50, s: 4.0, kg: 9.128, stoc: true }
 ];
+export default teavaRectangularaData;
