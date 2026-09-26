@@ -9,6 +9,7 @@ import SubcategoryView from "./SubcategoryView";
 import ProductView from "./ProductView";
 import MobileMenuToggle from "./MobileMenuToggle";
 import CornierView from './CornierView';
+import TeavaRectangularaView from './TeavaRectangularaView'; 
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -93,6 +94,17 @@ export async function generateMetadata({ params }) {
         title: "Cornier Aluminiu",
         name: "Cornier Aluminiu",
         description: "Cornier din aluminiu (Profil L) disponibil în diverse dimensiuni. Peste 200 de tone în stoc permanent.",
+      }
+    }
+  }
+
+  if (!result && lastSlug === 'teava-rectangulara') {
+    result = {
+      type: "product",
+      data: {
+        title: "Țeavă Rectangulară Aluminiu",
+        name: "Țeavă Rectangulară Aluminiu",
+        description: "Profile Aluminiu Țeavă rectangulară de înaltă calitate. Peste 200 de tone în stoc permanent și livrare rapidă.",
       }
     }
   }
@@ -284,15 +296,36 @@ export default async function CatchAllCategoryPage({ params }) {
   if (!result && lastSlug !== 'cornier') {
     notFound();
   }
+  
+  const allowedSlugs = ['cornier', 'teava-rectangulara'];
+
+  if (!result && !allowedSlugs.includes(lastSlug)) {
+    notFound();
+  }
+
+
+  const currentSlug = lastSlug || "cornier";
+
+  // Her özel sayfa için yedek (fallback) veri sözlüğü
+  const defaultProducts = {
+    "cornier": {
+      id: "cornier",
+      title: "Cornier Aluminiu",
+      name: "Cornier Aluminiu",
+      slug: "cornier",
+      category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
+    },
+    "teava-rectangulara": {
+      id: "teava-rectangulara",
+      title: "Țeavă Rectangulară Aluminiu",
+      name: "Țeavă Rectangulară Aluminiu",
+      slug: "teava-rectangulara",
+      category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
+    }
+  };
 
   const type = result?.type || "product";
-  const data = result?.data || { 
-    id: "cornier", 
-    title: "Cornier Aluminiu", 
-    name: "Cornier Aluminiu", 
-    slug: "cornier",
-    category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
-  };
+  const data = result?.data || defaultProducts[currentSlug] || defaultProducts["cornier"];
 
   const breadcrumbItems = [{ label: "Categorii", href: "/categorii" }];
 
@@ -557,8 +590,10 @@ export default async function CatchAllCategoryPage({ params }) {
         {/* SAĞ KATALOG ALANI */}
         <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
           
-          {lastSlug === "cornier" ? (
+        {lastSlug === "cornier" ? (
             <CornierView />
+          ) : lastSlug === "teava-rectangulara" ? (
+            <TeavaRectangularaView />
           ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
