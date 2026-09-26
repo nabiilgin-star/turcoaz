@@ -46,7 +46,7 @@ export default function WhatsAppButton() {
     >
       <div className="whatsapp-icon-wrapper">
         <Image
-          src="https://res.cloudinary.com/oivvupgw/image/upload/v1790456720/whatsapp-icon_giwjuh.jpg"
+          src="https://res.cloudinary.com/oivvupgw/image/upload/v1790456932/whatsapp-icon_uymrrw.png"
           alt="WhatsApp"
           width={60}
           height={60}

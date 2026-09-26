@@ -87,6 +87,7 @@ export const categories = [
             slug: "cornier",
             name: "Cornier Aluminiu (Profil L)",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
             description: "Cornier din aluminiu cu laturi egale sau inegale."
           },
           {
