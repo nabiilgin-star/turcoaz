@@ -36,10 +36,10 @@ export default function ProductView({ product }) {
 
           {/* 2. Bölüm: Üstte Açıklama, Altta Teknik Kesit Resmi (Dikey Akış) */}
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }}>
-            <div 
-              style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }}
-              dangerouslySetInnerHTML={{ __html: product.description }}
-            />
+          <div 
+  style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }}
+  dangerouslySetInnerHTML={{ __html: product.description || "" }}
+/>
             {product.detailImage && (
               <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
                 <Image 
