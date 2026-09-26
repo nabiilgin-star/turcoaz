@@ -10,7 +10,7 @@ const categoryImages = [
 ];
 
 export const categories = [
-    {
+  {
     name: "Sisteme Aluminiu AKPA",
     slug: "sisteme-aluminiu-akpa",
     icon: Layers,
@@ -76,129 +76,127 @@ export const categories = [
           },
         ],
       },
-           // Yeni Hali (6 ürünü de ekleyerek):
-{
-  name: "Profile Standard Aluminiu",
-  slug: "profile-standard-aluminiu",
-  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428981/Profile_aluminiu_standard_vojgdy.jpg",
-  products: [
-    {
-      id: "cornier",
-      slug: "cornier",
-      name: "Cornier Aluminiu (Profil L)",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
-      description: "Cornier din aluminiu cu laturi egale sau inegale."
-    },
-     {
-      id: "teava-rectangulara",
-      slug: "teava-rectangulara",
-      name: "Teava Rectangulara Aluminiu",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg",
-      description: "Profile Aluminiu Țeavă rectangulară "
-    },
-    {
-      id: "teava-rotunda",
-      slug: "teava-rotunda",
-      name: "Teava Rotunda Aluminiu",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/Profile_Teava_rotund_pwncn5.jpg", // Şimdilik ana resmi kullandım, sonra değiştirebilirsiniz
-      description: "Țeavă rotundă din aluminiu"
-    },
-    {
-      id: "teava-patrata",
-      slug: "teava-patrata",
-      name: "Teava Patrata Aluminiu",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428503/profile_teava_aluminiu_patrata_essstr.jpg",
-      description: "Profile pătrate din aluminiu"
-    },
-    {
-      id: "profil-U",
-      slug: "profil-U",
-      name: "Profil U Aluminiu",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790447666/Profile_Aluminiu_U_bl5olf.jpg",
-      description: "Profil U "
-    },
-    {
-      id: "profil-t",
-      slug: "profil-t",
-      name: "Profil T Aluminiu",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428502/Profile_T_mqh20y.png",
-      description: "Profil din Aluminiu T"
-    },
-    {
-      id: "platbanda",
-      slug: "platbanda",
-      name: "Platbanda Aluminiu (Profil Plat)",
-      image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_platbanda_bjyh46.jpg",
-      description: "Profile Platbandă din aluminiu"
-    }
-  ]
-}
-    ],
-  },
       {
-        name: "Perete Cortina",
-        slug: "perete-cortina",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
-      },
-      {
-        name: "Gard",
-        slug: "gard",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
-      },
-     {
-        name: "INCHIDERE TERASA",
-        slug: "inchidere-terasa",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        name: "Profile Standard Aluminiu",
+        slug: "profile-standard-aluminiu",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428981/Profile_aluminiu_standard_vojgdy.jpg",
         products: [
           {
-            id: "glisant-geam-simplu-sc100",
-            slug: "glisant-geam-simplu-sc100",
-            name: "Glisant Geam Simplu - SC100",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
-            pdfUrl: "/pdf/sc100.pdf"
+            id: "cornier",
+            slug: "cornier",
+            name: "Cornier Aluminiu (Profil L)",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
+            description: "Cornier din aluminiu cu laturi egale sau inegale."
           },
           {
-            id: "glisant-geam-termopan-iscb140",
-            slug: "glisant-geam-termopan-iscb140",
-            name: "Glisant Geam Termopan - ISCB140",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
-            pdfUrl: "/pdf/iscb140.pdf"
+            id: "teava-rectangulara",
+            slug: "teava-rectangulara",
+            name: "Teava Rectangulara Aluminiu",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg",
+            description: "Profile Aluminiu Țeavă rectangulară"
           },
           {
-            id: "sistem-tip-ghilotina",
-            slug: "sistem-tip-ghilotina",
-            name: "Sistem Tip Ghilotina",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem tip ghilotină motorizat/manual pentru terase.",
-            pdfUrl: "/pdf/ghilotina.pdf"
+            id: "teava-rotunda",
+            slug: "teava-rotunda",
+            name: "Teava Rotunda Aluminiu",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/Profile_Teava_rotund_pwncn5.jpg",
+            description: "Țeavă rotundă din aluminiu"
           },
           {
-            id: "sistem-tip-acordeon",
-            slug: "sistem-tip-acordeon",
-            name: "Sistem Tip Acordeon",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem tip acordeon pliabil pentru închidere spații.",
-            pdfUrl: "/pdf/acordeon.pdf"
+            id: "teava-patrata",
+            slug: "teava-patrata",
+            name: "Teava Patrata Aluminiu",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428503/profile_teava_aluminiu_patrata_essstr.jpg",
+            description: "Profile pătrate din aluminiu"
           },
           {
-            id: "sistem-tip-copertina-sticla",
-            slug: "sistem-tip-copertina-sticla",
-            name: "Sistem Tip Copertina Sticla",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem copertină din sticlă pentru protecție exterioară.",
-            pdfUrl: "/pdf/copertina-sticla.pdf"
+            id: "profil-U",
+            slug: "profil-U",
+            name: "Profil U Aluminiu",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790447666/Profile_Aluminiu_U_bl5olf.jpg",
+            description: "Profil U"
+          },
+          {
+            id: "profil-t",
+            slug: "profil-t",
+            name: "Profil T Aluminiu",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428502/Profile_T_mqh20y.png",
+            description: "Profil din Aluminiu T"
+          },
+          {
+            id: "platbanda",
+            slug: "platbanda",
+            name: "Platbanda Aluminiu (Profil Plat)",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_platbanda_bjyh46.jpg",
+            description: "Profile Platbandă din aluminiu"
           }
         ]
+      }
+    ],
+  },
+  {
+    name: "Perete Cortina",
+    slug: "perete-cortina",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
+  },
+  {
+    name: "Gard",
+    slug: "gard",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+  },
+  {
+    name: "INCHIDERE TERASA",
+    slug: "inchidere-terasa",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+    products: [
+      {
+        id: "glisant-geam-simplu-sc100",
+        slug: "glisant-geam-simplu-sc100",
+        name: "Glisant Geam Simplu - SC100",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
+        pdfUrl: "/pdf/sc100.pdf"
       },
-
- {
+      {
+        id: "glisant-geam-termopan-iscb140",
+        slug: "glisant-geam-termopan-iscb140",
+        name: "Glisant Geam Termopan - ISCB140",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
+        pdfUrl: "/pdf/iscb140.pdf"
+      },
+      {
+        id: "sistem-tip-ghilotina",
+        slug: "sistem-tip-ghilotina",
+        name: "Sistem Tip Ghilotina",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sistem tip ghilotină motorizat/manual pentru terase.",
+        pdfUrl: "/pdf/ghilotina.pdf"
+      },
+      {
+        id: "sistem-tip-acordeon",
+        slug: "sistem-tip-acordeon",
+        name: "Sistem Tip Acordeon",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sistem tip acordeon pliabil pentru închidere spații.",
+        pdfUrl: "/pdf/acordeon.pdf"
+      },
+      {
+        id: "sistem-tip-copertina-sticla",
+        slug: "sistem-tip-copertina-sticla",
+        name: "Sistem Tip Copertina Sticla",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        description: "Sistem copertină din sticlă pentru protecție exterioară.",
+        pdfUrl: "/pdf/copertina-sticla.pdf"
+      }
+    ]
+  },
+  {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
     name: "Sisteme Balustradă",
@@ -231,9 +229,8 @@ export const categories = [
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790026060/Balustrada_sticla_M90_lhzpom.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1790026060/Balustrada_sticla_M90_lhzpom.jpg",
             description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M90 – Sistem Premium.<br>Căutați profile din aluminiu pentru balustradă din sticlă, profil U continuu sau sisteme complete de balustradă în România? S.C. Turcoaz Aluminiu S.R.L. oferă sistemul premium AKPA M90, proiectat pentru siguranță, eleganță și durabilitate. Disponibil cu stoc permanent în depozitul din Popești‑Leordeni și în filiala regională Alufab Iași, asigurând distribuție rapidă la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Performanță & Avantaje Tehnice – AKPA M90</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Rezistență Certificată 3 kN/ml</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— profilul AKPA M90 Premium oferă rezistență structurală superioară, ideal pentru balcoane rezidențiale cu regim mare de înălțime și proiecte private.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Profil U pentru Balustradă Continuă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— sistem bazat pe profil U din aluminiu, pentru montaj curat, fixare stabilă și transparență arhitecturală maximă, fără montanți verticali.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Siguranță & Estetică Modernă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— compatibil cu sticlă securizată și stratificată, oferind un design minimalist, elegant și durabil pentru fațade și terase.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în Popești‑Leordeni și prin filiala Alufab Iași, pentru întreaga rețea de parteneri și distribuitori.</span>",
-
             pdfUrl: "/pdf/m90.pdf",
-             gallery: [
+            gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1790026990/Balustrada_sticla_M90_1_wmevlt.jpg",
               "https://res.cloudinary.com/oivvupgw/image/upload/v1790026795/Balustrada_sticla_m90_3_ko05xi.jpg",
             ],
@@ -262,7 +259,7 @@ export const categories = [
             description: "Sistem de balustradă din aluminiu M300.",
             pdfUrl: "/pdf/m300.pdf"
           },
-                    {
+          {
             id: "m100",
             slug: "m100",
             name: "m100",
@@ -310,20 +307,19 @@ export const categories = [
       }
     ],
   },
-   {
-        name: "Glafuri din Aluminiu",
-        slug: "glafuri-din-aluminiu",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
-        detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-        description: `Sisteme Premium de Glafuri din Aluminiu Extrudat | Pervazuri Profesionale pentru Ferestre.<br>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Caracteristici Tehnice & Finisaje Disponibile</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Culori & Finisaje Populare</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Dimensiuni & Grosime Robuste</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui cuprinsă între 1,4 mm și 2,5 mm în funcție de configurație.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Lungimi Extinse & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Protecție Împotriva Infiltrațiilor</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</span> `,
-        gallery: [
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784589195/PERVAZ-TP2_gnubk0.png",
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784589429/pervaz4_lzmcdu.jpg",
-          "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
-        ],
-      }, 
-  
+  {
+    name: "Glafuri din Aluminiu",
+    slug: "glafuri-din-aluminiu",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
+    description: `Sisteme Premium de Glafuri din Aluminiu Extrudat | Pervazuri Profesionale pentru Ferestre.<br>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Caracteristici Tehnice & Finisaje Disponibile</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Culori & Finisaje Populare</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Dimensiuni & Grosime Robuste</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui cuprinsă între 1,4 mm și 2,5 mm în funcție de configurație.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Lungimi Extinse & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Protecție Împotriva Infiltrațiilor</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</span> `,
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784589195/PERVAZ-TP2_gnubk0.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784589429/pervaz4_lzmcdu.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
+    ],
+  }, 
   {
     name: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
@@ -373,7 +369,7 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     ],
     subcategories: []
   },
- {
+  {
     id: "sticla",
     slug: "sticla",
     name: "Sticlă Laminată Securizată",
