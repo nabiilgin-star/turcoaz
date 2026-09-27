@@ -42,7 +42,7 @@ export const categories = [
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784485357/WD37-1_nw1wtx.jpg",
             description: `Sistem WD37 - avantaje:\n-sistem utilizat pentru executia de usi si ferestre\n-cel mai economic sistem rece de tamplarie din aluminiu\n-sistem fara ruperea puntii termice\n-posibilitatea executarii unei game largi de tipologii de constructie\n-inchidere pe trei nivele cu garnituri EPDM\n\nSTOC: Alb-RAL 9016, Maro-RAL8014, Gri antracit RAL 7016Mat, Stejar Auriu\nSTOC LIMITAT: imitatie lemn: WENGE, NUC`,
-            pdfUrl: "/pdf/WD37.pdf",
+            pdfUrl: "/pdf/wd37.pdf",
             gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784565774/WD37_HD_Letter_muct7d.jpg",
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784485360/WD37-4_ixcaqw.jpg",
