@@ -2,28 +2,38 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import teavaRotundaData from '@/app/data/teavaRotunda';
+import profilTData from '@/app/data/profilT';
 import styles from './product-page.module.css'; 
 
-export default function TeavaRotundaView() {
-  const [filterD, setFilterD] = useState('');
+export default function ProfilTView() {
+  const [filterA, setFilterA] = useState('');
+  const [filterB, setFilterB] = useState('');
   const [filterS, setFilterS] = useState('');
 
-  // 1. Dış Çap (D) filtrelemesi (Her zaman benzersiz tüm değerleri gösterir)
-  const uniqueD = [...new Set(teavaRotundaData.map(item => item.D))].sort((a, b) => a - b);
+  // 1. Üst Genişlik (a)
+  const uniqueA = [...new Set(profilTData.map(item => item.a))].sort((a, b) => a - b);
 
-  // 2. Et Kalınlığı (s) filtrelemesi (Seçilen Dış Çap'a göre dinamik daralır)
+  // 2. Gövde Yüksekliği (b) - Sadece seçilen A'ya göre daralır
+  const uniqueB = [...new Set(
+    profilTData
+      .filter(item => filterA === '' || item.a.toString() === filterA)
+      .map(item => item.b)
+  )].sort((a, b) => a - b);
+
+  // 3. Et Kalınlığı (s) - Seçilen A ve B'ye göre daralır
   const uniqueS = [...new Set(
-    teavaRotundaData
-      .filter(item => filterD === '' || item.D.toString() === filterD)
+    profilTData
+      .filter(item => (filterA === '' || item.a.toString() === filterA) && 
+                      (filterB === '' || item.b.toString() === filterB))
       .map(item => item.s)
   )].sort((a, b) => a - b);
 
   // Tabloyu filtreleme mantığı
-  const filteredData = teavaRotundaData.filter(item => {
-    const matchD = filterD === '' || item.D.toString() === filterD;
+  const filteredData = profilTData.filter(item => {
+    const matchA = filterA === '' || item.a.toString() === filterA;
+    const matchB = filterB === '' || item.b.toString() === filterB;
     const matchS = filterS === '' || item.s.toString() === filterS;
-    return matchD && matchS;
+    return matchA && matchB && matchS;
   });
 
   return (
@@ -31,9 +41,9 @@ export default function TeavaRotundaView() {
       <div className={styles.productHeroGrid}>
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
-            // NOT: Buraya kendi cloudinary'nizdeki Yuvarlak Boru (Teava Rotunda) görsel linkinizi yapıştırın
-            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790527130/Profile_Teava_rotund_tehnic_fh1x18.jpg" 
-            alt="Țeavă Rotundă Aluminiu"
+            // NOT: Profil T için kendi görsel URL'nizi buraya koyun
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790527688/Profile_T_j2twek.png" 
+            alt="Profil T Aluminiu"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
             priority
@@ -41,8 +51,8 @@ export default function TeavaRotundaView() {
         </div>
         
         <div>
-          <h1 className={styles.productTitle}>Țeavă Rotundă Aluminiu</h1>
-          <div className={styles.priceTag}>de la 3,80 LEI / m</div>
+          <h1 className={styles.productTitle}>Profil T Aluminiu</h1>
+          <div className={styles.priceTag}>de la 4,90 LEI / m</div>
           
           <ul className={styles.trustBadges}>
             <li className={styles.stockIn}>✅ Peste 200 de tone în stoc permanent</li>
@@ -60,18 +70,33 @@ export default function TeavaRotundaView() {
       <div className={styles.technicalTableSection}>
         <h3>Specificații Tehnice și Dimensiuni</h3>
         
-        <div className={styles.filterBar}>
+        <div className={styles.filterBar} style={{ flexWrap: 'wrap', gap: '15px' }}>
           <div className={styles.filterGroup}>
-            <label>Diametru Exterior - D (mm)</label>
+            <label>Latura - a (mm)</label>
             <select 
-              value={filterD} 
+              value={filterA} 
               onChange={(e) => {
-                setFilterD(e.target.value);
-                setFilterS(''); // D değişince S sıfırlanır
+                setFilterA(e.target.value);
+                setFilterB(''); // a değişince diğerleri sıfırlanır
+                setFilterS('');
               }}
             >
               <option value="">Toate</option>
-              {uniqueD.map(val => <option key={val} value={val}>Ø {val} mm</option>)}
+              {uniqueA.map(val => <option key={val} value={val}>{val} mm</option>)}
+            </select>
+          </div>
+
+          <div className={styles.filterGroup}>
+            <label>Înălțime - b (mm)</label>
+            <select 
+              value={filterB} 
+              onChange={(e) => {
+                setFilterB(e.target.value);
+                setFilterS(''); // b değişince kalınlık sıfırlanır
+              }}
+            >
+              <option value="">Toate</option>
+              {uniqueB.map(val => <option key={val} value={val}>{val} mm</option>)}
             </select>
           </div>
 
@@ -88,9 +113,10 @@ export default function TeavaRotundaView() {
           
           <button 
             className={styles.btnClearFilters} 
-            onClick={() => { setFilterD(''); setFilterS(''); }}
+            onClick={() => { setFilterA(''); setFilterB(''); setFilterS(''); }}
+            style={{ alignSelf: 'flex-end' }}
           >
-            Resetează Filtrele
+            Resetează
           </button>
         </div>
 
@@ -99,7 +125,7 @@ export default function TeavaRotundaView() {
             <thead>
               <tr>
                 <th>Cod Profil</th>
-                <th>D (Ext) x d (Int)</th>
+                <th>Dimensiune (a x b)</th>
                 <th>Grosime (s)</th>
                 <th>Greutate (Kg/m)</th>
                 <th>Disponibilitate</th>
@@ -110,7 +136,7 @@ export default function TeavaRotundaView() {
                 filteredData.map((row, index) => (
                   <tr key={index}>
                     <td><strong>{row.profilNo}</strong></td>
-                    <td>Ø {row.D} x {row.d} mm</td>
+                    <td>{row.a} x {row.b} mm</td>
                     <td>{row.s} mm</td>
                     <td>{row.kg} Kg/m</td>
                     <td>

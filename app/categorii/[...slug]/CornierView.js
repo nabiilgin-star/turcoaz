@@ -56,7 +56,7 @@ export default function CornierView() {
       <div className={styles.productHeroGrid}>
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
-            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg" 
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790526907/profile_Cornier_tehnic_zgbjhz.jpg" 
             alt="Cornier Aluminiu Profil L"
             fill
             style={{ objectFit: "contain", padding: "10px" }}

@@ -32,7 +32,7 @@ export default function TeavaPatrataView() {
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
             // NOT: Kare profil için kendi görsel URL'nizi buraya koyun
-            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg" 
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790527387/profile_teava_aluminiu_patrata_tehnic_cyofon.jpg" 
             alt="Țeavă Pătrată Aluminiu"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
