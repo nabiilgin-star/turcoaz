@@ -11,7 +11,7 @@ import MobileMenuToggle from "./MobileMenuToggle";
 import CornierView from './CornierView';
 import TeavaRectangularaView from './TeavaRectangularaView'; 
 import TeavaRotundaView from './TeavaRotundaView'; 
-import TeavaPatrataView from './GeciciView'; //vercel tetikleem
+import TeavaPatrataView from './TeavaPatrataView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -629,8 +629,8 @@ export default async function CatchAllCategoryPage({ params }) {
   <TeavaRectangularaView />
 ) : lastSlug === "teava-rotunda" ? (
   <TeavaRotundaView /> 
-  ) : lastSlug === "teava-patrata" ? (
-  <GeciciView />
+ ) : lastSlug === "teava-patrata" ? (
+  <TeavaPatrataView />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
