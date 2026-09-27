@@ -21,14 +21,28 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Sisteme Aluminiu Akpa',
       slug: 'sisteme-aluminiu-akpa',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800',
-      subcategories: ['Sisteme Tâmplărie', 'Perete Cortină', 'Gard', 'Închidere Terasă', 'Profile Standard Aluminiu', 'Glafuri din Aluminiu']
+    subcategories: [
+        { title: 'Sisteme Tâmplărie', slug: 'sisteme-tamplarie' }, 
+        { title: 'Perete Cortină', slug: 'perete-cortina' }, 
+        { title: 'Gard', slug: 'gard' }, 
+        { title: 'Închidere Terasă', slug: 'inchidere-terasa' }, 
+        { title: 'Profile Standard Aluminiu', slug: 'profile-standard-aluminiu' }, 
+        { title: 'Glafuri din Aluminiu', slug: 'glafuri-din-aluminiu' }
+      ]
     },
     {
       id: 2,
       title: 'Glafuri din Aluminiu',
       slug: 'glafuri-din-aluminiu',
       image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-      subcategories: ['Lățimi: 75 mm - 380 mm', 'RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe', 'Debitare la Dimensiune', 'Stoc permanent de peste 200 de tone pentru livrare imediată']
+      priceTag: "de la 16 LEI / ml", // <-- FİYAT ETİKETİNİ BURAYA EKLEDİK
+      // Bunlar sadece pazarlama cümlesi (sayfası yok), düz metin olarak kalabilir:
+      subcategories: [
+        'Lățimi: 75 mm - 380 mm', 
+        'RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe', 
+        'Debitare la Dimensiune', 
+        'Stoc permanent de peste 200 de tone pentru livrare imediată'
+      ]
     },
     {
       id: 3,
@@ -151,13 +165,31 @@ export default function CategoriesSection({ className = '' }) {
                     {cat.title}
                   </h3>
                   
+                  {/* YENİ EKLENEN FİYAT ETİKETİ (Eğer o kategoride priceTag varsa görünür) */}
+                  {cat.priceTag && (
+                    <div style={{
+                      display: 'inline-block',
+                      backgroundColor: '#ffb700', // Dikkat çekici kurumsal sarı/turuncu tonu
+                      color: '#111',
+                      padding: '4px 12px',
+                      borderRadius: '6px',
+                      fontWeight: '700',
+                      fontSize: '0.95rem',
+                      marginBottom: '12px',
+                      boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+                    }}>
+                      🏷️ {cat.priceTag}
+                    </div>
+                  )}
+                  
                   <ul className="subcategory-list-new">
-                    {cat.subcategories.map((sub, idx) => (
-                      <li key={idx}>{sub}</li>
-                    ))}
+                    {cat.subcategories.map((sub, idx) => {
+                      const displayText = typeof sub === 'object' && sub !== null ? sub.title : sub;
+                      return <li key={idx}>{displayText}</li>;
+                    })}
                   </ul>
 
-                  <span className="see-details-underline">
+                    <span className="see-details-underline">
                     Vezi toate produsele
                   </span>
                 </div>

@@ -10,6 +10,7 @@ import ProductView from "./ProductView";
 import MobileMenuToggle from "./MobileMenuToggle";
 import CornierView from './CornierView';
 import TeavaRectangularaView from './TeavaRectangularaView'; 
+import TeavaRotundaView from './TeavaRotundaView'; 
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -49,9 +50,9 @@ export async function generateMetadata({ params }) {
     if (targetLocalCategory) {
       if (pathSegments.length === 1) {
         if (targetLocalCategory.products && targetLocalCategory.products.length > 0) {
-          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.name } };
+          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.title || targetLocalCategory.name } };
         } else if (targetLocalCategory.detailImage || targetLocalCategory.description) {
-          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.name } };
+          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.title || targetLocalCategory.name } };
         } else {
           result = { type: "category", data: targetLocalCategory };
         }
@@ -60,13 +61,13 @@ export async function generateMetadata({ params }) {
         const targetProd = targetLocalCategory.products?.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
 
         if (targetProd) {
-          result = { type: "product", data: { ...targetProd, title: targetProd.name || targetProd.title } };
+          result = { type: "product", data: { ...targetProd, title: targetProd.title || targetProd.name } };
         } else {
           const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
           if (targetSub) {
             const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
             if (isDirectProduct) {
-              result = { type: "product", data: { ...targetSub, title: targetSub.name } };
+              result = { type: "product", data: { ...targetSub, title: targetSub.title || targetSub.name } };
             } else {
               result = { type: "subcategory", data: { category: targetLocalCategory, subcategory: targetSub } };
             }
@@ -80,7 +81,7 @@ export async function generateMetadata({ params }) {
         if (targetSub) {
           const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
           if (targetProd) {
-            result = { type: "product", data: { ...targetProd, title: targetProd.name || targetProd.title } };
+            result = { type: "product", data: { ...targetProd, title: targetProd.title || targetProd.name } };
           }
         }
       }
@@ -109,6 +110,18 @@ export async function generateMetadata({ params }) {
     }
   }
 
+  if (!result && lastSlug === 'teava-rotunda') {
+    result = {
+      type: "product",
+      data: {
+        title: "Țeavă Rotundă Aluminiu",
+        name: "Țeavă Rotundă Aluminiu",
+        description: "Țeavă rotundă din aluminiu disponibilă în diverse dimensiuni. Peste 200 de tone în stoc permanent și livrare rapidă.",
+      }
+    }
+  }
+
+  
   if (!result) {
     return {
       title: "Pagina nu a fost găsită | Turcoaz Aluminiu",
@@ -121,11 +134,11 @@ export async function generateMetadata({ params }) {
   let description = "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare și accesorii de calitate superioară.";
 
   if (type === "category") {
-    title = `${data.name || data.title} | Turcoaz Aluminiu`;
-    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.name || data.title}. Calitate superioară și livrare din stoc.`;
+    title = `${data.title || data.name} | Turcoaz Aluminiu`;
+    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.title || data.name}. Calitate superioară și livrare din stoc.`;
   } else if (type === "subcategory") {
-    title = `${data.subcategory?.name || 'Subcategorie'} - ${data.category?.name || data.category?.title || 'Categorie'} | Turcoaz`;
-    description = data.subcategory?.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory?.name || 'produse'}. Comandă online la preț de distribuitor.`;
+    title = `${data.subcategory?.title || data.subcategory?.name || 'Subcategorie'} - ${data.category?.title || data.category?.name || 'Categorie'} | Turcoaz`;
+    description = data.subcategory?.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory?.title || data.subcategory?.name || 'produse'}. Comandă online la preț de distribuitor.`;
   } else if (type === "product") {
     title = `${data.title || data.name} | Turcoaz Aluminiu`;
     description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `${data.title || data.name} - Sistem din aluminiu și sticlă de înaltă rezistență cu certificat de calitate.`;
@@ -198,7 +211,7 @@ export default async function CatchAllCategoryPage({ params }) {
             type: "product",
             data: {
               ...targetLocalCategory,
-              title: targetLocalCategory.name,
+              title: targetLocalCategory.title || targetLocalCategory.name,
               category: targetLocalCategory,
               subcategory: null
             }
@@ -208,7 +221,7 @@ export default async function CatchAllCategoryPage({ params }) {
             type: "product",
             data: {
               ...targetLocalCategory,
-              title: targetLocalCategory.name,
+              title: targetLocalCategory.title || targetLocalCategory.name,
               category: targetLocalCategory,
               subcategory: null
             }
@@ -229,7 +242,7 @@ export default async function CatchAllCategoryPage({ params }) {
             type: "product",
             data: {
               ...targetProd,
-              title: targetProd.name || targetProd.title,
+              title: targetProd.title || targetProd.name,
               category: targetLocalCategory,
               subcategory: null
             }
@@ -245,7 +258,7 @@ export default async function CatchAllCategoryPage({ params }) {
                 type: "product",
                 data: {
                   ...targetSub,
-                  title: targetSub.name,
+                  title: targetSub.title || targetSub.name,
                   category: targetLocalCategory,
                   subcategory: targetSub
                 }
@@ -254,7 +267,7 @@ export default async function CatchAllCategoryPage({ params }) {
               const mappedProducts = (targetSub.products || []).map((prod, index) => ({
                 ...prod,
                 id: prod.id || `local-prod-${index}`,
-                title: prod.name || prod.title,
+                title: prod.title || prod.name,
               }));
 
               result = {
@@ -282,7 +295,7 @@ export default async function CatchAllCategoryPage({ params }) {
               type: "product",
               data: {
                 ...targetProd,
-                title: targetProd.name || targetProd.title,
+                title: targetProd.title || targetProd.name,
                 category: targetLocalCategory,
                 subcategory: targetSub
               }
@@ -293,34 +306,36 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  if (!result && lastSlug !== 'cornier') {
-    notFound();
-  }
-  
-  const allowedSlugs = ['cornier', 'teava-rectangulara'];
+  const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
   }
 
-
   const currentSlug = lastSlug || "cornier";
 
-  // Her özel sayfa için yedek (fallback) veri sözlüğü
+  // Her özel sayfa için yedek (fallback) veri sözlüğü (name -> title olarak GÜNCELLENDİ)
   const defaultProducts = {
     "cornier": {
       id: "cornier",
       title: "Cornier Aluminiu",
       name: "Cornier Aluminiu",
       slug: "cornier",
-      category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
     },
     "teava-rectangulara": {
       id: "teava-rectangulara",
       title: "Țeavă Rectangulară Aluminiu",
       name: "Țeavă Rectangulară Aluminiu",
       slug: "teava-rectangulara",
-      category: { name: "Profile Standard", slug: "profile-standard-aluminiu" }
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
+    },
+    "teava-rotunda": {
+      id: "teava-rotunda",
+      title: "Țeavă Rotundă Aluminiu",
+      name: "Țeavă Rotundă Aluminiu",
+      slug: "teava-rotunda",
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
     }
   };
 
@@ -330,23 +345,23 @@ export default async function CatchAllCategoryPage({ params }) {
   const breadcrumbItems = [{ label: "Categorii", href: "/categorii" }];
 
   if (type === "category") {
-    breadcrumbItems.push({ label: data.name || data.title, href: `/categorii/${data.slug}` });
+    breadcrumbItems.push({ label: data.title || data.name, href: `/categorii/${data.slug}` });
   } else if (type === "subcategory" && data.category) {
     breadcrumbItems.push({
-      label: data.category.name || data.category.title,
+      label: data.category.title || data.category.name,
       href: `/categorii/${data.category.slug}`,
     });
-    breadcrumbItems.push({ label: data.subcategory?.name || 'Subcategorie', href: "#" });
+    breadcrumbItems.push({ label: data.subcategory?.title || data.subcategory?.name || 'Subcategorie', href: "#" });
   } else if (type === "product") {
     if (data.category) {
       breadcrumbItems.push({
-        label: data.category.name || data.category.title,
+        label: data.category.title || data.category.name,
         href: `/categorii/${data.category.slug}`,
       });
     }
     if (data.subcategory && data.subcategory.slug !== data.slug && data.category) {
       breadcrumbItems.push({
-        label: data.subcategory.name,
+        label: data.subcategory.title || data.subcategory.name,
         href: `/categorii/${data.category.slug}/${data.subcategory.slug}`,
       });
     }
@@ -548,7 +563,7 @@ export default async function CatchAllCategoryPage({ params }) {
                       transition: "all 0.2s"
                     }}
                   >
-                    <span>{cat.name || cat.title}</span>
+                    <span>{cat.title || cat.name}</span>
                     {cat.subcategories && (
                       <span style={{ fontSize: "12px", opacity: 0.8 }}>({cat.subcategories.length})</span>
                     )}
@@ -574,7 +589,7 @@ export default async function CatchAllCategoryPage({ params }) {
                                 textTransform: "none"
                               }}
                             >
-                              • {sub.name}
+                              • {sub.title || sub.name}
                             </a>
                           </li>
                         );
@@ -591,10 +606,12 @@ export default async function CatchAllCategoryPage({ params }) {
         <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
           
         {lastSlug === "cornier" ? (
-            <CornierView />
-          ) : lastSlug === "teava-rectangulara" ? (
-            <TeavaRectangularaView />
-          ) : (
+  <CornierView />
+) : lastSlug === "teava-rectangulara" ? (
+  <TeavaRectangularaView />
+) : lastSlug === "teava-rotunda" ? (
+  <TeavaRotundaView /> 
+) : (
             <>
               {type === "category" && <CategoryView category={data} />}
               {type === "subcategory" && (
@@ -608,7 +625,7 @@ export default async function CatchAllCategoryPage({ params }) {
               {type === "product" && (
                 <ProductView 
                   product={data} 
-                  subcategoryName={data.subcategory?.name} 
+                  subcategoryName={data.subcategory?.title || data.subcategory?.name} 
                 />
               )}
             </>

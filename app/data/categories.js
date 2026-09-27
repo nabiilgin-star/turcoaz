@@ -12,20 +12,20 @@ const categoryImages = [
 export const categories = [
   // 1. ANA KATEGORİ: Sisteme Aluminiu AKPA ve Alt Kategorileri
   {
-    name: "Sisteme Aluminiu AKPA",
+    title: "Sisteme Aluminiu AKPA",
     slug: "sisteme-aluminiu-akpa",
     icon: Layers,
     image: categoryImages[5],
     subcategories: [
       {
-        name: "SISTEME TAMPLARIE",
+        title: "SISTEME TAMPLARIE",
         slug: "sisteme-tamplarie",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
         products: [
           {
             id: "glisante-s28",
             slug: "glisante-s28",
-            name: "Glisante S28",
+            title: "Glisante S28",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
             description: `Sistem S28 – avantaje:\n- Sistem utilizat pentru executia de usi si ferestre glisante\n- Sistem economic de tamplarie din aluminiu, tip glisante\n- Sistem fara ruperea puntii termice\n- Posibilitatea executarii unei game largi de tipologii de constructie\n- Inchidere cu garnituri perie si garnituri EPDM\n\nSTOC:\nAlb - RAL 9016, Maro - RAL8014, Gri antracit 7016Mat, STEJAR AURIU`,
@@ -38,7 +38,7 @@ export const categories = [
           {
             id: "sistem-wd37",
             slug: "sistem-wd37",
-            name: "Sistem WD37",
+            title: "Sistem WD37",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784485357/WD37-1_nw1wtx.jpg",
             description: `Sistem WD37 - avantaje:\n-sistem utilizat pentru executia de usi si ferestre\n-cel mai economic sistem rece de tamplarie din aluminiu\n-sistem fara ruperea puntii termice\n-posibilitatea executarii unei game largi de tipologii de constructie\n-inchidere pe trei nivele cu garnituri EPDM\n\nSTOC: Alb-RAL 9016, Maro-RAL8014, Gri antracit RAL 7016Mat, Stejar Auriu\nSTOC LIMITAT: imitatie lemn: WENGE, NUC`,
@@ -51,7 +51,7 @@ export const categories = [
           {
             id: "sistem-wd50t",
             slug: "sistem-wd50t",
-            name: "Sistem WD50T cu bariera termica",
+            title: "Sistem WD50T cu bariera termica",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784487716/WD50T-PNG-800x961_fzeeav.png",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784487716/WD50T-PNG-800x961_fzeeav.png",
             description: `Sistem WD50 - avantaje:\n-sistem utilizat pentru executia de usi si ferestre\n-sistem cald, cu ruperea puntii termice\n-sistem economic de tamplarie din aluminiu\n-posibilitatea executarii unei game largi de tipologii de constructie\n-inchidere pe trei nivele cu garnituri EPDM\n\nSTOC: Alb-RAL 9016, Maro-RAL8014, Gri antracit RAL 7016Mat, Stejar Auriu\nSTOC LIMITAT: imitatie lemn: WENGE, NUC`,
@@ -64,7 +64,7 @@ export const categories = [
           {
             id: "sistem-wd70t",
             slug: "sistem-wd70t",
-            name: "Sistem WD70T cu bariera termica",
+            title: "Sistem WD70T cu bariera termica",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784564144/WD70T-Akpa_wfaar0.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784564144/WD70T-Akpa_wfaar0.jpg",
             description: "Top de gamă în izolație termică și fonică. Sistemul WD70T este perfect optimizat pentru proiecte rezidențiale moderne ce necesită cel mai înalt nivel de eficiență energetică.",
@@ -78,14 +78,14 @@ export const categories = [
         ],
       },
       {
-        name: "Profile Standard Aluminiu",
+        title: "Profile Standard Aluminiu",
         slug: "profile-standard-aluminiu",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428981/Profile_aluminiu_standard_vojgdy.jpg",
         products: [
           {
             id: "cornier",
             slug: "cornier",
-            name: "Cornier Aluminiu (Profil L)",
+            title: "Cornier Aluminiu (Profil L)",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg",
             description: "Cornier din aluminiu cu laturi egale sau inegale."
@@ -93,61 +93,61 @@ export const categories = [
           {
             id: "teava-rectangulara",
             slug: "teava-rectangulara",
-            name: "Teava Rectangulara Aluminiu",
+            title: "Teava Rectangulara Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg",
             description: "Profile Aluminiu Țeavă rectangulară"
           },
           {
             id: "teava-rotunda",
             slug: "teava-rotunda",
-            name: "Teava Rotunda Aluminiu",
+            title: "Teava Rotunda Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/Profile_Teava_rotund_pwncn5.jpg",
             description: "Țeavă rotundă din aluminiu"
           },
           {
             id: "teava-patrata",
             slug: "teava-patrata",
-            name: "Teava Patrata Aluminiu",
+            title: "Teava Patrata Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428503/profile_teava_aluminiu_patrata_essstr.jpg",
             description: "Profile pătrate din aluminiu"
           },
           {
             id: "profil-U",
             slug: "profil-U",
-            name: "Profil U Aluminiu",
+            title: "Profil U Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790447666/Profile_Aluminiu_U_bl5olf.jpg",
             description: "Profil U"
           },
           {
             id: "profil-t",
             slug: "profil-t",
-            name: "Profil T Aluminiu",
+            title: "Profil T Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428502/Profile_T_mqh20y.png",
             description: "Profil din Aluminiu T"
           },
           {
             id: "platbanda",
             slug: "platbanda",
-            name: "Platbanda Aluminiu (Profil Plat)",
+            title: "Platbanda Aluminiu (Profil Plat)",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_platbanda_bjyh46.jpg",
             description: "Profile Platbandă din aluminiu"
           }
         ]
       },
       {
-        name: "Perete Cortina",
+        title: "Perete Cortina",
         slug: "perete-cortina",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
         description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
       },
       {
-        name: "Gard",
+        title: "Gard",
         slug: "gard",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
         description: "Profile și sisteme din aluminiu pentru garduri rezidențiale moderne.",
       },
       {
-        name: "INCHIDERE TERASA",
+        title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
         description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.",
@@ -155,7 +155,7 @@ export const categories = [
           {
             id: "glisant-geam-simplu-sc100",
             slug: "glisant-geam-simplu-sc100",
-            name: "Glisant Geam Simplu - SC100",
+            title: "Glisant Geam Simplu - SC100",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
@@ -164,7 +164,7 @@ export const categories = [
           {
             id: "glisant-geam-termopan-iscb140",
             slug: "glisant-geam-termopan-iscb140",
-            name: "Glisant Geam Termopan - ISCB140",
+            title: "Glisant Geam Termopan - ISCB140",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
@@ -173,7 +173,7 @@ export const categories = [
           {
             id: "sistem-tip-ghilotina",
             slug: "sistem-tip-ghilotina",
-            name: "Sistem Tip Ghilotina",
+            title: "Sistem Tip Ghilotina",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             description: "Sistem tip ghilotină motorizat/manual pentru terase.",
@@ -182,7 +182,7 @@ export const categories = [
           {
             id: "sistem-tip-acordeon",
             slug: "sistem-tip-acordeon",
-            name: "Sistem Tip Acordeon",
+            title: "Sistem Tip Acordeon",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             description: "Sistem tip acordeon pliabil pentru închidere spații.",
@@ -191,7 +191,7 @@ export const categories = [
           {
             id: "sistem-tip-copertina-sticla",
             slug: "sistem-tip-copertina-sticla",
-            name: "Sistem Tip Copertina Sticla",
+            title: "Sistem Tip Copertina Sticla",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
             description: "Sistem copertină din sticlă pentru protecție exterioară.",
@@ -206,20 +206,20 @@ export const categories = [
   {
     id: "sisteme-balustrada",
     slug: "sisteme-balustrada",
-    name: "Sisteme Balustradă",
+    title: "Sisteme Balustradă",
     icon: Building2,
     image: categoryImages[0],
     subcategories: [
       {
         id: "balustrada-de-sticla",
         slug: "balustrada-de-sticla",
-        name: "Balustradă de sticlă",
+        title: "Balustradă de sticlă",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
         products: [
           {
             id: "m115",
             slug: "m115",
-            name: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium",
+            title: "Sistem de balustradă din aluminiu - AKPA M115 Sistem premium",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789317643/M115-0_xvzqqq.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784671305/M115_oqr6rz.jpg",
             description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M115 – Sistem Premium.<br>Căutați profile din aluminiu pentru balustradă din sticlă, profil U continuu sau sisteme complete de balustradă în România? S.C. Turcoaz Aluminiu S.R.L. oferă sistemul premium AKPA M115, proiectat pentru siguranță, eleganță și durabilitate. Disponibil cu stoc permanent în depozitul din Popești‑Leordeni și în filiala regională Alufab Iași, asigurând distribuție rapidă la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Performanță & Avantaje Tehnice – AKPA M115</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Rezistență Certificată 3 kN/ml</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— profilul AKPA M115 Premium oferă rezistență structurală superioară, ideal pentru balcoane rezidențiale cu regim mare de înălțime și proiecte private.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Profil U pentru Balustradă Continuă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— sistem bazat pe profil U din aluminiu, pentru montaj curat, fixare stabilă și transparență arhitecturală maximă, fără montanți verticali.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Siguranță & Estetică Modernă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— compatibil cu sticlă securizată și stratificată, oferind un design minimalist, elegant și durabil pentru fațade și terase.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în Popești‑Leordeni și prin filiala Alufab Iași, pentru întreaga rețea de parteneri și distribuitori.</span>",
@@ -232,7 +232,7 @@ export const categories = [
           {
             id: "m90",
             slug: "m90",
-            name: "Sistem de balustradă din aluminiu - AKPA M90 Sistem premium",
+            title: "Sistem de balustradă din aluminiu - AKPA M90 Sistem premium",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790026060/Balustrada_sticla_M90_lhzpom.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1790026060/Balustrada_sticla_M90_lhzpom.jpg",
             description: "Sisteme de Balustradă din Aluminiu și Sticlă | AKPA M90 – Sistem Premium.<br>Căutați profile din aluminiu pentru balustradă din sticlă, profil U continuu sau sisteme complete de balustradă în România? S.C. Turcoaz Aluminiu S.R.L. oferă sistemul premium AKPA M90, proiectat pentru siguranță, eleganță și durabilitate. Disponibil cu stoc permanent în depozitul din Popești‑Leordeni și în filiala regională Alufab Iași, asigurând distribuție rapidă la nivel național.<br><br>🏆 <strong style='font-size: 1rem; color: #1f2937;'>Performanță & Avantaje Tehnice – AKPA M90</strong><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Rezistență Certificată 3 kN/ml</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— profilul AKPA M90 Premium oferă rezistență structurală superioară, ideal pentru balcoane rezidențiale cu regim mare de înălțime și proiecte private.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Profil U pentru Balustradă Continuă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— sistem bazat pe profil U din aluminiu, pentru montaj curat, fixare stabilă și transparență arhitecturală maximă, fără montanți verticali.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Siguranță & Estetică Modernă</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— compatibil cu sticlă securizată și stratificată, oferind un design minimalist, elegant și durabil pentru fațade și terase.</span><br><br>• <strong style='font-size: 0.9rem; color: #111827; text-decoration: none;'>Stoc & Distribuție Națională</strong> <span style='font-size: 0.85rem; color: #4b5563;'>— disponibilitate imediată în Popești‑Leordeni și prin filiala Alufab Iași, pentru întreaga rețea de parteneri și distribuitori.</span>",
@@ -245,7 +245,7 @@ export const categories = [
           {
             id: "m115f",
             slug: "m115f",
-            name: "M115F",
+            title: "M115F",
             detailImage: "/images/m115f.jpg",
             description: "Sistem de balustradă din aluminiu M115F.",
             pdfUrl: "/pdf/m115f.pdf"
@@ -253,7 +253,7 @@ export const categories = [
           {
             id: "m125",
             slug: "m125",
-            name: "M125",
+            title: "M125",
             detailImage: "/images/m125.jpg",
             description: "Sistem de balustradă din aluminiu M125.",
             pdfUrl: "/pdf/m125.pdf"
@@ -261,7 +261,7 @@ export const categories = [
           {
             id: "m300",
             slug: "m300",
-            name: "M300",
+            title: "M300",
             detailImage: "/images/m300.jpg",
             description: "Sistem de balustradă din aluminiu M300.",
             pdfUrl: "/pdf/m300.pdf"
@@ -269,7 +269,7 @@ export const categories = [
           {
             id: "m100",
             slug: "m100",
-            name: "m100",
+            title: "m100",
             detailImage: "/images/m115.jpg",
             description: "Profil din aluminiu pentru balustradă de sticlă M115.",
             pdfUrl: "/pdf/m100.pdf"
@@ -279,7 +279,7 @@ export const categories = [
       {
         id: "sistem-balustrada-patrat",
         slug: "sistem-balustrada-patrat",
-        name: "Sistem Balustradă Pătrat",
+        title: "Sistem Balustradă Pătrat",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790017321/balustrada_patrata_1_ae2fgt.jpg",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
         description: "Sistem modern de balustradă din aluminiu cu profil pătrat.",
@@ -288,7 +288,7 @@ export const categories = [
       {
         id: "sistem-balustrada-rotund",
         slug: "sistem-balustrada-rotund",
-        name: "Sistem Balustradă Rotund",
+        title: "Sistem Balustradă Rotund",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790017320/balustrada_rotunda_1_dcrffw.jpg",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
         description: "Sistem clasic și elegant de balustradă din aluminiu cu profil rotund.",
@@ -297,7 +297,7 @@ export const categories = [
       {
         id: "balustrada-modulara",
         slug: "balustrada-modulara",
-        name: "Balustradă Modulară",
+        title: "Balustradă Modulară",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784592792/Balustrada-Modulara_ljlsyi.jpg",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784407768/SistemeBalustrada_etapaj.png",
         description: "Sistem modular versatil pentru balustrade din aluminiu.",
@@ -306,7 +306,7 @@ export const categories = [
       {
         id: "balustrada-fereastra-franceza-din-aluminiu",
         slug: "balustrada-fereastra-franceza-din-aluminiu",
-        name: "Balustradă fereastră franceză din aluminiu",
+        title: "Balustradă fereastră franceză din aluminiu",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
         detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593787/balustradafransuzesc_hbupoa.jpg",
         description: "Sistem modern de balustradă din aluminiu pentru ferestre franceze.",
@@ -317,7 +317,7 @@ export const categories = [
 
   // 3. ANA KATEGORİ: Glafuri din Aluminiu
   {
-    name: "Glafuri din Aluminiu",
+    title: "Glafuri din Aluminiu",
     slug: "glafuri-din-aluminiu",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
@@ -332,7 +332,7 @@ export const categories = [
 
   // 4. ANA KATEGORİ: ACP Aluminiu Compozit Panel (Bond)
   {
-    name: "ACP Aluminiu Compozit Panel (Bond)",
+    title: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
@@ -350,28 +350,28 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
 • Preț Avantajos & Stoc Disponibil — costuri mai avantajoase comparativ cu competitori precum Geplast, livrare rapidă din stoc prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.`,
     products: [
       {
-        name: "Primebond Plus",
+        title: "Primebond Plus",
         slug: "primebond-plus",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebondplus_ekuawf.jpg",
         description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,47 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/primebond.pdf"
       },
       {
-        name: "Primebond",
+        title: "Primebond",
         slug: "primebond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebond_uz2s35.jpg",
         description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,40 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/primebond.pdf"
       },
       {
-        name: "Durabond",
+        title: "Durabond",
         slug: "durabond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287063/durabond_pl0dgq.jpg",
         description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,30 mm + HDP\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 15 ani.\n• Poate fi fabricat în categoriile de rezistență la foc FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
         pdfUrl: "/pdf/durabond.pdf"
       },
       {
-        name: "Rallbond",
+        title: "Rallbond",
         slug: "rallbond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/rallbond_lapj2g.jpg",
         description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,20 mm + PE\n• Acesta este material publicitar și nu trebuie utilizat pe fațadele exterioare.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
@@ -385,7 +385,7 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
   {
     id: "sticla",
     slug: "sticla",
-    name: "Sticlă Laminată Securizată",
+    title: "Sticlă Laminată Securizată",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
     description: `<strong>🛡️ Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2</strong><br>
