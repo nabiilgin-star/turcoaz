@@ -11,6 +11,7 @@ import MobileMenuToggle from "./MobileMenuToggle";
 import CornierView from './CornierView';
 import TeavaRectangularaView from './TeavaRectangularaView'; 
 import TeavaRotundaView from './TeavaRotundaView'; 
+import TeavaPatrataView from './TeavaPatrataView'; 
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -121,6 +122,16 @@ export async function generateMetadata({ params }) {
     }
   }
 
+  if (!result && lastSlug === 'teava-patrata') {
+    result = {
+      type: "product",
+      data: {
+        title: "Țeavă Pătrată Aluminiu",
+        name: "Țeavă Pătrată Aluminiu",
+        description: "Țeavă pătrată din aluminiu de înaltă calitate. Peste 200 de tone în stoc permanent pentru livrare imediată în toată România.",
+      }
+    }
+  }
   
   if (!result) {
     return {
@@ -306,7 +317,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda'];
+  const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda','teava-patrata'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
@@ -335,6 +346,13 @@ export default async function CatchAllCategoryPage({ params }) {
       title: "Țeavă Rotundă Aluminiu",
       name: "Țeavă Rotundă Aluminiu",
       slug: "teava-rotunda",
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
+    },
+    "teava-patrata": {
+      id: "teava-patrata",
+      title: "Țeavă Pătrată Aluminiu",
+      name: "Țeavă Pătrată Aluminiu",
+      slug: "teava-patrata",
       category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
     }
   };
@@ -611,6 +629,8 @@ export default async function CatchAllCategoryPage({ params }) {
   <TeavaRectangularaView />
 ) : lastSlug === "teava-rotunda" ? (
   <TeavaRotundaView /> 
+  ) : lastSlug === "teava-patrata" ? (
+  <TeavaPatrataView />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
