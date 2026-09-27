@@ -122,14 +122,14 @@ export const categories = [
             id: "profil-t",
             slug: "profil-t",
             title: "Profil T Aluminiu",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428502/Profile_T_mqh20y.png",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790527688/Profile_T_j2twek.png",
             description: "Profil din Aluminiu T"
           },
           {
             id: "platbanda",
             slug: "platbanda",
             title: "Platbanda Aluminiu (Profil Plat)",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_platbanda_bjyh46.jpg",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790529146/profile_teava_aluminiu_platbanda_wfjhty.jpg",
             description: "Profile Platbandă din aluminiu"
           }
         ]
