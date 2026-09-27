@@ -28,12 +28,7 @@ export default function ProductView({ product }) {
           <h1 style={{ fontSize: "2.4rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
             {product.title}
           </h1>
-          
-          {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
-          <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
-            ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunar)
-          </div>
-
+         
           {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
           <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
             ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunar)
