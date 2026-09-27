@@ -14,7 +14,7 @@ export default function ProductView({ product }) {
           <div style={{ width: "100%", height: "300px", position: "relative", marginBottom: "40px", backgroundColor: "#fcfcfc" }}>
             <Image 
               src={product.image} 
-              alt={product.name} 
+              alt={product.title} 
               fill 
               style={{ objectFit: "contain" }}
               priority
@@ -26,9 +26,14 @@ export default function ProductView({ product }) {
           
           {/* Başlık */}
           <h1 style={{ fontSize: "2.4rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
-            {product.name}
+            {product.title}
           </h1>
-
+{/* Fiyat Etiketi (Eğer veritabanında price tanımlanmışsa ekrana basar) */}
+          {product.price && (
+            <div style={{ textAlign: "center", fontSize: "1.5rem", fontWeight: "bold", color: "#e63946", marginTop: "-20px" }}>
+              {product.price}
+            </div>
+            
           {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
           <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
             ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunar)
@@ -165,7 +170,7 @@ export default function ProductView({ product }) {
       <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
         
         {/* Başlık */}
-        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.name}</h1>
+        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.title}</h1>
         
         {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
         <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
@@ -175,7 +180,7 @@ export default function ProductView({ product }) {
         {/* Üstte Büyük Ana Görsel */}
         {mainDisplayImage && (
           <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9", border: "1px solid #eaeaea" }}>
-            <Image src={mainDisplayImage} alt={product.name} fill style={{ objectFit: "contain", padding: "15px" }} />
+            <Image src={mainDisplayImage} alt={product.title} fill style={{ objectFit: "contain", padding: "15px" }} />
           </div>
         )}
 
@@ -195,7 +200,7 @@ export default function ProductView({ product }) {
           <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
           {product.gallery.map((src, index) => (
             <div key={index} style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#fff", border: "1px solid #eaeaea", padding: "10px" }}>
-              <Image src={src} alt={`${product.name} detay ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
+              <Image src={src} alt={`${product.title} detay ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
             </div>
           ))}
         </div>
