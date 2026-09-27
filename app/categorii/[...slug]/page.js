@@ -12,6 +12,7 @@ import CornierView from './CornierView';
 import TeavaRectangularaView from './TeavaRectangularaView'; 
 import TeavaRotundaView from './TeavaRotundaView'; 
 import TeavaPatrataView from './TeavaPatrataView';
+import ProfilUView from './ProfilUView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -129,6 +130,17 @@ export async function generateMetadata({ params }) {
         title: "Țeavă Pătrată Aluminiu",
         name: "Țeavă Pătrată Aluminiu",
         description: "Țeavă pătrată din aluminiu de înaltă calitate. Peste 200 de tone în stoc permanent pentru livrare imediată în toată România.",
+      }
+    }
+  }
+
+  if (!result && lastSlug === 'profil-u') {
+    result = {
+      type: "product",
+      data: {
+        title: "Profil U Aluminiu",
+        name: "Profil U Aluminiu",
+        description: "Profile U din aluminiu disponibile în diverse dimensiuni. Peste 200 de tone în stoc permanent pentru livrare rapidă.",
       }
     }
   }
@@ -317,7 +329,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-  const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda','teava-patrata'];
+const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
@@ -353,6 +365,13 @@ export default async function CatchAllCategoryPage({ params }) {
       title: "Țeavă Pătrată Aluminiu",
       name: "Țeavă Pătrată Aluminiu",
       slug: "teava-patrata",
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
+    },
+    "profil-u": {
+      id: "profil-u",
+      title: "Profil U Aluminiu",
+      name: "Profil U Aluminiu",
+      slug: "profil-u",
       category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
     }
   };
@@ -631,6 +650,8 @@ export default async function CatchAllCategoryPage({ params }) {
   <TeavaRotundaView /> 
  ) : lastSlug === "teava-patrata" ? (
   <TeavaPatrataView />
+  ) : lastSlug === "profil-u" ? (
+  <ProfilUView />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
