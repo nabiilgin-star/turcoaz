@@ -14,6 +14,7 @@ import TeavaRotundaView from './TeavaRotundaView';
 import TeavaPatrataView from './TeavaPatrataView';
 import ProfilUView from './ProfilUView';
 import ProfilTView from './ProfilTView';
+import PlatbandaView from './PlatbandaView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -153,6 +154,17 @@ export async function generateMetadata({ params }) {
         title: "Profil T Aluminiu",
         name: "Profil T Aluminiu",
         description: "Profile T din aluminiu de înaltă rezistență. Disponibile în stoc permanent pentru livrare rapidă.",
+      }
+    }
+  }
+
+  if (!result && lastSlug === 'platbanda') {
+    result = {
+      type: "product",
+      data: {
+        title: "Platbandă Aluminiu",
+        name: "Platbandă Aluminiu",
+        description: "Platbandă (lamă) din aluminiu. Gamă variată de lățimi și grosimi. Peste 200 de tone în stoc permanent.",
       }
     }
   }
@@ -341,7 +353,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t'];
+const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
@@ -391,6 +403,13 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
       title: "Profil T Aluminiu",
       name: "Profil T Aluminiu",
       slug: "profil-t",
+      category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
+    },
+    "platbanda": {
+      id: "platbanda",
+      title: "Platbandă Aluminiu",
+      name: "Platbandă Aluminiu",
+      slug: "platbanda",
       category: { title: "Profile Standard", slug: "profile-standard-aluminiu" }
     }
   };
@@ -673,6 +692,8 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
   <ProfilUView />
   ) : lastSlug === "profil-t" ? (
   <ProfilTView />
+  ) : lastSlug === "platbanda" ? (
+  <PlatbandaView />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
