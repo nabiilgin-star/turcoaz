@@ -32,7 +32,7 @@ export default function TeavaRotundaView() {
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
             // NOT: Buraya kendi cloudinary'nizdeki Yuvarlak Boru (Teava Rotunda) görsel linkinizi yapıştırın
-            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg" 
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/Profile_Teava_rotund_pwncn5.jpg" 
             alt="Țeavă Rotundă Aluminiu"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
