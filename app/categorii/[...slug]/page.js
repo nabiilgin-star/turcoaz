@@ -11,7 +11,7 @@ import MobileMenuToggle from "./MobileMenuToggle";
 import CornierView from './CornierView';
 import TeavaRectangularaView from './TeavaRectangularaView'; 
 import TeavaRotundaView from './TeavaRotundaView'; 
-import TeavaPatrataView from './TeavaPatrataView'; 
+import TeavaPatrataView from './TeavaPatrataView'; //vercel tetikleem
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
