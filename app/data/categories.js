@@ -322,6 +322,7 @@ export const categories = [
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
 description: `
   <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat</h2>
+  <p><br>Preț: de la 15,50 LEI / ml.</p>
   <p>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent de peste 200 de tone în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național și vânzări lunare de peste 150 de tone.</p>
   
   <h2>Caracteristici Tehnice & Finisaje Disponibile</h2>
