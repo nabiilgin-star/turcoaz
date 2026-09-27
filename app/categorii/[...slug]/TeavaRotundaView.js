@@ -2,62 +2,38 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-// Veri dosyanızın yolu
-import cornierData from '@/app/data/cornier';
-
-// CSS dosyanız
+import teavaRotundaData from '@/app/data/teavaRotunda';
 import styles from './product-page.module.css'; 
 
-export default function CornierView() {
-  // Filtreler için State'ler
-  const [filterA, setFilterA] = useState('');
-  const [filterB, setFilterB] = useState('');
+export default function TeavaRotundaView() {
+  const [filterD, setFilterD] = useState('');
   const [filterS, setFilterS] = useState('');
 
-  // 1. Latura a her zaman tüm benzersiz a değerlerini listeler
-  const uniqueA = [...new Set(cornierData.map(item => item.a))].sort((a, b) => a - b);
+  // 1. Dış Çap (D) filtrelemesi (Her zaman benzersiz tüm değerleri gösterir)
+  const uniqueD = [...new Set(teavaRotundaData.map(item => item.D))].sort((a, b) => a - b);
 
-  // 2. Latura b, seçilen filterA'ya göre dinamik olarak daralır (Eşkenar için b = a kabul edilir)
-  const uniqueB = [...new Set(
-    cornierData
-      .filter(item => {
-        const itemB = item.b || item.a;
-        return filterA === '' || item.a.toString() === filterA;
-      })
-      .map(item => item.b || item.a)
-  )].sort((a, b) => a - b);
-
-  // 3. Grosime s, seçilen a ve b değerlerine göre dinamik olarak daralır
+  // 2. Et Kalınlığı (s) filtrelemesi (Seçilen Dış Çap'a göre dinamik daralır)
   const uniqueS = [...new Set(
-    cornierData
-      .filter(item => {
-        const itemB = item.b || item.a;
-        const matchA = filterA === '' || item.a.toString() === filterA;
-        const matchB = filterB === '' || itemB.toString() === filterB;
-        return matchA && matchB;
-      })
+    teavaRotundaData
+      .filter(item => filterD === '' || item.D.toString() === filterD)
       .map(item => item.s)
   )].sort((a, b) => a - b);
 
-  // Tabloyu anlık filtreleme mantığı
-  const filteredData = cornierData.filter(item => {
-    const matchA = filterA === '' || item.a.toString() === filterA;
-    const itemB = item.b || item.a; 
-    const matchB = filterB === '' || itemB.toString() === filterB;
+  // Tabloyu filtreleme mantığı
+  const filteredData = teavaRotundaData.filter(item => {
+    const matchD = filterD === '' || item.D.toString() === filterD;
     const matchS = filterS === '' || item.s.toString() === filterS;
-    
-    return matchA && matchB && matchS;
+    return matchD && matchS;
   });
 
   return (
     <section className={styles.b2bProductSection}>
-     {/* 1. ÜST BÖLÜM: B2B SATIŞ VE GÜVEN */}
       <div className={styles.productHeroGrid}>
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
-            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428504/profile_Cornier_olog97.jpg" 
-            alt="Cornier Aluminiu Profil L"
+            // NOT: Buraya kendi cloudinary'nizdeki Yuvarlak Boru (Teava Rotunda) görsel linkinizi yapıştırın
+            src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg" 
+            alt="Țeavă Rotundă Aluminiu"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
             priority
@@ -65,8 +41,8 @@ export default function CornierView() {
         </div>
         
         <div>
-          <h1 className={styles.productTitle}>Cornier Aluminiu (Profil L)</h1>
-          <div className={styles.priceTag}>de la 3,40 LEI / m</div>
+          <h1 className={styles.productTitle}>Țeavă Rotundă Aluminiu</h1>
+          <div className={styles.priceTag}>de la 3,80 LEI / m</div>
           
           <ul className={styles.trustBadges}>
             <li className={styles.stockIn}>✅ Peste 200 de tone în stoc permanent</li>
@@ -81,43 +57,26 @@ export default function CornierView() {
         </div>
       </div>
 
-      {/* 2. ALT BÖLÜM: FİLTRELİ DİNAMİK TABLO */}
       <div className={styles.technicalTableSection}>
         <h3>Specificații Tehnice și Dimensiuni</h3>
         
-        {/* Filtre Çubuğu */}
         <div className={styles.filterBar}>
           <div className={styles.filterGroup}>
-            <label>Latura a (mm)</label>
+            <label>Diametru Exterior - D (mm)</label>
             <select 
-              value={filterA} 
+              value={filterD} 
               onChange={(e) => {
-                setFilterA(e.target.value);
-                setFilterB(''); // A değişince B sıfırlanır
-                setFilterS(''); // A değişince S sıfırlanır
+                setFilterD(e.target.value);
+                setFilterS(''); // D değişince S sıfırlanır
               }}
             >
               <option value="">Toate</option>
-              {uniqueA.map(val => <option key={val} value={val}>{val} mm</option>)}
-            </select>
-          </div>
-          
-          <div className={styles.filterGroup}>
-            <label>Latura b (mm)</label>
-            <select 
-              value={filterB} 
-              onChange={(e) => {
-                setFilterB(e.target.value);
-                setFilterS(''); // B değişince S sıfırlanır
-              }}
-            >
-              <option value="">Toate</option>
-              {uniqueB.map(val => <option key={val} value={val}>{val} mm</option>)}
+              {uniqueD.map(val => <option key={val} value={val}>Ø {val} mm</option>)}
             </select>
           </div>
 
           <div className={styles.filterGroup}>
-            <label>Grosime s (mm)</label>
+            <label>Grosime - s (mm)</label>
             <select 
               value={filterS} 
               onChange={(e) => setFilterS(e.target.value)}
@@ -129,21 +88,20 @@ export default function CornierView() {
           
           <button 
             className={styles.btnClearFilters} 
-            onClick={() => { setFilterA(''); setFilterB(''); setFilterS(''); }}
+            onClick={() => { setFilterD(''); setFilterS(''); }}
           >
             Resetează Filtrele
           </button>
         </div>
 
-        {/* Veri Tablosu */}
         <div className={styles.tableResponsive}>
           <table className={styles.b2bTable}>
             <thead>
               <tr>
                 <th>Cod Profil</th>
-                <th>Dimensiuni (a x b)</th>
+                <th>D (Ext) x d (Int)</th>
                 <th>Grosime (s)</th>
-                <th>Greutate (Kg/ml)</th>
+                <th>Greutate (Kg/m)</th>
                 <th>Disponibilitate</th>
               </tr>
             </thead>
@@ -152,9 +110,9 @@ export default function CornierView() {
                 filteredData.map((row, index) => (
                   <tr key={index}>
                     <td><strong>{row.profilNo}</strong></td>
-                    <td>{row.a} x {row.b || row.a} mm</td>
+                    <td>Ø {row.D} x {row.d} mm</td>
                     <td>{row.s} mm</td>
-                    <td>{row.kg} Kg/ml</td>
+                    <td>{row.kg} Kg/m</td>
                     <td>
                       {row.stoc ? (
                         <span className={styles.badgeStoc}>În stoc</span>
