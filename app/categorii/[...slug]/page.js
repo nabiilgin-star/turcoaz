@@ -417,16 +417,25 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
   const type = result?.type || "product";
   const data = result?.data || defaultProducts[currentSlug] || defaultProducts["cornier"];
 
+ // O an bulunulan sayfanın tam URL'sini güvenli bir şekilde oluşturuyoruz
+  const currentPath = `/categorii/${pathSegments.join('/')}`;
+  
   const breadcrumbItems = [{ label: "Categorii", href: "/categorii" }];
 
   if (type === "category") {
-    breadcrumbItems.push({ label: data.title || data.name, href: `/categorii/${data.slug}` });
+    breadcrumbItems.push({ 
+      label: data.title || data.name, 
+      href: currentPath 
+    });
   } else if (type === "subcategory" && data.category) {
     breadcrumbItems.push({
       label: data.category.title || data.category.name,
       href: `/categorii/${data.category.slug}`,
     });
-    breadcrumbItems.push({ label: data.subcategory?.title || data.subcategory?.name || 'Subcategorie', href: "#" });
+    breadcrumbItems.push({ 
+      label: data.subcategory?.title || data.subcategory?.name || 'Subcategorie', 
+      href: currentPath 
+    });
   } else if (type === "product") {
     if (data.category) {
       breadcrumbItems.push({
@@ -440,7 +449,10 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
         href: `/categorii/${data.category.slug}/${data.subcategory.slug}`,
       });
     }
-    breadcrumbItems.push({ label: data.title || data.name, href: "#" });
+    breadcrumbItems.push({ 
+      label: data.title || data.name, 
+      href: currentPath 
+    });
   }
 
   const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);

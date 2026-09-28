@@ -12,11 +12,11 @@ const poppins = Poppins({
 // SEO GÜNCELLEMELERİ YAPILMIŞ METADATA OBJESİ
 // ----------------------------------------------------------------------
 export const metadata = {
+  metadataBase: new URL("https://turcoaz.com"),
   title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
   description:
     "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
   
-  metadataBase: new URL("https://turcoaz.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -40,7 +40,24 @@ export const metadata = {
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
+    images: [
+      {
+        url: "/logo.png", // 1200x630 boyutlarında kurumsal banner görselinizle değiştirebilirsiniz
+        width: 1200,
+        height: 630,
+        alt: "Turcoaz Aluminiu - Sisteme Profesionale",
+      },
+    ],
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
+    description:
+      "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
+    images: ["/logo.png"],
+  },
+
   verification: {
     google: "99WUIU-knQT64obdDg7tY_iKjVa3Yn2p8COGa5n25eo",
   },
@@ -50,7 +67,6 @@ export const metadata = {
 // STATİK VERİLER (Performans için fonksiyon dışında tanımlandı)
 // ----------------------------------------------------------------------
 
-// Romanya'nın tüm illerinin listesi (București, Ilfov ve Iași en başta)
 const allRomanianCounties = [
   "București", "Ilfov", "Iași", "Alba", "Arad", "Argeș", "Bacău", "Bihor",
   "Bistrița-Năsăud", "Botoșani", "Brașov", "Brăila", "Buzău", "Caraș-Severin",
@@ -61,7 +77,6 @@ const allRomanianCounties = [
   "Vrancea", "România"
 ];
 
-// Organization: Markanın şemsiye kurumsal kimliği
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -77,7 +92,6 @@ const organizationJsonLd = {
   areaServed: allRomanianCounties,
 };
 
-// Fiziksel lokasyonlar için LocalBusiness kaydı
 const locationsJsonLd = [
   {
     "@context": "https://schema.org",

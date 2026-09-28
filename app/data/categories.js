@@ -327,7 +327,7 @@ description: `
   
   <h2>Caracteristici Tehnice & Finisaje Disponibile</h2>
   <p><strong>Culori & Finisaje Populare:</strong> Gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</p>
-  <p><strong>Dimensiuni & Grosime Robuste (Model TP2):</strong> Opțiuni variate de lățime a profilului între 75 mm și 360 mm, cu o grosime a peretelui adaptată structural între 1,1 mm și 2,8 mm pentru prevenirea flambării.</p>
+  <p><strong>Dimensiuni & Grosime Robuste (Model TP2):</strong> Opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui adaptată structural între 1,1 mm și 2,8 mm pentru prevenirea flambării.</p>
   <p><strong>Lungimi Extinse & Distribuție Națională:</strong> Bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</p>
   <p><strong>Protecție Împotriva Infiltrațiilor:</strong> Panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</p>
 
