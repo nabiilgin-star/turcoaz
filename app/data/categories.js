@@ -478,7 +478,7 @@ Căutați profile PVC de înaltă calitate, sisteme cu 4, 5 sau 6 camere, glafur
       {
         title: "EXEN 6040A (60 mm - 4 Camere)",
         slug: "exen-6040a",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791317993/EXENPLAST-6040_qtryzg.jpg",
         description: "Specificații tehnice:\n• Lățime profil: 60 mm | Număr camere: 4 camere\n• Coeficient izolație termică: Uf = 1.432 W/m²K\n• Izolare acustică: Până la 58 dB\n• Grosime vitrare: 5 mm – 24 mm\n• Coduri principale: Toc 6040A-10 (1.024 gr/m), Aripă 6040A-20 (1.237 gr/m), Teu 6040A-30 (1.151 gr/m).",
         pdfUrl: "/pdf/exen_catalog_2026.pdf"
       }
