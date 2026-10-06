@@ -456,9 +456,45 @@ Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, t
 Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
   },
 {
-  id: "pvc",
-  slug: "profile-pvc",
-  title: "Sistem de Profile PVC EXENplast",
-  description: "Sistemul EXENplast EXEN 6040A cu 4 camere și lățime de 60 mm oferă profile PVC ecologice 100% fără plumb, izolație fonică de 58 dB și eficiență termică ridicată pentru uși și ferestre.",
-}
+    id: "pvc",
+    slug: "profile-pvc",
+    title: "Sistem de Profile PVC – EXENplast & EXEN",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+    description: `<strong>🛡️ Sistem de Profile PVC EXENplast & EXEN – Soluții Premium pentru Uși și Ferestre</strong><br>
+Import direct și distribuție autorizată – Calitate superioară, eficiență energetică maximă și 100% Fără Plumb (Lead-Free).
+
+<strong>⭐ Avantajele Noastre Principale</strong>
+• Formulă ecologică 100% fără plumb (Lead-Free) – protecție pentru mediu și sănătate
+• Izolație fonică superioară de până la 58 dB – 68 dB împotriva zgomotului exterior
+• Coeficienți de transfer termic excelenți (Uf de la 1.432 până la 0.85 W/m²K)
+• Armătură din oțel unificată pentru toc, aripă și teu (stabilitate structurală maximă)
+• Sistem „Dublu Click” pentru montajul rapid și sigur al baghetelor de geam
+• Gamă variată de culori laminate și finisaje elegante de lemn
+
+<strong>📏 Serii de Profile Disponibile în Portofoliu</strong>
+• <strong>EXEN 6040A (60 mm - 4 Camere)</strong> – Structură optimă, lățime de 60 mm, vitrare 5 mm – 24 mm. Ideal pentru proiecte standard cu cerințe ridicate de rezistență.
+• <strong>EXEN 70 (70 mm - 5/6 Camere)</strong> – Performanță termică sporită, conceput pentru clădiri rezidentiale moderne. Vitrare 24 mm – 36 mm.
+• <strong>EXEN 85 / Tripan (85 mm)</strong> – Vârful de gamă pentru case pasive și eficiență energetică extremă. Permite pachete de sticlă tripan de până la 52 mm.
+• <strong>Sistem Sürme / Culisant</strong> – Soluții culisante elegante pentru terase, balcoane și spații vitrate mari, economisind spațiu util.
+• <strong>Blancoplast (Glafuri PVC)</strong> – Glafuri interioare și exterioare rezistente la raze UV, umiditate și zgârieturi, cu folii renolit de înaltă calitate.
+
+<strong>🏗️ Coduri și Specificații Tehnice Principale (Seria EXEN 6040A)</strong>
+• <strong>Profil Toc 60 mm:</strong> Cod 6040A-10 | Greutate: ~1.024 gr/m
+• <strong>Profil Aripă 60 mm:</strong> Cod 6040A-20 | Greutate: ~1.237 gr/m
+• <strong>Profil Teu (Orta Kayıt):</strong> Cod 6040A-30 | Greutate: ~1.151 gr/m
+• <strong>Baghetă Geam 24 mm:</strong> Cod 6040A-80 | Greutate: ~284 gr/m
+
+<strong>🎨 Gamă de Culori și Finisaje LAMINAT</strong>
+• Alb Standard / Alb Pur
+• Gri Antracit (Anthracite Gray)
+• Stejar Auriu (Golden Oak) & Stejar Deschis / Închis
+• Mahon & Nuc (Walnut)
+
+<strong>📦 Detalii Comerciale și Livrare</strong>
+• Disponibilitate permanentă în stoc pentru profilele de bază și accesorii
+• Livrare rapidă în toată România prin logistică propriu sau parteneri
+• Consultanță tehnică dedicată pentru fabricatori, montatori și arhitecți
+• Transmiterea comenzilor și cererilor de ofertă în scris (dimensiuni / coduri)`
+  }
 ];
