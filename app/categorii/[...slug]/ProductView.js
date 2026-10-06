@@ -3,66 +3,39 @@ import Image from "next/image";
 export default function ProductView({ product }) {
   if (!product) return <div>Ürün bulunamadı.</div>;
 
-// ACP Bond ve PVC Profile sayfalarına özel dikey akışlı ortak tasarım
-const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
+  const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
   const isPvc = product.slug === "profile-pvc";
 
+  // 1. ACP BOND SAYFASI ÖZEL GÖRÜNÜMÜ (Parametreler tablosu ile)
   if (isAcpBond) {
-    // Sadece Bond'a ait banner, açıklama ve ürünler (Primebond, Durabond vb.)
-  }
-
-  if (isPvc) {
-    // Sadece PVC'ye ait banner, açıklama ve ürünler (EXEN 60, EXEN 70 vb. - Bond parametreleri OLMADAN)
-  } return (
+    return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
-        {/* 1. En Üst Tam Genişlik Banner Görseli */}
         {product.image && (
           <div style={{ width: "100%", height: "300px", position: "relative", marginBottom: "40px", backgroundColor: "#fcfcfc" }}>
-            <Image 
-              src={product.image} 
-              alt={product.title} 
-              fill 
-              style={{ objectFit: "contain" }}
-              priority
-            />
+            <Image src={product.image} alt={product.title} fill style={{ objectFit: "contain" }} priority />
           </div>
         )}
         
-        {/* Açıklama ve ardından ürünler (products.map) / kataloglar burada tam Bond gibi listelenecektir */}
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px", display: "flex", flexDirection: "column", gap: "40px" }}>
-          
-          {/* Başlık */}
           <h1 style={{ fontSize: "2.4rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
             {product.title}
           </h1>
-         
-          {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
+          
           <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
             ✓ Agrement Tehnic • Tablă Aluminiu Hydro Norvegia • Cel mai bun preț (Import 150t+/lunar)
           </div>
 
-          {/* 2. Bölüm: Üstte Açıklama, Altta Teknik Kesit Resmi (Dikey Akış) */}
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }}>
-          <div 
-  style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }}
-  dangerouslySetInnerHTML={{ __html: product.description || "" }}
-/>
+            <div style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: product.description || "" }} />
             {product.detailImage && (
               <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
-                <Image 
-                  src={product.detailImage} 
-                  alt="ACP Teknik Detay" 
-                  fill 
-                  style={{ objectFit: "contain", padding: "10px" }} 
-                />
+                <Image src={product.detailImage} alt="ACP Teknik Detay" fill style={{ objectFit: "contain", padding: "10px" }} />
               </div>
             )}
           </div>
 
-          {/* 3. Bölüm: Üstte Teknik Tablo, Altta Renk/Detay Görseli (Dikey Akış) */}
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }}>
             <h3 style={{ fontSize: "1.3rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Parametri Tehnici</h3>
-            
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem", textAlign: "left", backgroundColor: "#fff", borderRadius: "8px", overflow: "hidden" }}>
                 <thead>
@@ -83,73 +56,32 @@ const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
                 </tbody>
               </table>
             </div>
-
             <div style={{ position: "relative", width: "100%", height: "320px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
-              <Image 
-                src="https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/Bond_Color_t7va5t.jpg" 
-                alt="ACP Renkler ve Detay" 
-                fill 
-                style={{ objectFit: "cover" }} 
-              />
+              <Image src="https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/Bond_Color_t7va5t.jpg" alt="ACP Renkler ve Detay" fill style={{ objectFit: "cover" }} />
             </div>
           </div>
 
-          {/* 4. En Altta Mărci Disponibile (Dikey Akışlı Liste) */}
           {product.products && product.products.length > 0 && (
             <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "20px" }}>
-              <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
-                Mărci Disponibile
-              </h2>
+              <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>Mărci Disponibile</h2>
               <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
                 {product.products.map((brand, index) => (
-                  <div key={index} style={{ 
-                    border: "1px solid #eaeaea", 
-                    borderRadius: "16px", 
-                    padding: "24px", 
-                    backgroundColor: "#fafafa",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "16px",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.03)"
-                  }}>
+                  <div key={index} style={{ border: "1px solid #eaeaea", borderRadius: "16px", padding: "24px", backgroundColor: "#fafafa", display: "flex", flexDirection: "column", gap: "16px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)" }}>
                     {brand.image && (
                       <div style={{ position: "relative", width: "100%", height: "220px", borderRadius: "10px", overflow: "hidden", backgroundColor: "#fff", border: "1px solid #eee" }}>
-                        <Image 
-                          src={brand.image} 
-                          alt={brand.name} 
-                          fill 
-                          style={{ objectFit: "contain", padding: "10px" }} 
-                        />
+                        <Image src={brand.image} alt={brand.title || brand.name} fill style={{ objectFit: "contain", padding: "10px" }} />
                       </div>
                     )}
-
                     <div>
                       <h3 style={{ fontSize: "1.3rem", fontWeight: "600", color: "#222", marginBottom: "8px" }}>
-                        {brand.name}
+                        {brand.title || brand.name}
                       </h3>
                       <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0, whiteSpace: "pre-line" }}>
                         {brand.description}
                       </p>
                     </div>
-
                     {brand.pdfUrl && (
-                      <a 
-                        href={brand.pdfUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        style={{ 
-                          textDecoration: "none", 
-                          backgroundColor: "#c5a491", 
-                          color: "#fff", 
-                          padding: "12px 20px", 
-                          borderRadius: "8px", 
-                          textAlign: "center", 
-                          fontWeight: "500",
-                          fontSize: "0.95rem",
-                          display: "block",
-                          alignSelf: "flex-start"
-                        }}
-                      >
+                      <a href={brand.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", backgroundColor: "#c5a491", color: "#fff", padding: "12px 20px", borderRadius: "8px", textAlign: "center", fontWeight: "500", fontSize: "0.95rem", display: "block", alignSelf: "flex-start" }}>
                         Catalog PDF
                       </a>
                     )}
@@ -158,45 +90,103 @@ const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
               </div>
             </div>
           )}
-
         </div>
       </section>
     );
   }
 
-  // DİĞER NORMAL ÜRÜNLER İÇİN DİKEY AKIŞLI STANDART GÖRÜNÜM:
+  // 2. PVC PROFILE SAYFASI ÖZEL GÖRÜNÜMÜ (Bond parametreleri YOK, sadece EXEN serileri ve kataloglar var)
+  if (isPvc) {
+    return (
+      <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
+        {product.image && (
+          <div style={{ width: "100%", height: "300px", position: "relative", marginBottom: "40px", backgroundColor: "#fcfcfc" }}>
+            <Image src={product.image} alt={product.title} fill style={{ objectFit: "contain" }} priority />
+          </div>
+        )}
+        
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px", display: "flex", flexDirection: "column", gap: "40px" }}>
+          <h1 style={{ fontSize: "2.4rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
+            {product.title}
+          </h1>
+          
+          <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", textAlign: "center", marginTop: "-20px" }}>
+            ✓ 100% Fără Plumb (Lead-Free) • Calitate Premium • Stoc Permanent
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }}>
+            <div style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: product.description || "" }} />
+            {product.detailImage && (
+              <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
+                <Image src={product.detailImage} alt="PVC Detay" fill style={{ objectFit: "contain", padding: "10px" }} />
+              </div>
+            )}
+          </div>
+
+          {product.products && product.products.length > 0 && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginTop: "10px" }}>
+              <h2 style={{ fontSize: "1.8rem", fontWeight: "700", color: "#1a1a1a", textAlign: "center", margin: 0 }}>
+                Serii de Profile și Sisteme PVC
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+                {product.products.map((item, index) => (
+                  <div key={index} style={{ border: "1px solid #eaeaea", borderRadius: "16px", padding: "24px", backgroundColor: "#fafafa", display: "flex", flexDirection: "column", gap: "16px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)" }}>
+                    {item.image && (
+                      <div style={{ position: "relative", width: "100%", height: "220px", borderRadius: "10px", overflow: "hidden", backgroundColor: "#fff", border: "1px solid #eee" }}>
+                        <Image src={item.image} alt={item.title} fill style={{ objectFit: "contain", padding: "10px" }} />
+                      </div>
+                    )}
+                    <div>
+                      <h3 style={{ fontSize: "1.3rem", fontWeight: "600", color: "#222", marginBottom: "8px" }}>
+                        {item.title}
+                      </h3>
+                      <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0, whiteSpace: "pre-line" }}>
+                        {item.description}
+                      </p>
+                    </div>
+                    {item.pdfUrl && (
+                      <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", backgroundColor: "#0284c7", color: "#fff", padding: "12px 20px", borderRadius: "8px", textAlign: "center", fontWeight: "500", fontSize: "0.95rem", display: "block", alignSelf: "flex-start" }}>
+                        Descarcă Catalog PDF
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  // 3. DİĞER NORMAL ÜRÜNLER İÇİN STANDART GÖRÜNÜM:
   const mainDisplayImage = product.detailImage || product.image;
 
   return (
     <section style={{ padding: "40px 20px", backgroundColor: "#fff", width: "100%" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
         
-        {/* Başlık */}
         <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.title}</h1>
         
-        {/* TASARIMI BOZMAYAN ŞIK GÜVEN & FİYAT VURGUSU */}
         <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
-          ✓ Agrement Tehnic • Cel mai bun preț direct de la importator (Import 150t+/lunar)
+          ✓ Calitate superioară • Stoc permanent • Livrare rapidă
         </div>
 
-        {/* Üstte Büyük Ana Görsel */}
         {mainDisplayImage && (
           <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9", border: "1px solid #eaeaea" }}>
             <Image src={mainDisplayImage} alt={product.title} fill style={{ objectFit: "contain", padding: "15px" }} />
           </div>
         )}
 
-        {/* Altta Açıklama Metni */}
         <div style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} dangerouslySetInnerHTML={{ __html: product.description }} />
         
         {product.pdfUrl && (
           <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}>
-            <div style={{ backgroundColor: "#c5a491", color: "#fff", padding: "12px 28px", borderRadius: "8px", fontWeight: "600" }}>Catalog PDF</div>
+            <div style={{ backgroundColor: "#0284c7", color: "#fff", padding: "12px 28px", borderRadius: "8px", fontWeight: "600" }}>Catalog PDF</div>
           </a>
         )}
       </div>
 
-      {/* En Altta Alt Alta Sıralı Galeri Fotoğrafları */}
       {product.gallery && product.gallery.length > 0 && (
         <div style={{ maxWidth: "900px", margin: "50px auto 0", display: "flex", flexDirection: "column", gap: "30px" }}>
           <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
