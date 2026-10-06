@@ -456,14 +456,14 @@ Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, t
 Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
   },
 {
-    title: "Sistem de Profile PVC – EXENplast & EXEN",
+    title: "Sistem de Profile PVC – EXENplast & BLANCOPLAST",
     slug: "profile-pvc",
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
     gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791317993/EXENPLAST-6040_qtryzg.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791317993/EXENPLAST-6040_1_vo5lvj.jpg",
     ],
     description: `<strong>🛡️ Sistem de Profile PVC EXENplast & BLANCOPLAST – Soluții Premium pentru Uși și Ferestre</strong><br>
 Căutați profile PVC de înaltă calitate, sisteme cu 4, 5 sau 6 camere, glafuri sau sisteme culisante în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții ecologice și durabile pentru tâmplărie PVC, cu stoc permanent disponibil în depozit.
