@@ -4,10 +4,16 @@ export default function ProductView({ product }) {
   if (!product) return <div>Ürün bulunamadı.</div>;
 
 // ACP Bond ve PVC Profile sayfalarına özel dikey akışlı ortak tasarım
-  const isSpecialPage = product.slug === "acp-aluminiu-compozit-panel-bond" || product.slug === "profile-pvc";
+const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
+  const isPvc = product.slug === "profile-pvc";
 
-  if (isSpecialPage) {
-    return (
+  if (isAcpBond) {
+    // Sadece Bond'a ait banner, açıklama ve ürünler (Primebond, Durabond vb.)
+  }
+
+  if (isPvc) {
+    // Sadece PVC'ye ait banner, açıklama ve ürünler (EXEN 60, EXEN 70 vb. - Bond parametreleri OLMADAN)
+  } return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
         {/* 1. En Üst Tam Genişlik Banner Görseli */}
         {product.image && (

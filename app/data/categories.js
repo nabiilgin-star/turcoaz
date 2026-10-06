@@ -478,37 +478,9 @@ Căutați profile PVC de înaltă calitate, sisteme cu 4, 5 sau 6 camere, glafur
       {
         title: "EXEN 6040A (60 mm - 4 Camere)",
         slug: "exen-6040a",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
         description: "Specificații tehnice:\n• Lățime profil: 60 mm | Număr camere: 4 camere\n• Coeficient izolație termică: Uf = 1.432 W/m²K\n• Izolare acustică: Până la 58 dB\n• Grosime vitrare: 5 mm – 24 mm\n• Coduri principale: Toc 6040A-10 (1.024 gr/m), Aripă 6040A-20 (1.237 gr/m), Teu 6040A-30 (1.151 gr/m).",
         pdfUrl: "/pdf/exen_catalog_2026.pdf"
-      },
-      {
-        title: "EXEN 70 (70 mm - 5/6 Camere)",
-        slug: "exen-70",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-        description: "Specificații tehnice:\n• Lățime profil: 70 mm | Camere multiple pentru eficiență termică sporită\n• Coeficient izolație termică: Uf superior\n• Grosime vitrare: 24 mm – 36 mm\n• Ideal pentru proiecte rezidențiale moderne cu exigențe ridicate.",
-        pdfUrl: "/pdf/exen_catalog_2026.pdf"
-      },
-      {
-        title: "EXEN 85 Tripan (85 mm)",
-        slug: "exen-85-tripan",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-        description: "Specificații tehnice:\n• Lățime profil: 85 mm | Vârful de gamă pentru case pasive\n• Permite pachete de sticlă tripan de până la 52 mm\n• Izolație termică și fonică extremă pentru confort maxim.",
-        pdfUrl: "/pdf/exen_catalog_2026.pdf"
-      },
-      {
-        title: "Sistem PVC Glisant / Culisant",
-        slug: "sistem-Glisant",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-        description: "Specificații tehnice:\n• Sisteme culisante elegante pentru terase, balcoane și spații vitrate mari\n• Economisire eficientă a spațiului util și operare lină\n• Compatibil cu feronerie specială de glisare.",
-        pdfUrl: "/pdf/exen_catalog_2026.pdf"
-      },
-      {
-        title: "Blancoplast (Profil PVC)",
-        slug: "blancoplast-Profilpvc",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-        description: "Specificații tehnice:\n• Glafuri interioare și exterioare din PVC de înaltă rezistență\n• Folie renolit rezistentă la raze UV și zgârieturi\n• Dimensiuni variate (150mm - 350mm) și capace dedicate.",
-        pdfUrl: "/pdf/exen_distribuitor_2026.pdf"
       }
     ],
     subcategories: []
