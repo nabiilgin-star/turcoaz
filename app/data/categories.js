@@ -465,7 +465,7 @@ Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expus
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
     ],
-    description: `<strong>🛡️ Sistem de Profile PVC EXENplast & EXEN – Soluții Premium pentru Uși și Ferestre</strong><br>
+    description: `<strong>🛡️ Sistem de Profile PVC EXENplast & BLANCOPLAST – Soluții Premium pentru Uși și Ferestre</strong><br>
 Căutați profile PVC de înaltă calitate, sisteme cu 4, 5 sau 6 camere, glafuri sau sisteme culisante în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții ecologice și durabile pentru tâmplărie PVC, cu stoc permanent disponibil în depozit.
 
 <strong>⭐ De ce să alegi profilele noastre PVC EXEN?</strong>
