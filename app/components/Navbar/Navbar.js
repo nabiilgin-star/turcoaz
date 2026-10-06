@@ -367,7 +367,7 @@ const Navbar = ({ categories = [], announcement = {} }) => {
               minWidth: '300px' /* BU SATIR MENÜYÜ ZORLA SAĞA İTECEK */
             }}
           >
-            depozitaluminiu
+            turcoaz aluminiu
           </div>
           
           <div className="desktop-menu">
