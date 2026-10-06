@@ -354,7 +354,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda',profil-pvc];
+const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda','profil-pvc'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
