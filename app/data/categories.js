@@ -454,5 +454,11 @@ Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, t
 
 <strong>📘 Foaie de Produs – 10.10.2</strong>
 Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
-  }
+  },
+{
+  id: "pvc",
+  slug: "profile-pvc",
+  title: "Sistem de Profile PVC EXENplast",
+  description: "Sistemul EXENplast EXEN 6040A cu 4 camere și lățime de 60 mm oferă profile PVC ecologice 100% fără plumb, izolație fonică de 58 dB și eficiență termică ridicată pentru uși și ferestre.",
+}
 ];
