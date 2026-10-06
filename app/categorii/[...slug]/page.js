@@ -15,6 +15,7 @@ import TeavaPatrataView from './TeavaPatrataView';
 import ProfilUView from './ProfilUView';
 import ProfilTView from './ProfilTView';
 import PlatbandaView from './PlatbandaView';
+import PvcProfilView from './PvcProfilView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
@@ -353,7 +354,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda'];
+const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda',profil-pvc];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
@@ -706,6 +707,8 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
   <ProfilTView />
   ) : lastSlug === "platbanda" ? (
   <PlatbandaView />
+   ):lastSlug === "profile-pvc" ? (
+  <PvcProfilView />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}

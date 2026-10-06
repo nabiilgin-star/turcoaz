@@ -1,4 +1,5 @@
 "use client";
+console.log("BURASI BENIM DUZENLEDIGIM NAVBAR DOSYASI - 12345");
 
 import Link from "next/link";
 import Image from "next/image";
@@ -237,7 +238,6 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     };
   }, [isSearchOpen]);
 
-  // Farklı sayfadan ana sayfaya geçişlerde URL'deki hash (#) kısmına kaydırma kontrolü
   useEffect(() => {
     if (pathname === "/") {
       const hash = window.location.hash.replace("#", "");
@@ -302,18 +302,15 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     setSearchQuery("");
   };
 
-  // KESİN ÇÖZÜMLÜ YÖNLENDİRME/KAYDIRMA FONKSİYONU
   const scrollToSection = (id) => {
     closeMobileMenu();
 
     if (pathname === "/") {
-      // Ana sayfadaysak doğrudan yumuşakça kaydır
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Başka sayfadaysak ana sayfaya hash yönlendirmesi yap
       router.push(`/#${id}`);
     }
   };
@@ -355,29 +352,24 @@ const Navbar = ({ categories = [], announcement = {} }) => {
       <nav className="navbar">
         <div className="navbar-container container-max">
 
-          {/* LOGO ALANI */}
+{/* LOGO ALANI */}
           <div 
             className="logo-link"
-            onClick={() => scrollToSection("hero")}
+            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
             style={{ 
-              position: 'relative', 
-              zIndex: 999999, 
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center'
+              fontSize: '1.4rem', 
+              fontWeight: 800, 
+              color: '#0f172a', 
+              letterSpacing: '-0.5px', 
+              cursor: 'pointer', 
+              display: 'flex', 
+              alignItems: 'center',
+              minWidth: '300px' /* BU SATIR MENÜYÜ ZORLA SAĞA İTECEK */
             }}
           >
-            <Image
-              src="https://res.cloudinary.com/oivvupgw/image/upload/v1784325751/Logo_Turcoaz_aluminiu_er7eyt.png"
-              alt="Turcoaz Aluminiu Logo"
-              width={200}
-              height={60}
-              priority
-              className="nav-logo"
-              style={{ pointerEvents: 'none' }}
-            />
+            depozitaluminiu
           </div>
-
+          
           <div className="desktop-menu">
             {menuItems.map((item) => {
               const subItems = getSubItems(item);
@@ -490,11 +482,42 @@ const Navbar = ({ categories = [], announcement = {} }) => {
               )}
             </div>
 
-            <div className="cta-button-container">
-              <Link href="/contact">
-                <Button variant="primary">Solicită ofertă</Button>
-              </Link>
+        <Link href="/cos" style={{ textDecoration: 'none', width: '100%' }}>
+            <div 
+              className="btn primary mobile-cta"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                gap: '8px', 
+                backgroundColor: '#0ea5e9', 
+                color: 'white', 
+                padding: '12px 20px', 
+                borderRadius: '8px', 
+                fontWeight: '600', 
+                cursor: 'pointer',
+                width: '100%'
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              Coșul meu
+              <span style={{ 
+                backgroundColor: 'white', 
+                color: '#0ea5e9', 
+                borderRadius: '50%', 
+                padding: '2px 8px', 
+                fontSize: '0.85rem',
+                fontWeight: 'bold',
+                marginLeft: '4px'
+              }}>
+                0
+              </span>
             </div>
+          </Link>
 
             <button
               className={`hamburger-btn ${isMobileOpen ? "is-active" : ""}`}
@@ -511,7 +534,7 @@ const Navbar = ({ categories = [], announcement = {} }) => {
 
       <div className={`mobile-drawer ${isMobileOpen ? "open" : ""}`}>
         <div className="mobile-header">
-          <span className="mobile-title"></span>
+          <span className="mobile-title">depozitaluminiu</span>
         </div>
 
         <div className="mobile-content">
@@ -539,10 +562,42 @@ const Navbar = ({ categories = [], announcement = {} }) => {
         </div>
 
         <div className="mobile-footer">
-          <Link href="/contact" onClick={closeMobileMenu}>
-            <Button variant="primary" className="mobile-cta">
-              Solicită ofertă
-            </Button>
+          <Link href="/cos" onClick={closeMobileMenu} style={{ textDecoration: 'none', width: '100%' }}>
+            <div 
+              className="mobile-cta"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                gap: '8px', 
+                backgroundColor: '#0ea5e9', 
+                color: 'white', 
+                padding: '12px 20px', 
+                borderRadius: '8px', 
+                fontWeight: '600', 
+                cursor: 'pointer',
+                width: '100%',
+                boxShadow: '0 4px 6px -1px rgba(14, 165, 233, 0.4)'
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              Coșul meu
+              <span style={{ 
+                backgroundColor: 'white', 
+                color: '#0ea5e9', 
+                borderRadius: '50%', 
+                padding: '2px 8px', 
+                fontSize: '0.85rem',
+                fontWeight: 'bold',
+                marginLeft: '4px'
+              }}>
+                0
+              </span>
+            </div>
           </Link>
         </div>
       </div>
