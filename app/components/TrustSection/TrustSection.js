@@ -141,18 +141,28 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 5. Profile PVC */}
-            <div className="portfolio-card span-2">
-              <div className="card-split">
-                <div className="split-text">
-                  <h3>Profile PVC – Distribuitor Unic în România</h3>
-                  <p>Suntem distribuitor unic pentru EXENplast - profile PVC destinate realizării ferestrelor și ușilor, oferind produse conforme standardelor europene și cerințelor actuale ale pieței.</p>
-                </div>
-                <div className="split-image">
-                  <Image src={imgPvc} alt="Profile PVC Exen Plast" fill className="premium-img" />
-                </div>
-              </div>
-            </div>
+           {/* 5. Profile PVC */}
+<div className="portfolio-card span-2">
+  <div className="card-split">
+    <div className="split-text">
+      <h3>Profile PVC – Distribuitor Unic EXENplast & BlancoPlast în România</h3>
+      <p>
+        Suntem distribuitor autorizat și unic în România pentru brandurile de top 
+        <strong> EXENplast</strong> și <strong>BlancoPlast</strong>. Oferim profile PVC 
+        premium pentru ferestre și uși termopan, fabricate la standarde europene, 
+        cu izolație termică și fonică excelentă.
+      </p>
+    </div>
+    <div className="split-image">
+      <Image 
+        src={imgPvc} 
+        alt="Profile PVC EXENplast si BlancoPlast Romania" 
+        fill 
+        className="premium-img" 
+      />
+    </div>
+  </div>
+</div>
 
             {/* 6. Feronerie */}
             <div className="portfolio-card span-2">
