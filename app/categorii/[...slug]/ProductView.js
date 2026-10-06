@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function ProductView({ product }) {
   if (!product) return <div>Ürün bulunamadı.</div>;
 
-  // ACP Bond sayfasına özel dikey akışlı özel tasarım
-  const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
+// ACP Bond ve PVC Profile sayfalarına özel dikey akışlı ortak tasarım
+  const isSpecialPage = product.slug === "acp-aluminiu-compozit-panel-bond" || product.slug === "profile-pvc";
 
-  if (isAcpBond) {
+  if (isSpecialPage) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
         {/* 1. En Üst Tam Genişlik Banner Görseli */}
@@ -21,7 +21,8 @@ export default function ProductView({ product }) {
             />
           </div>
         )}
-
+        
+        {/* Açıklama ve ardından ürünler (products.map) / kataloglar burada tam Bond gibi listelenecektir */}
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px", display: "flex", flexDirection: "column", gap: "40px" }}>
           
           {/* Başlık */}
