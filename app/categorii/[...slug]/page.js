@@ -706,6 +706,8 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
   <ProfilTView />
   ) : lastSlug === "platbanda" ? (
   <PlatbandaView />
+  ) : lastSlug === "gard" ? (
+            <ProductView product={data.subcategory || data} />
 ) : (
             <>
               {type === "category" && <CategoryView category={data} />}
