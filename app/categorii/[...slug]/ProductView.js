@@ -5,8 +5,71 @@ export default function ProductView({ product }) {
 
   const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
   const isPvc = product.slug === "profile-pvc";
+  const isGard = product.slug === "gard";
 
-  // 1. ACP BOND SAYFASI ÖZEL GÖRÜNÜMÜ
+  // Ortak Buton Stili
+  const buttonStyle = {
+    display: "inline-block",
+    backgroundColor: "#c5a491",
+    color: "#fff",
+    padding: "12px 28px",
+    borderRadius: "10px",
+    fontWeight: "600",
+    fontSize: "0.95rem",
+    textAlign: "center",
+    textDecoration: "none",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
+  };
+
+  // 1. GARD SAYFASI ÖZEL GÖRÜNÜMÜ
+  if (isGard) {
+    return (
+      <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px", display: "flex", flexDirection: "column", gap: "24px" }}>
+          
+          <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: "20px 0 0 0" }}>
+            {product.title}
+          </h1>
+
+          {product.pdfUrl && (
+            <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
+              Catalog PDF
+            </a>
+          )}
+
+          {(product.detailImage || product.image) && (
+            <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff", border: "1px solid #eaeaea" }}>
+              <Image 
+                src={product.detailImage || product.image} 
+                alt={product.title} 
+                fill 
+                style={{ objectFit: "contain", padding: "15px" }} 
+                priority 
+              />
+            </div>
+          )}
+
+          <div 
+            style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} 
+            dangerouslySetInnerHTML={{ __html: product.description || "" }} 
+          />
+        </div>
+
+        {product.gallery && product.gallery.length > 0 && (
+          <div style={{ maxWidth: "900px", margin: "40px auto 0", display: "flex", flexDirection: "column", gap: "24px", padding: "0 20px" }}>
+            <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
+            {product.gallery.map((src, index) => (
+              <div key={index} style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff", border: "1px solid #eaeaea", padding: "10px" }}>
+                <Image src={src} alt={`${product.title} ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    );
+  }
+
+  // 2. ACP BOND SAYFASI
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
@@ -81,7 +144,7 @@ export default function ProductView({ product }) {
                       </p>
                     </div>
                     {brand.pdfUrl && (
-                      <a href={brand.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", backgroundColor: "#c5a491", color: "#fff", padding: "12px 20px", borderRadius: "8px", textAlign: "center", fontWeight: "500", fontSize: "0.95rem", display: "block", alignSelf: "flex-start" }}>
+                      <a href={brand.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
                         Catalog PDF
                       </a>
                     )}
@@ -95,7 +158,7 @@ export default function ProductView({ product }) {
     );
   }
 
-  // 2. PVC PROFILE SAYFASI ÖZEL GÖRÜNÜMÜ (Galerie Foto Eklendi)
+  // 3. PVC PROFILE SAYFASI
   if (isPvc) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
@@ -145,8 +208,8 @@ export default function ProductView({ product }) {
                       </p>
                     </div>
                     {item.pdfUrl && (
-                      <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", backgroundColor: "#0284c7", color: "#fff", padding: "12px 20px", borderRadius: "8px", textAlign: "center", fontWeight: "500", fontSize: "0.95rem", display: "block", alignSelf: "flex-start" }}>
-                        Descarcă Catalog PDF
+                      <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
+                        Catalog PDF
                       </a>
                     )}
                   </div>
@@ -156,7 +219,6 @@ export default function ProductView({ product }) {
           )}
         </div>
 
-        {/* PVC Sayfası İçin Galeri Foto Bölümü */}
         {product.gallery && product.gallery.length > 0 && (
           <div style={{ maxWidth: "900px", margin: "50px auto 0", display: "flex", flexDirection: "column", gap: "30px", padding: "0 20px" }}>
             <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
@@ -171,53 +233,33 @@ export default function ProductView({ product }) {
     );
   }
 
-  // 3. DİĞER NORMAL ÜRÜNLER İÇİN STANDART GÖRÜNÜM:
-// Standart Görünüm (Gard ve Diğer Sayfalar İçin)
+  // 4. STANDART SAYFALAR FALLBACK
   const mainDisplayImage = product.detailImage || product.image;
 
   return (
     <section style={{ padding: "40px 20px", backgroundColor: "#fff", width: "100%" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
+        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.title}</h1>
         
-        {/* 1. Başlık */}
-        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>
-          {product.title}
-        </h1>
-        
-        {/* Güven Vurgusu */}
         <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
           ✓ Calitate superioară • Stoc permanent • Livrare rapidă
         </div>
 
-        {/* 2. Ana Görsel */}
         {mainDisplayImage && (
           <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9", border: "1px solid #eaeaea" }}>
-            <Image src={mainDisplayImage} alt={product.title || "Gard F60"} fill style={{ objectFit: "contain", padding: "15px" }} priority />
+            <Image src={mainDisplayImage} alt={product.title} fill style={{ objectFit: "contain", padding: "15px" }} />
           </div>
         )}
 
-        {/* 3. Catalog PDF Butonu */}
         {product.pdfUrl && (
-          <a 
-            href={product.pdfUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            style={{ textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}
-          >
-            <div style={{ backgroundColor: "#0284c7", color: "#fff", padding: "12px 28px", borderRadius: "8px", fontWeight: "600", fontSize: "0.95rem" }}>
-              Descarcă Catalog PDF
-            </div>
+          <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
+            Catalog PDF
           </a>
         )}
 
-        {/* 4. Açıklama Metni (Rumence) */}
-        <div 
-          style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} 
-          dangerouslySetInnerHTML={{ __html: product.description }} 
-        />
+        <div style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} dangerouslySetInnerHTML={{ __html: product.description }} />
       </div>
 
-      {/* 5. Galerie Foto */}
       {product.gallery && product.gallery.length > 0 && (
         <div style={{ maxWidth: "900px", margin: "50px auto 0", display: "flex", flexDirection: "column", gap: "30px" }}>
           <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
@@ -229,5 +271,5 @@ export default function ProductView({ product }) {
         </div>
       )}
     </section>
-  );  
+  );
 }
