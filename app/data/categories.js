@@ -143,7 +143,8 @@ export const categories = [
       {
     title: "Sistem de Gard F60 – Profile din Aluminiu",
     slug: "gard",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+    icon: Layers,
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
@@ -157,10 +158,10 @@ Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru por�
 <strong>⭐ Avantajele Sistemului de Gard F60</strong>
 • <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
 • <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lămpi/lamele cu lățimi variate (60 - 150 mm).
-• <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante (simple sau duble) și porți culisante de garaj prin accesorii dedicate.
-• <strong>Protecție și Intimitate:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure, închise și complet protejate vizual de la exterior.`,
+• <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante și culisante.`,
     pdfUrl: "/pdf/gard-aluminiu.pdf",
-    products: [
+    products: [],
+    subcategories: [
       {
         title: "Specificații Tehnice – Sistem F60 (Technical Properties)",
         slug: "specificatii-tehnice-f60",
@@ -172,11 +173,12 @@ Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru por�
         title: "Opțiuni de Aplicare și Montaj (Application Options)",
         slug: "optiuni-aplicare-f60",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
-        description: "• Partiție tip L (L tipi Bölme)\n• Partiție înclinată / unghiulară (Açılı Bölme)\n• Partiție tip T (T tipi Bölme)\n• Partiție sfert / 4-căi (4'lü Bölme)\n• Flexibilitate maximă în proiectare și montaj pentru orice tip de împrejmuire rezidențială sau industrială.",
+        description: "• Partiție tip L (L tipi Bölme)\n• Partiție înclinată / unghiulară (Açılı Bölme)\n• Partiție tip T (T tipi Bölme)\n• Partiție sfert / 4-căi (4'lü Bölme)\n• Flexibilitate maximă în proiectare și montaj pentru orice tip de împrejmuire.",
         pdfUrl: "/pdf/gard-aluminiu.pdf"
       }
     ]
-  },       
+  },
+       
       {
         title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
