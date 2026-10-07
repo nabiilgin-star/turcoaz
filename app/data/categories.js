@@ -145,14 +145,14 @@ export const categories = [
     slug: "gard",
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
     gallery: [
+           "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg", 
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg"
     ],
-    pdfUrl: "/pdf/gard-aluminiu.pdf",
     description: `<strong>🛡️ Sistem de Gard F60 – Profile din Aluminiu pentru Împrejmuiri Moderne</strong><br>
 Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru porți și împrejmuiri în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții inovatoare și durabile pentru proiecte rezidențiale și industriale, cu stoc permanent disponibil în depozitul din Popești-Leordeni și filiala Alufab Iași.
 
@@ -160,22 +160,24 @@ Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru por�
 • <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
 • <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lamele cu lățimi variate (60 - 150 mm).
 • <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante (simple sau duble) și porți culisante de garaj.
-• <strong>Intimitate și Protecție:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure și protejate vizual de exterior.
+• <strong>Intimitate și Protecție:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure și complet protejate vizual de exterior.
 
-<strong>⚙️ Specificații Tehnice / Technical Properties</strong>
-• <strong>Lățime stâlp (Pole Width):</strong> 60 mm
-• <strong>Lățime panel (Panel Width):</strong> 60 - 150 mm
-• <strong>Grosime perete profil (Profile Wall Thickness):</strong> 1,2 - 1,5 mm
-• <strong>Adâncime panel (Panel Depth):</strong> 14 mm
-• <strong>Distanță min. între stâlpi (Min. Pole Space):</strong> 400 mm
-• <strong>Distanță max. între stâlpi (Max. Pole Space):</strong> 1600 mm
-• <strong>Înălțime maximă gard (Max. Fence Height):</strong> 1800 mm
+<strong>⚙️ Specificații Tehnice</strong>
+• <strong>Lățime stâlp:</strong> 60 mm
+• <strong>Lățime panou:</strong> 60 - 150 mm
+• <strong>Grosime perete profil:</strong> 1,2 - 1,5 mm
+• <strong>Adâncime panou:</strong> 14 mm
+• <strong>Distanță minimă între stâlpi:</strong> 400 mm
+• <strong>Distanță maximă între stâlpi:</strong> 1600 mm
+• <strong>Înălțime maximă gard:</strong> 1800 mm
 
-<strong>🏗️ Opțiuni de Aplicare / Application Options</strong>
-• Partiție tip L (L Type Partition)
-• Partiție înclinată / unghiulară (Angled Partition)
-• Partiție tip T (T Type Partition)
-• Partiție 4 căi / sfert (Quart Partition)`,
+<strong>🏗️ Opțiuni de Aplicare și Montaj</strong>
+• Partiție tip L
+• Partiție unghiulară / înclinată
+• Partiție tip T
+• Partiție în patru căi`,
+            pdfUrl: "/pdf/gard-aluminiu.pdf",
+
     products: [],
     subcategories: []
   },  
