@@ -22,21 +22,18 @@ export default function ProductView({ product }) {
   };
 
   // 1. GARD SAYFASI ÖZEL GÖRÜNÜMÜ
+  // 1. GARD SAYFASI ÖZEL GÖRÜNÜMÜ
   if (isGard) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px", display: "flex", flexDirection: "column", gap: "24px" }}>
           
+          {/* 1. BAŞLIK */}
           <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: "20px 0 0 0" }}>
             {product.title}
           </h1>
 
-          {product.pdfUrl && (
-            <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-              Catalog PDF
-            </a>
-          )}
-
+          {/* 2. ANA GÖRSEL (TEKNİK ÇİZİM) */}
           {(product.detailImage || product.image) && (
             <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff", border: "1px solid #eaeaea" }}>
               <Image 
@@ -49,12 +46,39 @@ export default function ProductView({ product }) {
             </div>
           )}
 
+          {/* 3. CATALOG PDF BUTONU (Görselin Altında, Sol Hizada, Dar / Compact Boyut) */}
+          {product.pdfUrl && (
+            <div style={{ display: "flex", justifyContent: "flex-start" }}>
+              <a 
+                href={product.pdfUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ 
+                  display: "inline-block", 
+                  backgroundColor: "#c5a491", 
+                  color: "#fff", 
+                  padding: "10px 24px", 
+                  borderRadius: "10px", 
+                  fontWeight: "600", 
+                  fontSize: "0.95rem", 
+                  textDecoration: "none",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)"
+                }}
+              >
+                Catalog PDF
+              </a>
+            </div>
+          )}
+
+          {/* 4. RUMENCE AÇIKLAMA METNİ */}
           <div 
             style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} 
             dangerouslySetInnerHTML={{ __html: product.description || "" }} 
           />
+
         </div>
 
+        {/* 5. GALERİ FOTOĞRAFLARI */}
         {product.gallery && product.gallery.length > 0 && (
           <div style={{ maxWidth: "900px", margin: "40px auto 0", display: "flex", flexDirection: "column", gap: "24px", padding: "0 20px" }}>
             <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
