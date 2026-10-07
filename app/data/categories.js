@@ -75,43 +75,6 @@ export const categories = [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784564143/WD70T-02_suoz0a.jpg",
             ],
           },
-          {
-    title: "Sistem de Gard F60 – Profile din Aluminiu",
-    slug: "gard",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
-    gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg"
-    ],
-    description: `<strong>🛡️ Sistem de Gard F60 – Profile din Aluminiu pentru Împrejmuiri Moderne și Rezidențiale</strong><br>
-Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru porți și împrejmuiri în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții inovatoare și durabile pentru proiecte arhitecturale, cu stoc permanent disponibil în depozitul din Popești-Leordeni și filiala Alufab Iași.
-
-<strong>⭐ Avantajele Sistemului de Gard F60</strong>
-• <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
-• <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lămpi/lamele cu lățimi variate (60 - 150 mm).
-• <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante (simple sau duble) și porți culisante de garaj prin accesorii dedicate.
-• <strong>Protecție și Intimitate:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure, închise și complet protejate vizual de la exterior.`,
-    pdfUrl: "/pdf/gard-aluminiu.pdf",
-    products: [
-      {
-        title: "Specificații Tehnice – Sistem F60 (Technical Properties)",
-        slug: "specificatii-tehnice-f60",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
-        description: "• Lățime stâlp / Pole Width: 60 mm\n• Lățime panel / Panel Width: 60 - 150 mm\n• Grosime perete profil / Profile Wall Thickness: 1,2 - 1,5 mm\n• Adâncime panel / Panel Depth: 14 mm\n• Distanță min. între stâlpi / Min. Pole Space: 400 mm\n• Distanță max. între stâlpi / Max. Pole Space: 1600 mm\n• Înălțime maximă gard / Max. Fence Height: 1800 mm",
-        pdfUrl: "/pdf/gard-aluminiu.pdf"
-      },
-      {
-        title: "Opțiuni de Aplicare și Montaj (Application Options)",
-        slug: "optiuni-aplicare-f60",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
-        description: "• Partiție tip L (L tipi Bölme)\n• Partiție înclinată / unghiulară (Açılı Bölme)\n• Partiție tip T (T tipi Bölme)\n• Partiție sfert / 4-căi (4'lü Bölme)\n• Flexibilitate maximă în proiectare și montaj pentru orice tip de împrejmuire rezidențială sau industrială.",
-        pdfUrl: "/pdf/gard-aluminiu.pdf"
-      }
-    ]
-  },
         ],
       },
       {
@@ -178,11 +141,42 @@ Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru por�
         description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
       },
       {
-        title: "Gard",
-        slug: "gard",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
-        description: "Profile și sisteme din aluminiu pentru garduri rezidențiale moderne.",
+    title: "Sistem de Gard F60 – Profile din Aluminiu",
+    slug: "gard",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg"
+    ],
+    description: `<strong>🛡️ Sistem de Gard F60 – Profile din Aluminiu pentru Împrejmuiri Moderne și Rezidențiale</strong><br>
+Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru porți și împrejmuiri în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții inovatoare și durabile pentru proiecte arhitecturale, cu stoc permanent disponibil în depozitul din Popești-Leordeni și filiala Alufab Iași.
+
+<strong>⭐ Avantajele Sistemului de Gard F60</strong>
+• <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
+• <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lămpi/lamele cu lățimi variate (60 - 150 mm).
+• <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante (simple sau duble) și porți culisante de garaj prin accesorii dedicate.
+• <strong>Protecție și Intimitate:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure, închise și complet protejate vizual de la exterior.`,
+    pdfUrl: "/pdf/gard-aluminiu.pdf",
+    products: [
+      {
+        title: "Specificații Tehnice – Sistem F60 (Technical Properties)",
+        slug: "specificatii-tehnice-f60",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
+        description: "• Lățime stâlp / Pole Width: 60 mm\n• Lățime panel / Panel Width: 60 - 150 mm\n• Grosime perete profil / Profile Wall Thickness: 1,2 - 1,5 mm\n• Adâncime panel / Panel Depth: 14 mm\n• Distanță min. între stâlpi / Min. Pole Space: 400 mm\n• Distanță max. între stâlpi / Max. Pole Space: 1600 mm\n• Înălțime maximă gard / Max. Fence Height: 1800 mm",
+        pdfUrl: "/pdf/gard-aluminiu.pdf"
       },
+      {
+        title: "Opțiuni de Aplicare și Montaj (Application Options)",
+        slug: "optiuni-aplicare-f60",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+        description: "• Partiție tip L (L tipi Bölme)\n• Partiție înclinată / unghiulară (Açılı Bölme)\n• Partiție tip T (T tipi Bölme)\n• Partiție sfert / 4-căi (4'lü Bölme)\n• Flexibilitate maximă în proiectare și montaj pentru orice tip de împrejmuire rezidențială sau industrială.",
+        pdfUrl: "/pdf/gard-aluminiu.pdf"
+      }
+    ]
+  },       
       {
         title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
