@@ -29,7 +29,8 @@ export default function CategoryView({ category }) {
           gap: "12px", 
           letterSpacing: "-0.2px" 
         }}>
-          {category.name} 
+          {/* DÜZELTME 1: title veya name kontrolü */}
+          {category.title || category.name} 
           {items.length > 0 && (
             <span style={{ 
               fontFamily: "'Poppins', sans-serif",
@@ -71,16 +72,16 @@ export default function CategoryView({ category }) {
                 transition: "all 0.2s ease"
               }}
             >
-             {/* Optimize Edilmiş Next.js <Image> Altyapısı */}
-<div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-  <Image
-    src={imgSrc}
-    alt={sub.name}
-    fill
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    style={{ objectFit: "contain" }}
-  />
-</div>
+              {/* Optimize Edilmiş Next.js <Image> Altyapısı */}
+              <div style={{ width: "100%", height: "200px", background: "#F8FAFC", overflow: "hidden", position: "relative", padding: "16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image
+                  src={imgSrc}
+                  alt={sub.title || sub.name || "Profil"}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
               
               {/* İçerik ve Başlık Alanı */}
               <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
@@ -93,7 +94,8 @@ export default function CategoryView({ category }) {
                     lineHeight: "1.4", 
                     width: "100%" 
                   }}>
-                    {sub.name}
+                    {/* DÜZELTME 2: Başlığın basıldığı kritik alan düzeltildi */}
+                    {sub.title || sub.name}
                   </span>
                 </div>
 
