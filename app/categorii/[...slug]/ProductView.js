@@ -6,7 +6,7 @@ export default function ProductView({ product }) {
   const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
   const isPvc = product.slug === "profile-pvc";
 
-  // 1. ACP BOND SAYFASI ÖZEL GÖRÜNÜMÜ (Parametreler tablosu ile)
+  // 1. ACP BOND SAYFASI ÖZEL GÖRÜNÜMÜ
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
@@ -95,7 +95,7 @@ export default function ProductView({ product }) {
     );
   }
 
-  // 2. PVC PROFILE SAYFASI ÖZEL GÖRÜNÜMÜ (Bond parametreleri YOK, sadece EXEN serileri ve kataloglar var)
+  // 2. PVC PROFILE SAYFASI ÖZEL GÖRÜNÜMÜ (Galerie Foto Eklendi)
   if (isPvc) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
@@ -155,6 +155,18 @@ export default function ProductView({ product }) {
             </div>
           )}
         </div>
+
+        {/* PVC Sayfası İçin Galeri Foto Bölümü */}
+        {product.gallery && product.gallery.length > 0 && (
+          <div style={{ maxWidth: "900px", margin: "50px auto 0", display: "flex", flexDirection: "column", gap: "30px", padding: "0 20px" }}>
+            <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
+            {product.gallery.map((src, index) => (
+              <div key={index} style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#fff", border: "1px solid #eaeaea", padding: "10px" }}>
+                <Image src={src} alt={`${product.title} detay ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     );
   }
