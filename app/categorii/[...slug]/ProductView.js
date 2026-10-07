@@ -172,33 +172,52 @@ export default function ProductView({ product }) {
   }
 
   // 3. DİĞER NORMAL ÜRÜNLER İÇİN STANDART GÖRÜNÜM:
+// Standart Görünüm (Gard ve Diğer Sayfalar İçin)
   const mainDisplayImage = product.detailImage || product.image;
 
   return (
     <section style={{ padding: "40px 20px", backgroundColor: "#fff", width: "100%" }}>
       <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
         
-        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>{product.title}</h1>
+        {/* 1. Başlık */}
+        <h1 style={{ fontSize: "2.2rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>
+          {product.title}
+        </h1>
         
+        {/* Güven Vurgusu */}
         <div style={{ fontSize: "0.95rem", color: "#0088A5", fontWeight: "600", marginTop: "-15px" }}>
           ✓ Calitate superioară • Stoc permanent • Livrare rapidă
         </div>
 
+        {/* 2. Ana Görsel */}
         {mainDisplayImage && (
           <div style={{ position: "relative", width: "100%", height: "380px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#f9f9f9", border: "1px solid #eaeaea" }}>
-            <Image src={mainDisplayImage} alt={product.title} fill style={{ objectFit: "contain", padding: "15px" }} />
+            <Image src={mainDisplayImage} alt={product.title || "Gard F60"} fill style={{ objectFit: "contain", padding: "15px" }} priority />
           </div>
         )}
 
-        <div style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} dangerouslySetInnerHTML={{ __html: product.description }} />
-        
+        {/* 3. Catalog PDF Butonu */}
         {product.pdfUrl && (
-          <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}>
-            <div style={{ backgroundColor: "#0284c7", color: "#fff", padding: "12px 28px", borderRadius: "8px", fontWeight: "600" }}>Catalog PDF</div>
+          <a 
+            href={product.pdfUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{ textDecoration: "none", display: "inline-block", alignSelf: "flex-start" }}
+          >
+            <div style={{ backgroundColor: "#0284c7", color: "#fff", padding: "12px 28px", borderRadius: "8px", fontWeight: "600", fontSize: "0.95rem" }}>
+              Descarcă Catalog PDF
+            </div>
           </a>
         )}
+
+        {/* 4. Açıklama Metni (Rumence) */}
+        <div 
+          style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} 
+          dangerouslySetInnerHTML={{ __html: product.description }} 
+        />
       </div>
 
+      {/* 5. Galerie Foto */}
       {product.gallery && product.gallery.length > 0 && (
         <div style={{ maxWidth: "900px", margin: "50px auto 0", display: "flex", flexDirection: "column", gap: "30px" }}>
           <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
@@ -210,5 +229,5 @@ export default function ProductView({ product }) {
         </div>
       )}
     </section>
-  );
+  );  
 }

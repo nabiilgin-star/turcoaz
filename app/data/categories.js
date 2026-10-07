@@ -140,14 +140,14 @@ export const categories = [
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
         description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
       },
-{
+      {
     title: "Sistem de Gard F60 – Profile din Aluminiu",
     slug: "gard",
     icon: Layers,
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784469591/gard_mxrzvx.jpg",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+    pdfUrl: "/pdf/gard-aluminiu.pdf",
     gallery: [
-           "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg", 
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
@@ -176,11 +176,9 @@ Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru por�
 • Partiție unghiulară / înclinată
 • Partiție tip T
 • Partiție în patru căi`,
-            pdfUrl: "/pdf/gard-aluminiu.pdf",
-
     products: [],
     subcategories: []
-  },  
+  },      
       {
         title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
