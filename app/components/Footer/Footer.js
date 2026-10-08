@@ -19,7 +19,7 @@ export default function Footer() {
 
           {/* Sağ Kısım: Yasal Linkler */}
           <div className="footer-legal-links">
-            <Link href="/politica-de-confidentialitate">Politica de confidențialitate</Link>
+            <Link href="politica-confidentialitate">Politica de confidențialitate</Link>
             <span className="legal-separator">•</span>
             <Link href="/termeni-si-conditii">Termeni și condiții</Link>
           </div>

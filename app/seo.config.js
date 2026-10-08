@@ -2,7 +2,7 @@ export const siteConfig = {
   domain: "https://turcoaz.com",
   companyName: "S.C. Turcoaz Aluminiu S.R.L.",
   locale: "ro_RO",
-  defaultOgImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/AKPA_Main.jpg",
+ogImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png", // Veya 1200x630 kurumsal banner görseli
 };
 
 export const pages = {
@@ -160,7 +160,7 @@ export const pages = {
     path: "/categorii/profile-pvc",
     title: "Profile PVC Fără Plumb EXENplast și Blancoplast – Turcoaz",
     description: "Profile PVC ecologice fără plumb, serii EXEN 60, 70 și 85 mm, plus sisteme de glisare. Livrare rapidă din depozitul Popești-Leordeni.",
-    indexable: false, // Sayfa tam hazır olunca true yapın
+    indexable: true, // Sayfa tam hazır olunca true yapın
   },
   sticlaComponente: {
     path: "/categorii/componente-sisteme-sticla",
