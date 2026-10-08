@@ -328,19 +328,19 @@ const Navbar = ({ categories = [], announcement = {} }) => {
 
   const getProductLink = (product) => {
     if (product.link) return product.link;
-    if (product.slug) return `/categorii/${product.slug}`;
-    return "/categorii";
+    return "#";
   };
 
   const menuItems = [
-    { title: "Acasă", href: "/" },
-    { title: "Produse", href: "/categorii" },
-    { title: "Profile AKPA", href: "/categorii/sisteme-aluminiu-akpa" },
-    { title: "Glafuri Aluminiu", href: "/categorii/glafuri-din-aluminiu" },
-    { title: "Panouri Bond", href: "/categorii/acp-aluminiu-compozit-panel-bond" },
-    { title: "Profile PVC", href: "/categorii/profile-pvc" },
-    { title: "Balustrade Sticlă", href: "/categorii/balustrada-de-sticla" },
-    { title: "Contact", href: "/contact" },
+    { title: "Acasă", slug: "acasa", type: "scroll", isScroll: true, targetId: "hero" },
+    { title: "Produse", slug: "produse-scroll", type: "scroll", isScroll: true, targetId: "categories" },
+    { title: "Contact", slug: "contact-scroll", type: "scroll", isScroll: true, targetId: "contact" },
+    { title: "Despre Noi", slug: "despre-noi-scroll", type: "scroll", isScroll: true, targetId: "about" },
+    ...categories.map((cat) => ({
+      title: cat.name,
+      slug: cat.slug,
+      type: "category",
+    })),
   ];
 
   return (
