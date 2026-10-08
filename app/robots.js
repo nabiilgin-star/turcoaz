@@ -1,4 +1,4 @@
-import { siteConfig } from "@/seo.config.js";
+import { siteConfig } from "./seo.config";
 
 export default function robots() {
   return {

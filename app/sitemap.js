@@ -1,68 +1,74 @@
-import { categories } from "@/app/data/categories"; 
+/**
+ * app/sitemap.js
+ * seo.config.js ile senkron: bir sayfa `indexable: false` ise hem sayfada noindex
+ * olur hem de buradan otomatik çıkar. Artık iki yerde elle düzeltme yok.
+ */
+import { categories } from "@/app/data/categories";
+import { siteConfig, pages } from "./seo.config";
 
-const baseUrl = "https://turcoaz.com";
+// noindex olan sayfaların path'leri (slug değil, tam path → yanlış eşleşme olmaz)
+const noindexPaths = new Set(
+  Object.values(pages)
+    .filter((p) => !p.indexable)
+    .map((p) => p.path)
+);
 
-function pageEntry(url, priority, changeFrequency = "weekly", lastModDate) {
-  return { 
-    url, 
-    lastModified: lastModDate || new Date().toISOString(),
-    changeFrequency, 
-    priority 
+/** Gerçek tarih yoksa lastModified HİÇ yazılmaz (sahte "bugün" tarihi Google'ı yanıltır). */
+function entry(path, lastModified) {
+  return {
+    url: `${siteConfig.domain}${path === "/" ? "" : path}`,
+    ...(lastModified ? { lastModified } : {}),
   };
 }
 
-export default async function sitemap() {
-  // RİSK 1 & 2 ÇÖZÜLDÜ: Olmayan sayfalar çıkarıldı, var olan yasal sayfalar eklendi.
+export default function sitemap() {
   const urls = [
-    pageEntry(baseUrl, 1.0, "daily"), 
-    pageEntry(`${baseUrl}/categorii`, 0.9, "weekly"),
-    pageEntry(`${baseUrl}/contact`, 0.8, "yearly"), 
-    pageEntry(`${baseUrl}/politica-confidentialitate`, 0.5, "yearly"),
-    pageEntry(`${baseUrl}/termeni-si-conditii`, 0.5, "yearly"),
+    entry("/"),
+    entry("/categorii"),
+    entry("/contact"),
+    entry("/politica-confidentialitate"),
+    entry("/termeni-si-conditii"),
   ];
 
-  // RİSK 4 ÇÖZÜLDÜ: Henüz tamamlanmamış (noindex) kategorileri sızdırmamak için kara liste (blacklist) oluşturduk.
-  const excludedSlugs = ['profile-pvc', 'componente-sisteme-sticla'];
-
-  // 2. Dinamik Kategoriler Döngüsü
   for (const cat of categories) {
-    // Kategori slug'ı yoksa veya kara listedeyse atla
-    if (!cat.slug || excludedSlugs.includes(cat.slug)) continue;
+    if (!cat.slug) continue;
+    const catPath = `/categorii/${cat.slug}`;
+    // noindex kategori → alt sayfaları da atlanır (önceki davranışla aynı)
+    if (noindexPaths.has(catPath)) continue;
+    urls.push(entry(catPath, cat.updatedAt));
 
-    let catPriority = cat.slug === 'glafuri-din-aluminiu' ? 0.9 : 0.8;
-    urls.push(pageEntry(`${baseUrl}/categorii/${cat.slug}`, catPriority, "weekly", cat.updatedAt));
-
-    // Alt Kategoriler Döngüsü
     const subs = cat.subcategories || cat.subCategories;
-    if (Array.isArray(subs)) {
-      for (const sub of subs) {
-        // Alt kategori slug'ı yoksa veya kara listedeyse atla
-        if (!sub.slug || excludedSlugs.includes(sub.slug)) continue;
-        
-        let subUrl = `${baseUrl}/categorii/${cat.slug}/${sub.slug}`;
-        urls.push(pageEntry(subUrl, 0.7, "weekly", sub.updatedAt));
+    if (!Array.isArray(subs)) continue;
 
-        // RİSK 3 ÇÖZÜLDÜ: 3. Seviye ürün döngüsü (items/products) tamamen silindi! 
-        // Ürünler alt kategori sayfasında listelendiği için artık 404 verecek hayalet URL'ler üretilmeyecek.
-      }
+    for (const sub of subs) {
+      if (!sub.slug) continue;
+      const subPath = `${catPath}/${sub.slug}`;
+      if (noindexPaths.has(subPath)) continue;
+      urls.push(entry(subPath, sub.updatedAt));
     }
   }
 
-  // Bütün standart profilleri içeren güncel manuel listemiz
+  // Elle yönetilen standart profiller (kategori verisinde yoksa)
   const standardProfiles = [
-    'cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t', 'platbanda'
+    "cornier",
+    "teava-rectangulara",
+    "teava-rotunda",
+    "teava-patrata",
+    "profil-u",
+    "profil-t",
+    "platbanda",
   ];
-  
-  standardProfiles.forEach((slug) => {
-    urls.push(pageEntry(
-      `${baseUrl}/categorii/sisteme-aluminiu-akpa/profile-standard-aluminiu/${slug}`, 
-      0.7, 
-      "weekly"
-    ));
-  });
+  for (const slug of standardProfiles) {
+    urls.push(
+      entry(`/categorii/sisteme-aluminiu-akpa/profile-standard-aluminiu/${slug}`)
+    );
+  }
 
-  // Yinelenen URL'leri temizle (Güvenlik önlemi)
-  const uniqueUrls = Array.from(new Map(urls.map(item => [item.url, item])).values());
-
-  return uniqueUrls;
+  // Tekrarlayanları temizle; tarihi olan kayıt tarihi olmayana tercih edilir
+  const map = new Map();
+  for (const u of urls) {
+    const prev = map.get(u.url);
+    if (!prev || (!prev.lastModified && u.lastModified)) map.set(u.url, u);
+  }
+  return Array.from(map.values());
 }
