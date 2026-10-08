@@ -348,6 +348,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
     ],
   },
 // 3. ANA KATEGORİ: Glafuri din Aluminiu
+ // 3. ANA KATEGORİ: Glafuri din Aluminiu
   {
     title: "Glafuri din Aluminiu",
     slug: "glafuri-din-aluminiu",
@@ -362,19 +363,19 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
     ],
     description: `
-      <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat</h2>
+      <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat în București, Ilfov și România</h2>
       <p><strong>Preț:</strong> de la 15,50 LEI / ml (fără TVA)</p>
-      <p>Căutați <strong>glafuri din aluminiu</strong>, <strong>pervazuri din aluminiu</strong> de înaltă calitate sau <strong>glaf exterioare aluminiu</strong> pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu. Asigurăm stoc permanent de peste 200 de tone în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, la cele mai bune oferte de <strong>glafuri aluminiu preț</strong> de pe piață.</p>
+      <p>Căutați <strong>glafuri din aluminiu în București</strong>, <strong>pervazuri aluminiu Ilfov</strong> sau <strong>glafuri exterioare cu livrare în toată România</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sisteme complete din aluminiu extrudat pentru protecția ferestrelor și a fațadelor. Asigurăm stoc permanent de peste 200 de tone în depozitul nostru central din zona București / Ilfov (Popești-Leordeni) și filiala regională Alufab Iași, oferind cel mai bun raport calitate-preț pentru <strong>glafuri aluminiu la preț de distribuitor</strong>.</p>
       
-      <h2>Caracteristici Tehnice & Finisaje Disponibile</h2>
-      <p><strong>Culori & Finisaje Populare:</strong> Gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</p>
-      <p><strong>Dimensiuni & Grosime Robuste (Model TP2):</strong> Opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui adaptată structural între 1,1 mm și 2,8 mm pentru prevenirea flambării.</p>
-      <p><strong>Lungimi Extinse & Distribuție Națională:</strong> Bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</p>
-      <p><strong>Protecție Împotriva Infiltrațiilor:</strong> Panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</p>
+      <h2>Caracteristici Tehnice & Rezistență Structurală</h2>
+      <p><strong>Culori & Finisaje Disponibile:</strong> Alb, Maro, Antracit Gri (RAL 7016), Stejar Auriu, Nuc, Wenghe, precum și vopsire electrostatică în orice culoare RAL la comandă.</p>
+      <p><strong>Grosime Adaptivă Anti-Flambaj (Model TP2):</strong> Lățimi de la 75 mm până la 380 mm. La lățimi mari, grosimea peretelui crește până la 2,8 mm pentru a preveni curbarea, deformarea sau flexarea profilului în timp.</p>
+      <p><strong>Protecție Împotriva Infiltrațiilor:</strong> Panta frontală integrată direcționează eficient apa de ploaie departe de tencuială, prevenind umiditatea, deteriorarea fațadei și condensul.</p>
+      <p><strong>Lungimi de Bare & Acoperire Națională:</strong> Bare de 4000 mm – 7000 mm sau debitate la dimensiune, cu livrare rapidă în București, Ilfov, Iași și prin flotă proprie sau curierat în orice județ din România.</p>
 
       <h2>Întrebări Frecvente (FAQ)</h2>
-      <p><strong>Ce rol au capacele laterale pentru glafuri?</strong> Capacele laterale sunt esențiale pentru direcționarea apei departe de tencuială, prevenirea infiltrațiilor la colțuri și compensarea dilatării termice a aluminiului.</p>
-      <p><strong>Care este avantajul grosimii adaptive la modelul TP2?</strong> Spre deosebire de glafurile subțiri standard, modelul TP2 își crește grosimea până la 2,8 mm la lățimi mari, oferind o rigiditate superioară împotriva vântului și greutății.</p>
+      <p><strong>Care este avantajul modelului TP2 la lățimi mari?</strong> Spre deosebire de glafurile economice subțiri, modelul TP2 își mărește grosimea peretelui de aluminiu până la 2,8 mm la lățimi mari (până la 380 mm), oferind o rigiditate superioară și prevenind flambarea.</p>
+      <p><strong>Cum se face livrarea în București, Ilfov și în țară?</strong> Expediem comenzi rapid direct din depozitul central din zona București / Ilfov (Popești-Leordeni) și din filiala Alufab Iași. Asigurăm acoperire operativă în București, Ilfov, Iași și livrare pe șantier în toată România.</p>
     `,
     products: [],
     subcategories: []
