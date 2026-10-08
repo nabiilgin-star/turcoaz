@@ -41,11 +41,12 @@ export default function TeavaRectangularaView() {
 
   return (
     <section className={styles.b2bProductSection}>
+      {/* 1. ÜST BÖLÜM: B2B SATIŞ VE GÜVEN */}
       <div className={styles.productHeroGrid}>
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
             src="https://res.cloudinary.com/oivvupgw/image/upload/v1790428490/profile_teava_aluminiu_rectangular_rrd1se.jpg" 
-            alt="Teava Rectangulara Aluminiu"
+            alt="teava rectangulara aluminiu profil dreptunghiular dimensiuni si schita tehnica"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
             priority
@@ -53,24 +54,55 @@ export default function TeavaRectangularaView() {
         </div>
         
         <div>
-          <h1 className={styles.productTitle}>Țeavă Rectangulară Aluminiu</h1>
+          {/* SEO Uyumlu H1 Başlık */}
+          <h1 className={styles.productTitle}>Țeavă Rectangulară Aluminiu Extrudat</h1>
           <div className={styles.priceTag}>de la 4,20 LEI / m</div>
           
+          {/* SEO Açıklama Paragrafı */}
+          <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>
+            La Turcoaz Aluminiu găsiți <strong>țeavă rectangulară aluminiu</strong> (profil dreptunghiular) de calitate superioară pentru construcții și confecții metalice. 
+            Verificați gama noastră de <strong>țeavă aluminiu dimensiuni</strong> și solicitați o ofertă avantajoasă 
+            pentru <strong>țeavă aluminiu preț</strong> direct din stocul depozitelor noastre din Popești-Leordeni și Iași.
+          </p>
+
           <ul className={styles.trustBadges}>
             <li className={styles.stockIn}>✅ Peste 200 de tone în stoc permanent</li>
             <li className={styles.shippingNote}>🚚 Se expediază la comandă</li>
             <li className={styles.taxNote}>⚠️ Prețul nu include taxele de transport</li>
           </ul>
 
-          <div className={styles.actionButtons}>
-            <button className={styles.btnCalculator}>🧮 Consultați calculatorul UM</button>
+          {/* Action Buttons + Catalog PDF */}
+          <div className={styles.actionButtons} style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap", marginTop: "16px" }}>
+            <Link 
+              href="/catalog-profile-standard.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "10px 20px",
+                backgroundColor: "#c5a491",
+                color: "#ffffff",
+                borderRadius: "10px",
+                fontWeight: "700",
+                fontSize: "13px",
+                textDecoration: "none",
+                boxShadow: "0 2px 8px rgba(197, 164, 145, 0.35)"
+              }}
+            >
+              Catalog PDF
+            </Link>
+            <button className={styles.btnCalculator}>🧮 Calculator UM</button>
             <Link href="/contact" className={styles.btnQuote}>Solicită ofertă</Link>
           </div>
         </div>
       </div>
 
-      <div className={styles.technicalTableSection}>
-        <h3>Specificații Tehnice și Dimensiuni</h3>
+      {/* 2. ALT BÖLÜM: FİLTRELİ DİNAMİK TABLO */}
+      <div className={styles.technicalTableSection} style={{ marginTop: "40px" }}>
+        {/* H2 Başlık: SEO Uyumlu İkincil Kelimeler */}
+        <h2 style={{ fontSize: "1.4rem", fontWeight: "700", color: "#0F172A", marginBottom: "20px" }}>
+          Țeavă Rectangulară Aluminiu – Specificații Tehnice și Dimensiuni
+        </h2>
         
         <div className={styles.filterBar}>
           <div className={styles.filterGroup}>
@@ -79,8 +111,8 @@ export default function TeavaRectangularaView() {
               value={filterA} 
               onChange={(e) => {
                 setFilterA(e.target.value);
-                setFilterB(''); // A değişince B sıfırlanır
-                setFilterS(''); // A değişince S sıfırlanır
+                setFilterB('');
+                setFilterS('');
               }}
             >
               <option value="">Toate</option>
@@ -94,7 +126,7 @@ export default function TeavaRectangularaView() {
               value={filterB} 
               onChange={(e) => {
                 setFilterB(e.target.value);
-                setFilterS(''); // B değişince S sıfırlanır
+                setFilterS('');
               }}
             >
               <option value="">Toate</option>
@@ -135,7 +167,7 @@ export default function TeavaRectangularaView() {
             <tbody>
               {filteredData.length > 0 ? (
                 filteredData.map((row, index) => (
-                  <tr key={index}>
+                  <tr key={row.profilNo || index}>
                     <td><strong>{row.profilNo}</strong></td>
                     <td>{row.a} x {row.b} mm</td>
                     <td>{row.s} mm</td>

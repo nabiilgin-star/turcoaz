@@ -28,12 +28,12 @@ export default function TeavaPatrataView() {
 
   return (
     <section className={styles.b2bProductSection}>
+      {/* 1. ÜST BÖLÜM: B2B SATIŞ VE GÜVEN */}
       <div className={styles.productHeroGrid}>
         <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", background: "#fff", border: "1px solid #eaeaea" }}>
           <Image 
-            // NOT: Kare profil için kendi görsel URL'nizi buraya koyun
             src="https://res.cloudinary.com/oivvupgw/image/upload/v1790527387/profile_teava_aluminiu_patrata_tehnic_cyofon.jpg" 
-            alt="Țeavă Pătrată Aluminiu"
+            alt="teava patrata aluminiu profil patrat dimensiuni si schita tehnica"
             fill
             style={{ objectFit: "contain", padding: "10px" }}
             priority
@@ -41,24 +41,55 @@ export default function TeavaPatrataView() {
         </div>
         
         <div>
-          <h1 className={styles.productTitle}>Țeavă Pătrată Aluminiu</h1>
+          {/* SEO Uyumlu H1 Başlık */}
+          <h1 className={styles.productTitle}>Țeavă Pătrată Aluminiu Extrudat</h1>
           <div className={styles.priceTag}>de la 4,50 LEI / m</div>
           
+          {/* SEO Açıklama Paragrafı */}
+          <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>
+            La Turcoaz Aluminiu găsiți <strong>țeavă pătrată aluminiu</strong> (profil pătrat) de calitate superioară pentru cadre, rafturi și structuri ușoare. 
+            Verificați lista de <strong>țeavă pătrată dimensiuni</strong> disponibile și solicitați o ofertă avantajoasă 
+            pentru <strong>țeavă pătrată preț</strong> direct din stocul depozitelor noastre din Popești-Leordeni și Iași.
+          </p>
+
           <ul className={styles.trustBadges}>
             <li className={styles.stockIn}>✅ Peste 200 de tone în stoc permanent</li>
             <li className={styles.shippingNote}>🚚 Se expediază la comandă</li>
             <li className={styles.taxNote}>⚠️ Prețul nu include taxele de transport</li>
           </ul>
 
-          <div className={styles.actionButtons}>
-            <button className={styles.btnCalculator}>🧮 Consultați calculatorul UM</button>
+          {/* Action Buttons + Catalog PDF */}
+          <div className={styles.actionButtons} style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap", marginTop: "16px" }}>
+            <Link 
+              href="/catalog-profile-standard.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "10px 20px",
+                backgroundColor: "#c5a491",
+                color: "#ffffff",
+                borderRadius: "10px",
+                fontWeight: "700",
+                fontSize: "13px",
+                textDecoration: "none",
+                boxShadow: "0 2px 8px rgba(197, 164, 145, 0.35)"
+              }}
+            >
+              Catalog PDF
+            </Link>
+            <button className={styles.btnCalculator}>🧮 Calculator UM</button>
             <Link href="/contact" className={styles.btnQuote}>Solicită ofertă</Link>
           </div>
         </div>
       </div>
 
-      <div className={styles.technicalTableSection}>
-        <h3>Specificații Tehnice și Dimensiuni</h3>
+      {/* 2. ALT BÖLÜM: FİLTRELİ DİNAMİK TABLO */}
+      <div className={styles.technicalTableSection} style={{ marginTop: "40px" }}>
+        {/* H2 Başlık: SEO Uyumlu İkincil Kelimeler */}
+        <h2 style={{ fontSize: "1.4rem", fontWeight: "700", color: "#0F172A", marginBottom: "20px" }}>
+          Țeavă Pătrată Aluminiu – Specificații Tehnice și Dimensiuni
+        </h2>
         
         <div className={styles.filterBar}>
           <div className={styles.filterGroup}>
@@ -67,7 +98,7 @@ export default function TeavaPatrataView() {
               value={filterA} 
               onChange={(e) => {
                 setFilterA(e.target.value);
-                setFilterS(''); // 'a' değişince kalınlık 's' sıfırlanır
+                setFilterS('');
               }}
             >
               <option value="">Toate</option>
@@ -108,7 +139,7 @@ export default function TeavaPatrataView() {
             <tbody>
               {filteredData.length > 0 ? (
                 filteredData.map((row, index) => (
-                  <tr key={index}>
+                  <tr key={row.profilNo || index}>
                     <td><strong>{row.profilNo}</strong></td>
                     <td>{row.a} x {row.a} mm</td>
                     <td>{row.s} mm</td>

@@ -1,14 +1,16 @@
-export default function robots() {
-  const baseUrl = 'https://turcoaz.com';
+import type { MetadataRoute } from "next";
+import { siteConfig } from "@/seo.config";
 
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/admin/'], // Admin panelini arama motorlarından gizlemek SEO için önemlidir
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin", "/api/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteConfig.domain}/sitemap.xml`,
+    host: siteConfig.domain,
   };
 }
