@@ -204,9 +204,9 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
       description: "Sistem culisant cu geam termopan ISCB140 pentru închideri terase și balcoane în București și România. Izolație termică superioară și stoc permanent.",
       indexable: true
     },
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140_locoi7.jpg",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140_.jpg",
     imageAlt: "Sistem culisant cu geam termopan ISCB140 pentru închideri terase",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140_locoi7.jpg",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140_.jpg",
 pdfUrl: "/pdf/iscb-140.pdf",    
  gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791492159/iscb140-sc100_btodeo.png",
