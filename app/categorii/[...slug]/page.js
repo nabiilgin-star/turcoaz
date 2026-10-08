@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getNavbarData, resolvePath } from "@/app/lib/get-nav-data";
+import { getNavbarData, resolvePath, getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
 import Breadcrumb from "@/app/components/Breadcrumb/Breadcrumb";
@@ -18,10 +18,37 @@ import PlatbandaView from './PlatbandaView';
 
 // Local veri dosyası
 import { categories as localCategories } from "@/app/data/categories"; 
-import { getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 
 // ----------------------------------------------------------------------
-// 1. DİNAMİK SEO METADATA OLUSTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
+// HELPER: CLIENT COMPONENT'LERE FONKSİYON/ICON AKTARIMINI ENGELLEYEN SÜZGEÇ
+// ----------------------------------------------------------------------
+function sanitizeData(data) {
+  if (!data) return data;
+  if (Array.isArray(data)) {
+    return data.map(sanitizeData);
+  }
+  if (typeof data === 'object') {
+    const copy = { ...data };
+    delete copy.icon; // Lucide icon bileşenini temizle
+    if (copy.subcategories) {
+      copy.subcategories = copy.subcategories.map(sanitizeData);
+    }
+    if (copy.products) {
+      copy.products = copy.products.map(sanitizeData);
+    }
+    if (copy.category) {
+      copy.category = sanitizeData(copy.category);
+    }
+    if (copy.subcategory) {
+      copy.subcategory = sanitizeData(copy.subcategory);
+    }
+    return copy;
+  }
+  return data;
+}
+
+// ----------------------------------------------------------------------
+// 1. DİNAMİK SEO METADATA OLUŞTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
 // ----------------------------------------------------------------------
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
@@ -100,7 +127,7 @@ export async function generateMetadata({ params }) {
         name: "Cornier Aluminiu",
         description: "Cornier din aluminiu (Profil L) disponibil în diverse dimensiuni. Peste 200 de tone în stoc permanent.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'teava-rectangulara') {
@@ -111,7 +138,7 @@ export async function generateMetadata({ params }) {
         name: "Țeavă Rectangulară Aluminiu",
         description: "Profile Aluminiu Țeavă rectangulară de înaltă calitate. Peste 200 de tone în stoc permanent și livrare rapidă.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'teava-rotunda') {
@@ -122,7 +149,7 @@ export async function generateMetadata({ params }) {
         name: "Țeavă Rotundă Aluminiu",
         description: "Țeavă rotundă din aluminiu disponibilă în diverse dimensiuni. Peste 200 de tone în stoc permanent și livrare rapidă.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'teava-patrata') {
@@ -133,7 +160,7 @@ export async function generateMetadata({ params }) {
         name: "Țeavă Pătrată Aluminiu",
         description: "Țeavă pătrată din aluminiu de înaltă calitate. Peste 200 de tone în stoc permanent pentru livrare imediată în toată România.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'profil-u') {
@@ -144,7 +171,7 @@ export async function generateMetadata({ params }) {
         name: "Profil U Aluminiu",
         description: "Profile U din aluminiu disponibile în diverse dimensiuni. Peste 200 de tone în stoc permanent pentru livrare rapidă.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'profil-t') {
@@ -155,7 +182,7 @@ export async function generateMetadata({ params }) {
         name: "Profil T Aluminiu",
         description: "Profile T din aluminiu de înaltă rezistență. Disponibile în stoc permanent pentru livrare rapidă.",
       }
-    }
+    };
   }
 
   if (!result && lastSlug === 'platbanda') {
@@ -166,7 +193,7 @@ export async function generateMetadata({ params }) {
         name: "Platbandă Aluminiu",
         description: "Platbandă (lamă) din aluminiu. Gamă variată de lățimi și grosimi. Peste 200 de tone în stoc permanent.",
       }
-    }
+    };
   }
   
   if (!result) {
@@ -184,7 +211,7 @@ export async function generateMetadata({ params }) {
     title = `${data.title || data.name} | Turcoaz Aluminiu`;
     description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.title || data.name}. Calitate superioară și livrare din stoc.`;
   } else if (type === "subcategory") {
-    title = `${data.subcategory?.title || data.subcategory?.name || 'Subcategorie'} - ${data.category?.title || data.category?.name || 'Categorie'} | Turcoaz`;
+    title = `${data.subcategory?.title || data.subcategory?.name || 'Subcategorie'} | ${data.category?.title || data.category?.name || 'Categorie'} | Turcoaz`;
     description = data.subcategory?.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory?.title || data.subcategory?.name || 'produse'}. Comandă online la preț de distribuitor.`;
   } else if (type === "product") {
     title = `${data.title || data.name} | Turcoaz Aluminiu`;
@@ -353,7 +380,7 @@ export default async function CatchAllCategoryPage({ params }) {
     }
   }
 
-const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda'];
+  const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-patrata', 'profil-u', 'profil-t','platbanda'];
 
   if (!result && !allowedSlugs.includes(lastSlug)) {
     notFound();
@@ -361,7 +388,6 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
 
   const currentSlug = lastSlug || "cornier";
 
-  // Her özel sayfa için yedek (fallback) veri sözlüğü (name -> title olarak GÜNCELLENDİ)
   const defaultProducts = {
     "cornier": {
       id: "cornier",
@@ -415,60 +441,61 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
   };
 
   const type = result?.type || "product";
-  const data = result?.data || defaultProducts[currentSlug] || defaultProducts["cornier"];
+  const rawData = result?.data || defaultProducts[currentSlug] || defaultProducts["cornier"];
 
- // O an bulunulan sayfanın tam URL'sini güvenli bir şekilde oluşturuyoruz
+  // 🛠️ KRİTİK DÜZELTME: Veriyi Client Component'lere aktarmadan önce temizliyoruz
+  const cleanData = sanitizeData(rawData);
+
   const currentPath = `/categorii/${pathSegments.join('/')}`;
-  
   const breadcrumbItems = [{ label: "Categorii", href: "/categorii" }];
 
   if (type === "category") {
     breadcrumbItems.push({ 
-      label: data.title || data.name, 
+      label: cleanData.title || cleanData.name, 
       href: currentPath 
     });
-  } else if (type === "subcategory" && data.category) {
+  } else if (type === "subcategory" && cleanData.category) {
     breadcrumbItems.push({
-      label: data.category.title || data.category.name,
-      href: `/categorii/${data.category.slug}`,
+      label: cleanData.category.title || cleanData.category.name,
+      href: `/categorii/${cleanData.category.slug}`,
     });
     breadcrumbItems.push({ 
-      label: data.subcategory?.title || data.subcategory?.name || 'Subcategorie', 
+      label: cleanData.subcategory?.title || cleanData.subcategory?.name || 'Subcategorie', 
       href: currentPath 
     });
   } else if (type === "product") {
-    if (data.category) {
+    if (cleanData.category) {
       breadcrumbItems.push({
-        label: data.category.title || data.category.name,
-        href: `/categorii/${data.category.slug}`,
+        label: cleanData.category.title || cleanData.category.name,
+        href: `/categorii/${cleanData.category.slug}`,
       });
     }
-    if (data.subcategory && data.subcategory.slug !== data.slug && data.category) {
+    if (cleanData.subcategory && cleanData.subcategory.slug !== cleanData.slug && cleanData.category) {
       breadcrumbItems.push({
-        label: data.subcategory.title || data.subcategory.name,
-        href: `/categorii/${data.category.slug}/${data.subcategory.slug}`,
+        label: cleanData.subcategory.title || cleanData.subcategory.name,
+        href: `/categorii/${cleanData.category.slug}/${cleanData.subcategory.slug}`,
       });
     }
     breadcrumbItems.push({ 
-      label: data.title || data.name, 
+      label: cleanData.title || cleanData.name, 
       href: currentPath 
     });
   }
 
-  const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? data.slug : data?.category?.slug);
+  const activeCategorySlug = matchedCategory ? matchedCategory.slug : (type === "category" ? cleanData.slug : cleanData?.category?.slug);
 
-  const productImages = data.gallery && data.gallery.length > 0 
-    ? data.gallery 
-    : [data.image || data.detailImage].filter(Boolean);
+  const productImages = cleanData.gallery && cleanData.gallery.length > 0 
+    ? cleanData.gallery 
+    : [cleanData.image || cleanData.detailImage].filter(Boolean);
 
   const productSchema = type === "product" ? {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": data.title || data.name,
+    "name": cleanData.title || cleanData.name,
     "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
-    "description": data.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
-    "sku": `TURCOAZ-${data.slug ? data.slug.toUpperCase() : 'PROD'}`,
-    "mpn": `AKPA-${data.slug ? data.slug.toUpperCase() : 'PROD'}`,
+    "description": cleanData.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
+    "sku": `TURCOAZ-${cleanData.slug ? cleanData.slug.toUpperCase() : 'PROD'}`,
+    "mpn": `AKPA-${cleanData.slug ? cleanData.slug.toUpperCase() : 'PROD'}`,
     "brand": {
       "@type": "Brand",
       "name": "AKPA"
@@ -501,10 +528,10 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
     ]
   } : null;
 
-  const faqSchema = (data?.faqs && data.faqs.length > 0) ? {
+  const faqSchema = (cleanData?.faqs && cleanData.faqs.length > 0) ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": data.faqs.map((faq) => ({
+    "mainEntity": cleanData.faqs.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -541,7 +568,7 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
               ? "categories"
               : "subcategories"
         }
-        id={data.id || data.subcategory?.id || 999}
+        id={cleanData.id || cleanData.subcategory?.id || 999}
       />
       <Navbar
         categories={navData.categories}
@@ -639,7 +666,7 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "space-between",
+                      justifySpaceBetween: "space-between",
                       padding: "12px 14px",
                       borderRadius: "10px",
                       textDecoration: "none",
@@ -659,7 +686,7 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
                     <ul style={{ listStyle: "none", paddingLeft: "12px", marginTop: "6px", marginBottom: "6px", display: "flex", flexDirection: "column", gap: "4px", borderLeft: "2px solid #E2E8F0" }}>
                       {cat.subcategories.map((sub) => {
-                        const isSubActive = data?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
+                        const isSubActive = cleanData?.subcategory?.slug?.toLowerCase() === sub.slug?.toLowerCase();
                         return (
                           <li key={sub.slug}>
                             <a
@@ -692,37 +719,37 @@ const allowedSlugs = ['cornier', 'teava-rectangulara', 'teava-rotunda', 'teava-p
         {/* SAĞ KATALOG ALANI */}
         <div style={{ minWidth: 0, width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
           
-        {lastSlug === "cornier" ? (
-  <CornierView />
-) : lastSlug === "teava-rectangulara" ? (
-  <TeavaRectangularaView />
-) : lastSlug === "teava-rotunda" ? (
-  <TeavaRotundaView /> 
- ) : lastSlug === "teava-patrata" ? (
-  <TeavaPatrataView />
-  ) : lastSlug === "profil-u" ? (
-  <ProfilUView />
-  ) : lastSlug === "profil-t" ? (
-  <ProfilTView />
-  ) : lastSlug === "platbanda" ? (
-  <PlatbandaView />
-  ) : lastSlug === "gard" ? (
-            <ProductView product={data.subcategory || data} />
-) : (
+          {lastSlug === "cornier" ? (
+            <CornierView />
+          ) : lastSlug === "teava-rectangulara" ? (
+            <TeavaRectangularaView />
+          ) : lastSlug === "teava-rotunda" ? (
+            <TeavaRotundaView /> 
+          ) : lastSlug === "teava-patrata" ? (
+            <TeavaPatrataView />
+          ) : lastSlug === "profil-u" ? (
+            <ProfilUView />
+          ) : lastSlug === "profil-t" ? (
+            <ProfilTView />
+          ) : lastSlug === "platbanda" ? (
+            <PlatbandaView />
+          ) : lastSlug === "gard" ? (
+            <ProductView product={cleanData.subcategory || cleanData} />
+          ) : (
             <>
-              {type === "category" && <CategoryView category={data} />}
+              {type === "category" && <CategoryView category={cleanData} />}
               {type === "subcategory" && (
                 <SubcategoryView
-                  category={data.category}
-                  subcategory={data.subcategory}
-                  products={data.products}
-                  subcategories={data.subcategories}
+                  category={cleanData.category}
+                  subcategory={cleanData.subcategory}
+                  products={cleanData.products}
+                  subcategories={cleanData.subcategories}
                 />
               )}
               {type === "product" && (
                 <ProductView 
-                  product={data} 
-                  subcategoryName={data.subcategory?.title || data.subcategory?.name} 
+                  product={cleanData} 
+                  subcategoryName={cleanData.subcategory?.title || cleanData.subcategory?.name} 
                 />
               )}
             </>
