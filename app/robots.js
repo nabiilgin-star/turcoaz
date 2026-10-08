@@ -6,10 +6,12 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/api/"],
+        disallow: [
+          "/api/",
+          "/admin/", // Admin koruması middleware + noindex ile sağlanır
+        ],
       },
     ],
     sitemap: `${siteConfig.domain}/sitemap.xml`,
-    host: siteConfig.domain,
   };
 }

@@ -353,21 +353,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
     slug: "glafuri-din-aluminiu",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-description: `
-  <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat</h2>
-  <p><br>Preț: de la 15,50 LEI / ml.</p>
-  <p>Căutați glafuri din aluminiu, pervazuri din aluminiu de înaltă calitate, pervaz aluminiu sau glaf aluminiu pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu, cu stoc permanent de peste 200 de tone în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, asigurând o rețea extinsă de distribuție la nivel național și vânzări lunare de peste 150 de tone.</p>
-  
-  <h2>Caracteristici Tehnice & Finisaje Disponibile</h2>
-  <p><strong>Culori & Finisaje Populare:</strong> Gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</p>
-  <p><strong>Dimensiuni & Grosime Robuste (Model TP2):</strong> Opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui adaptată structural între 1,1 mm și 2,8 mm pentru prevenirea flambării.</p>
-  <p><strong>Lungimi Extinse & Distribuție Națională:</strong> Bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</p>
-  <p><strong>Protecție Împotriva Infiltrațiilor:</strong> Panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</p>
-
-  <h2>Întrebări Frecvente (FAQ)</h2>
-  <p><strong>Ce rol au capacele laterale pentru glafuri?</strong> Capacele laterale sunt esențiale pentru direcționarea apei departe de tencuială, prevenirea infiltrațiilor la colțuri și compensarea dilatării termice a aluminiului.</p>
-  <p><strong>Care este avantajul grosimii adaptive la modelul TP2?</strong> Spre deosebire de glafurile subțiri standard, modelul TP2 își crește grosimea până la 2,8 mm la lățimi mari, oferind o rigiditate superioară împotriva vântului și greutății.</p>
-`,
+    pdfUrl: "/pdf/glafuri-aluminiu.pdf",
     price: "de la 15,50 LEI / ml", 
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
@@ -375,6 +361,23 @@ description: `
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589429/pervaz4_lzmcdu.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589492/pervaz5_1_xp9use.jpg",
     ],
+    description: `
+      <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat</h2>
+      <p><strong>Preț:</strong> de la 15,50 LEI / ml (fără TVA)</p>
+      <p>Căutați <strong>glafuri din aluminiu</strong>, <strong>pervazuri din aluminiu</strong> de înaltă calitate sau <strong>glaf exterioare aluminiu</strong> pentru ferestre în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții durabile și estetice pentru tâmplărie PVC și aluminiu. Asigurăm stoc permanent de peste 200 de tone în depozitul din Popești-Leordeni și filiala regională Alufab din Iași, la cele mai bune oferte de <strong>glafuri aluminiu preț</strong> de pe piață.</p>
+      
+      <h2>Caracteristici Tehnice & Finisaje Disponibile</h2>
+      <p><strong>Culori & Finisaje Populare:</strong> Gamă diversificată de nuanțe: Alb, Maro, Antracit Gri, Stejar Auriu, Nuc și Wenghe, plus opțiunea de vopsire în orice culoare RAL dorită.</p>
+      <p><strong>Dimensiuni & Grosime Robuste (Model TP2):</strong> Opțiuni variate de lățime a profilului între 75 mm și 380 mm, cu o grosime a peretelui adaptată structural între 1,1 mm și 2,8 mm pentru prevenirea flambării.</p>
+      <p><strong>Lungimi Extinse & Distribuție Națională:</strong> Bare cu lungimi cuprinse între 4000 mm și 7000 mm, livrate rapid prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.</p>
+      <p><strong>Protecție Împotriva Infiltrațiilor:</strong> Panta frontală direcționează eficient scurgerea apei spre exterior, prevenind infiltrațiile în perete, pierderile termice și condensul.</p>
+
+      <h2>Întrebări Frecvente (FAQ)</h2>
+      <p><strong>Ce rol au capacele laterale pentru glafuri?</strong> Capacele laterale sunt esențiale pentru direcționarea apei departe de tencuială, prevenirea infiltrațiilor la colțuri și compensarea dilatării termice a aluminiului.</p>
+      <p><strong>Care este avantajul grosimii adaptive la modelul TP2?</strong> Spre deosebire de glafurile subțiri standard, modelul TP2 își crește grosimea până la 2,8 mm la lățimi mari, oferind o rigiditate superioară împotriva vântului și greutății.</p>
+    `,
+    products: [],
+    subcategories: []
   },
 
   // 4. ANA KATEGORİ: ACP Aluminiu Compozit Panel (Bond)
@@ -384,44 +387,49 @@ description: `
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
+    pdfUrl: "/pdf/primebond.pdf",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     ],
-    description: `Panouri Compozit (Bond) și Plăci Compozit pentru Fațade – Calitate Superioară și Avantaje Majore în România.
-Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațade de înaltă calitate în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții moderne pentru fațade arhitecturale ventilate, placări exterioare și interioare, cu stoc permanent disponibil în depozit.
+    description: `
+      <h2>Panouri Compozite Bond și Plăci Compozite pentru Fațade Ventilate</h2>
+      <p>Căutați <strong>panouri compozite bond</strong>, <strong>plăci compozite aluminiu</strong> sau <strong>fațade compozite</strong> de înaltă calitate în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții moderne pentru fațade arhitecturale ventilate, placări exterioare și interioare. Verificați gama noastră de produse la cel mai bun raport calitate-preț pentru <strong>alucobond preț</strong>, direct din depozitele noastre din Popești-Leordeni și Iași.</p>
 
-🏆 De ce să alegi panourile noastre compozit (Bond)?
-• Agrement Tehnic în România — produse certificate oficial și dețin agrement tehnic complet pentru proiecte civile și industriale conforme cu standardele naționale.
-• Primebond – Aluminiu Hydro Norvegia — panourile compozit sunt fabricate cu aluminiu premium importat din Norvegia (Hydro), oferind durabilitate maximă, stabilitate structurală și finisaje PVDF/HDP de top.
-• Preț Avantajos & Stoc Disponibil — costuri mai avantajoase comparativ cu competitori precum Geplast, livrare rapidă din stoc prin rețeaua noastră din Popești-Leordeni și filiala Alufab Iași.`,
+      <h2>De ce să alegi panourile noastre compozit (Bond)?</h2>
+      <ul>
+        <li><strong>Agrement Tehnic în România:</strong> Produse certified oficial cu agrement tehnic complet pentru proiecte civile și industriale conforme cu standardele naționale.</li>
+        <li><strong>Primebond – Aluminiu Hydro Norvegia:</strong> Fabricate cu aluminiu premium importat din Norvegia (Hydro), oferind durabilitate maximă, stabilitate structurală și finisaje PVDF/HDP de top.</li>
+        <li><strong>Preț Avantajos & Stoc Permanent:</strong> Costuri competitive, livrare rapidă din stoc prin rețeaua noastră regională.</li>
+      </ul>
+    `,
     products: [
       {
         title: "Primebond Plus",
         slug: "primebond-plus",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebondplus_ekuawf.jpg",
-        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,47 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
+        description: "<strong>Specificații tehnice:</strong><br>- Grosime tablă + vopsea: 0,47 mm + PVDF<br>- Potrivit pentru utilizare în exterior cu garanție de 20 de ani.<br>- Clasă de rezistență la foc: A2 și FR/B1.<br>- Dimensiune standard: 4 x 1250 x 3200 mm.<br>- Culori și dimensiuni personalizate la comandă.",
         pdfUrl: "/pdf/primebond.pdf"
       },
       {
         title: "Primebond",
         slug: "primebond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/primebond_uz2s35.jpg",
-        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,40 mm + PVDF\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 20 de ani.\n• Poate fi fabricat în categoriile de rezistență la foc A2 și FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
+        description: "<strong>Specificații tehnice:</strong><br>- Grosime tablă + vopsea: 0,40 mm + PVDF<br>- Potrivit pentru utilizare în exterior cu garanție de 20 de ani.<br>- Clasă de rezistență la foc: A2 și FR/B1.<br>- Dimensiune standard: 4 x 1250 x 3200 mm.<br>- Culori și dimensiuni personalizate la comandă.",
         pdfUrl: "/pdf/primebond.pdf"
       },
       {
         title: "Durabond",
         slug: "durabond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287063/durabond_pl0dgq.jpg",
-        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,30 mm + HDP\n• Potrivit pentru utilizare în exterior și beneficiază de o garanție de 15 ani.\n• Poate fi fabricat în categoriile de rezistență la foc FR/B1.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
+        description: "<strong>Specificații tehnice:</strong><br>- Grosime tablă + vopsea: 0,30 mm + HDP<br>- Potrivit pentru exterior cu garanție de 15 ani.<br>- Clasă de rezistență la foc: FR/B1.<br>- Dimensiune standard: 4 x 1250 x 3200 mm.<br>- Culori și dimensiuni la comandă.",
         pdfUrl: "/pdf/durabond.pdf"
       },
       {
         title: "Rallbond",
         slug: "rallbond",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789287064/rallbond_lapj2g.jpg",
-        description: "Specificații tehnice:\n• Grosime tablă + vopsea: 0,20 mm + PE\n• Acesta este material publicitar și nu trebuie utilizat pe fațadele exterioare.\n• Dimensiunile standard sunt 4*1250*3200mm.\n• Culori și dimensiuni personalizate sunt disponibile.",
+        description: "<strong>Specificații tehnice:</strong><br>- Grosime tablă + vopsea: 0,20 mm + PE<br>- Material ideal pentru semnalistică publicitară și placări interioare.<br>- Dimensiune standard: 4 x 1250 x 3200 mm.<br>- Gamă variată de culori.",
         pdfUrl: "/pdf/rallbond.pdf"
       }
     ],
@@ -435,84 +443,73 @@ Căutați plăci compozit, panou compozit sau profile din aluminiu pentru fațad
     title: "Sticlă Laminată Securizată",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
-    description: `<strong>🛡️ Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2</strong><br>
-Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²
+    pdfUrl: "/pdf/catalog-sticla.pdf",
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
+    ],
+    description: `
+      <h2>Sticlă Laminată Securizată pentru Balustrade – 6.6.2 / 8.8.2 / 10.10.2</h2>
+      <p>Import direct Turcia – Calitate premium, preț optim, livrare rapidă în România • Preț de la 50 € + TVA / m²</p>
 
-<strong>⭐ Avantajele Noastre</strong>
-• Import direct Turcia → prețuri fără intermediari
-• Calitate premium certificată EN 12600
-• Preț de la 50 € + TVA / m²
-• Debitare la comandă + canturi finisate profesional
-• Consultanță tehnică pentru balustrade, trepte și fațade
-• Livrare rapidă în toată România (Popești-Leordeni + Iași)
-• Stoc permanent pentru 6.6.2 / 8.8.2 / 10.10.2
+      <h2>Avantajele Sticlei Securizate Turcoaz</h2>
+      <ul>
+        <li><strong>Import Direct:</strong> Prețuri avantajoase fără intermediari pentru <strong>sticlă laminată securizată</strong> și <strong>geam securizat</strong>.</li>
+        <li><strong>Certificare EN 12600:</strong> Calitate premium garantată pentru siguranță sporită.</li>
+        <li><strong>Debitare & Canturi Finisate:</strong> Finisare profesională la dimensiunile solicitate.</li>
+        <li><strong>Stoc Permanent:</strong> Livrare rapidă din depozitele Popești-Leordeni și Iași pentru configurațiile 6.6.2, 8.8.2 și 10.10.2.</li>
+      </ul>
 
-<strong>🔍 Ce este Sticla Laminată Securizată?</strong>
-Sticla laminată securizată (numită și duplex) este formată din două foi de sticlă securizată unite cu folie PVB. În caz de impact, fragmentele rămân lipite de folie — nu se prăbușește, nu cade, nu produce accidente.
+      <h2>Ce este Sticla Laminată Securizată?</h2>
+      <p>Sticla laminată securizată (numită și duplex) este formată din două foi de sticlă securizată unite cu folie PVB. În caz de impact, fragmentele rămân lipite de folie — nu se prăbușește și nu produce accidente.</p>
 
-<strong>📏 Configurații Disponibile</strong>
-• <strong>6.6.2 (≈12.76 mm)</strong> – două foi de 6 mm + 2 folii PVB
-• <strong>8.8.2 (≈17.52 mm)</strong> – două foi de 8 mm + 2 folii PVB
-• <strong>10.10.2 (≈21.52 mm)</strong> – două foi de 10 mm + 2 folii PVB
-<em>Explicație simplă: 8.8.2 = 8 mm + 8 mm + 2 folii PVB → panou de ~17.5 mm, ideal pentru balustrade.</em>
+      <h2>Configurații & Utilizări Recomandate</h2>
+      <p><strong>6.6.2 (≈12.76 mm):</strong> Două foi de 6 mm + 2 folii PVB – ideală pentru balustrade interioare și compartimentări.</p>
+      <p><strong>8.8.2 (≈17.52 mm):</strong> Standardul de aur pentru <strong>balustradă sticlă terasă</strong>, balcon și scări. Rezistență excelentă la vânt în profilele AKPA M115.</p>
+      <p><strong>10.10.2 (≈21.52 mm):</strong> Pentru trepte din sticlă, copertine și balustrade fără ramă supuse la încărcări mari.</p>
 
-<strong>🏗️ Utilizări Recomandate</strong>
-• Balustrade interioare → 6.6.2 / 8.8.2
-• Balustrade exterioare → 8.8.2 / 10.10.2
-• Trepte din sticlă → 10.10.2 / 12.12.2
-• Fațade, copertine, vitraje mari → 8.8.2 / 10.10.2
-
-<strong>🥇 Recomandarea Tehnică</strong>
-Pentru balustrade montate în profil U din aluminiu: <strong>8.8.2 este standardul de aur</strong>. Nu vibrează, nu flexează, rezistă la vânt și se potrivește perfect în profilele AKPA M115.
-
-<strong>💰 Prețuri (SEO + Conversie)</strong>
-• 6.6.2 → de la 50 € + TVA / m²
-• 8.8.2 → de la 70 € + TVA / m²
-• 10.10.2 → de la 85 € + TVA / m²
-<em>*(Prețurile pot varia în funcție de cantitate, finisaje și complexitatea proiectului.)*</em>
-
-<strong>📦 Detalii Comerciale</strong>
-• Prețurile sunt exprimate pe m², fără TVA
-• Panourile sub 0.5 m² → se facturează 0.5 m²
-• Termen execuție: 10–20 zile lucrătoare
-• Ridicare din depozit sau livrare cu auto propriu
-• Dimensiunile se transmit în scris: L x H x nr. bucăți
-• Responsabilitatea dimensiunilor aparține clientului
-
-<strong>📘 Foaie de Produs – 6.6.2</strong>
-Clar + Clar – canturi finisate. Ideală pentru balustrade rezidențiale, copertine mici, uși interioare cu cerințe de siguranță.
-
-<strong>📘 Foaie de Produs – 8.8.2</strong>
-Clar + Clar – 17.52 mm. Cea mai folosită sticlă pentru balustrade premium, terase, scări, spații publice.
-
-<strong>📘 Foaie de Produs – 10.10.2</strong>
-Clar + Clar – 21.52 mm. Pentru trepte, balustrade fără ramă, proiecte expuse la vânt puternic.`,
+      <h2>Listă Prețuri Orientative</h2>
+      <ul>
+        <li><strong>6.6.2:</strong> de la 50 € + TVA / m²</li>
+        <li><strong>8.8.2:</strong> de la 70 € + TVA / m²</li>
+        <li><strong>10.10.2:</strong> de la 85 € + TVA / m²</li>
+      </ul>
+    `,
+    products: [],
+    subcategories: []
   },
-{
+
+  // 6. ANA KATEGORİ: Profile PVC
+  {
     title: "Sistem de Profile PVC – EXENplast & BLANCOPLAST",
     slug: "profile-pvc",
     icon: Layers,
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791316708/Profil-pvc-exenplat-blancoplast_skqvec.jpg",
+    pdfUrl: "/pdf/exen_catalog_2026.pdf",
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791317993/EXENPLAST-6040_qtryzg.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791318248/EXENPLAST-6040_2_yfzqlb.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791317993/EXENPLAST-6040_1_vo5lvj.jpg",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791318395/EXENPLAST-6040_3_qycvuk.jpg",
     ],
-    description: `<strong>🛡️ Sistem de Profile PVC EXENplast & BLANCOPLAST – Soluții Premium pentru Uși și Ferestre</strong><br>
-Căutați profile PVC de înaltă calitate, sisteme cu 4, 5 sau 6 camere, glafuri sau sisteme culisante în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții ecologice și durabile pentru tâmplărie PVC, cu stoc permanent disponibil în depozit.
+    description: `
+      <h2>Sistem de Profile PVC EXENplast & BLANCOPLAST – Soluții Premium pentru Uși și Ferestre</h2>
+      <p>Căutați <strong>profile PVC fără plumb</strong>, sisteme ecologice cu 4, 5 sau 6 camere și soluții de <strong>tâmplărie PVC</strong> în România? S.C. Turcoaz Aluminiu S.R.L. oferă profile PVC de înaltă calitate cu stoc permanent disponibil în depozitele noastre din Popești-Leordeni și Iași.</p>
 
-<strong>⭐ De ce să alegi profilele noastre PVC EXEN?</strong>
-• 100% Fără Plumb (Lead-Free) — formule ecologice care protejează mediul și sănătatea conform standardelor europene.
-• Izolație Fonică și Termică Superioară — coeficienți Uf optimizați și protecție acustică de la 58 dB până la 68 dB împotriva zgomotului exterior.
-• Stabilitate și Armătură Unificată — oțel unificat pentru toc, aripă și teu, asigurând o rezistență mecanică excelentă.`,
+      <h2>Avantajele Profilelor PVC EXEN</h2>
+      <ul>
+        <li><strong>100% Fără Plumb (Lead-Free):</strong> Formule 100% ecologice ce respectă mediul și cerințele europene.</li>
+        <li><strong>Izolație Fonică și Termică Superioară:</strong> Coeficienți Uf optimizați (Uf = 1.432 W/m²K) și protecție acustică ridicată.</li>
+        <li><strong>Stabilitate și Armătură Unificată:</strong> Oțel unificat pentru toc, aripă și teu pentru rezistență mecanică sporită.</li>
+      </ul>
+    `,
     products: [
       {
         title: "EXEN 6040A (60 mm - 4 Camere)",
         slug: "exen-6040a",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791321887/exenplast_6040_4_jt9iax.jpg",
-        description: "Specificații tehnice:\n• Lățime profil: 60 mm | Număr camere: 4 camere\n• Coeficient izolație termică: Uf = 1.432 W/m²K\n• Izolare acustică: Până la 58 dB\n• Grosime vitrare: 5 mm – 24 mm\n• Coduri principale: Toc 6040A-10 (1.024 gr/m), Aripă 6040A-20 (1.237 gr/m), Teu 6040A-30 (1.151 gr/m).",
+        description: "<strong>Specificații tehnice:</strong><br>- Lățime profil: 60 mm | Număr camere: 4 camere<br>- Coeficient izolație termică: Uf = 1.432 W/m²K<br>- Izolare acustică: Până la 58 dB<br>- Grosime vitrare: 5 mm – 24 mm<br>- Coduri principale: Toc 6040A-10 (1.024 gr/m), Aripă 6040A-20 (1.237 gr/m), Teu 6040A-30 (1.151 gr/m).",
         pdfUrl: "/pdf/exen_catalog_2026.pdf"
       }
     ],
