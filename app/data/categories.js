@@ -194,7 +194,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
             description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
             pdfUrl: "/pdf/sc100.pdf"
           },
-   {
+ {
     id: "glisant-geam-termopan-iscb140",
     slug: "glisant-geam-termopan-iscb140",
     title: "Sistem Culisant cu Geam Termopan ISCB140 – Închideri Terase",
@@ -208,35 +208,36 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
     imageAlt: "Sistem culisant cu geam termopan ISCB140 pentru închideri terase",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140_locoi7.jpg",
     pdfUrl: "/pdf/iscb140.pdf",
-    gallery: [
+    
+ gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791492159/iscb140-sc100_btodeo.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791491458/SCB140-4_amzmer.jpg",
     ],
     description: `
       <h2>Sistem Culisant cu Geam Termopan ISCB140 pentru Închideri Terase în București și România</h2>
-      <p>Căutați un <strong>sistem culisant cu sticlă termoizolantă pentru închideri terase</strong> sau un <strong>sistem culisant pentru închideri terase cu sticlă termopan</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sistemul premium <strong>ISCB140</strong>, proiectat pentru deschideri mari, eficiență termică ridicată, etanșare avansată și transparență arhitecturală maximă[cite: 2]. Asigurăm stoc permanent în depozitul central din zona București / Ilfov (Popești-Leordeni) și filiala Alufab Iași, cu livrare rapidă în toată România.</p>
+      <p>Căutați un <strong>sistem culisant cu sticlă termoizolantă pentru închideri terase</strong> sau un <strong>sistem culisant pentru închideri terase cu sticlă termopan</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sistemul premium <strong>ISCB140</strong>, proiectat pentru deschideri mari, eficiență termică ridicată, etanșare avansată și transparență arhitecturală maximă. Asigurăm stoc permanent în depozitul central din zona București / Ilfov (Popești-Leordeni) și filiala Alufab Iași, cu livrare rapidă în toată România.</p>
 
       <h2>Avantaje Principale – ISCB140</h2>
       <ul>
-        <li><strong>Sistem Premium pentru Deschideri Mari:</strong> Proiectat special pentru performanță superioară în proiecte moderne[cite: 2].</li>
-        <li><strong>Capacitate de Susținere:</strong> Suportă o greutate maximă de până la 90 kg pe fiecare canat[cite: 2].</li>
-        <li><strong>Configurații Complexe:</strong> Suport nativ pentru sisteme cu 4 șine, configurație 4+4 canate, precum și montaj în formă de L și U[cite: 2].</li>
+        <li><strong>Sistem Premium pentru Deschideri Mari:</strong> Proiectat special pentru performanță superioară în proiecte moderne.</li>
+        <li><strong>Capacitate de Susținere:</strong> Suportă o greutate maximă de până la 90 kg pe fiecare cercevea.</li>
+        <li><strong>Configurații Complexe:</strong> Suport nativ pentru sisteme cu 4 șine, configurație 4+4 cercevele, precum și montaj în formă de L și U.</li>
         <li><strong>Etanșare cu Profile Verticale:</strong> Asigură o barieră eficientă împotriva intemperiilor și a pierderilor termice între panourile de termopan.</li>
         <li><strong>Transparență Maximă și Eficiență Termică:</strong> Design contemporan care maximizează lumina naturală menținând confortul termic.</li>
       </ul>
 
       <h2>Specificații Tehnice Oficiale – ISCB140</h2>
       <ul>
-        <li><strong>Lățime Toc (Kasa):</strong> 140 mm — cadru robust optimizat pentru geam termopan[cite: 2].</li>
-        <li><strong>Lățime Canat (Cercevea):</strong> 24 mm — profil proiectat pentru stabilitate structurală[cite: 2].</li>
-        <li><strong>Grosime Perete Profil:</strong> 1,2 mm – 1,5 mm — rezistență mecanică superioară la vânt și utilizare intensă[cite: 2].</li>
-        <li><strong>Grosime Vitraj / Sticlă:</strong> 20 mm (geam termopan izolant) pentru o izolare termică și fonică excelentă[cite: 2].</li>
-        <li><strong>Dimensiuni & Capacitate Maximă:</strong> Lățime maximă canat 1000 mm, înălțime maximă 3000 mm și greutate maximă 90 kg per canat[cite: 2].</li>
-        <li><strong>Configurație Canate:</strong> Sistem cu 4 șine și configurație 4+4 canate (4 stânga / 4 dreapta)[cite: 2].</li>
+        <li><strong>Lățime Toc:</strong> 140 mm — cadru robust optimizat pentru geam termopan.</li>
+        <li><strong>Lățime Cercevea:</strong> 24 mm — profil proiectat pentru stabilitate structurală.</li>
+        <li><strong>Grosime Perete Profil:</strong> 1,2 mm – 1,5 mm — rezistență mecanică superioară la vânt și utilizare intensă.</li>
+        <li><strong>Grosime Vitraj / Sticlă:</strong> 20 mm (geam termopan izolant) pentru o izolare termică și fonică excelentă.</li>
+        <li><strong>Dimensiuni & Capacitate Maximă:</strong> Lățime maximă cercevea 1000 mm, înălțime maximă 3000 mm și greutate maximă 90 kg per cercevea.</li>
+        <li><strong>Configurație Cercevele:</strong> Sistem cu 4 șine și configurație 4+4 cercevele (4 stânga / 4 dreapta).</li>
       </ul>
 
       <h2>Opțiuni de Configurare</h2>
-      <p>Sistemul ISCB140 excelează în proiecte arhitecturale complexe, fiind compatibil cu <strong>Balcon tip L</strong>, <strong>Balcon tip U</strong>, sistem cu 4 șine și prag, și configurație 4+4 canate[cite: 2].</p>
+      <p>Sistemul ISCB140 excelează în proiecte arhitecturale complexe, fiind compatibil cu <strong>Balcon tip L</strong>, <strong>Balcon tip U</strong>, sistem cu 4 șine și prag, și configurație 4+4 cercevele.</p>
 
       <p><em>Sistemul culisant ISCB140 oferă o soluție modernă pentru închiderea balcoanelor, teraselor și spațiilor comerciale. Datorită profilului din aluminiu și suprafeței vitrate generoase, acest sistem asigură luminozitate maximă, design elegant și funcționare fiabilă pentru proiectele tale.</em> Program de calcul disponibil — primul pas clar pentru proiectul tău!</p>
 
