@@ -239,7 +239,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
       <p><strong>Unde se pot utiliza sistemele culisante ISCB140?</strong> Sunt ideale pentru închiderea teraselor rezidențiale, restaurantelor, spațiilor comerciale și a balcoanelor mari din București, Ilfov, Iași și în toată România.</p>
       <p><strong>Cum se face livrarea?</strong> Expediem componentele și profilele direct din depozitul nostru din Popești-Leordeni și filiala Iași, asigurând suport logistic complet pentru parteneri și montatori.</p>
     `
-  }.
+  },
           {
             id: "sistem-tip-ghilotina",
             slug: "sistem-tip-ghilotina",
