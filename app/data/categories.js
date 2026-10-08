@@ -140,45 +140,45 @@ export const categories = [
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
         description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
       },
-      {
-    title: "Sistem de Gard F60 – Profile din Aluminiu",
-    slug: "gard",
-    icon: Layers,
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
-    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
-    pdfUrl: "/pdf/gard-aluminiu.pdf",
-    gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg"
-    ],
-    description: `<strong>🛡️ Sistem de Gard F60 – Profile din Aluminiu pentru Împrejmuiri Moderne</strong><br>
-Căutați sisteme de gard din aluminiu de înaltă calitate, profile pentru porți și împrejmuiri în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții inovatoare și durabile pentru proiecte rezidențiale și industriale, cu stoc permanent disponibil în depozitul din Popești-Leordeni și filiala Alufab Iași.
+   {
+  title: "Sistem de Gard F60 – Profile din Aluminiu",
+  slug: "gard",
+  icon: Layers,
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+  pdfUrl: "/pdf/gard-aluminiu.pdf",
+  gallery: [
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg"
+  ],
+  description: `<strong>🛡️ Sistem de Gard F60 – Profile din Aluminiu pentru Împrejmuiri Moderne</strong><br>
+Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de înaltă calitate sau <strong>profile gard aluminiu</strong> pentru porți și împrejmuiri în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții inovatoare și durabile pentru proiecte rezidențiale și industriale. Solicitați o ofertă avantajoasă de <strong>gard aluminiu preț</strong> direct din stocul permanent din depozitul Popești-Leordeni și filiala Alufab Iași.<br><br>
 
 <strong>⭐ Avantajele Sistemului de Gard F60</strong>
-• <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
-• <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lamele cu lățimi variate (60 - 150 mm).
-• <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru realizarea de porți batante (simple sau duble) și porți culisante de garaj.
-• <strong>Intimitate și Protecție:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure și complet protejate vizual de exterior.
+- <strong>Design Estetic și Variat:</strong> Lambriuri cu aspect diversificat ce conferă o eleganță deosebită proprietății.
+- <strong>Opțiuni de Vizibilitate:</strong> Vederi pline sau cu spații libere, folosind lamele cu lățimi variate (60 - 150 mm).
+- <strong>Soluții Complete pentru Porți:</strong> Compatibilitate excelentă pentru <strong>porți aluminiu</strong> batante (simple sau duble) și porți culisante de garaj.
+- <strong>Intimitate și Protecție:</strong> Transformă grădinile, depozitele și spațiile deschise în zone sigure și complet protejate vizual de exterior.<br><br>
 
 <strong>⚙️ Specificații Tehnice</strong>
-• <strong>Lățime stâlp:</strong> 60 mm
-• <strong>Lățime panou:</strong> 60 - 150 mm
-• <strong>Grosime perete profil:</strong> 1,2 - 1,5 mm
-• <strong>Adâncime panou:</strong> 14 mm
-• <strong>Distanță minimă între stâlpi:</strong> 400 mm
-• <strong>Distanță maximă între stâlpi:</strong> 1600 mm
-• <strong>Înălțime maximă gard:</strong> 1800 mm
+- <strong>Lățime stâlp:</strong> 60 mm
+- <strong>Lățime panou:</strong> 60 - 150 mm
+- <strong>Grosime perete profil:</strong> 1,2 - 1,5 mm
+- <strong>Adâncime panou:</strong> 14 mm
+- <strong>Distanță minimă între stâlpi:</strong> 400 mm
+- <strong>Distanță maximă între stâlpi:</strong> 1600 mm
+- <strong>Înălțime maximă gard:</strong> 1800 mm<br><br>
 
 <strong>🏗️ Opțiuni de Aplicare și Montaj</strong>
-• Partiție tip L
-• Partiție unghiulară / înclinată
-• Partiție tip T
-• Partiție în patru căi`,
-    products: [],
-    subcategories: []
-  },      
+- Partiție tip L
+- Partiție unghiulară / înclinată
+- Partiție tip T
+- Partiție în patru căi`,
+  products: [],
+  subcategories: []
+},
       {
         title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
