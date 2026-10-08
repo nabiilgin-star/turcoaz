@@ -195,14 +195,51 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
             pdfUrl: "/pdf/sc100.pdf"
           },
           {
-            id: "glisant-geam-termopan-iscb140",
-            slug: "glisant-geam-termopan-iscb140",
-            title: "Glisant Geam Termopan - ISCB140",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem glisant cu geam termopan ISCB140 pentru închidere terase.",
-            pdfUrl: "/pdf/iscb140.pdf"
-          },
+    id: "glisant-geam-termopan-iscb140",
+    slug: "glisant-geam-termopan-iscb140",
+    title: "Sistem Culisant cu Geam Termopan ISCB140 – Închideri Terase",
+    updatedAt: "2026-10-08",
+    seo: {
+      title: "Sistem Culisant cu Geam Termopan ISCB140 | Turcoaz Aluminiu",
+      description: "Sistem culisant cu geam termopan ISCB140 pentru închideri terase și balcoane în București și România. Izolație termică superioară și stoc permanent.",
+      indexable: true
+    },
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+    imageAlt: "Sistem culisant cu geam termopan ISCB140 pentru închideri terase",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+    pdfUrl: "/pdf/iscb140.pdf",
+    gallery: [
+      {
+        src: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        alt: "Detalii tehnice sistem ISCB140 și opțiuni de aplicare"
+      }
+    ],
+    description: `
+      <h2>Sistem Culisant cu Geam Termopan ISCB140 pentru Închideri Terase în București și România</h2>
+      <p>Căutați un <strong>sistem culisant cu sticlă termoizolantă pentru închideri terase</strong> sau un <strong>sistem culisant pentru închideri terase cu sticlă termopan</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sistemul premium <strong>ISCB140</strong>, proiectat pentru eficiență termică ridicată, etanșare avansată și transparență arhitecturală maximă. Asigurăm stoc permanent în depozitul central din zona București / Ilfov (Popești-Leordeni) și filiala Alufab Iași, cu livrare rapidă în toată România.</p>
+
+      <h2>Specificații Tehnice Oficiale – ISCB140</h2>
+      <ul>
+        <li><strong>Lățime Cadru (Kasa):</strong> 140 mm[cite: 2] — cadru robust optimizat pentru geam termopan.</li>
+        <li><strong>Lățime Cercevea (Canat):</strong> 24 mm[cite: 2] — profil proiectat pentru stabilitate structurală.</li>
+        <li><strong>Grosime Perete Profil:</strong> 1,2 mm – 1,5 mm[cite: 2] — rezistență mecanică superioară la vânt și utilizare intensă.</li>
+        <li><strong>Grosime Sticlă:</strong> 20 mm[cite: 2] (geam termopan izolant) pentru o izolare termică și fonică excelentă.</li>
+        <li><strong>Dimensiuni & Capacitate Maximă:</strong> Lățime cercevea de până la 1000 mm, înălțime de până la 3000 mm și o greutate maximă de 90 kg per cercevea[cite: 2].</li>
+        <li><strong>Configurație:</strong> Sistem culisant cu 4 căi / 4 puncte de îmbinare (4 stânga, 4 dreapta)[cite: 2].</li>
+      </ul>
+
+      <h2>Avantaje Majore & Etanșare</h2>
+      <ul>
+        <li><strong>Etanșare cu Profile Verticale:</strong> Asigură o barieră eficientă împotriva intemperiilor și a pierderilor termice între panourile de termopan.</li>
+        <li><strong>Transparență Maximă și Eficiență Termică:</strong> Design modern care permite pătrunderea luminii naturale, menținând în același timp confortul termic pe terase și balcoane.</li>
+        <li>Program de calcul disponibil — primul pas clar pentru proiectul tău de închidere terasă.</li>
+      </ul>
+
+      <h2>Întrebări Frecvente (FAQ)</h2>
+      <p><strong>Unde se pot utiliza sistemele culisante ISCB140?</strong> Sunt ideale pentru închiderea teraselor rezidențiale, restaurantelor, spațiilor comerciale și a balcoanelor mari din București, Ilfov, Iași și în toată România.</p>
+      <p><strong>Cum se face livrarea?</strong> Expediem componentele și profilele direct din depozitul nostru din Popești-Leordeni și filiala Iași, asigurând suport logistic complet pentru parteneri și montatori.</p>
+    `
+  }.
           {
             id: "sistem-tip-ghilotina",
             slug: "sistem-tip-ghilotina",
