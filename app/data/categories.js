@@ -194,7 +194,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
             description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
             pdfUrl: "/pdf/sc100.pdf"
           },
-          {
+         {
     id: "glisant-geam-termopan-iscb140",
     slug: "glisant-geam-termopan-iscb140",
     title: "Sistem Culisant cu Geam Termopan ISCB140 – Închideri Terase",
@@ -209,10 +209,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
     pdfUrl: "/pdf/iscb140.pdf",
     gallery: [
-      {
-        src: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-        alt: "Detalii tehnice sistem ISCB140 și opțiuni de aplicare"
-      }
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg"
     ],
     description: `
       <h2>Sistem Culisant cu Geam Termopan ISCB140 pentru Închideri Terase în București și România</h2>
@@ -220,12 +217,12 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
 
       <h2>Specificații Tehnice Oficiale – ISCB140</h2>
       <ul>
-        <li><strong>Lățime Cadru (Kasa):</strong> 140 mm[cite: 2] — cadru robust optimizat pentru geam termopan.</li>
-        <li><strong>Lățime Cercevea (Canat):</strong> 24 mm[cite: 2] — profil proiectat pentru stabilitate structurală.</li>
-        <li><strong>Grosime Perete Profil:</strong> 1,2 mm – 1,5 mm[cite: 2] — rezistență mecanică superioară la vânt și utilizare intensă.</li>
-        <li><strong>Grosime Sticlă:</strong> 20 mm[cite: 2] (geam termopan izolant) pentru o izolare termică și fonică excelentă.</li>
-        <li><strong>Dimensiuni & Capacitate Maximă:</strong> Lățime cercevea de până la 1000 mm, înălțime de până la 3000 mm și o greutate maximă de 90 kg per cercevea[cite: 2].</li>
-        <li><strong>Configurație:</strong> Sistem culisant cu 4 căi / 4 puncte de îmbinare (4 stânga, 4 dreapta)[cite: 2].</li>
+        <li><strong>Lățime Cadru (Kasa):</strong> 140 mm — cadru robust optimizat pentru geam termopan.</li>
+        <li><strong>Lățime Cercevea (Canat):</strong> 24 mm — profil proiectat pentru stabilitate structurală.</li>
+        <li><strong>Grosime Perete Profil:</strong> 1,2 mm – 1,5 mm — rezistență mecanică superioară la vânt și utilizare intensă.</li>
+        <li><strong>Grosime Sticlă:</strong> 20 mm (geam termopan izolant) pentru o izolare termică și fonică excelentă.</li>
+        <li><strong>Dimensiuni & Capacitate Maximă:</strong> Lățime cercevea de până la 1000 mm, înălțime de până la 3000 mm și o greutate maximă de 90 kg per cercevea.</li>
+        <li><strong>Configurație:</strong> Sistem culisant cu 4 căi / 4 puncte de îmbinare (4 stânga, 4 dreapta).</li>
       </ul>
 
       <h2>Avantaje Majore & Etanșare</h2>
