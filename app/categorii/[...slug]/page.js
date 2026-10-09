@@ -50,17 +50,25 @@ function sanitizeData(data) {
 // ----------------------------------------------------------------------
 // 1. DİNAMİK SEO METADATA OLUŞTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
 // ----------------------------------------------------------------------
-// DİKKAT: categories.js dosyanızın yolunu kendi projenize göre düzeltin (Örn: '@/lib/categories' veya '../categories')
-
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
   const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
+  
+  // Sizin eski kodunuzdaki canonicalUrl mantığını koruduk
+  const baseUrl = "https://turcoaz.com";
+  const canonicalUrl = pathSegments ? `${baseUrl}/categorii/${pathSegments.join('/')}` : `${baseUrl}/categorii`;
 
-  // 1. Ana Kategori veya Kategori seçilmediyse (Örn: turcoaz.com/categorii)
+  // 1. Ana Kategori veya Kategori seçilmediyse
   if (!pathSegments || pathSegments.length === 0) {
     return {
       title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
       description: "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
+      openGraph: {
+        url: canonicalUrl,
+        siteName: "Turcoaz Aluminiu",
+        locale: "ro_RO",
+        type: "website",
+      },
       robots: {
         index: true,
         follow: true,
@@ -72,8 +80,6 @@ export async function generateMetadata({ params }) {
 
   // 2. Kategori Dizisinden (categories.js) Ürünü/Kategoriyi Bulma İşlemi
   let currentItem = null;
-  
-  // Ağaç yapısında slug'ı arayan yardımcı fonksiyon (subcategories ve products dizilerini tarar)
   const findItemBySlug = (items, targetSlug) => {
     for (const item of items) {
       if (item.slug === targetSlug) return item;
@@ -93,7 +99,7 @@ export async function generateMetadata({ params }) {
     currentItem = findItemBySlug(categories, lastSlug);
   }
 
-  // 3. Ürün bulunamazsa Fallback (404 SEO)
+  // 3. Ürün bulunamazsa Fallback
   if (!currentItem) {
     return {
       title: "Produs | Turcoaz Aluminiu",
@@ -101,17 +107,18 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // 4. Bulunan Ürünün Dinamik SEO Verileri (OpenGraph, Twitter ve Tam Metin)
+  // 4. Bulunan Ürünün Dinamik SEO Verileri
   return {
-    // Eğer o ürüne özel bir seo.title yazılmışsa onu, yoksa normal title'ı alır
     title: currentItem.seo?.title || currentItem.title,
     description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
     openGraph: {
       title: currentItem.seo?.title || currentItem.title,
       description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
-      url: `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
+      url: canonicalUrl,
+      siteName: "Turcoaz Aluminiu",
+      locale: "ro_RO",
+      type: "website",
       images: currentItem.image ? [{ url: currentItem.image }] : [],
-      type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
