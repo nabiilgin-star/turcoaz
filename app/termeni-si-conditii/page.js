@@ -4,9 +4,9 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 import "../components/LegalLayout.css";
 
 export const metadata = {
-  title: "Termeni și Condiții - Kahe",
+  title: "Termeni și Condiții - Turcoaz",
   description:
-    "Citește regulile și condițiile de utilizare ale site-ului Kahe.",
+    "Citește regulile și condițiile de utilizare ale site-ului Turcoaz Aluminiu.",
 };
 
 export default async function TermsAndConditionsPage() {
@@ -32,14 +32,14 @@ export default async function TermsAndConditionsPage() {
 
           <div className="legal-content">
             <p>
-              Bine ați venit pe site-ul Kahe. Prin accesarea și utilizarea
+              Bine ați venit pe site-ul Turcoaz Aluminiu. Prin accesarea și utilizarea
               acestui site, sunteți de acord să respectați următorii termeni și
               condiții. Vă rugăm să îi citiți cu atenție.
             </p>
 
             <h2>1. Informații Generale</h2>
             <p>
-              Site-ul Kahe (kahe.ro) este deținut și administrat de Kahe, o
+              Site-ul turcoaz (turcoaz.com) este deținut și administrat de Turcoaz Aluminiu, o
               companie specializată în soluții de feronerie pentru sticlă. Toate
               produsele prezentate sunt oferite în limita stocului și a
               disponibilității furnizorilor noștri.
@@ -49,7 +49,7 @@ export default async function TermsAndConditionsPage() {
             <p>
               Întregul conținut al acestui site, incluzând imagini, texte,
               logo-uri și elemente grafice, reprezintă proprietatea intelectuală
-              a Kahe sau a partenerilor săi și este protejat de legislația
+              a Turcoaz Aluminiu sau a partenerilor săi și este protejat de legislația
               privind drepturile de autor. Orice utilizare neautorizată este
               strict interzisă.
             </p>
@@ -66,7 +66,7 @@ export default async function TermsAndConditionsPage() {
             <p>
               Depunem eforturi constante pentru ca informațiile de pe site
               (prețuri, specificații tehnice, imagini) să fie corecte. Cu toate
-              acestea, Kahe nu își asumă răspunderea pentru erori tipografice
+              acestea, Turcoaz Aluminiu nu își asumă răspunderea pentru erori tipografice
               sau modificări neanunțate ale producătorilor. Imaginile produselor
               au caracter informativ.
             </p>
@@ -88,7 +88,7 @@ export default async function TermsAndConditionsPage() {
             <h2>7. Contact</h2>
             <p>
               Dacă aveți întrebări referitoare la acești termeni, vă rugăm să ne
-              contactați la: contact@kahe.ro.
+              contactați la: info@turcoaz.com
             </p>
           </div>
         </div>
