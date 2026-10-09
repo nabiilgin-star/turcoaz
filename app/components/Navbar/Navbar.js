@@ -372,34 +372,45 @@ const Navbar = ({ categories = [], announcement = {} }) => {
             />
           </div>
 
-          <div className="desktop-menu">
-            {menuItems.map((item) => {
-              const subItems = getSubItems(item);
-              const hasSub = subItems && subItems.length > 0;
-              
-              if (item.isScroll) {
-                return (
-                  <div key={item.slug} className="nav-item">
-                    <span 
-                      className="nav-link" 
-                      onClick={() => scrollToSection(item.targetId)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {item.title}
-                    </span>
-                  </div>
-                );
-              }
+        <div className="desktop-menu">
+    {menuItems.map((item) => {
+      const subItems = getSubItems(item);
+      const hasSub = subItems && subItems.length > 0;
+      
+      if (item.isScroll) {
+        return (
+          <div key={item.slug || item.targetId} className="nav-item">
+            <span 
+              className="nav-link" 
+              onClick={() => scrollToSection(item.targetId)}
+              style={{ cursor: "pointer" }}
+            >
+              {item.title}
+            </span>
+          </div>
+        );
+      }
 
-              return (
-                <div key={item.slug} className="nav-item">
-                  <Link href={item.path || "#"} className="nav-link">
-                    {item.title}{" "}
-                    {hasSub && (
-                      <ChevronDown size={16} className="chevron-icon" />
-                    )}
-                  </Link>
+      // HATA ÇÖZÜMÜ: Linkin bozulmasını kesin olarak engelliyoruz.
+      // Eğer eleman statik bir link ise sadece kendi özel path'ini kullansın, 
+      // Kategori ise kategori linki oluştursun.
+      let correctHref = item.path || "#";
+      if (item.type === "link") {
+        if (item.slug === "") correctHref = "/";
+        else if (item.slug === "categorii") correctHref = "/categorii";
+        else if (item.slug === "contact") correctHref = "/contact";
+      }
 
+      return (
+        <div key={item.slug || item.title} className="nav-item">
+          <Link href={correctHref} className="nav-link">
+            {item.title}{" "}
+            {hasSub && (
+              <ChevronDown size={16} className="chevron-icon" />
+            )}
+          </Link>
+          
+          {/* Alt Menü (Dropdown) kodlarınız muhtemelen burada devam ediyordur... */}
                   {hasSub && (
                     <div className="dropdown-menu">
                       {subItems.map((sub, idx) => (
