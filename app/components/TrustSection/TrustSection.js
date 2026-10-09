@@ -82,7 +82,7 @@ const TrustSection = () => {
                   <ul className="premium-bullet-list row-layout margin-top-sm">
                     <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
                     <li><span>Lățimi: 75 mm - 380 mm</span></li>
-                    <li><span>RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe </span></li>
+                    <li><span>RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe </span></li>
                     <li><span>Debitare la Dimensiune</span></li>
                     <li><span>Stoc permanent de peste 200 de tone pentru livrare imediată</span></li>
                   </ul>
