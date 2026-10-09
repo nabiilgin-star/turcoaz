@@ -326,17 +326,17 @@ const Navbar = ({ categories = [], announcement = {} }) => {
   };
 
   const menuItems = [
-    { title: "Acasă", slug: "", path: "/", type: "link" },
-    { title: "Produse", slug: "categorii", path: "/categorii", type: "link" },
-    { title: "Despre Noi", slug: "despre-noi", path: "/#despre-noi", type: "scroll", isScroll: true, targetId: "despre-noi" },
-    { title: "Contact", slug: "contact", path: "/contact", type: "link" },
-    ...categories.map((cat) => ({
-      title: cat.title,
-      slug: cat.slug,
-      path: `/categorii/${cat.slug}`,
-      type: "category",
-    })),
-  ];
+  { title: "Acasă", slug: "", path: "/", type: "link" },
+  { title: "Produse", slug: "categorii", path: "/categorii", type: "link" },
+  { title: "Despre Noi", slug: "despre-noi", path: "/#despre-noi", type: "link" },
+  { title: "Contact", slug: "contact", path: "/#contact", type: "link" }, // Yolu /#contact yaptık
+  ...categories.map((cat) => ({
+    title: cat.title,
+    slug: cat.slug,
+    path: `/categorii/${cat.slug}`,
+    type: "category",
+  })),
+];
 
   return (
     <>
