@@ -185,15 +185,61 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
         description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.",
         products: [
-          {
-            id: "glisant-geam-simplu-sc100",
-            slug: "glisant-geam-simplu-sc100",
-            title: "Glisant Geam Simplu - SC100",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem glisant din sticlă simplă SC100 pentru închidere terase.",
-            pdfUrl: "/pdf/sc100.pdf"
-          },
+        {
+    id: "sistem-glisant-scb100",
+    slug: "sistem-glisant-scb100",
+    title: "Sistem Glisant pentru Balcon cu Panouri din Sticlă SCB100",
+    updatedAt: "2026-10-09",
+    seo: {
+      title: "Sistem Glisant Balcon SCB100 | Turcoaz Aluminiu",
+      description: "Sistemul SCB100 oferă o soluție modernă pentru închiderea balcoanelor cu sticlă. Vizibilitate panoramică maximă. Stoc disponibil în București și România.",
+      indexable: true
+    },
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791562122/scb100_df214x.png",
+    imageAlt: "Sistem Glisant pentru Balcon SCB100 cu vizibilitate panoramică",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791562122/scb100_df214x.png",
+     pdfUrl: "/pdf/scb100.pdf",
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791562122/scb100_df214x.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791562781/scb100-1_x7dlp6.png"
+    ],
+    description: `
+      <h2>Sistem Glisant pentru Balcon cu Panouri din Sticlă – SCB100</h2>
+      <p>Sistemul <strong>SCB100</strong> oferă o soluție modernă și elegantă pentru închiderea balcoanelor, asigurând vizibilitate panoramică maximă, funcționare ușoară și durabilitate îndelungată. Designul minimalist permite integrarea armonioasă în proiecte rezidențiale și comerciale. S.C. Turcoaz Aluminiu S.R.L. asigură stoc permanent pentru sistemele glisante SCB100 în depozitele din București, Ilfov (Popești-Leordeni) și filiala Iași, cu livrare rapidă în toată România.</p>
+
+      <h2>Avantaje Principale</h2>
+      <ul>
+        <li>✅ <strong>Design modern și elegant:</strong> Profil îngust pentru un aspect arhitectural curat.</li>
+        <li>✅ <strong>Vizibilitate panoramică extinsă:</strong> Suprafețe vitrate mari, fără obstacole vizuale.</li>
+        <li>✅ <strong>Sistem de glisare silențios:</strong> Operare lină și confort maxim în utilizare.</li>
+        <li>✅ <strong>Materiale premium:</strong> Profile din aluminiu de înaltă calitate.</li>
+        <li>✅ <strong>Rezistență ridicată:</strong> Proiectat pentru utilizare intensivă și durabilitate pe termen lung.</li>
+        <li>✅ <strong>Întreținere redusă:</strong> Componente fiabile și ușor de curățat.</li>
+        <li>✅ <strong>Soluție ideală:</strong> Flexibilitate totală pentru balcoane și terase.</li>
+      </ul>
+
+      <h2>Specificații Tehnice Oficiale – SCB100</h2>
+      <ul>
+        <li><strong>Lățime toc (Frame Width):</strong> 58 - 101 mm</li>
+        <li><strong>Lățime canat (Sash Width):</strong> 17,5 mm</li>
+        <li><strong>Grosime perete profil:</strong> 1,4 - 1,7 mm</li>
+        <li><strong>Grosime sticlă:</strong> 8 - 10 mm</li>
+        <li><strong>Lățime maximă canat:</strong> 1000 mm</li>
+        <li><strong>Înălțime maximă canat:</strong> 3000 mm</li>
+        <li><strong>Greutate maximă canat:</strong> 70 kg</li>
+        <li><strong>Număr maxim canate:</strong> 5 stânga / 5 dreapta</li>
+      </ul>
+
+      <h2>Opțiuni de Aplicare și Configurare</h2>
+      <ul>
+        <li>Balcoane drepte și liniare</li>
+        <li>Balcoane în colț (tip L)</li>
+        <li>Terase rezidențiale de casă sau apartament</li>
+        <li>Spații comerciale și restaurante</li>
+        <li>Închideri panoramice pentru optimizarea spațiului de locuit</li>
+      </ul>
+    `
+  },
  {
     id: "glisant-geam-termopan-iscb140",
     slug: "glisant-geam-termopan-iscb140",
