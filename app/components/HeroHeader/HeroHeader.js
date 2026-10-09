@@ -68,7 +68,7 @@ const HeroHeader = ({ heroSettings = [] }) => {
             </span>
 
             <h1 className="hero-title">
-              Sisteme premium de feronerie și sticlă.
+              Distribuitor Premium de Profile Aluminiu, PVC, Glafuri și Sisteme de Sticlă
             </h1>
 
             <p className="hero-description">

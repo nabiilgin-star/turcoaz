@@ -24,6 +24,13 @@ export default function Footer() {
             <Link href="/termeni-si-conditii">Termeni și condiții</Link>
           </div>
 
+<div className="company-legal-info">
+  <p><strong>Turcoaz Aluminiu S.R.L.</strong></p>
+  <p>CUI: RO28922264 | Reg. Com: J2016003625234</p>
+  <p>Sediu Social & Depozit: Str. Taberei nr. 6, Popești-Leordeni, Ilfov, România</p>
+  <p>Email: info@turcoaz.com</p> 
+</div>
+
         </div>
       </div>
     </footer>

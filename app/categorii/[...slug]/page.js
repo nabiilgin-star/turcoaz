@@ -50,10 +50,14 @@ function sanitizeData(data) {
 // ----------------------------------------------------------------------
 // 1. DİNAMİK SEO METADATA OLUŞTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
 // ----------------------------------------------------------------------
+// DİKKAT: categories.js dosyanızın yolunu kendi projenize göre düzeltin (Örn: '@/lib/categories' veya '../categories')
+import { categories } from '@/categories'; 
+
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
   const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
 
+  // 1. Ana Kategori veya Kategori seçilmediyse (Örn: turcoaz.com/categorii)
   if (!pathSegments || pathSegments.length === 0) {
     return {
       title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
@@ -66,6 +70,64 @@ export async function generateMetadata({ params }) {
       },
     };
   }
+
+  // 2. Kategori Dizisinden (categories.js) Ürünü/Kategoriyi Bulma İşlemi
+  let currentItem = null;
+  
+  // Ağaç yapısında slug'ı arayan yardımcı fonksiyon (subcategories ve products dizilerini tarar)
+  const findItemBySlug = (items, targetSlug) => {
+    for (const item of items) {
+      if (item.slug === targetSlug) return item;
+      if (item.subcategories && item.subcategories.length > 0) {
+        const found = findItemBySlug(item.subcategories, targetSlug);
+        if (found) return found;
+      }
+      if (item.products && item.products.length > 0) {
+        const found = findItemBySlug(item.products, targetSlug);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
+
+  if (typeof categories !== 'undefined') {
+    currentItem = findItemBySlug(categories, lastSlug);
+  }
+
+  // 3. Ürün bulunamazsa Fallback (404 SEO)
+  if (!currentItem) {
+    return {
+      title: "Produs | Turcoaz Aluminiu",
+      description: "Sisteme din aluminiu și PVC premium în România.",
+    };
+  }
+
+  // 4. Bulunan Ürünün Dinamik SEO Verileri (OpenGraph, Twitter ve Tam Metin)
+  return {
+    // Eğer o ürüne özel bir seo.title yazılmışsa onu, yoksa normal title'ı alır
+    title: currentItem.seo?.title || currentItem.title,
+    description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
+    openGraph: {
+      title: currentItem.seo?.title || currentItem.title,
+      description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
+      url: `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
+      images: currentItem.image ? [{ url: currentItem.image }] : [],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: currentItem.seo?.title || currentItem.title,
+      description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
+      images: currentItem.image ? [currentItem.image] : [],
+    },
+    robots: {
+      index: currentItem.seo?.indexable !== false,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  };
+}
 
   const [apiResult] = await Promise.all([
     resolvePath(pathSegments).catch(() => null),

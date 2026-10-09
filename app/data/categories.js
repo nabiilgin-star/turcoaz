@@ -22,13 +22,37 @@ export const categories = [
         slug: "sisteme-tamplarie",
         image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
         products: [
-          {
+         {
             id: "glisante-s28",
             slug: "glisante-s28",
-            title: "Glisante S28",
+            title: "Glisante S28 – Sistem Culisant din Aluminiu",
+            seo: {
+              title: "Sistem Culisant din Aluminiu S28 | Turcoaz Aluminiu",
+              description: "Sistemul glisant S28 pentru ferestre și uși din aluminiu oferă soluții economice și fiabile, fără rupere termică. Stoc în București, Ilfov și România.",
+              indexable: true
+            },
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
             detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
-            description: `Sistem S28 – avantaje:\n- Sistem utilizat pentru executia de usi si ferestre glisante\n- Sistem economic de tamplarie din aluminiu, tip glisante\n- Sistem fara ruperea puntii termice\n- Posibilitatea executarii unei game largi de tipologii de constructie\n- Inchidere cu garnituri perie si garnituri EPDM\n\nSTOC:\nAlb - RAL 9016, Maro - RAL8014, Gri antracit 7016Mat, STEJAR AURIU`,
+            description: `
+              <h2>Sistem Culisant din Aluminiu – Glisante S28</h2>
+              <p>Sistemul <strong>Glisante S28</strong> este o soluție extrem de fiabilă și economică, utilizată pentru execuția de uși și ferestre glisante (culisante) din aluminiu. S.C. Turcoaz Aluminiu S.R.L. asigură stoc permanent pentru acest sistem, cu livrare rapidă din depozitele din București, Ilfov (Popești-Leordeni) și filiala Iași, acoperind toată România.</p>
+
+              <h2>Avantaje Principale – Sistem S28</h2>
+              <ul>
+                <li><strong>Soluție Economică:</strong> Sistem economic de tâmplărie din aluminiu, ideal pentru ferestre și uși de tip glisant, unde nu se cer izolații termice avansate.</li>
+                <li><strong>Sistem Fără Rupere Termică (Sistem Rece):</strong> Proiectat pentru balcoane neîncălzite, compartimentări interioare sau spații comerciale (fără barieră termică).</li>
+                <li><strong>Versatilitate:</strong> Posibilitatea executării unei game largi de tipologii de construcție, adaptabile oricărui proiect.</li>
+                <li><strong>Etanșare Eficientă:</strong> Echipat cu sistem de închidere cu garnituri tip perie și garnituri EPDM pentru durabilitate și protecție la praf/vânt.</li>
+              </ul>
+
+              <h2>Disponibilitate STOC (Culori)</h2>
+              <ul>
+                <li><strong>Alb:</strong> RAL 9016</li>
+                <li><strong>Maro:</strong> RAL 8014</li>
+                <li><strong>Gri Antracit:</strong> RAL 7016 Mat</li>
+                <li><strong>Aspect Lemn:</strong> Stejar Auriu</li>
+              </ul>
+            `,
             pdfUrl: "/pdf/s28-glisanta.pdf",
             gallery: [
               "https://res.cloudinary.com/oivvupgw/image/upload/v1784566277/AKPA_S28_RO_HD_e3xt4u.jpg",

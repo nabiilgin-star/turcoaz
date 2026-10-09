@@ -4,7 +4,7 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 import "../components/LegalLayout.css";
 
 export const metadata = {
-  title: "Politica de Confidențialitate - Kahe",
+  title: "Politica de Confidențialitate - Turcoaz Aluminiu",
   description: "Află cum colectăm și protejăm datele tale personale.",
 };
 
@@ -31,7 +31,7 @@ export default async function PrivacyPolicyPage() {
 
           <div className="legal-content">
             <p>
-              La Kahe, ne angajăm să protejăm și să respectăm confidențialitatea
+              La Turcoaz Aluminiu SRL, ne angajăm să protejăm și să respectăm confidențialitatea
               datelor dumneavoastră personale. Această politică explică modul în
               care colectăm, utilizăm și protejăm informațiile pe care ni le
               furnizați.
@@ -84,7 +84,7 @@ export default async function PrivacyPolicyPage() {
               Conform GDPR, aveți dreptul de a solicita accesul la datele
               dumneavoastră, rectificarea acestora, ștergerea sau
               restricționarea prelucrării. Pentru orice solicitare, ne puteți
-              contacta la adresa de e-mail: contact@kahe.ro.
+              contacta la adresa de e-mail: info@turcoaz.com
             </p>
 
             <h2>5. Module Cookie</h2>
