@@ -273,7 +273,7 @@ export const resolvePath = unstable_cache(
     return null;
   },
   ["resolve-path"],
-  { revalidate: 3600, tags: ["categories", "subcategories", "products"] },
+  { revalidate: 3600, tags: ["categories", "subcategories", "products"] }
 );
 
 const { data: product } = await supabaseAdmin
