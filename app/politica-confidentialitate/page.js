@@ -4,8 +4,24 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 import "../components/LegalLayout.css";
 
 export const metadata = {
-  title: "Politica de Confidențialitate - Turcoaz Aluminiu",
-  description: "Află cum colectăm și protejăm datele tale personale.",
+  title: "Politica de Confidențialitate | Turcoaz Aluminiu",
+  description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+  alternates: {
+    canonical: 'https://turcoaz.com/politica-confidentialitate',
+  },
+  openGraph: {
+    title: "Politica de Confidențialitate | Turcoaz Aluminiu",
+    description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+    url: 'https://turcoaz.com/politica-confidentialitate',
+    siteName: "Turcoaz Aluminiu",
+    locale: "ro_RO",
+    type: "website",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Politica de Confidențialitate | Turcoaz Aluminiu",
+    description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+  },
 };
 
 export default async function PrivacyPolicyPage() {
