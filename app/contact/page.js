@@ -5,7 +5,7 @@ import HeroHeader from "../components/HeroHeader/HeroHeader";
 import { getNavbarData } from "@/app/lib/get-nav-data";
 
 export const metadata = {
-  title: "Contact - Kahe",
+  title: "Contact - Turcoaz",
   description: "Contactează-ne pentru orice întrebare sau solicitare",
 };
 
