@@ -230,7 +230,7 @@ const TrustSection = () => {
               <li><span>• Construim o afacere durabilă, profitabilă și orientată spre viitor.</span></li>
             </ul>
             <p className="margin-top-sm border-left-box">
-              Turcoaz Trading SRL urmărește să atingă competențe de top în coordonarea și execuția lucrărilor de construcții civile și industriale, finalizând proiectele rapid, eficient și la cele mai avantajoase condiții pentru clienți.
+              Turcoaz Aluminiu SRL urmărește să atingă competențe de top în coordonarea și execuția lucrărilor de construcții civile și industriale, finalizând proiectele rapid, eficient și la cele mai avantajoase condiții pentru clienți.
             </p>
           </div>
 

@@ -51,7 +51,6 @@ function sanitizeData(data) {
 // 1. DİNAMİK SEO METADATA OLUŞTURUCU (GOOGLE SEARCH CONSOLE ODAKLI)
 // ----------------------------------------------------------------------
 // DİKKAT: categories.js dosyanızın yolunu kendi projenize göre düzeltin (Örn: '@/lib/categories' veya '../categories')
-import { categories } from '@/categories'; 
 
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
