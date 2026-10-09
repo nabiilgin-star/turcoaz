@@ -331,17 +331,18 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     return "#";
   };
 
-  const menuItems = [
-    { title: "Acasă", slug: "acasa", type: "scroll", isScroll: true, targetId: "hero" },
-    { title: "Produse", slug: "produse-scroll", type: "scroll", isScroll: true, targetId: "categories" },
-    { title: "Contact", slug: "contact-scroll", type: "scroll", isScroll: true, targetId: "contact" },
-    { title: "Despre Noi", slug: "despre-noi-scroll", type: "scroll", isScroll: true, targetId: "about" },
-    ...categories.map((cat) => ({
-      title: cat.name,
-      slug: cat.slug,
-      type: "category",
-    })),
-  ];
+ const menuItems = [
+  { title: "Acasă", slug: "", path: "/", type: "link" },
+  { title: "Produse", slug: "categorii", path: "/categorii", type: "link" },
+  { title: "Despre Noi", slug: "despre-noi", path: "/despre-noi", type: "link" },
+  { title: "Contact", slug: "contact", path: "/contact", type: "link" },
+  ...categories.map((cat) => ({
+    title: cat.title, // cat.name yerine cat.title (categories.js dosyanızdaki anahtar adınıza göre)
+    slug: cat.slug,
+    path: `/categorii/${cat.slug}`,
+    type: "category",
+  })),
+];
 
   return (
     <>
