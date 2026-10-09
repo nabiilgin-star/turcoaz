@@ -200,7 +200,6 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791562122/scb100_df214x.png",
      pdfUrl: "/pdf/scb100.pdf",
     gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1791562122/scb100_df214x.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1791562781/scb100-1_x7dlp6.png"
     ],
     description: `
@@ -301,14 +300,47 @@ pdfUrl: "/pdf/iscb-140.pdf",
             pdfUrl: "/pdf/ghilotina.pdf"
           },
           {
-            id: "sistem-tip-acordeon",
-            slug: "sistem-tip-acordeon",
-            title: "Sistem Tip Acordeon",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem tip acordeon pliabil pentru închidere spații.",
-            pdfUrl: "/pdf/acordeon.pdf"
-          },
+    id: "sistem-glisant-pliabil-cb40",
+    slug: "sistem-glisant-pliabil-cb40",
+    title: "Sistem Glisant și Pliabil din Sticlă CB40 pentru Balcoane",
+    updatedAt: "2026-10-09",
+    seo: {
+      title: "Sistem Glisant și Pliabil Sticlă CB40 | Turcoaz Aluminiu",
+      description: "Sistemul CB40 este o soluție modernă glisantă și pliabilă pentru închiderea balcoanelor și teraselor. Stoc disponibil în București și România.",
+      indexable: true
+    },
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791565991/cb40_smfsmw.png", 
+    imageAlt: "Sistem glisant și pliabil din sticlă CB40",
+    detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791565991/cb40_smfsmw.png",
+    pdfUrl: "/pdf/cb40.pdf",
+    gallery: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1791565991/cb40-1_cxqqsl.png",
+    ],
+    description: `
+      <h2>Sistem Glisant și Pliabil din Sticlă pentru Balcoane și Terase – CB40</h2>
+      <p>Sistemul <strong>CB40</strong> reprezintă o soluție modernă pentru protecție, vizibilitate și design contemporan. Acesta este un sistem elegant glisant și pliabil din sticlă cu profil de aluminiu, proiectat special pentru balcoane, terase, hoteluri și clădiri rezidențiale moderne. Datorită profilului minimalist și suprafeței vitrate extinse, sistemul oferă siguranță maximă fără a compromite panorama. S.C. Turcoaz Aluminiu S.R.L. asigură stoc permanent în depozitul din București / Ilfov (Popești-Leordeni) și filiala Iași, cu distribuție rapidă în toată România.</p>
+
+      <h2>Avantaje Principale – CB40</h2>
+      <ul>
+        <li>✅ <strong>Deschidere completă a panourilor:</strong> Permite culisarea și plierea totală a sticlei, oferind un spațiu 100% deschis atunci când îți dorești.</li>
+        <li>✅ <strong>Vizibilitate panoramică completă:</strong> Design inteligent, fără montanți vizibili care să blocheze vederea.</li>
+        <li>✅ <strong>Etanșare superioară:</strong> Etanșare completă între panouri, utilizând profile din aluminiu pentru o izolare termică mai eficientă împotriva intemperiilor.</li>
+        <li>✅ <strong>Design modern și minimalist:</strong> Se integrează armonios în proiecte arhitecturale contemporane (rezidențiale și comerciale).</li>
+        <li>✅ <strong>Siguranță structurală ridicată:</strong> Construit din materiale premium pentru a rezista la șocuri și utilizare intensă.</li>
+        <li>✅ <strong>Rezistență la intemperii și coroziune:</strong> Profile din aluminiu tratate special pentru durabilitate excelentă în medii exterioare.</li>
+        <li>✅ <strong>Întreținere redusă:</strong> Sistem fiabil, sigur și ușor de curățat pe ambele fețe ale sticlei.</li>
+      </ul>
+
+      <h2>Caracteristici Tehnice Oficiale</h2>
+      <ul>
+        <li><strong>Grosime sticlă:</strong> 8 - 10 mm (sticlă securizată)</li>
+        <li><strong>Structură:</strong> Aluminiu extrudat de înaltă calitate</li>
+        <li><strong>Tip montaj:</strong> Flexibilitate pentru montaj lateral sau pe pardoseală, adaptabil oricărui proiect</li>
+        <li><strong>Aspect:</strong> Elegant, suprafață vitrată continuă fără profile verticale deranjante</li>
+        <li><strong>Domeniu de utilizare:</strong> Compatibilitate excelentă atât cu proiectele rezidențiale (balcoane de apartament, terase de casă), cât și comerciale (restaurante, cafenele, hoteluri)</li>
+      </ul>
+    `
+  },
           {
             id: "sistem-tip-copertina-sticla",
             slug: "sistem-tip-copertina-sticla",
