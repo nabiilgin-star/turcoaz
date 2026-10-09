@@ -63,7 +63,7 @@ export default function AdminLayout({ children }) {
         <div className={styles.sidebarHeader}>
           <Image
             src="https://res.cloudinary.com/dfyvfexhc/image/upload/v1768644306/afmvb5dhoixh0b90mpn2.png"
-            alt="Kahe Admin"
+            alt="turcoaz Admin"
             width={120}
             height={40}
             priority
