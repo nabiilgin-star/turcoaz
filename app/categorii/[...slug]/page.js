@@ -54,7 +54,6 @@ export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
   const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
   
-  // Sizin eski kodunuzdaki canonicalUrl mantığını koruduk
   const baseUrl = "https://turcoaz.com";
   const canonicalUrl = pathSegments ? `${baseUrl}/categorii/${pathSegments.join('/')}` : `${baseUrl}/categorii`;
 
@@ -95,6 +94,7 @@ export async function generateMetadata({ params }) {
     return null;
   };
 
+  // type of categories === 'undefined' kontrolü (import hatasına karşı)
   if (typeof categories !== 'undefined') {
     currentItem = findItemBySlug(categories, lastSlug);
   }
@@ -134,183 +134,6 @@ export async function generateMetadata({ params }) {
     },
   };
 }
-
-  const [apiResult] = await Promise.all([
-    resolvePath(pathSegments).catch(() => null),
-  ]);
-
-  let result = apiResult;
-
-  // Local veri eşleştirme (Fallback)
-  if (!result && pathSegments && pathSegments.length > 0) {
-    const firstSlug = pathSegments[0]?.toLowerCase().trim();
-    const targetLocalCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
-
-    if (targetLocalCategory) {
-      if (pathSegments.length === 1) {
-        if (targetLocalCategory.products && targetLocalCategory.products.length > 0) {
-          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.title || targetLocalCategory.name } };
-        } else if (targetLocalCategory.detailImage || targetLocalCategory.description) {
-          result = { type: "product", data: { ...targetLocalCategory, title: targetLocalCategory.title || targetLocalCategory.name } };
-        } else {
-          result = { type: "category", data: targetLocalCategory };
-        }
-      } else if (pathSegments.length === 2) {
-        const secondSlug = pathSegments[1]?.toLowerCase().trim();
-        const targetProd = targetLocalCategory.products?.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
-
-        if (targetProd) {
-          result = { type: "product", data: { ...targetProd, title: targetProd.title || targetProd.name } };
-        } else {
-          const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === secondSlug);
-          if (targetSub) {
-            const isDirectProduct = !targetSub.products && (targetSub.detailImage || targetSub.description);
-            if (isDirectProduct) {
-              result = { type: "product", data: { ...targetSub, title: targetSub.title || targetSub.name } };
-            } else {
-              result = { type: "subcategory", data: { category: targetLocalCategory, subcategory: targetSub } };
-            }
-          }
-        }
-      } else {
-        const prodSlug = pathSegments[pathSegments.length - 1]?.toLowerCase().trim();
-        const subSlug = pathSegments[pathSegments.length - 2]?.toLowerCase().trim();
-        const targetSub = targetLocalCategory.subcategories?.find(s => s.slug?.toLowerCase().trim() === subSlug);
-
-        if (targetSub) {
-          const targetProd = targetSub.products?.find(p => p.slug?.toLowerCase().trim() === prodSlug || p.id?.toLowerCase().trim() === prodSlug);
-          if (targetProd) {
-            result = { type: "product", data: { ...targetProd, title: targetProd.title || targetProd.name } };
-          }
-        }
-      }
-    }
-  }
-
-  if (!result && lastSlug === 'cornier') {
-    result = {
-      type: "product",
-      data: {
-        title: "Cornier Aluminiu",
-        name: "Cornier Aluminiu",
-        description: "Cornier din aluminiu (Profil L) disponibil în diverse dimensiuni. Peste 200 de tone în stoc permanent.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'teava-rectangulara') {
-    result = {
-      type: "product",
-      data: {
-        title: "Țeavă Rectangulară Aluminiu",
-        name: "Țeavă Rectangulară Aluminiu",
-        description: "Profile Aluminiu Țeavă rectangulară de înaltă calitate. Peste 200 de tone în stoc permanent și livrare rapidă.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'teava-rotunda') {
-    result = {
-      type: "product",
-      data: {
-        title: "Țeavă Rotundă Aluminiu",
-        name: "Țeavă Rotundă Aluminiu",
-        description: "Țeavă rotundă din aluminiu disponibilă în diverse dimensiuni. Peste 200 de tone în stoc permanent și livrare rapidă.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'teava-patrata') {
-    result = {
-      type: "product",
-      data: {
-        title: "Țeavă Pătrată Aluminiu",
-        name: "Țeavă Pătrată Aluminiu",
-        description: "Țeavă pătrată din aluminiu de înaltă calitate. Peste 200 de tone în stoc permanent pentru livrare imediată în toată România.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'profil-u') {
-    result = {
-      type: "product",
-      data: {
-        title: "Profil U Aluminiu",
-        name: "Profil U Aluminiu",
-        description: "Profile U din aluminiu disponibile în diverse dimensiuni. Peste 200 de tone în stoc permanent pentru livrare rapidă.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'profil-t') {
-    result = {
-      type: "product",
-      data: {
-        title: "Profil T Aluminiu",
-        name: "Profil T Aluminiu",
-        description: "Profile T din aluminiu de înaltă rezistență. Disponibile în stoc permanent pentru livrare rapidă.",
-      }
-    };
-  }
-
-  if (!result && lastSlug === 'platbanda') {
-    result = {
-      type: "product",
-      data: {
-        title: "Platbandă Aluminiu",
-        name: "Platbandă Aluminiu",
-        description: "Platbandă (lamă) din aluminiu. Gamă variată de lățimi și grosimi. Peste 200 de tone în stoc permanent.",
-      }
-    };
-  }
-  
-  if (!result) {
-    return {
-      title: "Pagina nu a fost găsită | Turcoaz Aluminiu",
-      robots: { index: false, follow: true },
-    };
-  }
-
-  const { type, data } = result;
-  let title = "Turcoaz Aluminiu";
-  let description = "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare și accesorii de calitate superioară.";
-
-  if (type === "category") {
-    title = `${data.title || data.name} | Turcoaz Aluminiu`;
-    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Sisteme și profile din aluminiu pentru ${data.title || data.name}. Calitate superioară și livrare din stoc.`;
-  } else if (type === "subcategory") {
-    title = `${data.subcategory?.title || data.subcategory?.name || 'Subcategorie'} | ${data.category?.title || data.category?.name || 'Categorie'} | Turcoaz`;
-    description = data.subcategory?.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `Profile și accesorii din aluminiu pentru ${data.subcategory?.title || data.subcategory?.name || 'produse'}. Comandă online la preț de distribuitor.`;
-  } else if (type === "product") {
-    title = `${data.title || data.name} | Turcoaz Aluminiu`;
-    description = data.description?.replace(/<[^>]*>?/gm, '').slice(0, 155) || `${data.title || data.name} - Sistem din aluminiu și sticlă de înaltă rezistență cu certificat de calitate.`;
-  }
-
-  const canonicalUrl = `https://turcoaz.com/categorii/${pathSegments.join('/')}`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "Turcoaz Aluminiu",
-      locale: "ro_RO",
-      type: "website",
-    },
-  };
-}
-
 // ----------------------------------------------------------------------
 // 2. STATİK SAYFA VE DİNAMİK PARAMETRE YAPILANDIRMASI
 // ----------------------------------------------------------------------
