@@ -191,18 +191,23 @@ export const getProductBySlug = unstable_cache(
   ["product-slug"],
   { revalidate: 3600, tags: ["products"] },
 );
-
 export const resolvePath = unstable_cache(
   async (pathSegments) => {
     if (!pathSegments || pathSegments.length === 0) return null;
 
-    const lastSlug = pathSegments[pathSegments.length - 1];
+    // 1. Ard arda gelen aynı slug tekrarlarını (mükerrerliği) kesin olarak temizle
+    const cleanSegments = pathSegments.filter(
+      (slug, index, arr) => index === 0 || slug !== arr[index - 1]
+    );
 
-    if (pathSegments.length === 1) {
+    const lastSlug = cleanSegments[cleanSegments.length - 1];
+
+    // 2. Tek seviyeli ana kategori sorgusu
+    if (cleanSegments.length === 1) {
       const { data: category } = await supabaseAdmin
         .from("categories")
         .select("*, subcategories(*)")
-        .eq("slug", pathSegments[0])
+        .eq("slug", cleanSegments[0])
         .order("display_order", {
           foreignTable: "subcategories",
           ascending: true,
@@ -211,7 +216,67 @@ export const resolvePath = unstable_cache(
       if (category) return { type: "category", data: category };
     }
 
+    // 3. İki veya daha fazla seviyeli sorgular (Ürün veya Alt Kategori)
     const { data: product } = await supabaseAdmin
+      .from("products")
+      .select(
+        "*, subcategories(*, categories(*)), categories(*), product_documents(*)",
+      )
+      .eq("slug", lastSlug)
+      .single();
+
+    if (product) {
+      if (product.subcategories) {
+        return {
+          type: "product",
+          data: {
+            ...product,
+            subcategory: product.subcategories,
+            category: product.subcategories.categories,
+          },
+        };
+      } else if (product.categories) {
+        return {
+          type: "product",
+          data: {
+            ...product,
+            subcategory: null,
+            category: product.categories,
+          },
+        };
+      }
+    }
+
+    const { data: subcategory } = await supabaseAdmin
+      .from("subcategories")
+      .select("*, categories(*), products(*), subcategories(*)") 
+      .eq("slug", lastSlug)
+      .order("display_order", { foreignTable: "products", ascending: true })
+      .order("display_order", {
+        foreignTable: "subcategories",
+        ascending: true,
+      })
+      .single();
+
+    if (subcategory) {
+      return {
+        type: "subcategory",
+        data: {
+          category: subcategory.categories,
+          subcategory: subcategory,
+          products: subcategory.products || [],
+          subcategories: subcategory.subcategories || [],
+        },
+      };
+    }
+
+    return null;
+  },
+  ["resolve-path"],
+  { revalidate: 3600, tags: ["categories", "subcategories", "products"] },
+);
+
+const { data: product } = await supabaseAdmin
       .from("products")
       .select(
         "*, subcategories(*, categories(*)), categories(*), product_documents(*)",
