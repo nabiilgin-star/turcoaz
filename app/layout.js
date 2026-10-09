@@ -85,7 +85,7 @@ const organizationJsonLd = {
   url: "https://turcoaz.com",
   logo: "https://turcoaz.com/logo.png",
   foundingDate: "2002",
-  email: "turcoaztrading@yahoo.com",
+  email: "info@turcoaz.com",
   sameAs: [
     "https://www.google.com/maps/place/Turcoaz+Aluminiu+SRL/@44.3765673,26.1882932,17z/data=!4m6!3m5!1s0x40b1fdf5e63c6ee5:0x2c86dbb15c0eb27c!8m2!3d44.3765673!4d26.1882932",
   ],
@@ -102,7 +102,7 @@ const locationsJsonLd = [
     image: "https://turcoaz.com/logo.png",
     url: "https://turcoaz.com",
     telephone: "+40730630063",
-    email: "turcoaztrading@yahoo.com",
+    email: "info@turcoaz.com",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -132,7 +132,7 @@ const locationsJsonLd = [
     parentOrganization: { "@id": "https://turcoaz.com/#organization" },
     url: "https://turcoaz.com",
     telephone: "+40720097224",
-    email: "turcoaztrading@yahoo.com",
+    email: "info@turcoaz.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Str. Orăștie",

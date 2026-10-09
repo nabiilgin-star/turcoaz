@@ -53,7 +53,7 @@ export default function ContactForm({ className = "", contactImage }) {
       address: "Str. Taberei nr. 6, Popești‑Leordeni, Ilfov",
       phone: "+40 730 63 00 63",
       phoneRaw: "+40730630063",
-      email: "turcoaztrading@yahoo.com"
+      email: "info@turcoaz.com"
     },
     {
       title: "Șos. Giurgiului (Magazin)",
@@ -61,7 +61,7 @@ export default function ContactForm({ className = "", contactImage }) {
       address: "Str. Orăștie, Sector 4, București",
       phone: "+40 720 097 224",
       phoneRaw: "+40720097224",
-      email: "turcoaztrading@yahoo.com"
+      email: "info@turcoaz.com"
     },
     {
       title: "Iași (Depozit)",
