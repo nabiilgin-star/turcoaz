@@ -39,7 +39,7 @@ export default function CategoriesSection({ className = '' }) {
       // Bunlar sadece pazarlama cümlesi (sayfası yok), düz metin olarak kalabilir:
       subcategories: [
         'Lățimi: 75 mm - 380 mm', 
-        'RAL 9016 / 8014 / 7016 / Stejar A./ Nuc / Wenghe', 
+        'RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe', 
         'Debitare la Dimensiune', 
         'Stoc permanent de peste 200 de tone pentru livrare imediată'
       ]
@@ -52,7 +52,7 @@ export default function CategoriesSection({ className = '' }) {
       subcategories: ['Sistem Balustradă Pătrat', 'Sistem Balustradă Rotund', 'Balustradă Modulară', 'Balustradă de Sticlă']
     },
     {
-      id: 3,
+      id: 4,
       title: 'Componente Sisteme Sticlă',
       slug: 'componente-sisteme-sticla',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800',
@@ -94,7 +94,7 @@ export default function CategoriesSection({ className = '' }) {
 
           return (
             <div 
-              key={cat.id}
+            key={cat.slug || `${cat.id}-${index}`}
               className={`category-card-accordion ${isActive ? 'active' : ''}`}
               onMouseEnter={() => setActiveIndex(index)}
               style={{ position: 'relative' }} // Tıklama katmanı için zemin hazırladık
