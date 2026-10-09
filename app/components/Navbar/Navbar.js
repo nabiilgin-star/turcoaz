@@ -25,7 +25,9 @@ const DesktopDropdownItem = ({
   isCustom = false,
 }) => {
   const hasSub = item.subcategories && item.subcategories.length > 0;
-  const href = isCustom ? "#" : `/categorii/${parentPath}/${item.slug}`;
+  // Null/undefined oluşmasını önleyen güvenli yol birleştirme
+  const currentPath = parentPath ? `${parentPath}/${item.slug}` : item.slug;
+  const href = isCustom ? "#" : `/categorii/${currentPath}`;
 
   if (item.isAction) {
     return (
@@ -67,7 +69,7 @@ const DesktopDropdownItem = ({
             <DesktopDropdownItem
               key={idx}
               item={sub}
-              parentPath={`${parentPath}/${item.slug}`}
+              parentPath={currentPath}
               level={level + 1}
             />
           ))}
@@ -96,10 +98,11 @@ const MobileMenuItem = ({
     }
   };
 
+  const currentPath = parentPath ? `${parentPath}/${item.slug || ""}`.replace(/\/$/, "") : item.slug;
   const href =
     item.type === "custom" || item.isScroll
-      ? "#"
-      : `/categorii/${parentPath}${item.slug ? "/" + item.slug : ""}`;
+      ? item.path || "#"
+      : item.path || `/categorii/${currentPath}`;
 
   const imageSrc = isBalustradeItem(item) ? BALUSTRADA_IMAGE_URL : item.image;
 
@@ -111,7 +114,6 @@ const MobileMenuItem = ({
       <div
         className={`mobile-item-header ${isOpen ? "active" : ""}`}
         onClick={hasSub ? onToggle : undefined}
-        style={{ paddingLeft: `${level * 1}rem` }}
       >
         {hasSub ? (
           <>
@@ -176,11 +178,7 @@ const MobileMenuItem = ({
                 onToggle={() => setIsChildOpen(!isChildOpen)}
                 closeMobileMenu={closeMobileMenu}
                 scrollToSection={scrollToSection}
-                parentPath={
-                  parentPath
-                    ? `${parentPath}/${item.slug || ""}`.replace(/\/$/, "")
-                    : item.slug
-                }
+                parentPath={currentPath}
                 level={level + 1}
               />
             );
@@ -237,7 +235,6 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     };
   }, [isSearchOpen]);
 
-  // Farklı sayfadan ana sayfaya geçişlerde URL'deki hash (#) kısmına kaydırma kontrolü
   useEffect(() => {
     if (pathname === "/") {
       const hash = window.location.hash.replace("#", "");
@@ -302,18 +299,15 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     setSearchQuery("");
   };
 
-  // KESİN ÇÖZÜMLÜ YÖNLENDİRME/KAYDIRMA FONKSİYONU
   const scrollToSection = (id) => {
     closeMobileMenu();
 
     if (pathname === "/") {
-      // Ana sayfadaysak doğrudan yumuşakça kaydır
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Başka sayfadaysak ana sayfaya hash yönlendirmesi yap
       router.push(`/#${id}`);
     }
   };
@@ -331,18 +325,18 @@ const Navbar = ({ categories = [], announcement = {} }) => {
     return "#";
   };
 
- const menuItems = [
-  { title: "Acasă", slug: "", path: "/", type: "link" },
-  { title: "Produse", slug: "categorii", path: "/categorii", type: "link" },
-  { title: "Despre Noi", slug: "despre-noi", path: "/despre-noi", type: "link" },
-  { title: "Contact", slug: "contact", path: "/contact", type: "link" },
-  ...categories.map((cat) => ({
-    title: cat.title, // cat.name yerine cat.title (categories.js dosyanızdaki anahtar adınıza göre)
-    slug: cat.slug,
-    path: `/categorii/${cat.slug}`,
-    type: "category",
-  })),
-];
+  const menuItems = [
+    { title: "Acasă", slug: "", path: "/", type: "link" },
+    { title: "Produse", slug: "categorii", path: "/categorii", type: "link" },
+    { title: "Despre Noi", slug: "despre-noi", path: "/#despre-noi", type: "scroll", isScroll: true, targetId: "despre-noi" },
+    { title: "Contact", slug: "contact", path: "/contact", type: "link" },
+    ...categories.map((cat) => ({
+      title: cat.title,
+      slug: cat.slug,
+      path: `/categorii/${cat.slug}`,
+      type: "category",
+    })),
+  ];
 
   return (
     <>
@@ -356,7 +350,6 @@ const Navbar = ({ categories = [], announcement = {} }) => {
       <nav className="navbar">
         <div className="navbar-container container-max">
 
-          {/* LOGO ALANI */}
           <div 
             className="logo-link"
             onClick={() => scrollToSection("hero")}
@@ -400,12 +393,12 @@ const Navbar = ({ categories = [], announcement = {} }) => {
 
               return (
                 <div key={item.slug} className="nav-item">
-                  <span className="nav-link">
+                  <Link href={item.path || "#"} className="nav-link">
                     {item.title}{" "}
                     {hasSub && (
                       <ChevronDown size={16} className="chevron-icon" />
                     )}
-                  </span>
+                  </Link>
 
                   {hasSub && (
                     <div className="dropdown-menu">
@@ -413,9 +406,7 @@ const Navbar = ({ categories = [], announcement = {} }) => {
                         <DesktopDropdownItem
                           key={idx}
                           item={sub}
-                          parentPath={
-                            item.type === "category" ? item.slug : null
-                          }
+                          parentPath={item.type === "category" ? item.slug : ""}
                           isCustom={item.type === "custom"}
                         />
                       ))}
@@ -527,13 +518,14 @@ const Navbar = ({ categories = [], announcement = {} }) => {
                   subcategories: subItems,
                   type: item.type,
                   isScroll: item.isScroll,
-                  targetId: item.targetId
+                  targetId: item.targetId,
+                  path: item.path
                 }}
                 isOpen={openMobileSubmenu === item.slug}
                 onToggle={() => toggleMobileSubmenu(item.slug)}
                 closeMobileMenu={closeMobileMenu}
                 scrollToSection={scrollToSection}
-                parentPath={item.type === "category" ? item.slug : null}
+                parentPath={item.type === "category" ? item.slug : ""}
               />
             );
           })}
