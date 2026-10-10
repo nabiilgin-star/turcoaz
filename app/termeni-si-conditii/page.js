@@ -7,6 +7,7 @@ export const metadata = {
   title: "Termeni și Condiții - Turcoaz",
   description:
     "Citește regulile și condițiile de utilizare ale site-ului Turcoaz Aluminiu.",
+    alternates: { canonical: "https://turcoaz.com/termeni-si-conditii" },
 };
 
 export default async function TermsAndConditionsPage() {

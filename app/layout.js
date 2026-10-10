@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
   
-  alternates: { canonical: "https://turcoaz.com/termeni-si-conditii" },
+  alternates: {
     canonical: "/",
     languages: {
       "ro-RO": "/",
