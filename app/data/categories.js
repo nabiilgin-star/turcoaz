@@ -136,8 +136,8 @@ export const categories = [
             description: "Profile pătrate din aluminiu"
           },
           {
-            id: "profil-U",
-            slug: "profil-U",
+            id: "profil-u",
+            slug: "profil-u",
             title: "Profil U Aluminiu",
             image: "https://res.cloudinary.com/oivvupgw/image/upload/v1790447666/Profile_Aluminiu_U_bl5olf.jpg",
             description: "Profil U"
