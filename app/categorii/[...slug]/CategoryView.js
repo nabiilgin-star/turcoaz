@@ -23,30 +23,29 @@ export default function CategoryView({ category }) {
         gap: "24px"
       }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px" }}>
-          <h1 style={{ 
-            fontSize: "28px", 
-            fontWeight: "800", 
-            color: "#0F172A", 
-            margin: 0, 
-            display: "flex", 
-            alignItems: "center", 
-            gap: "12px", 
-            letterSpacing: "-0.2px" 
-          }}>
-            {category.title || category.name} 
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <h1 style={{
+              fontSize: "28px",
+              fontWeight: "800",
+              color: "#0F172A",
+              margin: 0,
+              letterSpacing: "-0.2px"
+            }}>
+              {category.title || category.name}
+            </h1>
             {hasItems && (
-              <span style={{ 
-                background: "#F1F5F9", 
-                color: "#0088A5", 
-                fontSize: "13px", 
-                padding: "4px 14px", 
-                borderRadius: "20px", 
-                fontWeight: "700" 
+              <span style={{
+                background: "#F1F5F9",
+                color: "#0088A5",
+                fontSize: "13px",
+                padding: "4px 14px",
+                borderRadius: "20px",
+                fontWeight: "700"
               }}>
                 {items.length} modele
               </span>
             )}
-          </h1>
+          </div>
 
           {/* Eylem Butonları + Catalog PDF (Varsa) */}
           <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
