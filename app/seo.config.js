@@ -131,7 +131,7 @@ export const pages = {
   sistemeBalustrada: {
     path: "/categorii/sisteme-balustrada",
     title: "Sisteme de Balustradă din Aluminiu și Sticlă | Turcoaz",
-    description: "Sisteme complete de balustradă din aluminiu și sticlă securizată pentru interior și exterior.",
+    description: "Sisteme complete de balustradă din aluminiu și sticlă securizată pentru interior și exterior. Agrement Tehnic, finisaje eloxat, livrare rapidă în toată România.",
     indexable: true,
   },
   balustradaSticla: {

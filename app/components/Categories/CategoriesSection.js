@@ -154,10 +154,10 @@ export default function CategoriesSection({ className = '' }) {
               <div className="card-content-new" style={{ pointerEvents: 'none' }}> 
                 {/* pointerEvents: 'none' vererek linkin tıklanmasını engellemesini önledik */}
                 
-                {/* Kapalı Karttaki Dikey Yazı */}
-                <h3 className="vertical-title-new">
-                  {cat.title}
-                </h3>
+                {/* Kapalı Karttaki Dikey Yazı (görsel etiket; asıl başlık aşağıdaki h3) */}
+<span className="vertical-title-new" aria-hidden="true">
+  {cat.title}
+</span>
 
                 {/* Açık Karttaki Detay Alanı */}
                 <div className="active-content-inner">
