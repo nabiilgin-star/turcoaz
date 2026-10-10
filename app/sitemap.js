@@ -18,7 +18,7 @@ const noindexPaths = new Set(
 
 function entry(path, lastModified) {
   return {
-    url: `${siteConfig.domain}${path === "/" ? "" : path}`,
+    url: `${siteConfig.domain}${path === "/" ? "" : path.toLowerCase()}`,
     ...(lastModified ? { lastModified } : {}),
   };
 }
