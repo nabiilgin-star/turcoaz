@@ -217,7 +217,7 @@ export default function ProductView({ product }) {
               </h2>
               <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
                 {product.products.map((item, index) => (
-                  <div key={index} style={{ border: "1px solid #eaeaea", borderRadius: "16px", padding: "24px", backgroundColor: "#fafafa", display: "flex", flexDirection: "column", gap: "16px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)" }}>
+                  <div key={index} id={item.slug} style={{ border: "1px solid #eaeaea", borderRadius: "16px", padding: "24px", backgroundColor: "#fafafa", display: "flex", flexDirection: "column", gap: "16px", boxShadow: "0 4px 10px rgba(0,0,0,0.03)" }}>
                     {item.image && (
                       <div style={{ position: "relative", width: "100%", height: "220px", borderRadius: "10px", overflow: "hidden", backgroundColor: "#fff", border: "1px solid #eee" }}>
                         <Image src={item.image} alt={item.title} fill style={{ objectFit: "contain", padding: "10px" }} />

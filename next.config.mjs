@@ -6,6 +6,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/categorii/profile-pvc/exen-6040a",
+        destination: "/categorii/profile-pvc#exen-6040a",
+        permanent: true,
+      },
+    ];
+  },
   // Pins the project root (silences the multiple-lockfiles warning)
   turbopack: {
     root: __dirname,
