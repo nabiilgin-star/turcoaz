@@ -130,13 +130,23 @@ export async function generateMetadata({ params }) {
 
   const title =
     seoEntry?.title || item.seo?.title || `${name} | Turcoaz Aluminiu`;
+  // Özellik listesi gibi başlayan veya çok kısa metinler SERP için uygun değil
+  const specLike =
+    plainDesc.length < 50 ||
+    /^(Specifica[tțţ]ii|Caracteristici)/i.test(plainDesc) ||
+    /\s\|\s/.test(plainDesc);
+
+  const autoDesc = name
+    ? `${name} – disponibil din stoc la Turcoaz Aluminiu. Cere ofertă, livrare rapidă în toată România.`.slice(0, 155)
+    : "";
 
   const description =
     seoEntry?.description ||
     item.seo?.description ||
-    plainDesc ||
+    (!specLike && plainDesc) ||
+    autoDesc ||
     "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.";
-
+    
   const indexable = seoEntry?.indexable ?? item.seo?.indexable !== false;
   const image = item.image || item.detailImage;
 
