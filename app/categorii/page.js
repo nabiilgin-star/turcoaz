@@ -6,6 +6,7 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 export const metadata = {
   title: "Profile Aluminiu, Balustrade Sticlă și Compozit Panel (Bond) | Turcoaz",
   description: "Gama completă de profile din aluminiu, sisteme pentru balustrade din sticlă securizată și panouri compozite (bond) pentru fațade. Depozit Popești-Leordeni.",
+  alternates: { canonical: "https://turcoaz.com/categorii" },
 };
 
 export default async function CategoriesPage() {
