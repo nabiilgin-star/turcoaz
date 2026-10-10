@@ -52,79 +52,100 @@ function sanitizeData(data) {
 // ----------------------------------------------------------------------
 export async function generateMetadata({ params }) {
   const { slug: pathSegments } = await params;
-  const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
-  
-  const baseUrl = "https://turcoaz.com";
-  const canonicalUrl = pathSegments ? `${baseUrl}/categorii/${pathSegments.join('/')}` : `${baseUrl}/categorii`;
+  const lastSlug =
+    pathSegments && pathSegments.length > 0
+      ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim()
+      : "";
 
-  // 1. Ana Kategori veya Kategori seçilmediyse
+  const baseUrl = "https://turcoaz.com";
+  const canonicalUrl =
+    pathSegments && pathSegments.length > 0
+      ? `${baseUrl}/categorii/${pathSegments.join("/")}`
+      : `${baseUrl}/categorii`;
+
+  // 1. Ana /categorii sayfası
   if (!pathSegments || pathSegments.length === 0) {
     return {
-      title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
-      description: "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
+      title: "Categorii Produse | Turcoaz Aluminiu",
+      description:
+        "Profile aluminiu, glafuri exterioare, balustrade din sticlă, panouri compozite și profile PVC. Livrare rapidă în toată România.",
+      alternates: { canonical: canonicalUrl },
       openGraph: {
         url: canonicalUrl,
         siteName: "Turcoaz Aluminiu",
         locale: "ro_RO",
         type: "website",
       },
-      robots: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
     };
   }
 
-  // 2. Kategori Dizisinden (categories.js) Ürünü/Kategoriyi Bulma İşlemi
+  // 2. Önce veritabanı (sayfa bileşeniyle aynı kaynak), sonra yerel veri
   let currentItem = null;
-  const findItemBySlug = (items, targetSlug) => {
-    for (const item of items) {
-      if (item.slug === targetSlug) return item;
-      if (item.subcategories && item.subcategories.length > 0) {
-        const found = findItemBySlug(item.subcategories, targetSlug);
-        if (found) return found;
-      }
-      if (item.products && item.products.length > 0) {
-        const found = findItemBySlug(item.products, targetSlug);
-        if (found) return found;
-      }
-    }
-    return null;
-  };
 
-  // type of categories === 'undefined' kontrolü (import hatasına karşı)
-  if (typeof categories !== 'undefined') {
-    currentItem = findItemBySlug(categories, lastSlug);
+  try {
+    const apiResult = await resolvePath(pathSegments);
+    if (apiResult?.data) currentItem = apiResult.data;
+  } catch (e) {
+    currentItem = null;
   }
 
-  // 3. Ürün bulunamazsa Fallback
+  if (!currentItem) {
+    const findItemBySlug = (items, targetSlug) => {
+      for (const item of items || []) {
+        if (item.slug?.toLowerCase().trim() === targetSlug) return item;
+        const found =
+          findItemBySlug(item.subcategories, targetSlug) ||
+          findItemBySlug(item.products, targetSlug);
+        if (found) return found;
+      }
+      return null;
+    };
+    currentItem = findItemBySlug(localCategories, lastSlug);
+  }
+
+  // 3. Hiçbiri bulunamazsa yedek (yine de kendi canonical'ı ile)
   if (!currentItem) {
     return {
       title: "Produs | Turcoaz Aluminiu",
       description: "Sisteme din aluminiu și PVC premium în România.",
+      alternates: { canonical: canonicalUrl },
+      robots: { index: false, follow: true },
     };
   }
 
-  // 4. Bulunan Ürünün Dinamik SEO Verileri
+  // 4. Dinamik SEO verileri
+  const name = currentItem.title || currentItem.name || "";
+  const title = currentItem.seo?.title || `${name} | Turcoaz Aluminiu`;
+  const plainDesc = (currentItem.description || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 155);
+  const description =
+    currentItem.seo?.description ||
+    plainDesc ||
+    "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.";
+  const image = currentItem.image || currentItem.detailImage;
+
   return {
-    title: currentItem.seo?.title || currentItem.title,
-    description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
-      title: currentItem.seo?.title || currentItem.title,
-      description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
+      title,
+      description,
       url: canonicalUrl,
       siteName: "Turcoaz Aluminiu",
       locale: "ro_RO",
       type: "website",
-      images: currentItem.image ? [{ url: currentItem.image }] : [],
+      images: image ? [{ url: image }] : [],
     },
     twitter: {
-      card: 'summary_large_image',
-      title: currentItem.seo?.title || currentItem.title,
-      description: currentItem.seo?.description || "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.",
-      images: currentItem.image ? [currentItem.image] : [],
+      card: "summary_large_image",
+      title,
+      description,
+      images: image ? [image] : [],
     },
     robots: {
       index: currentItem.seo?.indexable !== false,
