@@ -412,46 +412,31 @@ export default async function CatchAllCategoryPage({ params }) {
     ? cleanData.gallery 
     : [cleanData.image || cleanData.detailImage].filter(Boolean);
 
+      // Marka: kategoriye göre (sabit "AKPA" yerine). Emin değilseniz marka yazılmaz.
+  const productBrand = (() => {
+    const cat = activeCategorySlug || "";
+    const slugStr = (cleanData.slug || "").toLowerCase();
+    if (["sisteme-aluminiu-akpa", "sisteme-balustrada", "glafuri-din-aluminiu"].includes(cat)) return "AKPA";
+    if (cat === "profile-pvc") return slugStr.includes("blanco") ? "BLANCOPLAST" : "EXENplast";
+    return null;
+  })();
+
+  const productDescription = (cleanData.description || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
   const productSchema = type === "product" ? {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": cleanData.title || cleanData.name,
+    "url": `https://turcoaz.com/categorii/${pathSegments.join("/")}`,
     "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
-    "description": cleanData.description?.replace(/<[^>]*>?/gm, '') || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
-    "sku": `TURCOAZ-${cleanData.slug ? cleanData.slug.toUpperCase() : 'PROD'}`,
-    "mpn": `AKPA-${cleanData.slug ? cleanData.slug.toUpperCase() : 'PROD'}`,
-    "brand": {
-      "@type": "Brand",
-      "name": "AKPA"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "RON",
-      "lowPrice": "10.00",
-      "highPrice": "500.00",
-      "offerCount": "1",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition",
-      "url": `https://turcoaz.com/categorii/${pathSegments.join('/')}`,
-      "seller": {
-        "@type": "Organization",
-        "name": "S.C. Turcoaz Aluminiu S.R.L."
-      }
-    },
-    "additionalProperty": [
-      {
-        "@type": "PropertyValue",
-        "name": "Capacitate producție și import",
-        "value": "150+ tone/lună"
-      },
-      {
-        "@type": "PropertyValue",
-        "name": "Certificare",
-        "value": "Agrement Tehnic"
-      }
-    ]
+    "description": productDescription || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
+    "sku": `TURCOAZ-${cleanData.slug ? cleanData.slug.toUpperCase() : "PROD"}`,
+    ...(productBrand ? { "brand": { "@type": "Brand", "name": productBrand } } : {})
   } : null;
-
+  
   const faqSchema = (cleanData?.faqs && cleanData.faqs.length > 0) ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
