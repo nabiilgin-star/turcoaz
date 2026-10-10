@@ -43,7 +43,7 @@ export default function PlatbandaView() {
         <div>
           {/* SEO Uyumlu H1 Başlık */}
           <h1 className={styles.productTitle}>Platbandă Aluminiu (Bară Plată)</h1>
-          <div className={styles.priceTag}>de la 3,50 LEI / m</div>
+          <div className={styles.priceTag}>de la 3,50 LEI / m / Cu TVA</div>
           
           {/* SEO Açıklama Paragrafı */}
           <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>

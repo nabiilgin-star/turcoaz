@@ -20,7 +20,7 @@ export default function CategoriesSection({ className = '' }) {
       id: 1,
       title: 'Sisteme Aluminiu Akpa',
       slug: 'sisteme-aluminiu-akpa',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800',
+      image: 'https://res.cloudinary.com/oivvupgw/image/upload/v1791649862/sistemealuminiu_bdtojt.jpg',
     subcategories: [
         { title: 'Sisteme Tâmplărie', slug: 'sisteme-tamplarie' }, 
         { title: 'Perete Cortină', slug: 'perete-cortina' }, 
@@ -35,7 +35,7 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Glafuri din Aluminiu',
       slug: 'glafuri-din-aluminiu',
       image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-      priceTag: "de la 15,50 LEI / ml", // <-- FİYAT ETİKETİNİ BURAYA EKLEDİK
+      priceTag: "de la 15,50 LEI / ml / Cu TVA", // <-- FİYAT ETİKETİNİ BURAYA EKLEDİK
       // Bunlar sadece pazarlama cümlesi (sayfası yok), düz metin olarak kalabilir:
       subcategories: [
         'Lățimi: 75 mm - 380 mm', 

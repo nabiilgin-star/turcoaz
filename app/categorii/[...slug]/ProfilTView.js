@@ -53,7 +53,7 @@ export default function ProfilTView() {
         <div>
           {/* SEO Uyumlu H1 Başlık */}
           <h1 className={styles.productTitle}>Profil T Aluminiu Extrudat</h1>
-          <div className={styles.priceTag}>de la 4,90 LEI / m</div>
+          <div className={styles.priceTag}>de la 4,90 LEI / m / Cu TVA</div>
           
           {/* SEO Açıklama Paragrafı */}
           <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>
