@@ -1,7 +1,18 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  poweredByHeader: false, 
+  poweredByHeader: false,
+  // Pins the project root (silences the multiple-lockfiles warning)
+  turbopack: {
+    root: __dirname,
+  },
   images: {
+    // 75 is the default; 90 is used by the hero image
+    qualities: [75, 90],
     remotePatterns: [
       {
         protocol: "https",
