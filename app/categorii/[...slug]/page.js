@@ -191,6 +191,11 @@ export async function generateStaticParams() {
 // ----------------------------------------------------------------------
 export default async function CatchAllCategoryPage({ params }) {
   const { slug: pathSegments } = await params;
+
+  // EXEN 6040A ayri sayfa degil, PVC sayfasinda kart olarak gosterilir
+  if (pathSegments?.join("/") === "profile-pvc/exen-6040a") {
+    notFound();
+  }
   
   const lastSlug = pathSegments && pathSegments.length > 0 ? pathSegments[pathSegments.length - 1]?.toLowerCase().trim() : "";
 
