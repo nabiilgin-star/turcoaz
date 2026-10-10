@@ -54,7 +54,7 @@ export default function CategoriesSection({ className = '' }) {
     {
       id: 4,
       title: 'Componente Sisteme Sticlă',
-      slug: 'componente-sisteme-sticla',
+      slug: 'componente-sisteme-sticla', hidden: true, // page not live yet (404); remove 'hidden' once the category page exists
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800',
       subcategories: ['Ușă din Sticlă cu Toc', 'Ușă din Sticlă fără Toc', 'Sisteme Cabină de Duș', 'Compartimentare Sticlă']
     },
@@ -86,7 +86,7 @@ export default function CategoriesSection({ className = '' }) {
       <h2 className="categories-title">Produsele noastre</h2>
       
       <div className="categories-container-accordion">
-        {categories.map((cat, index) => {
+        {categories.filter((c) => !c.hidden).map((cat, index) => {
           const isActive = activeIndex === index;
           const lookupSlug = cat.slug ? cat.slug.trim() : '';
           const finalMedia = IMAGE_REPLACEMENTS[lookupSlug] || cat.image;
