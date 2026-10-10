@@ -1,3 +1,4 @@
+import { pages as seoPages } from "@/app/seo.config";
 import { notFound } from "next/navigation";
 import { getNavbarData, resolvePath, getAllSlugsForStaticGeneration } from "@/app/lib/get-nav-data";
 import Navbar from "@/app/components/Navbar/Navbar";

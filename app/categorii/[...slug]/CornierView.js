@@ -66,7 +66,7 @@ export default function CornierView() {
         <div>
           {/* SEO Uyumlu H1 */}
           <h1 className={styles.productTitle}>Cornier Aluminiu Extrudat (Profil L)</h1>
-          <div className={styles.priceTag}>de la 3,40 LEI / m / Cu TVA</div>
+          <div className={styles.priceTag}>de la 3,40 LEI / m / TVA inclus</div>
           
           {/* SEO Açıklama Paragrafı (Ana ve İkincil Kelimeler Entegre Edildi) */}
           <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>

@@ -56,7 +56,7 @@ export default function TeavaRectangularaView() {
         <div>
           {/* SEO Uyumlu H1 Başlık */}
           <h1 className={styles.productTitle}>Țeavă Rectangulară Aluminiu Extrudat</h1>
-          <div className={styles.priceTag}>de la 4,20 LEI / m / Cu TVA</div>
+          <div className={styles.priceTag}>de la 4,20 LEI / m / TVA inclus</div>
           
           {/* SEO Açıklama Paragrafı */}
           <p style={{ fontSize: "0.95rem", color: "#475569", lineHeight: "1.6", margin: "12px 0 16px 0" }}>

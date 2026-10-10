@@ -499,7 +499,7 @@ pdfUrl: "/pdf/iscb-140.pdf",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
     pdfUrl: "/pdf/glafuri-aluminiu.pdf",
-    price: "de la 15,50 LEI / ml / Cu TVA", 
+    price: "de la 15,50 LEI / ml / TVA inclus", 
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589195/PERVAZ-TP2_gnubk0.png",
@@ -508,7 +508,7 @@ pdfUrl: "/pdf/iscb-140.pdf",
     ],
     description: `
       <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat în București, Ilfov și România</h2>
-      <p><strong>Preț:</strong> de la 15,50 LEI / ml / Cu TVA</p>
+      <p><strong>Preț:</strong> de la 15,50 LEI / ml / TVA inclus</p>
       <p>Căutați <strong>glafuri din aluminiu în București</strong>, <strong>pervazuri aluminiu Ilfov</strong> sau <strong>glafuri exterioare cu livrare în toată România</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sisteme complete din aluminiu extrudat pentru protecția ferestrelor și a fațadelor. Asigurăm stoc permanent de peste 200 de tone în depozitul nostru central din zona București / Ilfov (Popești-Leordeni) și filiala regională Alufab Iași, oferind cel mai bun raport calitate-preț pentru <strong>glafuri aluminiu la preț de distribuitor</strong>.</p>
       
       <h2>Caracteristici Tehnice & Rezistență Structurală</h2>
