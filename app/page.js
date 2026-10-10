@@ -5,17 +5,12 @@ import TrustSection from "./components/TrustSection/TrustSection";
 import ContactForm from "./components/Contact/ContactForm";
 import Footer from "./components/Footer/Footer";
 import styles from "./page.css";
-import {
-  getNavbarData,
-  getFaqs,
-  getHeroSettings,
-} from "@/app/lib/get-nav-data";
+import { getNavbarData, getHeroSettings } from "@/app/lib/get-nav-data";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export default async function Home() {
-  const [navData, faqs, contactImageResult, heroSettings] = await Promise.all([
+  const [navData, contactImageResult, heroSettings] = await Promise.all([
     getNavbarData(),
-    getFaqs(),
     supabaseAdmin
       .from("settings")
       .select("value")
@@ -24,28 +19,29 @@ export default async function Home() {
     getHeroSettings(),
   ]);
 
-  const { categories, products, announcement, topProducts } = navData;
+  const { categories, announcement, topProducts } = navData;
   const contactImage = contactImageResult.data?.value || null;
 
- return (
-  <main className="page">
-    <Navbar categories={categories} announcement={announcement} />
+  return (
+    <main className="page">
+      <Navbar categories={categories} announcement={announcement} />
 
-    <div id="hero">
-      <HeroHeader heroSettings={heroSettings} />
-    </div>
+      <div id="hero">
+        <HeroHeader heroSettings={heroSettings} />
+      </div>
 
-    <div id="categories">
-      <CategoriesSection categories={categories} />
-    </div>
+      <div id="categories">
+        <CategoriesSection categories={categories} />
+      </div>
 
-    <div id="despre-noi">
-      <TrustSection />
-    </div>
+      <div id="despre-noi">
+        <TrustSection />
+      </div>
 
-    {/* id="contact" ContactForm.js içindeki <section>'da var */}
-    <ContactForm contactImage={contactImage} />
+      {/* id="contact" ContactForm.js içindeki <section>'da */}
+      <ContactForm contactImage={contactImage} />
 
-    <Footer categories={categories} topProducts={topProducts} />
-  </main>
-);
+      <Footer categories={categories} topProducts={topProducts} />
+    </main>
+  );
+}
