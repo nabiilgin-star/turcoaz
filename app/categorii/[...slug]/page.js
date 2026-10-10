@@ -81,7 +81,11 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // 2. Önce veritabanı (sayfa bileşeniyle aynı kaynak), sonra yerel veri
+  // 2. seo.config.js'te bu yol için yazılmış metin var mı (öncelikli kaynak)
+  const seoPath = `/categorii/${pathSegments.join("/")}`;
+  const seoEntry = Object.values(seoPages).find((p) => p?.path === seoPath);
+
+  // 3. Veritabanı (sayfa bileşeniyle aynı kaynak), sonra yerel veri
   let currentItem = null;
 
   try {
@@ -105,8 +109,8 @@ export async function generateMetadata({ params }) {
     currentItem = findItemBySlug(localCategories, lastSlug);
   }
 
-  // 3. Hiçbiri bulunamazsa yedek (yine de kendi canonical'ı ile)
-  if (!currentItem) {
+  // 4. Ne seo.config.js'te ne veride bulunduysa yedek
+  if (!currentItem && !seoEntry) {
     return {
       title: "Produs | Turcoaz Aluminiu",
       description: "Sisteme din aluminiu și PVC premium în România.",
@@ -115,19 +119,26 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // 4. Dinamik SEO verileri
-  const name = currentItem.title || currentItem.name || "";
-  const title = currentItem.seo?.title || `${name} | Turcoaz Aluminiu`;
-  const plainDesc = (currentItem.description || "")
+  // 5. Metinleri birleştir: seo.config.js > ürünün seo bloğu > otomatik
+  const item = currentItem || {};
+  const name = item.title || item.name || "";
+  const plainDesc = (item.description || "")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 155);
+
+  const title =
+    seoEntry?.title || item.seo?.title || `${name} | Turcoaz Aluminiu`;
+
   const description =
-    currentItem.seo?.description ||
+    seoEntry?.description ||
+    item.seo?.description ||
     plainDesc ||
     "Descoperiți detalii și specificații tehnice la Turcoaz Aluminiu. Livrare rapidă în România.";
-  const image = currentItem.image || currentItem.detailImage;
+
+  const indexable = seoEntry?.indexable ?? item.seo?.indexable !== false;
+  const image = item.image || item.detailImage;
 
   return {
     title,
@@ -149,7 +160,7 @@ export async function generateMetadata({ params }) {
       images: image ? [image] : [],
     },
     robots: {
-      index: currentItem.seo?.indexable !== false,
+      index: indexable,
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
