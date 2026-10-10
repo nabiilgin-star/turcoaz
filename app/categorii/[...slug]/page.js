@@ -444,6 +444,12 @@ export default async function CatchAllCategoryPage({ params }) {
   const productSchema = type === "product" ? {
     "@context": "https://schema.org",
     "@type": "Product",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RON",
+      "price": "27.00",
+      "availability": "https://schema.org/InStock"
+    },
     "name": cleanData.title || cleanData.name,
     "url": `https://turcoaz.com/categorii/${pathSegments.join("/")}`,
     "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
