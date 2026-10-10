@@ -28,6 +28,8 @@ export default function sitemap() {
     entry("/"),
     entry("/categorii"),
     entry("/contact"),
+    entry("/depozit-aluminiu-bucuresti"),
+    entry("/depozit-aluminiu-iasi"),
     entry("/politica-confidentialitate"),
     entry("/termeni-si-conditii"),
   ];
