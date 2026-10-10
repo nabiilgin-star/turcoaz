@@ -227,16 +227,9 @@ export default function ProductView({ product }) {
                       <h3 style={{ fontSize: "1.3rem", fontWeight: "600", color: "#222", marginBottom: "8px" }}>
                         {item.title}
                       </h3>
-                      {/<[a-z][\s\S]*>/i.test(item.description || "") ? (
-                        <div
-                          style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0 }}
-                          dangerouslySetInnerHTML={{ __html: item.description }}
-                        />
-                      ) : (
-                        <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0, whiteSpace: "pre-line" }}>
-                          {item.description}
-                        </p>
-                      )}
+                      <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0, whiteSpace: "pre-line" }}>
+                        {item.description}
+                      </p>
                     </div>
                     {item.pdfUrl && (
                       <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
