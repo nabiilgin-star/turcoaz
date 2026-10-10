@@ -4,38 +4,62 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Send, MapPin, Phone, Mail, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import "./Contact.css";
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function ContactForm({ className = "", contactImage }) {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+
+    if (!consent) {
+      setStatusMessage(
+        "Vă rugăm să acceptați prelucrarea datelor personale."
+      );
+      return;
+    }
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error("EmailJS: lipsesc variabilele de mediu NEXT_PUBLIC_EMAILJS_*");
+      setStatusMessage(
+        "Formularul nu este configurat momentan. Vă rugăm să ne sunați sau să ne scrieți la info@turcoaz.com."
+      );
+      return;
+    }
+
     setLoading(true);
     setStatusMessage("");
 
     const formData = {
-      from_name: e.target.name.value,
-      company: e.target.company.value || "Nespecificat",
-      phone: e.target.phone.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
+      from_name: form.elements["name"].value,
+      company: form.elements["company"].value || "Nespecificat",
+      phone: form.elements["phone"].value,
+      email: form.elements["email"].value,
+      message: form.elements["message"].value,
+      gdpr_consent: "Da",
     };
 
     try {
-      // Buradaki ID'leri EmailJS panelinden alacağın kendi ID'lerinle değiştireceksin
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         formData,
-        "YOUR_PUBLIC_KEY"
+        EMAILJS_PUBLIC_KEY
       );
 
       setStatusMessage("Mesajul a fost trimis cu succes!");
-      e.target.reset();
+      form.reset();
+      setConsent(false);
     } catch (error) {
-      console.error("Erore la trimitere:", error);
+      console.error("Eroare la trimitere:", error);
       setStatusMessage("A apărut o eroare. Vă rugăm să încercați din nou.");
     } finally {
       setLoading(false);
@@ -53,7 +77,7 @@ export default function ContactForm({ className = "", contactImage }) {
       address: "Str. Taberei nr. 6, Popești‑Leordeni, Ilfov",
       phone: "+40 730 63 00 63",
       phoneRaw: "+40730630063",
-      email: "info@turcoaz.com"
+      email: "info@turcoaz.com",
     },
     {
       title: "Șos. Giurgiului (Magazin)",
@@ -61,7 +85,7 @@ export default function ContactForm({ className = "", contactImage }) {
       address: "Str. Orăștie, Sector 4, București",
       phone: "+40 720 097 224",
       phoneRaw: "+40720097224",
-      email: "info@turcoaz.com"
+      email: "info@turcoaz.com",
     },
     {
       title: "Iași (Depozit)",
@@ -69,8 +93,8 @@ export default function ContactForm({ className = "", contactImage }) {
       address: "Str. Trei Fântâni, Iași",
       phone: "+40 746 921 162",
       phoneRaw: "+40746921162",
-      email: "alufab.iasi@gmail.com"
-    }
+      email: "alufab.iasi@gmail.com",
+    },
   ];
 
   return (
@@ -109,12 +133,13 @@ export default function ContactForm({ className = "", contactImage }) {
               <div className="contact-image-col">
                 <Image
                   src={imageUrl}
-                  alt="Contact Support"
+                  alt="Depozit și echipa Turcoaz Aluminiu"
                   fill
+                  sizes="(max-width: 768px) 100vw, 45vw"
                   className="contact-image"
                 />
               </div>
-              
+
               <div className="schedule-box">
                 <div className="schedule-header">
                   <Clock size={18} />
@@ -142,6 +167,8 @@ export default function ContactForm({ className = "", contactImage }) {
                       <input
                         type="text"
                         id="name"
+                        name="name"
+                        autoComplete="name"
                         placeholder="Introdu numele tău"
                         className="form-input"
                         required
@@ -155,6 +182,8 @@ export default function ContactForm({ className = "", contactImage }) {
                       <input
                         type="text"
                         id="company"
+                        name="company"
+                        autoComplete="organization"
                         placeholder="Numele companiei"
                         className="form-input"
                       />
@@ -167,6 +196,8 @@ export default function ContactForm({ className = "", contactImage }) {
                       <input
                         type="tel"
                         id="phone"
+                        name="phone"
+                        autoComplete="tel"
                         placeholder="+40 123 456 789"
                         className="form-input"
                         required
@@ -180,6 +211,8 @@ export default function ContactForm({ className = "", contactImage }) {
                       <input
                         type="email"
                         id="email"
+                        name="email"
+                        autoComplete="email"
                         placeholder="email@exemplu.com"
                         className="form-input"
                         required
@@ -192,27 +225,59 @@ export default function ContactForm({ className = "", contactImage }) {
                       </label>
                       <textarea
                         id="message"
+                        name="message"
                         placeholder="Scrie mesajul tău aici..."
                         className="form-textarea"
                         required
                       ></textarea>
                     </div>
+
+                    <div className="form-group full-width">
+                      <label className="gdpr-consent">
+                        <input
+                          type="checkbox"
+                          name="gdpr"
+                          required
+                          checked={consent}
+                          onChange={(e) => setConsent(e.target.checked)}
+                        />
+                        <span>
+                          Sunt de acord cu prelucrarea datelor personale
+                          conform{" "}
+                          <Link href="/politica-confidentialitate">
+                            Politicii de confidențialitate
+                          </Link>
+                          .
+                        </span>
+                      </label>
+                    </div>
                   </div>
 
-                  <button type="submit" className="btn-submit" disabled={loading}>
+                  <button
+                    type="submit"
+                    className="btn-submit"
+                    disabled={loading}
+                  >
                     <Send size={18} />
                     {loading ? "Se trimite..." : "Trimite mesajul"}
                   </button>
 
                   {statusMessage && (
-                    <p style={{ marginTop: "1rem", textAlign: "center", fontWeight: "500" }}>
+                    <p
+                      role="status"
+                      aria-live="polite"
+                      style={{
+                        marginTop: "1rem",
+                        textAlign: "center",
+                        fontWeight: "500",
+                      }}
+                    >
                       {statusMessage}
                     </p>
                   )}
                 </form>
               </div>
             </div>
-
           </div>
         </div>
       </div>

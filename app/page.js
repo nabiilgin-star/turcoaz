@@ -27,32 +27,25 @@ export default async function Home() {
   const { categories, products, announcement, topProducts } = navData;
   const contactImage = contactImageResult.data?.value || null;
 
-  return (
-    <main className="page">
-      <Navbar
-        categories={categories}
-        announcement={announcement}
-      />
-      {/* 1. Acasă (Hero) ID'si eklendi */}
-      <div id="hero">
-        <HeroHeader heroSettings={heroSettings} />
-      </div>
+ return (
+  <main className="page">
+    <Navbar categories={categories} announcement={announcement} />
 
-      <div id="categories">
-        <CategoriesSection categories={categories} />
-      </div>
-      
+    <div id="hero">
+      <HeroHeader heroSettings={heroSettings} />
+    </div>
 
-      {/* 2. Despre Noi (Hakkımızda) için TrustSection'ı hedef aldık veya bu ID'yi buraya bağladık */}
-      <div id="about">
-        <TrustSection />
-      </div>
+    <div id="categories">
+      <CategoriesSection categories={categories} />
+    </div>
 
-      <div id="contact">
-        <ContactForm contactImage={contactImage} />
-      </div>
-      
-      <Footer categories={categories} topProducts={topProducts} />
-    </main>
-  );
-}
+    <div id="despre-noi">
+      <TrustSection />
+    </div>
+
+    {/* id="contact" ContactForm.js içindeki <section>'da var */}
+    <ContactForm contactImage={contactImage} />
+
+    <Footer categories={categories} topProducts={topProducts} />
+  </main>
+);

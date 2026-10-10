@@ -276,3 +276,33 @@
     grid-column: span 1;
   }
 }
+/* GDPR onay kutusu */
+.gdpr-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: var(--fs-6);
+  color: #344054;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.gdpr-consent input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+  accent-color: var(--color-primary, #008080);
+  cursor: pointer;
+}
+
+.gdpr-consent a {
+  color: var(--color-primary, #008080);
+  text-decoration: underline;
+}
+
+/* Gönderim sırasında butonun pasif görünümü */
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
