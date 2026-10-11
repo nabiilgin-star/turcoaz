@@ -116,7 +116,7 @@ export default function ProductView({ product }) {
             <div style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: product.description || "" }} />
             {product.detailImage && (
               <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
-                <Image src={product.detailImage} alt="ACP Teknik Detay" fill style={{ objectFit: "contain", padding: "10px" }} />
+                <Image src={product.detailImage} alt="Panou compozit aluminiu ACP - detaliu tehnic" fill style={{ objectFit: "contain", padding: "10px" }} />
               </div>
             )}
           </div>
@@ -144,7 +144,7 @@ export default function ProductView({ product }) {
               </table>
             </div>
             <div style={{ position: "relative", width: "100%", height: "320px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
-              <Image src="https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/Bond_Color_t7va5t.jpg" alt="ACP Renkler ve Detay" fill style={{ objectFit: "cover" }} />
+              <Image src="https://res.cloudinary.com/oivvupgw/image/upload/v1789256461/Bond_Color_t7va5t.jpg" alt="Panouri ACP Bond - gamă de culori" fill style={{ objectFit: "cover" }} />
             </div>
           </div>
 
@@ -205,7 +205,7 @@ export default function ProductView({ product }) {
             <div style={{ fontSize: "1rem", color: "#444", lineHeight: "1.8", whiteSpace: "pre-line" }} dangerouslySetInnerHTML={{ __html: product.description || "" }} />
             {product.detailImage && (
               <div style={{ position: "relative", width: "100%", height: "350px", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 15px rgba(0,0,0,0.06)", backgroundColor: "#fff" }}>
-                <Image src={product.detailImage} alt="PVC Detay" fill style={{ objectFit: "contain", padding: "10px" }} />
+                <Image src={product.detailImage} alt="Profile PVC EXENplast și BLANCOPLAST - prezentare gamă" fill style={{ objectFit: "contain", padding: "10px" }} />
               </div>
             )}
           </div>
@@ -255,7 +255,7 @@ export default function ProductView({ product }) {
             <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
             {product.gallery.map((src, index) => (
               <div key={index} style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#fff", border: "1px solid #eaeaea", padding: "10px" }}>
-                <Image src={src} alt={`${product.title} detay ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
+                <Image src={src} alt={`${product.title} - fotografie ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
               </div>
             ))}
           </div>
@@ -296,7 +296,7 @@ export default function ProductView({ product }) {
           <h3 style={{ fontSize: "1.5rem", fontWeight: "700", color: "#1a1a1a", margin: 0 }}>Galerie Foto</h3>
           {product.gallery.map((src, index) => (
             <div key={index} style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", boxShadow: "0 5px 20px rgba(0,0,0,0.08)", backgroundColor: "#fff", border: "1px solid #eaeaea", padding: "10px" }}>
-              <Image src={src} alt={`${product.title} detay ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
+              <Image src={src} alt={`${product.title} - fotografie ${index + 1}`} width={900} height={500} style={{ width: "100%", height: "auto", objectFit: "contain", borderRadius: "8px" }} />
             </div>
           ))}
         </div>
