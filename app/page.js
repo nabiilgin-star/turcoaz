@@ -4,12 +4,13 @@ import CategoriesSection from "./components/Categories/CategoriesSection";
 import TrustSection from "./components/TrustSection/TrustSection";
 import ContactForm from "./components/Contact/ContactForm";
 import Footer from "./components/Footer/Footer";
+import FAQ from "./components/FAQ/FAQ";
 import styles from "./page.css";
-import { getNavbarData, getHeroSettings } from "@/app/lib/get-nav-data";
+import { getNavbarData, getHeroSettings, getFaqs } from "@/app/lib/get-nav-data";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 
 export default async function Home() {
-  const [navData, contactImageResult, heroSettings] = await Promise.all([
+  const [navData, contactImageResult, heroSettings, faqs] = await Promise.all([
     getNavbarData(),
     supabaseAdmin
       .from("settings")
@@ -17,6 +18,7 @@ export default async function Home() {
       .eq("key", "contact_image")
       .single(),
     getHeroSettings(),
+    getFaqs(),
   ]);
 
   const { categories, announcement, topProducts } = navData;
@@ -39,6 +41,8 @@ export default async function Home() {
       </div>
 
       {/* id="contact" ContactForm.js içindeki <section>'da */}
+      {faqs?.length > 0 && <FAQ faqs={faqs} />}
+
       <ContactForm contactImage={contactImage} />
 
       <Footer categories={categories} topProducts={topProducts} />

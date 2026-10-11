@@ -16,7 +16,7 @@ export default function FAQ({ faqs: propFaqs }) {
   return (
     <section id="faq" className="faq-section">
       <div className="container-max">
-        <h2 className="section-title">Intrebari frecvente</h2>
+        <h2 className="section-title">Întrebări frecvente</h2>
         <div className="faq-grid">
           {faqs.map((faq, index) => (
             <div
