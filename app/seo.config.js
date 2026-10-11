@@ -159,7 +159,7 @@ export const pages = {
   pvc: {
     path: "/categorii/profile-pvc",
     title: "Profile PVC Fără Plumb EXENplast și Blancoplast – Turcoaz",
-    description: "Profile PVC ecologice fără plumb, serii EXEN 60, 70 și 85 mm, plus sisteme de glisare. Livrare rapidă din depozitul Popești-Leordeni.",
+    description: "Profile PVC fără plumb EXENplast și BlancoPlast. EXEN 6040A: 60 mm, 4 camere, Uf 1,432 W/m²K. Stoc în Popești-Leordeni, livrare în toată România.",
     indexable: true, // Sayfa tam hazır olunca true yapın
   },
   sticlaComponente: {
