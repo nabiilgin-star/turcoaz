@@ -34,7 +34,7 @@ const localBusinessSchema = {
   "image": "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
   "@id": "https://turcoaz.com/depozit-aluminiu-bucuresti#warehouse",
   "url": "https://turcoaz.com/depozit-aluminiu-bucuresti",
-  "telephone": "+40700000000", // Şirket telefon numaranızla güncelleyin
+  "telephone": "+40730630063", // Şirket telefon numaranızla güncelleyin
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -119,7 +119,7 @@ export default async function DepozitBucurestiPage() {
           
           <div style={{ display: "flex", gap: "16px", marginTop: "28px", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/40700000000?text=Buna%20ziua,%20doresc%20o%20oferta%20pentru%20depozitul%20din%20Bucuresti"
+              href="https://wa.me/40730630063?text=Buna%20ziua,%20doresc%20o%20oferta%20pentru%20depozitul%20din%20Bucuresti"
               target="_blank"
               rel="noopener noreferrer"
               style={{

@@ -34,7 +34,7 @@ const localBusinessSchema = {
   "image": "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
   "@id": "https://turcoaz.com/depozit-aluminiu-iasi#warehouse",
   "url": "https://turcoaz.com/depozit-aluminiu-iasi",
-  "telephone": "+40700000000", // Telefon numaranızla güncelleyebilirsiniz
+  "telephone": "+40746921162", // Telefon numaranızla güncelleyebilirsiniz
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -119,7 +119,7 @@ export default async function DepozitIasiPage() {
           
           <div style={{ display: "flex", gap: "16px", marginTop: "28px", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/40700000000?text=Buna%20ziua,%20doresc%20o%20oferta%20pentru%20depozitul%20Alufab%20Iasi"
+              href="https://wa.me/40730630063?text=Buna%20ziua,%20doresc%20o%20oferta%20pentru%20depozitul%20Alufab%20Iasi"
               target="_blank"
               rel="noopener noreferrer"
               style={{
