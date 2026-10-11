@@ -25,10 +25,7 @@ const TrustSection = () => {
             <span className="section-badge">Prezentare Companie</span>
             <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
             <p className="paragraph-lead">
-              Turcoaz Aluminiu SRL face parte dintr-un grup de companii cu o vastă experiență 
-  în industria aluminiului și a sistemelor pentru construcții, activând pe piață încă 
-  din anul 2002. Cu o experiență cumulată de peste 24 de ani în domeniu, acționariatul 
-  a construit o reputație solidă bazată pe profesionalism, inovație și parteneriate durabile.
+              Turcoaz Aluminiu SRL activează din 2011 și face parte dintr-un grup de companii afiliate, cu activitate în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționariatul are peste 24 de ani de experiență în industria aluminiului, pe care a construit o reputație solidă bazată pe profesionalism, inovație și parteneriate durabile.
             </p>
             <p className="paragraph-normal">
               Astăzi, compania este un furnizor de referință pe piața materialelor pentru fațade, tâmplărie, sisteme din sticlă și soluții arhitecturale premium, oferind clienților o gamă completă de produse certificate și servicii specializate.

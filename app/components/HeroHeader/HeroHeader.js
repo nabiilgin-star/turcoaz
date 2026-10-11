@@ -73,7 +73,7 @@ const HeroHeader = ({ heroSettings = [] }) => {
 
             <p className="hero-description">
               Oferim o gamă completă de produse de înaltă calitate pentru
-              proiecte rezidențiale și comerciale. Experiență de peste 24 ani în
+              proiecte rezidențiale și comerciale. Experiență de peste 24 de ani în
               domeniu.
             </p>
 
