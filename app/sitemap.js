@@ -101,6 +101,8 @@ export default function sitemap() {
       map.set(u.url, u);
     }
   }
+  const removed = ["/categorii/profile-pvc/exen-6040a"];
+  return Array.from(map.values()).filter((u) => !removed.some((r) => u.url.endsWith(r)));
 
-  return Array.from(map.values());
+
 }
