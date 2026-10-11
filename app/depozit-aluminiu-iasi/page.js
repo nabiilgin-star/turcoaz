@@ -21,6 +21,14 @@ export const metadata = {
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
+    images: [{ url: "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg", alt: "Depozit Alufab Iași, partener Turcoaz Aluminiu" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Depozit Profile Aluminiu Iași — Filiala Regională Alufab | Turcoaz",
+    description:
+      "Distribuitor de profile din aluminiu, glafuri, accesorii ferestre și panouri compozite ACP în Iași. Stoc permanent și livrare rapidă în toată regiunea Moldova.",
+    images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"],
   },
 };
 
@@ -34,11 +42,11 @@ const localBusinessSchema = {
   "image": "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
   "@id": "https://turcoaz.com/depozit-aluminiu-iasi#warehouse",
   "url": "https://turcoaz.com/depozit-aluminiu-iasi",
-  "telephone": "+40746921162", // Telefon numaranızla güncelleyebilirsiniz
+  "telephone": "+40746921162",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Iași",
+    "streetAddress": "Str. Trei Fântâni",
     "addressLocality": "Iași",
     "addressRegion": "Iași",
     "postalCode": "700000",
@@ -58,8 +66,8 @@ const localBusinessSchema = {
       "Thursday",
       "Friday"
     ],
-    "opens": "08:30",
-    "closes": "17:30"
+    "opens": "08:00",
+    "closes": "17:00"
   }
 };
 
@@ -68,7 +76,7 @@ export default async function DepozitIasiPage() {
 
   const breadcrumbItems = [
     { label: "Acasă", href: "/" },
-    { label: "Depozit Regional Iași (Alufab)", href: "#" },
+    { label: "Depozit Regional Iași (Alufab)", href: "/depozit-aluminiu-iasi" },
   ];
 
   return (

@@ -21,6 +21,14 @@ export const metadata = {
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
+    images: [{ url: "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg", alt: "Depozit central Turcoaz Aluminiu, Popești-Leordeni" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Depozit Profile Aluminiu București & Popești-Leordeni | Turcoaz",
+    description:
+      "Furnizor și distribuitor de sisteme din aluminiu extrudat AKPA, glafuri, feronerie și panouri compozite. Livrare din depozitul central Popești-Leordeni.",
+    images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"],
   },
 };
 
@@ -34,11 +42,11 @@ const localBusinessSchema = {
   "image": "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
   "@id": "https://turcoaz.com/depozit-aluminiu-bucuresti#warehouse",
   "url": "https://turcoaz.com/depozit-aluminiu-bucuresti",
-  "telephone": "+40730630063", // Şirket telefon numaranızla güncelleyin
+  "telephone": "+40730630063",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Şos. Olteniței / Popești-Leordeni",
+    "streetAddress": "Str. Taberei nr. 6",
     "addressLocality": "Popești-Leordeni",
     "addressRegion": "Ilfov",
     "postalCode": "077160",
@@ -46,7 +54,7 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 44.375, // Tam koordinatlarınızla güncelleyebilirsiniz
+    "latitude": 44.375,
     "longitude": 26.145
   },
   "openingHoursSpecification": {
@@ -58,8 +66,8 @@ const localBusinessSchema = {
       "Thursday",
       "Friday"
     ],
-    "opens": "08:30",
-    "closes": "17:30"
+    "opens": "08:00",
+    "closes": "17:00"
   }
 };
 
@@ -68,7 +76,7 @@ export default async function DepozitBucurestiPage() {
 
   const breadcrumbItems = [
     { label: "Acasă", href: "/" },
-    { label: "Depozit București & Ilfov", href: "#" },
+    { label: "Depozit București & Ilfov", href: "/depozit-aluminiu-bucuresti" },
   ];
 
   return (

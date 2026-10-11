@@ -22,6 +22,10 @@ export default function Footer() {
             <Link href="/politica-confidentialitate">Politica de confidențialitate</Link>
             <span className="legal-separator">•</span>
             <Link href="/termeni-si-conditii">Termeni și condiții</Link>
+            <span className="legal-separator">•</span>
+            <Link href="/depozit-aluminiu-bucuresti">Depozit București</Link>
+            <span className="legal-separator">•</span>
+            <Link href="/depozit-aluminiu-iasi">Depozit Iași</Link>
           </div>
 
 <div className="company-legal-info">
