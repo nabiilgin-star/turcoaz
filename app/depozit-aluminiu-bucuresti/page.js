@@ -220,7 +220,7 @@ export default async function DepozitBucurestiPage() {
           </h2>
           <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
             <li style={{ fontSize: "15px", color: "#475569", lineHeight: "1.5" }}>
-              ✔️ <strong>Capacitate de stoc masivă:</strong> Peste 150 tone de profile și accesorii pregătite pentru ridicare sau livrare.
+              ✔️ <strong>Capacitate de stoc masivă:</strong> Peste 200 de tone de profile și accesorii în stoc permanent, pregătite pentru ridicare sau livrare. Vânzări lunare de peste 150 de tone.
             </li>
             <li style={{ fontSize: "15px", color: "#475569", lineHeight: "1.5" }}>
               ✔️ <strong>Livrare rapidă în București și Ilfov:</strong> Flotă proprie de transport pentru șantiere și ateliere de producție.

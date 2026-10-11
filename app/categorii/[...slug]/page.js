@@ -608,9 +608,6 @@ export default async function CatchAllCategoryPage({ params }) {
                     }}
                   >
                     <span>{cat.title || cat.name}</span>
-                    {cat.subcategories && (
-                      <span style={{ fontSize: "12px", opacity: 0.8 }}>({cat.subcategories.length})</span>
-                    )}
                   </a>
 
                   {isActive && cat.subcategories && cat.subcategories.length > 0 && (
