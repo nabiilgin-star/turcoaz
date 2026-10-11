@@ -191,7 +191,7 @@ const locationsJsonLd = [
     "@type": "Store",
     "@id": "https://turcoaz.com/#iasi",
     name: "Alufab SRL - Depozit Iași",
-    parentOrganization: { "@id": "https://turcoaz.com/#organization" },
+    affiliation: { "@id": "https://turcoaz.com/#organization" },
     url: "https://turcoaz.com",
     telephone: "+40746921162",
     email: "alufab.iasi@gmail.com",
