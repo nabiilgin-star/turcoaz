@@ -82,14 +82,52 @@ const organizationJsonLd = {
   "@type": "Organization",
   "@id": "https://turcoaz.com/#organization",
   name: "Turcoaz Aluminiu SRL",
+  legalName: "Turcoaz Aluminiu S.R.L.",
   url: "https://turcoaz.com",
-  logo: "https://turcoaz.com/logo.png",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://turcoaz.com/logo.png",
+  },
   foundingDate: "2002",
   email: "info@turcoaz.com",
+  telephone: "+40730630063",
+  vatID: "RO28922264",
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Nr. Reg. Com.",
+    value: "J2016003625234",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Str. Taberei nr. 6",
+    addressLocality: "Pope\u0219ti-Leordeni",
+    addressRegion: "Ilfov",
+    addressCountry: "RO",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+40730630063",
+      email: "info@turcoaz.com",
+      contactType: "customer service",
+      areaServed: "RO",
+      availableLanguage: ["ro"],
+    },
+  ],
   sameAs: [
     "https://www.google.com/maps/place/Turcoaz+Aluminiu+SRL/@44.3765673,26.1882932,17z/data=!4m6!3m5!1s0x40b1fdf5e63c6ee5:0x2c86dbb15c0eb27c!8m2!3d44.3765673!4d26.1882932",
   ],
-  areaServed: allRomanianCounties,
+  areaServed: { "@type": "Country", name: "Rom\u00E2nia" },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://turcoaz.com/#website",
+  url: "https://turcoaz.com",
+  name: "Turcoaz Aluminiu",
+  inLanguage: "ro-RO",
+  publisher: { "@id": "https://turcoaz.com/#organization" },
 };
 
 const locationsJsonLd = [
@@ -182,6 +220,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className={poppins.className}>
