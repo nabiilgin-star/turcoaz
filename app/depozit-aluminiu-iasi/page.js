@@ -7,14 +7,14 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 // 1. REGIONAL B2B SEO METADATA - IAȘI / ALUFAB
 // ----------------------------------------------------------------------
 export const metadata = {
-  title: "Depozit Profile Aluminiu Iași — Filiala Regională Alufab | Turcoaz",
+  title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
   description:
-    "Filiala regională Alufab Iași: depozit de profile din aluminiu AKPA, glafuri exterioare, panouri compozite ACP Bond și accesorii tâmplărie în Iași și regiunea Moldova.",
+    "Alufab Iași, companie afiliată Turcoaz Aluminiu: depozit de profile din aluminiu AKPA, glafuri exterioare, panouri compozite ACP Bond și accesorii tâmplărie în Iași și regiunea Moldova.",
   alternates: {
     canonical: "https://turcoaz.com/depozit-aluminiu-iasi",
   },
   openGraph: {
-    title: "Depozit Profile Aluminiu Iași — Filiala Regională Alufab | Turcoaz",
+    title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
     description:
       "Distribuitor de profile din aluminiu, glafuri, accesorii ferestre și panouri compozite ACP în Iași. Stoc permanent și livrare rapidă în toată regiunea Moldova.",
     url: "https://turcoaz.com/depozit-aluminiu-iasi",
@@ -25,7 +25,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Depozit Profile Aluminiu Iași — Filiala Regională Alufab | Turcoaz",
+    title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
     description:
       "Distribuitor de profile din aluminiu, glafuri, accesorii ferestre și panouri compozite ACP în Iași. Stoc permanent și livrare rapidă în toată regiunea Moldova.",
     images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"],
@@ -38,7 +38,7 @@ export const metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "WholesaleStore",
-  "name": "Turcoaz Aluminiu - Filiala Regională Alufab Iași",
+  "name": "Alufab - Depozit Iași",
   "image": "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
   "@id": "https://turcoaz.com/depozit-aluminiu-iasi#warehouse",
   "url": "https://turcoaz.com/depozit-aluminiu-iasi",
@@ -116,13 +116,13 @@ export default async function DepozitIasiPage() {
             textTransform: "uppercase",
             letterSpacing: "1px"
           }}>
-            Filiala Regională Alufab Iași
+            Depozit Alufab Iași
           </span>
           <h1 style={{ fontSize: "36px", fontWeight: "800", marginTop: "16px", marginBottom: "16px", lineHeight: "1.2" }}>
             Depozit Profile Aluminiu, Glafuri & Panouri Compozite — Iași & Regiunea Moldova
           </h1>
           <p style={{ fontSize: "16px", color: "#94A3B8", maxWidth: "800px", lineHeight: "1.6" }}>
-            Prin filiala noastră regională Alufab din Iași, S.C. Turcoaz Aluminiu S.R.L. asigură distribuția rapidă de sisteme din aluminiu, glafuri profesionale și accesorii pentru atelierele de tâmplărie și șantierele din județele Iași, Suceava, Botoșani, Neamț, Bacău și Vaslui.
+            Alufab SRL, companie afiliată Turcoaz Aluminiu, operează depozitul din Iași și asigură distribuția rapidă de sisteme din aluminiu, glafuri profesionale și accesorii pentru atelierele de tâmplărie și șantierele din județele Iași, Suceava, Botoșani, Neamț, Bacău și Vaslui.
           </p>
           
           <div style={{ display: "flex", gap: "16px", marginTop: "28px", flexWrap: "wrap" }}>
@@ -164,7 +164,7 @@ export default async function DepozitIasiPage() {
       {/* PRODUSE DISPONIBILE ÎN DEPOZITUL IAȘI */}
       <section style={{ maxWidth: "1320px", margin: "40px auto", padding: "0 24px" }}>
         <h2 style={{ fontSize: "24px", fontWeight: "800", color: "#0F172A", marginBottom: "24px" }}>
-          Sisteme și Materiale Disponibile prin Filiala Alufab Iași
+          Sisteme și Materiale Disponibile în Depozitul Alufab Iași
         </h2>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
@@ -212,11 +212,11 @@ export default async function DepozitIasiPage() {
         </div>
       </section>
 
-      {/* AVANTAJE FILIALA IAȘI */}
+      {/* AVANTAJE DEPOZIT IAȘI */}
       <section style={{ maxWidth: "1320px", margin: "40px auto", padding: "0 24px" }}>
         <div style={{ background: "#FFFFFF", padding: "36px", borderRadius: "20px", border: "1px solid #E2E8F0" }}>
           <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#0F172A", marginBottom: "16px" }}>
-            Avantajele colaborării cu Filiala Regională Alufab Iași
+            Avantajele colaborării cu Alufab Iași
           </h2>
           <ul style={{ listStyle: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
             <li style={{ fontSize: "15px", color: "#475569", lineHeight: "1.5" }}>
