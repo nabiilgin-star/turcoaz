@@ -17,15 +17,9 @@ export default function proxy(request) {
     return NextResponse.redirect(url, 308);
   }
 
-  const isAdminRoute = pathname.startsWith("/admin");
-  const isLoginRoute = pathname === "/admin/login";
-
-  if (isAdminRoute && !isLoginRoute) {
-    const adminSession = request.cookies.get("admin_session");
-
-    if (!adminSession) {
-      return NextResponse.redirect(new URL("/admin/login", request.url));
-    }
+  // GECICI KILIT: imzali oturum dogrulamasi yazilana kadar tum /admin istekleri kapali
+  if (pathname.startsWith("/admin")) {
+    return new NextResponse("Not found", { status: 404 });
   }
 
   return NextResponse.next();
