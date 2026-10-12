@@ -1,9 +1,11 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function createFAQ(formData) {
+  await requireAdmin();
   const question = formData.get("question");
   const answer = formData.get("answer");
 
@@ -21,6 +23,7 @@ export async function createFAQ(formData) {
 }
 
 export async function updateFAQ(id, formData) {
+  await requireAdmin();
   const question = formData.get("question");
   const answer = formData.get("answer");
 
@@ -39,6 +42,7 @@ export async function updateFAQ(id, formData) {
 }
 
 export async function deleteFAQ(id) {
+  await requireAdmin();
   const { error } = await supabaseAdmin.from("faqs").delete().eq("id", id);
 
   if (error) {
@@ -51,6 +55,7 @@ export async function deleteFAQ(id) {
 }
 
 export async function updateFAQOrder(items) {
+  await requireAdmin();
   const promises = items.map((item) =>
     supabaseAdmin
       .from("faqs")

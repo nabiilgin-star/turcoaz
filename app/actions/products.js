@@ -1,11 +1,13 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { generateSlug } from "@/app/utils/slugGenerator";
 import { optimizeAndUploadImages } from "@/app/utils/optimizeImages";
 
 export async function createProduct(formData) {
+  await requireAdmin();
   let subcategory_id = formData.get("subcategory_id");
   if (!subcategory_id) subcategory_id = null;
 
@@ -83,6 +85,7 @@ export async function createProduct(formData) {
 }
 
 export async function updateProduct(id, formData) {
+  await requireAdmin();
   let subcategory_id = formData.get("subcategory_id");
   if (!subcategory_id) subcategory_id = null;
 
@@ -148,6 +151,7 @@ export async function updateProduct(id, formData) {
 }
 
 export async function deleteProduct(id) {
+  await requireAdmin();
   const { error } = await supabaseAdmin.from("products").delete().eq("id", id);
 
   if (error) {
@@ -231,6 +235,7 @@ async function processDocuments(productId, formData) {
 }
 
 export async function updateProductOrder(items) {
+  await requireAdmin();
   const promises = items.map((item) =>
     supabaseAdmin
       .from("products")
@@ -246,6 +251,7 @@ export async function updateProductOrder(items) {
 }
 
 export async function moveProduct(productId, updates) {
+  await requireAdmin();
   
   const { error } = await supabaseAdmin
     .from("products")

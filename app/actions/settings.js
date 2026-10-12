@@ -1,10 +1,12 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { uploadImage } from "@/app/utils/uploadImage";
 
 export async function updateSetting(key, formDataOrValue) {
+  await requireAdmin();
   let value;
 
   if (formDataOrValue instanceof FormData) {
@@ -38,6 +40,7 @@ export async function updateSetting(key, formDataOrValue) {
 }
 
 export async function updateHeroSetting(deviceType, formData) {
+  await requireAdmin();
   const imageFile = formData.get("image");
   const currentValue = formData.get("current_value");
   let imageUrl = currentValue;

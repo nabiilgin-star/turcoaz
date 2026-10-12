@@ -1,11 +1,13 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { generateSlug } from "@/app/utils/slugGenerator";
 import { uploadImage } from "@/app/utils/uploadImage";
 
 export async function createCategory(formData) {
+  await requireAdmin();
   const name = formData.get("name");
   const slug = generateSlug(name);
   
@@ -34,6 +36,7 @@ export async function createCategory(formData) {
 }
 
 export async function updateCategory(id, formData) {
+  await requireAdmin();
   const name = formData.get("name");
   const slug = generateSlug(name);
 
@@ -67,6 +70,7 @@ export async function updateCategory(id, formData) {
 }
 
 export async function deleteCategory(id) {
+  await requireAdmin();
   const { error } = await supabaseAdmin
     .from("categories")
     .delete()
@@ -82,6 +86,7 @@ export async function deleteCategory(id) {
 }
 
 export async function updateCategoryOrder(items) {
+  await requireAdmin();
   
   
   const promises = items.map((item) =>

@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
+import { verifySessionToken } from "./lib/admin-session";
 
-export default function proxy(request) {
+export default async function proxy(request) {
   const { pathname } = request.nextUrl;
 
-  // Ayrı ürün sayfası kaldırıldı -> kategori sayfası
+  // Separate product page removed -> category page
   if (pathname === "/categorii/profile-pvc/exen-6040a") {
     const url = request.nextUrl.clone();
     url.pathname = "/categorii/profile-pvc";
@@ -17,9 +18,12 @@ export default function proxy(request) {
     return NextResponse.redirect(url, 308);
   }
 
-  // GECICI KILIT: imzali oturum dogrulamasi yazilana kadar tum /admin istekleri kapali
-  if (pathname.startsWith("/admin")) {
-    return new NextResponse("Not found", { status: 404 });
+  // Admin area: a valid signed session is required (login page excepted)
+  if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
+    const token = request.cookies.get("admin_session")?.value;
+    if (!(await verifySessionToken(token))) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
   }
 
   return NextResponse.next();

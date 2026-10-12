@@ -1,9 +1,11 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function createCatalog(formData) {
+  await requireAdmin();
   const name = formData.get("name");
   const file = formData.get("file");
 
@@ -39,6 +41,7 @@ export async function createCatalog(formData) {
 }
 
 export async function deleteCatalog(id) {
+  await requireAdmin();
   const { error } = await supabaseAdmin.from("catalogs").delete().eq("id", id);
 
   if (error) throw new Error(error.message);

@@ -1,11 +1,13 @@
 "use server";
 
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { requireAdmin } from "@/lib/admin-auth";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { generateSlug } from "@/app/utils/slugGenerator";
 import { uploadImage } from "@/app/utils/uploadImage";
 
 export async function createSubcategory(formData) {
+  await requireAdmin();
   const category_id = formData.get("category_id");
   const parent_id = formData.get("parent_id") || null;
   const name = formData.get("name");
@@ -33,6 +35,7 @@ export async function createSubcategory(formData) {
 }
 
 export async function updateSubcategory(id, formData) {
+  await requireAdmin();
   const category_id = formData.get("category_id");
   const parent_id = formData.get("parent_id") || null;
   const name = formData.get("name");
@@ -66,6 +69,7 @@ export async function updateSubcategory(id, formData) {
 }
 
 export async function deleteSubcategory(id) {
+  await requireAdmin();
   const { error } = await supabaseAdmin
     .from("subcategories")
     .delete()
@@ -82,6 +86,7 @@ export async function deleteSubcategory(id) {
 }
 
 export async function updateSubcategoryOrder(items) {
+  await requireAdmin();
   const promises = items.map((item) =>
     supabaseAdmin
       .from("subcategories")
