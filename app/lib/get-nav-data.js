@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabase } from "@/lib/supabase";
 import { revalidateTag, unstable_cache } from "next/cache";
 import dns from "dns";
 import { categories as localCategories } from "@/app/data/categories";
@@ -10,7 +10,7 @@ if (dns && typeof dns.setDefaultResultOrder === "function") {
 
 export const getNavbarData = unstable_cache(
   async () => {
-    const { data: categories, error: catError } = await supabaseAdmin
+    const { data: categories, error: catError } = await supabase
       .from("categories")
       .select("*")
       .eq("show_in_menu", true) 
@@ -20,7 +20,7 @@ export const getNavbarData = unstable_cache(
       return { categories: [], products: [], topProducts: [], announcement: { text: "", active: false } };
     }
 
-    const { data: allSubcategories, error: subError } = await supabaseAdmin
+    const { data: allSubcategories, error: subError } = await supabase
       .from("subcategories")
       .select("*")
       .order("display_order", { ascending: true });
@@ -47,14 +47,14 @@ export const getNavbarData = unstable_cache(
 
     const [{ data: topProductsRaw }, { data: recommendedRaw }] =
       await Promise.all([
-        supabaseAdmin
+        supabase
           .from("products")
           .select(
             "id, title, slug, image, category_id, subcategory_id, subcategories(slug, parent_id, category_id, categories(slug)), categories(slug)",
           )
           .order("view_count", { ascending: false })
           .limit(5),
-        supabaseAdmin
+        supabase
           .from("products")
           .select(
             "id, title, slug, image, category_id, subcategory_id, is_recommended, subcategories(slug, parent_id, category_id, categories(slug)), categories(slug)",
@@ -103,7 +103,7 @@ export const getNavbarData = unstable_cache(
         link: buildPath(p),
       })) || [];
 
-    const { data: settings } = await supabaseAdmin
+    const { data: settings } = await supabase
       .from("settings")
       .select("key, value")
       .in("key", ["announcement_text", "announcement_active"]);
@@ -129,7 +129,7 @@ export const getNavbarData = unstable_cache(
 
 export const getCategoryBySlug = unstable_cache(
   async (slug) => {
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabase
       .from("categories")
       .select("*, subcategories(*), products(*)")
       .eq("slug", slug)
@@ -148,7 +148,7 @@ export const getCategoryBySlug = unstable_cache(
 
 export const getSubcategoryWithProducts = unstable_cache(
   async (catSlug, subSlug) => {
-    const { data: subcategory, error } = await supabaseAdmin
+    const { data: subcategory, error } = await supabase
       .from("subcategories")
       .select("*, categories!inner(*), products(*)")
       .eq("slug", subSlug)
@@ -169,7 +169,7 @@ export const getSubcategoryWithProducts = unstable_cache(
 
 export const getProductBySlug = unstable_cache(
   async (slug) => {
-    const { data: product, error } = await supabaseAdmin
+    const { data: product, error } = await supabase
       .from("products")
       .select(
         "*, subcategories(*, categories(*)), categories(*), product_documents(*)",
@@ -205,7 +205,7 @@ export const resolvePath = unstable_cache(
 
     // 2. Tek seviyeli ana kategori sorgusu
     if (cleanSegments.length === 1) {
-      const { data: category } = await supabaseAdmin
+      const { data: category } = await supabase
         .from("categories")
         .select("*, subcategories(*)")
         .eq("slug", cleanSegments[0])
@@ -218,7 +218,7 @@ export const resolvePath = unstable_cache(
     }
 
     // 3. İki veya daha fazla seviyeli sorgular (Ürün veya Alt Kategori)
-    const { data: product } = await supabaseAdmin
+    const { data: product } = await supabase
       .from("products")
       .select(
         "*, subcategories(*, categories(*)), categories(*), product_documents(*)",
@@ -248,7 +248,7 @@ export const resolvePath = unstable_cache(
       }
     }
 
-    const { data: subcategory } = await supabaseAdmin
+    const { data: subcategory } = await supabase
       .from("subcategories")
       .select("*, categories(*), products(*), subcategories(*)") 
       .eq("slug", lastSlug)
@@ -279,18 +279,18 @@ export const resolvePath = unstable_cache(
 
 export const getAllSlugsForStaticGeneration = unstable_cache(
   async () => {
-    const { data: categories } = await supabaseAdmin
+    const { data: categories } = await supabase
       .from("categories")
       .select("slug");
     const categoryPaths = categories?.map((c) => ({ slug: [c.slug] })) || [];
 
-    const { data: allSubs } = await supabaseAdmin
+    const { data: allSubs } = await supabase
       .from("subcategories")
       .select("*");
     const subMap = {};
     allSubs?.forEach((s) => (subMap[s.id] = s));
 
-    const { data: fullSubcategories } = await supabaseAdmin
+    const { data: fullSubcategories } = await supabase
       .from("subcategories")
       .select("id, slug, parent_id, category_id, categories(slug)");
 
@@ -312,7 +312,7 @@ export const getAllSlugsForStaticGeneration = unstable_cache(
     const catMap = {};
     categories?.forEach((c) => (catMap[c.id] = c));
 
-    const { data: products } = await supabaseAdmin
+    const { data: products } = await supabase
       .from("products")
       .select("slug, subcategory_id, category_id");
 
@@ -364,7 +364,7 @@ export const getAllSlugsForStaticGeneration = unstable_cache(
 export const getFaqs = unstable_cache(
   async () => {
     try {
-      const { data, error } = await supabaseAdmin
+      const { data, error } = await supabase
         .from("faqs")
         .select("*")
         .order("display_order", { ascending: true });
@@ -382,7 +382,7 @@ export const getFaqs = unstable_cache(
 export const getHeroSettings = unstable_cache(
   async () => {
     try {
-      const { data, error } = await supabaseAdmin
+      const { data, error } = await supabase
         .from("hero_settings")
         .select("device_type, image_url");
 

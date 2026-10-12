@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import ContactForm from "../components/Contact/ContactForm";
 import { getNavbarData } from "@/app/lib/get-nav-data";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabase } from "@/lib/supabase";
 
 export const metadata = {
   title: "Contact | Turcoaz Aluminiu – București, Popești-Leordeni, Iași",
@@ -21,7 +21,7 @@ export const metadata = {
 export default async function ContactPage() {
   const [navData, contactImageResult] = await Promise.all([
     getNavbarData(),
-    supabaseAdmin
+    supabase
       .from("settings")
       .select("value")
       .eq("key", "contact_image")

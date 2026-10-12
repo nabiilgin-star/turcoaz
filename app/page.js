@@ -6,12 +6,12 @@ import ContactForm from "./components/Contact/ContactForm";
 import Footer from "./components/Footer/Footer";
 import styles from "./page.css";
 import { getNavbarData, getHeroSettings } from "@/app/lib/get-nav-data";
-import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
   const [navData, contactImageResult, heroSettings] = await Promise.all([
     getNavbarData(),
-    supabaseAdmin
+    supabase
       .from("settings")
       .select("value")
       .eq("key", "contact_image")
