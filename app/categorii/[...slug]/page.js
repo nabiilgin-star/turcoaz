@@ -441,7 +441,9 @@ export default async function CatchAllCategoryPage({ params }) {
     .replace(/\s+/g, " ")
     .trim();
 
-  const productSchema = type === "product" ? {
+  const isProductPage = type === "product" && cleanData.slug !== "glafuri-din-aluminiu";
+
+  const productSchema = isProductPage ? {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": cleanData.title || cleanData.name,
