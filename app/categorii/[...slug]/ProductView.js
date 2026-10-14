@@ -3,10 +3,14 @@ import Image from "next/image";
 export default function ProductView({ product }) {
   if (!product) return <div>Ürün bulunamadı.</div>;
 
-  const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
-  const isPvc = product.slug === "profile-pvc";
-  const isGard = product.slug === "gard";
-
+  const isAcpBond = product?.slug?.includes("acp") || product?.title?.toLowerCase().includes("acp");
+  const isPvc = product?.slug?.includes("pvc") || product?.title?.toLowerCase().includes("pvc");
+  const isGard = product?.slug?.includes("gard") || product?.title?.toLowerCase().includes("gard");
+  
+  // GARANTİLİ KONTROL (Hem sluga hem başlığa bakar, veri boşsa hata vermez)
+  const isGlafuri = product?.slug?.includes("glafuri") || product?.title?.toLowerCase().includes("glafuri");
+  const isSticla = product?.slug?.includes("sticla") || product?.title?.toLowerCase().includes("sticla");
+  
   // Ortak Buton Stili
   const buttonStyle = {
     display: "inline-block",
@@ -282,7 +286,8 @@ export default function ProductView({ product }) {
           </div>
         )}
 
-        {product.pdfUrl && (
+        {/* DOĞRU OLAN KISIM: !isGlafuri ve !isSticla koşulları eklendi */}
+        {product.pdfUrl && !isGlafuri && !isSticla && (
           <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
             Catalog PDF
           </a>
