@@ -35,9 +35,7 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Glafuri din Aluminiu',
       slug: 'glafuri-din-aluminiu',
       image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-      priceTag: "de la 15,50 LEI / ml / TVA inclus", // <-- FİYAT ETİKETİNİ BURAYA EKLEDİK
-      // Bunlar sadece pazarlama cümlesi (sayfası yok), düz metin olarak kalabilir:
-      subcategories: [
+        subcategories: [
         'Lățimi: 75 mm - 380 mm', 
         'RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe', 
         'Debitare la Dimensiune', 
