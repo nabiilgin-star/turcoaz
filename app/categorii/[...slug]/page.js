@@ -218,16 +218,34 @@ export default async function CatchAllCategoryPage({ params }) {
     const targetLocalCategory = localCategories.find(c => c.slug?.toLowerCase().trim() === firstSlug);
 
     if (targetLocalCategory) {
-
-if (pathSegments.length === 1) {
-  // Tek segment varsa (örn: /categorii/glafuri-din-aluminiu),
-  // içinde ürün, açıklama veya resim olsa bile bu her zaman bir KATEGORİDİR.
-  result = {
-    type: "category",
-    data: targetLocalCategory
-  };
-}
-
+      if (pathSegments.length === 1) {
+        if (targetLocalCategory.products && targetLocalCategory.products.length > 0) {
+          result = {
+            type: "product",
+            data: {
+              ...targetLocalCategory,
+              title: targetLocalCategory.title || targetLocalCategory.name,
+              category: targetLocalCategory,
+              subcategory: null
+            }
+          };
+        } else if (targetLocalCategory.detailImage || targetLocalCategory.description) {
+          result = {
+            type: "product",
+            data: {
+              ...targetLocalCategory,
+              title: targetLocalCategory.title || targetLocalCategory.name,
+              category: targetLocalCategory,
+              subcategory: null
+            }
+          };
+        } else {
+          result = {
+            type: "category",
+            data: targetLocalCategory
+          };
+        }
+      } 
       else if (pathSegments.length === 2) {
         const secondSlug = pathSegments[1]?.toLowerCase().trim();
         const targetProd = targetLocalCategory.products?.find(p => p.slug?.toLowerCase().trim() === secondSlug || p.id?.toLowerCase().trim() === secondSlug);
@@ -361,12 +379,7 @@ if (pathSegments.length === 1) {
     }
   };
 
-  const isRootCategory = pathSegments.length === 1 && !!matchedCategory;
-
-const type = isRootCategory
-  ? "category"
-  : (result?.type || "product");
-  
+  const type = result?.type || "product";
   const rawData = result?.data || defaultProducts[currentSlug] || defaultProducts["cornier"];
 
   // 🛠️ KRİTİK DÜZELTME: Veriyi Client Component'lere aktarmadan önce temizliyoruz
