@@ -168,8 +168,8 @@ export const categories = [
   title: "Sistem de Gard F60 – Profile din Aluminiu",
   slug: "gard",
   icon: Layers,
-  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-2_gage5r.jpg",
-  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1791401511/Gard-Fence_60-5_syvdit.jpg",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792101810/Bro%C8%99ur%C4%83_modern%C4%83_pentru_gard_F60_zoiqtm.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792101810/Bro%C8%99ur%C4%83_modern%C4%83_pentru_gard_F60_zoiqtm.png",
   pdfUrl: "/pdf/gard-aluminiu.pdf",
   gallery: [
     "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
@@ -206,7 +206,7 @@ Căutați <strong>sistem de gard F60</strong>, <strong>gard aluminiu</strong> de
       {
         title: "INCHIDERE TERASA",
         slug: "inchidere-terasa",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792101091/Mediterranean_Glass_Terrace_by_the_Sea_awedqw.png",
         description: "Sisteme moderne de închidere terase cu sticlă și aluminiu.",
         products: [
         {
