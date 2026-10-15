@@ -58,26 +58,8 @@ export default function TeavaRotundaView() {
             <li className={styles.taxNote}>⚠️ Prețul nu include taxele de transport</li>
           </ul>
 
-          {/* Action Buttons + Catalog PDF */}
+          {/* Action Buttons */}
           <div className={styles.actionButtons} style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap", marginTop: "16px" }}>
-            <Link 
-              href="/catalog-profile-standard.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                padding: "10px 20px",
-                backgroundColor: "var(--color-cta, #007A91)",
-                color: "#ffffff",
-                borderRadius: "10px",
-                fontWeight: "700",
-                fontSize: "13px",
-                textDecoration: "none",
-                boxShadow: "0 2px 8px rgba(197, 164, 145, 0.35)"
-              }}
-            >
-              Catalog PDF
-            </Link>
             <button className={styles.btnCalculator}>🧮 Calculator UM</button>
             <Link href="/contact" className={styles.btnQuote}>Solicită ofertă</Link>
           </div>
