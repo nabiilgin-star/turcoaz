@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import CardVideo from './CardVideo';
 import './Categories.css'; 
 import Image from 'next/image';
 
@@ -116,22 +117,7 @@ export default function CategoriesSection({ className = '' }) {
               {/* Arka Plan Görsel / Video Alanı */}
               <div className="card-image-wrapper">
                 {isVideo ? (
-                  <video 
-                    src={finalMedia}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="card-image-new"
-                    style={{
-                      position: 'absolute',
-                      height: '100%',
-                      width: '100%',
-                      left: 0,
-                      top: 0,
-                      objectFit: 'cover'
-                    }}
-                  />
+                  <CardVideo src={finalMedia} active={isActive} />
                 ) : (
                  <Image 
   src={finalMedia} 
