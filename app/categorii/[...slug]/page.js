@@ -465,11 +465,14 @@ export default async function CatchAllCategoryPage({ params }) {
     }))
   } : null;
 
-  const productSchemaJson = productSchema ? JSON.stringify(productSchema) : "";
+ const productSchemaJson = productSchema ? JSON.stringify(productSchema) : "";
   const faqSchemaJson = faqSchema ? JSON.stringify(faqSchema) : "";
-return (
+
+  return (
     <main suppressHydrationWarning className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
-      {productSchema ? (
+      
+      {/* Glafuri sayfası için Product şemasını (offers hatası vermemesi için) engelliyoruz */}
+      {productSchema && cleanData.slug !== "glafuri-din-aluminiu" ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: productSchemaJson }}
@@ -482,7 +485,7 @@ return (
           dangerouslySetInnerHTML={{ __html: faqSchemaJson }}
         />
       ) : null}
-
+      
       <TrackView
         table={
           type === "product"
