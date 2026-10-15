@@ -168,10 +168,11 @@ export const categories = [
   title: "Sistem de Gard F60 – Profile din Aluminiu",
   slug: "gard",
   icon: Layers,
-  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792101810/Bro%C8%99ur%C4%83_modern%C4%83_pentru_gard_F60_zoiqtm.png",
-  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792101810/Bro%C8%99ur%C4%83_modern%C4%83_pentru_gard_F60_zoiqtm.png",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792102425/Modern_F60_Aluminum_Fence_Showcase_j9li9a.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792102425/Modern_F60_Aluminum_Fence_Showcase_j9li9a.png",
   pdfUrl: "/pdf/gard-aluminiu.pdf",
   gallery: [
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1792101810/Bro%C8%99ur%C4%83_modern%C4%83_pentru_gard_F60_zoiqtm.png",
     "https://res.cloudinary.com/oivvupgw/image/upload/v1791401513/Gard-Fence_60-1_aa02aw.jpg",
     "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-3_kzf1s7.jpg",
     "https://res.cloudinary.com/oivvupgw/image/upload/v1791401512/Gard-Fence_60-4_jtd7sb.jpg",
