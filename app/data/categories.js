@@ -314,15 +314,54 @@ pdfUrl: "/pdf/iscb-140.pdf",
       <p><strong>Cum se face livrarea?</strong> Expediem componentele și profilele direct din depozitul nostru din Popești-Leordeni și filiala Iași, asigurând suport logistic complet pentru parteneri și montatori.</p>
     `
   },
-          {
-            id: "sistem-tip-ghilotina",
-            slug: "sistem-tip-ghilotina",
-            title: "Sistem Tip Ghilotina",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem tip ghilotină motorizat/manual pentru terase.",
-            pdfUrl: "/pdf/ghilotina.pdf"
-          },
+  {
+  id: "sistem-tip-ghilotina",
+  slug: "sistem-tip-ghilotina",
+  title: "SH110 – Sistem de Sticlă Ghilotină Motorizată",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792100226/Motorized_Glass_Terrace_System_Sunset_Showcase_i9lhs7.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792100226/Motorized_Glass_Terrace_System_Sunset_Showcase_i9lhs7.png",
+  pdfUrl: "/pdf/sh110-ghilotina.pdf",
+  gallery: [
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1792100225/SH110_Profiles_and_Accessories_Catalog_kqpi53.png"
+  ],
+  seo: {
+    title: "SH110 – Sistem Ghilotină Motorizată din Sticlă | Turcoaz",
+    description: "Sistem SH110 de sticlă ghilotină motorizată pentru terase, restaurante și spații comerciale. Descoperă soluțiile Turcoaz și solicită o ofertă personalizată.",
+    indexable: true
+  },
+  description: `
+    <h2>SH110 – Sistem de Sticlă Ghilotină Motorizată</h2>
+    <p><strong>Confort modern, design elegant și tehnologie pentru spații exterioare.</strong></p>
+    <p>Sistemul SH110 de sticlă ghilotină motorizată este o soluție modernă pentru închiderea și amenajarea teraselor, restaurantelor, cafenelelor și spațiilor comerciale. Datorită panourilor de sticlă cu acționare electrică, spațiul poate fi adaptat cu ușurință în funcție de condițiile meteorologice și de preferințele utilizatorului.</p>
+    <p>Conceput pentru proiecte arhitecturale contemporane, sistemul SH110 îmbină funcționalitatea, transparența și aspectul elegant al profilelor din aluminiu. Este o alegere potrivită pentru cei care doresc să valorifice spațiile exterioare și să creeze un ambient confortabil, cu un design premium.</p>
+    <p><strong>SH110 de la Turcoaz – o soluție modernă pentru terase rezidențiale și comerciale.</strong></p>
+
+    <h2>Avantaje Principale</h2>
+    <ul>
+      <li><strong>Acționare Motorizată:</strong> Utilizare confortabilă și rapidă, printr-o simplă apăsare de buton.</li>
+      <li><strong>Vedere Panoramică:</strong> Linii de profil minimaliste care nu obstrucționează peisajul.</li>
+      <li><strong>Design Modern:</strong> Estetică premium, ușor de integrat în orice concept arhitectural.</li>
+    </ul>
+
+    <h2>Aplicații pentru Sistemul SH110</h2>
+    <p>Sistemul de sticlă ghilotină SH110 este potrivit pentru proiecte în care flexibilitatea, estetica și utilizarea eficientă a spațiului sunt prioritare.</p>
+    <ul>
+      <li><strong>Terase rezidențiale:</strong> soluții moderne pentru balcoane, terase și zone de relaxare.</li>
+      <li><strong>Restaurante și cafenele:</strong> amenajarea unor spații versatile, adaptate conceptului locației.</li>
+      <li><strong>Hoteluri și resorturi:</strong> integrarea unor suprafețe vitrate în zonele de lounge și de servire.</li>
+      <li><strong>Spații comerciale:</strong> soluții de închidere pentru zone exterioare și spații de prezentare.</li>
+      <li><strong>Proiecte arhitecturale:</strong> integrarea sticlei și a profilelor din aluminiu în designuri contemporane.</li>
+    </ul>
+    <p><em>Fiecare proiect poate necesita măsurători și configurări specifice pentru a obține o instalare corectă și un rezultat estetic.</em></p>
+
+    <h2>Documentație Tehnică</h2>
+    <p>Consultați catalogul tehnic atașat (disponibil în secțiunea de descărcare <strong>Catalog PDF</strong>) pentru a vizualiza schemele detaliate ale profilelor și accesoriilor necesare sistemului SH110.</p>
+
+    <h2>Solicitați o Ofertă</h2>
+    <p>Sunteți interesat de acest sistem? Trimiteți-ne următorul mesaj pentru a primi detalii exacte:</p>
+    <blockquote><em>„Bună ziua! Doresc o ofertă pentru sistemul SH110 de sticlă ghilotină motorizată. Vă rog să-mi oferiți informații despre configurații, dimensiuni și preț.”</em></blockquote>
+  `
+},
           {
     id: "sistem-glisant-pliabil-cb40",
     slug: "sistem-glisant-pliabil-cb40",
@@ -365,15 +404,49 @@ pdfUrl: "/pdf/iscb-140.pdf",
       </ul>
     `
   },
-          {
-            id: "sistem-tip-copertina-sticla",
-            slug: "sistem-tip-copertina-sticla",
-            title: "Sistem Tip Copertina Sticla",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Terase-1_macqv3.jpg",
-            description: "Sistem copertină din sticlă pentru protecție exterioară.",
-            pdfUrl: "/pdf/copertina-sticla.pdf"
-          }
+{
+  id: "sistem-tip-copertina-sticla",
+  slug: "sistem-tip-copertina-sticla",
+  title: "WG100 Skyroof – Sistem de Acoperiș din Sticlă pentru Terase",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792098196/WG100_Skyroof_Sunset_Terrace_gbmbtu.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792098196/WG100_Skyroof_Sunset_Terrace_gbmbtu.png",
+  pdfUrl: "/pdf/wg100-skyroof.pdf",
+   gallery: [
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1792099449/WG100_Skyroof_Technical_Profile_Catalog_r5jzvd.png",
+ ],
+  seo: {
+    title: "WG100 Skyroof – Acoperiș din Sticlă pentru Terase | Turcoaz",
+    description: "Descoperă WG100 Skyroof, sistem de acoperiș din sticlă cu structură din aluminiu pentru terase moderne. Soluții elegante pentru locuințe, restaurante și spații comerciale.",
+    indexable: true
+  },
+  description: `
+    <h2>Sistem de Acoperiș din Sticlă pentru Terase – WG100 Skyroof</h2>
+    <p><strong>WG100 Skyroof</strong> este un sistem modern de acoperiș din sticlă pentru terase, conceput pentru a oferi protecție împotriva intemperiilor și un aspect arhitectural elegant. Cu o structură robustă din aluminiu și panouri de sticlă de grosime mare, sistemul este ideal pentru terase rezidențiale, spații HoReCa, restaurante și zone exterioare acoperite.</p>
+
+    <h2>Specificații Tehnice Oficiale / Technical Properties</h2>
+    <ul>
+      <li><strong>Lățime profil stâlp:</strong> 141 mm</li>
+      <li><strong>Lățime profil jgheab:</strong> 200,2 mm</li>
+      <li><strong>Dimensiuni profil portant:</strong> 55x125 mm</li>
+      <li><strong>Grosime perete profil:</strong> 1,5 - 3 mm</li>
+      <li><strong>Grosime maximă panou sticlă:</strong> 32 mm</li>
+      <li><strong>Lățime maximă panou:</strong> 750 mm</li>
+      <li><strong>Lățime maximă verandă fără îmbinare:</strong> 5000 mm</li>
+      <li><strong>Adâncime maximă verandă:</strong> 3500 mm</li>
+      <li><strong>Distanța maximă între stâlpi:</strong> 5000 mm</li>
+      <li><strong>Înălțime maximă spate verandă:</strong> 2800 mm</li>
+      <li><strong>Înălțime maximă față verandă:</strong> 2400 mm</li>
+    </ul>
+
+    <h2>Opțiuni de Instalare și Configurare</h2>
+    <ul>
+      <li><strong>Structură de bază:</strong> Verandă dreaptă (cu sau fără îmbinare) și Verandă tip L.</li>
+      <li><strong>Consolidări opționale:</strong> Ranforsare jgheab și Ranforsare profil portant.</li>
+    </ul>
+
+    <p><em>Transformați terasa într-un spațiu elegant și protejat. Lățimea maximă impresionantă între stâlpi (5000 mm) permite vizibilitate maximă și o estetică minimalistă de excepție.</em></p>
+  `
+}
         ]
       }
     ],

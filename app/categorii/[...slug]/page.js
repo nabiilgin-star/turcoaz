@@ -467,9 +467,8 @@ export default async function CatchAllCategoryPage({ params }) {
 
   const productSchemaJson = productSchema ? JSON.stringify(productSchema) : "";
   const faqSchemaJson = faqSchema ? JSON.stringify(faqSchema) : "";
-
-  return (
-    <main className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
+return (
+    <main suppressHydrationWarning className="page" style={{ backgroundColor: "#F8FAFC", minHeight: "100vh", overflowX: "hidden", width: "100%", boxSizing: "border-box" }}>
       {productSchema ? (
         <script
           type="application/ld+json"
