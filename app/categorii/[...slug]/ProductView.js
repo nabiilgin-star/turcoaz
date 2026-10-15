@@ -10,7 +10,7 @@ export default function ProductView({ product }) {
   // Ortak Buton Stili
   const buttonStyle = {
     display: "inline-block",
-    backgroundColor: "#c5a491",
+    backgroundColor: "var(--color-cta, #007A91)",
     color: "#fff",
     padding: "12px 28px",
     borderRadius: "10px",
@@ -55,7 +55,7 @@ export default function ProductView({ product }) {
                 rel="noopener noreferrer" 
                 style={{ 
                   display: "inline-block", 
-                  backgroundColor: "#c5a491", 
+                  backgroundColor: "var(--color-cta, #007A91)", 
                   color: "#fff", 
                   padding: "10px 24px", 
                   borderRadius: "10px", 

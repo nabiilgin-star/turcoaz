@@ -5,6 +5,7 @@
      Turcoaz Aluminiu Renk Paleti (KAHE Mavisinden Dönüşüm)
      ========================================================================== */
   --color-primary: #00b4d8;         /* Ana Renk: Canlı Alüminyum Turkuazı */
+  --color-cta: #007A91;   /* butonlar: beyaz yazi ile ~5:1 */
   --color-primary-dark: #0077b6;    /* Derin Turkuaz (Hover durumları için) */
   --color-aluminum-light: #f1f5f9;  /* Parlak Alüminyum Yüzey */
   --color-aluminum-dark: #64748b;   /* Fırçalanmış Metalik Gri */

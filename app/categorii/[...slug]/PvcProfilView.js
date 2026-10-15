@@ -16,7 +16,7 @@ export default function PvcProfilView() {
         .pvc-hero-text { flex: 1; }
         .pvc-hero-img { flex: 1; display: flex; justify-content: center; position: relative; width: 100%; min-height: 320px; }
         .btn-primary { background: #00A8CC; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.2s; }
-        .btn-pdf { background: #c5a491; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.2s; box-shadow: 0 2px 8px rgba(197, 164, 145, 0.35); }
+        .btn-pdf { background: var(--color-cta, #007A91); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.2s; box-shadow: 0 2px 8px rgba(197, 164, 145, 0.35); }
         
         /* Grid Layouts */
         .pvc-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }

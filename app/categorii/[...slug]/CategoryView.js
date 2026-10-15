@@ -56,7 +56,7 @@ export default function CategoryView({ category }) {
                 rel="noopener noreferrer"
                 style={{
                   padding: "10px 22px",
-                  backgroundColor: "#c5a491",
+                  backgroundColor: "var(--color-cta, #007A91)",
                   color: "#FFFFFF",
                   borderRadius: "10px",
                   fontWeight: "700",
@@ -161,7 +161,7 @@ export default function CategoryView({ category }) {
                     <span style={{
                       display: "inline-block",
                       padding: "10px 24px",
-                      backgroundColor: "#c5a491",
+                      backgroundColor: "var(--color-cta, #007A91)",
                       color: "#FFFFFF",
                       borderRadius: "20px",
                       fontWeight: "700",

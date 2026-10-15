@@ -76,7 +76,7 @@ export default function SubcategoryView({
                       <span style={{
                         display: "inline-block",
                         padding: "8px 22px",
-                        backgroundColor: "#c5a491",
+                        backgroundColor: "var(--color-cta, #007A91)",
                         color: "#FFFFFF",
                         borderRadius: "20px",
                         fontWeight: "700",
@@ -173,7 +173,7 @@ export default function SubcategoryView({
                         <span style={{
                           display: "inline-block",
                           padding: "8px 22px",
-                          backgroundColor: "#c5a491",
+                          backgroundColor: "var(--color-cta, #007A91)",
                           color: "#FFFFFF",
                           borderRadius: "20px",
                           fontWeight: "700",

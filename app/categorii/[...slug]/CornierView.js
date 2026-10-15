@@ -90,7 +90,7 @@ export default function CornierView() {
               style={{
                 display: "inline-block",
                 padding: "10px 20px",
-                backgroundColor: "#c5a491",
+                backgroundColor: "var(--color-cta, #007A91)",
                 color: "#ffffff",
                 borderRadius: "10px",
                 fontWeight: "700",
