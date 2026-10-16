@@ -162,11 +162,11 @@ export const categories = [
   id: "perete-cortina",
   slug: "perete-cortina",
   title: "FS50 – Sistem de Perete Cortină din Aluminiu și Sticlă",
-  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792185037/FS50_Sistem_Perete_Cortin%C4%83_x04eti.png",
-  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792185037/FS50_Sistem_Perete_Cortin%C4%83_x04eti.png",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792184930/FS50_Curtain_Wall_System_Brochure_jeborj.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792184930/FS50_Curtain_Wall_System_Brochure_jeborj.png",
   pdfUrl: "/pdf/fs50.pdf",
   gallery: [
-    "https://res.cloudinary.com/oivvupgw/image/upload/v1792184930/FS50_Curtain_Wall_System_Brochure_jeborj.png"
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1792185037/FS50_Sistem_Perete_Cortin%C4%83_x04eti.png"
   ],
   seo: {
     title: "FS50 – Sistem Perete Cortină din Aluminiu și Sticlă | Turcoaz",
@@ -628,7 +628,6 @@ pdfUrl: "/pdf/iscb-140.pdf",
     ],
   },
 // 3. ANA KATEGORİ: Glafuri din Aluminiu
- // 3. ANA KATEGORİ: Glafuri din Aluminiu
   {
     title: "Glafuri din Aluminiu",
     slug: "glafuri-din-aluminiu",
