@@ -362,7 +362,7 @@ const Navbar = ({ categories = [], announcement = {} }) => {
             }}
           >
             <Image
-              src="https://res.cloudinary.com/oivvupgw/image/upload/v1784325751/Logo_Turcoaz_aluminiu_er7eyt.png"
+              src="https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png"
               alt="Turcoaz Aluminiu Logo"
               width={200}
               height={60}

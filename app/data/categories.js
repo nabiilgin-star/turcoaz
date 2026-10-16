@@ -20,7 +20,7 @@ export const categories = [
       {
         title: "SISTEME TAMPLARIE",
         slug: "sisteme-tamplarie",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792167467/Modern_Aluminum_Systems_Showcase_ybkjv4.png",
         products: [
          {
             id: "glisante-s28",
@@ -465,7 +465,7 @@ pdfUrl: "/pdf/iscb-140.pdf",
         id: "balustrada-de-sticla",
         slug: "balustrada-de-sticla",
         title: "Balustradă de sticlă",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792168179/Premium_Aluminum_Glazing_Profile_Display_vbiy1i.png",
         products: [
           {
             id: "m115",
@@ -660,11 +660,11 @@ pdfUrl: "/pdf/iscb-140.pdf",
     id: "sticla",
     slug: "sticla",
     title: "Sticlă Laminată Securizată",
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784416310/Sticla-Securizata-Curbata_ya1kgq.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
     pdfUrl: "/pdf/catalog-sticla.pdf",
     gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1784593459/Balustradasticla_n7rx1n.png",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784416310/Sticla-Securizata-Curbata_ya1kgq.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789333969/Sticla_Laminat_Securizat__tqngsn.jpg",
     ],
     description: `
