@@ -159,11 +159,73 @@ export const categories = [
         ]
       },
       {
-        title: "Perete Cortina",
-        slug: "perete-cortina",
-        image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470156/Perete-Cortina_jzrfez.jpg",
-        description: "Sisteme moderne de perete cortină din aluminiu pentru fațade arhitecturale.",
-      },
+  id: "perete-cortina",
+  slug: "perete-cortina",
+  title: "FS50 – Sistem de Perete Cortină din Aluminiu și Sticlă",
+  image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792185037/FS50_Sistem_Perete_Cortin%C4%83_x04eti.png",
+  detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792185037/FS50_Sistem_Perete_Cortin%C4%83_x04eti.png",
+  pdfUrl: "/pdf/fs50.pdf",
+  gallery: [
+    "https://res.cloudinary.com/oivvupgw/image/upload/v1792184930/FS50_Curtain_Wall_System_Brochure_jeborj.png"
+  ],
+  seo: {
+    title: "FS50 – Sistem Perete Cortină din Aluminiu și Sticlă | Turcoaz",
+    description: "Descoperă sistemul FS50 de perete cortină din aluminiu și sticlă pentru clădiri moderne. Consultă variantele de fațadă, datele tehnice și solicită o ofertă de la Turcoaz.",
+    indexable: true
+  },
+  description: `
+    <h2>FS50 – Sistem de Perete Cortină din Aluminiu și Sticlă</h2>
+    <p><strong>Design arhitectural modern, transparență și performanță pentru clădiri contemporane.</strong></p>
+    <p>Sistemul <strong>FS50</strong> de perete cortină este o soluție modernă pentru realizarea fațadelor din aluminiu și sticlă, destinată clădirilor comerciale, clădirilor de birouri, hotelurilor și proiectelor arhitecturale contemporane.</p>
+    <p>Prin integrarea profilelor din aluminiu cu suprafețe vitrate ample, sistemul contribuie la obținerea unei fațade elegante, luminoase și uniforme. Configurațiile disponibile permit adaptarea soluției la cerințele proiectului, atât din punct de vedere estetic, cât și funcțional. Turcoaz oferă soluții din aluminiu și sticlă pentru arhitectura modernă.</p>
+
+    <h2>Avantajele Sistemului FS50</h2>
+    <ul>
+      <li><strong>Design arhitectural contemporan:</strong> Suprafețele vitrate și profilele din aluminiu permit realizarea unor fațade cu aspect modern, potrivite pentru clădiri noi și proiecte de renovare.</li>
+      <li><strong>Lumină naturală și transparență:</strong> Fațadele vitrate pot contribui la valorificarea luminii naturale și la crearea unor spații interioare deschise și luminoase.</li>
+      <li><strong>Mai multe variante de fațadă:</strong> Sistemul permite configurarea unor soluții cu capac exterior, cu silicon structural sau semicapotate, conform opțiunilor tehnice disponibile.</li>
+      <li><strong>Adaptare la cerințele proiectului:</strong> Dimensiunile profilelor, tipul de geam și configurația fațadei se aleg în funcție de proiectare și de cerințele tehnice ale clădirii.</li>
+    </ul>
+
+    <h2>Variante de Aplicare</h2>
+    <ul>
+      <li><strong>Fațadă structurală cu silicon:</strong> O soluție cu aspect uniform, în care prinderile vizibile sunt reduse pentru a evidenția suprafețele vitrate.</li>
+      <li><strong>Fațadă capotată:</strong> Sistem cu profile de presare și capace exterioare, care evidențiază ritmul geometric al fațadei.</li>
+      <li><strong>Fațadă semicapotată:</strong> O variantă arhitecturală care combină suprafețele vitrate cu profile vizibile selectiv, în funcție de configurație.</li>
+    </ul>
+
+    <h2>Specificații Tehnice FS50</h2>
+    <ul>
+      <li><strong>Lățime profil:</strong> 50 mm</li>
+      <li><strong>Grosime perete profil:</strong> 1,4 – 2,5 mm</li>
+      <li><strong>Adâncime profil montant:</strong> 50 – 180 mm</li>
+      <li><strong>Adâncime profil traversă:</strong> 30 – 126 mm</li>
+      <li><strong>Grosime sticlă:</strong> 4 mm (minimă) – 45 mm (maximă)</li>
+      <li><strong>Dimensiuni panou:</strong> 700 × 1200 mm (minim) – 1500 × 2000 mm (maxim)</li>
+      <li><strong>Greutate maximă panou:</strong> 155 kg</li>
+    </ul>
+
+    <p><strong>Performanțe Declarate:</strong><br/>
+    <em>Permeabilitate la aer (EN 12152):</em> A4 – 600 Pa<br/>
+    <em>Etanșeitate la apă (EN 12154):</em> RE 1200 Pa<br/>
+    <em>Rezistență la vânt (EN 13830):</em> 1200 Pa<br/>
+    <em>Izolație termică (Uf):</em> 2,64 – 3,88 W/(m²·K)</p>
+    <p><em>* Valorile sunt preluate din broșura tehnică oficială. Performanțele finale depind de configurația sistemului, dimensiunile elementelor, tipul de geam și condițiile proiectului.</em></p>
+
+    <h2>Unde se utilizează sistemul FS50?</h2>
+    <p>Sistemul FS50 este destinat proiectelor în care aspectul arhitectural, suprafețele vitrate și integrarea elementelor din aluminiu au un rol important.</p>
+    <ul>
+      <li><strong>Clădiri de birouri:</strong> fațade moderne pentru spații profesionale și sedii de companii.</li>
+      <li><strong>Clădiri comerciale:</strong> soluții vitrate pentru centre comerciale, showroom-uri și spații de prezentare.</li>
+      <li><strong>Hoteluri și clădiri de ospitalitate:</strong> design contemporan pentru fațade și zone comune.</li>
+      <li><strong>Clădiri publice:</strong> soluții arhitecturale pentru proiecte instituționale și multifuncționale.</li>
+    </ul>
+
+    <h2>Solicită o Ofertă</h2>
+    <p>Ai un proiect de fațadă din aluminiu și sticlă? Echipa Turcoaz te poate ajuta să identifici configurația potrivită pentru proiectul tău. Solicită informații despre sistemul FS50 copiind și trimițându-ne mesajul de mai jos:</p>
+    <blockquote><em>„Bună ziua! Doresc o ofertă pentru sistemul FS50 de perete cortină din aluminiu și sticlă. Vă rog să-mi oferiți informații despre configurații, dimensiuni și preț.”</em></blockquote>
+  `
+},
    {
   title: "Sistem de Gard F60 – Profile din Aluminiu",
   slug: "gard",
@@ -573,7 +635,6 @@ pdfUrl: "/pdf/iscb-140.pdf",
     image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470155/pervaz6_bhmroe.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
     pdfUrl: "/pdf/glafuri-aluminiu.pdf",
-    price: "de la 15,50 LEI / ml / TVA inclus", 
     gallery: [
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1784589195/PERVAZ-TP2_gnubk0.png",
@@ -582,9 +643,7 @@ pdfUrl: "/pdf/iscb-140.pdf",
     ],
     description: `
       <h2>Sisteme Premium de Glafuri din Aluminiu Extrudat în București, Ilfov și România</h2>
-      <p><strong>Preț:</strong> de la 15,50 LEI / ml / TVA inclus</p>
-      <p>Căutați <strong>glafuri din aluminiu în București</strong>, <strong>pervazuri aluminiu Ilfov</strong> sau <strong>glafuri exterioare cu livrare în toată România</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sisteme complete din aluminiu extrudat pentru protecția ferestrelor și a fațadelor. Asigurăm stoc permanent de peste 200 de tone în depozitul nostru central din zona București / Ilfov (Popești-Leordeni) și filiala regională Alufab Iași, oferind cel mai bun raport calitate-preț pentru <strong>glafuri aluminiu la preț de distribuitor</strong>.</p>
-      
+     <p>Căutați <strong>glafuri din aluminiu în București</strong>, <strong>pervazuri aluminiu Ilfov</strong> sau <strong>glafuri exterioare cu livrare în toată România</strong>? S.C. Turcoaz Aluminiu S.R.L. furnizează sisteme complete din aluminiu extrudat pentru protecția ferestrelor și a fațadelor. Asigurăm stoc permanent de peste 200 de tone în depozitul nostru central din zona București / Ilfov (Popești-Leordeni) și filiala regională Alufab Iași, oferind cel mai bun raport calitate-preț pentru <strong>glafuri aluminiu la preț de distribuitor</strong>.</p>
       <h2>Caracteristici Tehnice & Rezistență Structurală</h2>
       <p><strong>Culori & Finisaje Disponibile:</strong> Alb, Maro, Antracit Gri (RAL 7016), Stejar Auriu, Nuc, Wenghe, precum și vopsire electrostatică în orice culoare RAL la comandă.</p>
       <p><strong>Grosime Adaptivă Anti-Flambaj (Model TP2):</strong> Lățimi de la 75 mm până la 380 mm. La lățimi mari, grosimea peretelui crește până la 2,8 mm pentru a preveni curbarea, deformarea sau flexarea profilului în timp.</p>
