@@ -35,8 +35,6 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Glafuri din Aluminiu',
       slug: 'glafuri-din-aluminiu',
       image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784589354/pervaz0_afn0uf.png",
-      priceTag: "de la 15,50 LEI / ml / TVA inclus", // <-- FİYAT ETİKETİNİ BURAYA EKLEDİK
-      // Bunlar sadece pazarlama cümlesi (sayfası yok), düz metin olarak kalabilir:
       subcategories: [
         'Lățimi: 75 mm - 380 mm', 
         'RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe', 
@@ -165,11 +163,11 @@ export default function CategoriesSection({ className = '' }) {
                     {cat.title}
                   </h3>
                   
-                  {/* YENİ EKLENEN FİYAT ETİKETİ (Eğer o kategoride priceTag varsa görünür) */}
-                  {cat.priceTag && (
+                  {/* YENİ EKLENEN FİYAT ETİKETİ (Glafuri hariç gösterilir) */}
+                  {cat.priceTag && cat.slug !== "glafuri-din-aluminiu" && (
                     <div style={{
                       display: 'inline-block',
-                      backgroundColor: '#ffb700', // Dikkat çekici kurumsal sarı/turuncu tonu
+                      backgroundColor: '#ffb700',
                       color: '#111',
                       padding: '4px 12px',
                       borderRadius: '6px',
@@ -181,7 +179,7 @@ export default function CategoriesSection({ className = '' }) {
                       🏷️ {cat.priceTag}
                     </div>
                   )}
-                  
+
                   <ul className="subcategory-list-new">
                     {cat.subcategories.map((sub, idx) => {
                       const displayText = typeof sub === 'object' && sub !== null ? sub.title : sub;
