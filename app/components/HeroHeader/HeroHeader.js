@@ -43,7 +43,6 @@ const HeroHeader = ({ heroSettings = [] }) => {
             <source media="(min-width: 769px)" srcSet={desktop} />
             <img
               {...rest}
-              loading="eager"
               className="hero-bg"
               fetchPriority="high"
               decoding="sync"
@@ -59,10 +58,10 @@ const HeroHeader = ({ heroSettings = [] }) => {
             />
           </picture>
 
-          {/* Arka Plan Overlay Katmanı */}
+          {}
           <div className="hero-overlay"></div>
 
-          {/* Hero İçerik Katmanı */}
+          {}
           <div className="hero-content">
             <span className="hero-badge">
               Soluții profesionale pentru construcții
