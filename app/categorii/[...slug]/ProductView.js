@@ -237,9 +237,13 @@ export default function ProductView({ product }) {
                           {item.description}
                         </p>
                       )}
-                    </div>
-                    {/* Glafuri ve Sticla (cam) içeren slug'larda bu butonu gizliyoruz */}
-                    {item.pdfUrl && !item.slug?.includes("glafuri") && !item.slug?.includes("sticla") && (
+                  </div>
+                    {/* Hem slug hem id hem de pdf url içinde arama yaparak kesin gizleme */}
+                    {item.pdfUrl && 
+                     !item.pdfUrl?.includes("glafuri") && 
+                     !item.slug?.includes("glafuri") && 
+                     !item.slug?.includes("sticla") && 
+                     !item.id?.includes("sistem-tip-copertina-sticla") && (
                       <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
                         {item.pdfLabel || "Catalog PDF"}
                       </a>
