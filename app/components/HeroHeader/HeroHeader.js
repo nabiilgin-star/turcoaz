@@ -42,28 +42,27 @@ const HeroHeader = ({ heroSettings = [] }) => {
             <source media="(max-width: 768px)" srcSet={mobile} />
             <source media="(min-width: 769px)" srcSet={desktop} />
             <img
-             <img
-  {...rest}
-  loading="eager"
-  className="hero-bg"
-  fetchPriority="high"
-  decoding="sync"
-  style={{
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    zIndex: -2,
-  }}
+              {...rest}
+              loading="eager"
+              className="hero-bg"
+              fetchPriority="high"
+              decoding="sync"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: -2,
+              }}
             />
           </picture>
 
-          {}
+          {/* Arka Plan Overlay Katmanı */}
           <div className="hero-overlay"></div>
 
-          {}
+          {/* Hero İçerik Katmanı */}
           <div className="hero-content">
             <span className="hero-badge">
               Soluții profesionale pentru construcții
