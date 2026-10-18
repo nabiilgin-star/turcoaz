@@ -1,6 +1,8 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    optimizeCss: true, // Render-blocking (Oluşturmayı engelleyen) CSS gecikmesini çözer
+  },
   images: {
     remotePatterns: [
       {
