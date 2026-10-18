@@ -31,8 +31,8 @@ export const categories = [
               description: "Sistemul glisant S28 pentru ferestre și uși din aluminiu oferă soluții economice și fiabile, fără rupere termică. Stoc în București, Ilfov și România.",
               indexable: true
             },
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784481561/S28-2-1_dp9668.jpg",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792317969/Glisante_S28_Sistem_din_Aluminiu_quzhkw.png",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792317969/Glisante_S28_Sistem_din_Aluminiu_quzhkw.png",
             description: `
               <h2>Sistem Culisant din Aluminiu – Glisante S28</h2>
               <p>Sistemul <strong>Glisante S28</strong> este o soluție extrem de fiabilă și economică, utilizată pentru execuția de uși și ferestre glisante (culisante) din aluminiu. S.C. Turcoaz Aluminiu S.R.L. asigură stoc permanent pentru acest sistem, cu livrare rapidă din depozitele din București, Ilfov (Popești-Leordeni) și filiala Iași, acoperind toată România.</p>
@@ -63,8 +63,8 @@ export const categories = [
             id: "sistem-wd37",
             slug: "sistem-wd37",
             title: "Sistem WD37",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784470157/Tamplarie_mhksam.png",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784485357/WD37-1_nw1wtx.jpg",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792317317/WD37_Aluminum_Frame_Architectural_Advertisement_rlctxa.png",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792317317/WD37_Aluminum_Frame_Architectural_Advertisement_rlctxa.png",
             description: `Sistem WD37 - avantaje:\n-sistem utilizat pentru executia de usi si ferestre\n-cel mai economic sistem rece de tamplarie din aluminiu\n-sistem fara ruperea puntii termice\n-posibilitatea executarii unei game largi de tipologii de constructie\n-inchidere pe trei nivele cu garnituri EPDM\n\nSTOC: Alb-RAL 9016, Maro-RAL8014, Gri antracit RAL 7016Mat, Stejar Auriu\nSTOC LIMITAT: imitatie lemn: WENGE, NUC`,
             pdfUrl: "/pdf/wd37.pdf",
             gallery: [
@@ -76,8 +76,8 @@ export const categories = [
             id: "sistem-wd50t",
             slug: "sistem-wd50t",
             title: "Sistem WD50T cu bariera termica",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784487716/WD50T-PNG-800x961_fzeeav.png",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784487716/WD50T-PNG-800x961_fzeeav.png",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792318274/WD50T_Thermal_Break_Aluminum_System_kgykjj.png",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792318274/WD50T_Thermal_Break_Aluminum_System_kgykjj.png",
             description: `Sistem WD50 - avantaje:\n-sistem utilizat pentru executia de usi si ferestre\n-sistem cald, cu ruperea puntii termice\n-sistem economic de tamplarie din aluminiu\n-posibilitatea executarii unei game largi de tipologii de constructie\n-inchidere pe trei nivele cu garnituri EPDM\n\nSTOC: Alb-RAL 9016, Maro-RAL8014, Gri antracit RAL 7016Mat, Stejar Auriu\nSTOC LIMITAT: imitatie lemn: WENGE, NUC`,
             pdfUrl: "/pdf/wd50t.pdf",
             gallery: [
@@ -89,8 +89,8 @@ export const categories = [
             id: "sistem-wd70t",
             slug: "sistem-wd70t",
             title: "Sistem WD70T cu bariera termica",
-            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1784564144/WD70T-Akpa_wfaar0.jpg",
-            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1784564144/WD70T-Akpa_wfaar0.jpg",
+            image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792318761/WD70T_Aluminum_Window_System_vvd6mq.png",
+            detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1792318761/WD70T_Aluminum_Window_System_vvd6mq.png",
             description: "Top de gamă în izolație termică și fonică. Sistemul WD70T este perfect optimizat pentru proiecte rezidențiale moderne ce necesită cel mai înalt nivel de eficiență energetică.",
             pdfUrl: "/pdf/wd70t.pdf",
             gallery: [
