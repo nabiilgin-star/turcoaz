@@ -238,9 +238,10 @@ export default function ProductView({ product }) {
                         </p>
                       )}
                     </div>
-                    {item.pdfUrl && (
+                    {/* Glafuri ve Sticla (cam) içeren slug'larda bu butonu gizliyoruz */}
+                    {item.pdfUrl && !item.slug?.includes("glafuri") && !item.slug?.includes("sticla") && (
                       <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-                        Catalog PDF
+                        {item.pdfLabel || "Catalog PDF"}
                       </a>
                     )}
                   </div>
