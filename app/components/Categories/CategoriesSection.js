@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import './Categories.css'; 
 import Image from 'next/image';
@@ -12,6 +12,41 @@ const IMAGE_REPLACEMENTS = {
   'sticla': 'https://res.cloudinary.com/oivvupgw/image/upload/v1784416310/Sticla-Securizata-Curbata_ya1kgq.png',
 };
 
+// VİDEOLARI SADECE EKRANA YAKLAŞINCA YÜKLEYEN PERFORMANS BİLEŞENİ
+const LazyVideo = ({ src, className, style, ...props }) => {
+  const videoRef = useRef(null);
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIntersecting(true);
+          observer.disconnect(); // Ekrana girince yüklemeyi başlat ve takibi bırak
+        }
+      },
+      { rootMargin: "300px" } // Kullanıcı videoya 300px yaklaşınca indirmeye başla
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={videoRef} className={className} style={{ ...style, backgroundColor: '#f1f5f9' }}>
+      {isIntersecting && (
+        <video 
+          src={src} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          {...props} 
+        />
+      )}
+    </div>
+  );
+};
+
 export default function CategoriesSection({ className = '' }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -21,7 +56,7 @@ export default function CategoriesSection({ className = '' }) {
       title: 'Sisteme Aluminiu Akpa',
       slug: 'sisteme-aluminiu-akpa',
       image: 'https://res.cloudinary.com/oivvupgw/image/upload/v1791649862/sistemealuminiu_bdtojt.jpg',
-    subcategories: [
+      subcategories: [
         { title: 'Sisteme Tâmplărie', slug: 'sisteme-tamplarie' }, 
         { title: 'Perete Cortină', slug: 'perete-cortina' }, 
         { title: 'Gard', slug: 'gard' }, 
@@ -116,7 +151,7 @@ export default function CategoriesSection({ className = '' }) {
               {/* Arka Plan Görsel / Video Alanı */}
               <div className="card-image-wrapper">
                 {isVideo ? (
-                  <video 
+                  <LazyVideo 
                     src={finalMedia}
                     autoPlay
                     loop
@@ -128,22 +163,21 @@ export default function CategoriesSection({ className = '' }) {
                       height: '100%',
                       width: '100%',
                       left: 0,
-                      top: 0,
-                      objectFit: 'cover'
+                      top: 0
                     }}
                   />
                 ) : (
                  <Image 
-  src={finalMedia} 
-  alt={cat.title} 
-  className="card-image-new"
-  fill
-  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  style={{
-    objectFit: 'cover',
-    color: 'transparent'
-  }}
-/>
+                    src={finalMedia} 
+                    alt={cat.title} 
+                    className="card-image-new"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{
+                      objectFit: 'cover',
+                      color: 'transparent'
+                    }}
+                  />
                 )}
                 <div className={`card-overlay-new ${isActive ? 'active' : ''}`} />
               </div>
@@ -153,9 +187,9 @@ export default function CategoriesSection({ className = '' }) {
                 {/* pointerEvents: 'none' vererek linkin tıklanmasını engellemesini önledik */}
                 
                 {/* Kapalı Karttaki Dikey Yazı (görsel etiket; asıl başlık aşağıdaki h3) */}
-<span className="vertical-title-new" aria-hidden="true">
-  {cat.title}
-</span>
+                <span className="vertical-title-new" aria-hidden="true">
+                  {cat.title}
+                </span>
 
                 {/* Açık Karttaki Detay Alanı */}
                 <div className="active-content-inner">
