@@ -6,6 +6,8 @@ export default function ProductView({ product }) {
   const isAcpBond = product.slug === "acp-aluminiu-compozit-panel-bond";
   const isPvc = product.slug === "profile-pvc";
   const isGard = product.slug === "gard";
+  const isGlafuri = product.slug === "glafuri-din-aluminiu" || product.slug === "glafuri";
+  const isSticla = product.slug === "sticla"; // Veritabanındaki sticla slug'ınız neyse onu yazın
 
   // Ortak Buton Stili
   const buttonStyle = {
@@ -237,15 +239,10 @@ export default function ProductView({ product }) {
                           {item.description}
                         </p>
                       )}
-                  </div>
-                    {/* Hem slug hem id hem de pdf url içinde arama yaparak kesin gizleme */}
-                    {item.pdfUrl && 
-                     !item.pdfUrl?.includes("glafuri") && 
-                     !item.slug?.includes("glafuri") && 
-                     !item.slug?.includes("sticla") && 
-                     !item.id?.includes("sistem-tip-copertina-sticla") && (
+                    </div>
+                    {item.pdfUrl && (
                       <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-                        {item.pdfLabel || "Catalog PDF"}
+                        Catalog PDF
                       </a>
                     )}
                   </div>
@@ -287,12 +284,13 @@ export default function ProductView({ product }) {
           </div>
         )}
 
-        {product.pdfUrl && (
+        {/* SADECE GLAFURI VE STICLA DEĞİLSE BUTONU GÖSTER */}
+        {product.pdfUrl && !isGlafuri && !isSticla && (
           <a href={product.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
             Catalog PDF
           </a>
         )}
-
+        
         <div style={{ fontSize: "1rem", color: "#555", lineHeight: "1.8", whiteSpace: "pre-line", background: "#fafafa", padding: "30px", borderRadius: "16px", border: "1px solid #eaeaea" }} dangerouslySetInnerHTML={{ __html: product.description }} />
       </div>
 
