@@ -42,20 +42,21 @@ const HeroHeader = ({ heroSettings = [] }) => {
             <source media="(max-width: 768px)" srcSet={mobile} />
             <source media="(min-width: 769px)" srcSet={desktop} />
             <img
-              {...rest}
-              loading="eager" {/* DIŞARIDAN GELEN LAZY LOAD'U EZER VE HEMEN YÜKLER */}
-              className="hero-bg"
-              fetchPriority="high"
-              decoding="sync"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                zIndex: -2,
-              }}
+             <img
+  {...rest}
+  loading="eager"
+  className="hero-bg"
+  fetchPriority="high"
+  decoding="sync"
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    zIndex: -2,
+  }}
             />
           </picture>
 
