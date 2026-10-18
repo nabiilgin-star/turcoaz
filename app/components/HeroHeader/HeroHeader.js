@@ -43,6 +43,7 @@ const HeroHeader = ({ heroSettings = [] }) => {
             <source media="(min-width: 769px)" srcSet={desktop} />
             <img
               {...rest}
+              loading="eager" {/* DIŞARIDAN GELEN LAZY LOAD'U EZER VE HEMEN YÜKLER */}
               className="hero-bg"
               fetchPriority="high"
               decoding="sync"
