@@ -43,7 +43,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png", // 1200x630 boyutlarında kurumsal banner görselinizle değiştirebilirsiniz
+        url: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png", // 1200x630 boyutlarında kurumsal banner görselinizle değiştirebilirsiniz
         width: 1200,
         height: 630,
         alt: "Turcoaz Aluminiu - Sisteme Profesionale",
