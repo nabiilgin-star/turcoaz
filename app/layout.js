@@ -56,7 +56,7 @@ export const metadata = {
     title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
     description:
       "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
-    images: ["/logo.png"],
+    images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png"],
   },
 
   verification: {
@@ -89,7 +89,7 @@ const organizationJsonLd = {
   url: "https://turcoaz.com",
   logo: {
     "@type": "ImageObject",
-    url: "https://turcoaz.com/logo.png",
+    url: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png",
   },
   email: "info@turcoaz.com",
   telephone: "+40730630063",
@@ -139,7 +139,7 @@ const locationsJsonLd = [
     "@id": "https://turcoaz.com/#popesti-leordeni",
     name: "Turcoaz Aluminiu SRL - Depozit Central",
     parentOrganization: { "@id": "https://turcoaz.com/#organization" },
-    image: "https://turcoaz.com/logo.png",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png",
     url: "https://turcoaz.com",
     telephone: "+40730630063",
     email: "info@turcoaz.com",
