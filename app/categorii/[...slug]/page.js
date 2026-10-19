@@ -441,7 +441,7 @@ export default async function CatchAllCategoryPage({ params }) {
     .replace(/\s+/g, " ")
     .trim();
 
-  const productSchema = type === "product" ? {
+ const productSchema = type === "product" ? {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": cleanData.title || cleanData.name,
@@ -449,7 +449,15 @@ export default async function CatchAllCategoryPage({ params }) {
     "image": productImages.length > 0 ? productImages : ["https://res.cloudinary.com/oivvupgw/image/upload/v1784664028/pervazaluminiu_dtoqug.png"],
     "description": productDescription || "Sistem premium din aluminiu și sticlă de la Turcoaz Aluminiu",
     "sku": `TURCOAZ-${cleanData.slug ? cleanData.slug.toUpperCase() : "PROD"}`,
-    ...(productBrand ? { "brand": { "@type": "Brand", "name": productBrand } } : {})
+    ...(productBrand ? { "brand": { "@type": "Brand", "name": productBrand } } : {}),
+    "offers": {
+      "@type": "Offer",
+      "url": "https://turcoaz.com/contact", // Fiyat bilgisi için yönlendirilen sayfa
+      "priceCurrency": "RON",
+      "price": "0", // B2B sitelerde Google hatasını aşmak için 0 kullanılır
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   } : null;
   
   const faqSchema = (cleanData?.faqs && cleanData.faqs.length > 0) ? {
