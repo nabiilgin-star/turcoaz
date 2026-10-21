@@ -1,10 +1,8 @@
-
-import type { MetadataRoute } from "next";
 import { siteConfig } from "./seo.config";
 
 const blockedPaths = ["/api/", "/admin/"];
 
-export default function robots(): MetadataRoute.Robots {
+export default function robots() {
   return {
     rules: [
       {
