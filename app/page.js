@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import CategoriesSection from "./components/Categories/CategoriesSection";
 import TrustSection from "./components/TrustSection/TrustSection";
+import FAQSection from "./components/FAQSection/FAQSection"; // FAQ bileşeni eklendi
 import ContactForm from "./components/Contact/ContactForm";
 import Footer from "./components/Footer/Footer";
 import styles from "./page.css";
@@ -37,6 +38,9 @@ export default async function Home() {
       <div id="despre-noi">
         <TrustSection />
       </div>
+
+      {/* FAQ (SSS) Bileşeni buraya güvenle eklendi */}
+      <FAQSection />
 
       {/* id="contact" ContactForm.js içindeki <section>'da */}
       <ContactForm contactImage={contactImage} />
