@@ -642,22 +642,18 @@ pdfUrl: "/pdf/iscb-140.pdf",
     ],
     description: `
       <h2>Glafuri din Aluminiu Extrudat în București, Ilfov și în România</h2>
-
     <p>
       <strong>Glafurile exterioare din aluminiu extrudat</strong> ajută la evacuarea apei de ploaie departe de fereastră și protejează zona de sub tâmplărie. S.C. Turcoaz Aluminiu S.R.L. furnizează glafuri din aluminiu în diferite dimensiuni și finisaje, cu posibilitatea debitării la dimensiunea solicitată, în funcție de produsul disponibil.
     </p>
-
     <p>
       Pentru proiecte din București, Ilfov, Iași și din restul României, puteți solicita informații despre dimensiuni, culori, disponibilitatea produselor și condițiile de livrare. Compania operează din zona Popești-Leordeni, Ilfov, și colaborează cu filiala regională Alufab Iași.
     </p>
-
     <h2>Caracteristici tehnice ale glafurilor din aluminiu</h2>
 
     <h3>Material și protecția fațadei</h3>
     <p>
       Glafurile din aluminiu extrudat sunt utilizate la exterior, sub fereastră. Profilul și panta acestuia ajută la direcționarea apei de ploaie departe de fațadă. Pentru rezultate corecte, dimensiunile, etanșarea și montajul trebuie adaptate configurației ferestrei.
     </p>
-
     <h3>Dimensiuni și grosimi – modelul TP2</h3>
     <p>
       Modelul TP2 este disponibil în mai multe lățimi, în funcție de codul produsului. Tabelul tehnic prezintă dimensiunile și grosimile corespunzătoare fiecărui profil. De exemplu, în tabelul furnizat pentru TP2 apar lățimi de la 75 mm până la 360 mm, cu grosimi diferite în funcție de dimensiune.
@@ -665,49 +661,39 @@ pdfUrl: "/pdf/iscb-140.pdf",
     <p>
       Pentru confirmarea lățimii potrivite, a grosimii și a codului de produs, consultați catalogul actualizat sau solicitați o verificare din partea echipei Turcoaz Aluminiu.
     </p>
-
     <h3>Culori și finisaje disponibile</h3>
     <p>
       În funcție de produs și de stoc, finisajele pot include alb, maro, gri antracit RAL 7016 și decoruri cu aspect de lemn, precum Stejar Auriu, Nuc și Wenghe. Pentru alte culori RAL sau finisaje speciale, disponibilitatea și posibilitatea de vopsire se confirmă la cerere.
     </p>
-
     <h3>Lungimi și debitare la dimensiune</h3>
     <p>
       Lungimea disponibilă și posibilitatea debitării depind de profilul selectat și de cerințele comenzii. La solicitarea ofertei, comunicați lățimea, lungimea, culoarea și cantitatea necesară pentru a primi confirmarea configurației disponibile.
     </p>
-
     <h2>Întrebări frecvente despre glafurile din aluminiu</h2>
-
     <h3>Ce avantaje oferă un glaf exterior din aluminiu?</h3>
     <p>
       Un glaf exterior din aluminiu ajută la evacuarea apei de ploaie departe de fereastră și de fațadă. Profilul potrivit, panta și montajul corect contribuie la protejarea zonei de sub fereastră împotriva infiltrațiilor.
     </p>
-
     <h3>Ce lățimi sunt disponibile pentru modelul TP2?</h3>
     <p>
       Lățimea depinde de codul produsului. Tabelul tehnic furnizat pentru modelul TP2 prezintă lățimi între 75 mm și 360 mm. Contactați echipa pentru confirmarea dimensiunii și a disponibilității înainte de comandă.
     </p>
-
     <h3>Ce grosime are profilul TP2?</h3>
     <p>
       Grosimea variază în funcție de lățimea și codul profilului. Consultați tabelul tehnic pentru valoarea aferentă dimensiunii alese, în loc să presupuneți că toate variantele au aceeași grosime.
     </p>
-
     <h3>Pot comanda glafuri din aluminiu debitate la dimensiune?</h3>
     <p>
       Puteți solicita o ofertă pentru debitare la dimensiune, în funcție de model și de posibilitățile de livrare. Transmiteți lățimea, lungimea, culoarea și cantitatea dorită pentru confirmare.
     </p>
-
     <h3>Ce culori pot alege pentru glafurile din aluminiu?</h3>
     <p>
       Opțiunile pot include alb, maro, gri antracit RAL 7016 și finisaje decorative cu aspect de lemn. Culorile disponibile și eventualele finisaje speciale trebuie confirmate pentru produsul solicitat.
     </p>
-
     <h3>Livrați glafuri din aluminiu în toată România?</h3>
     <p>
       Puteți solicita livrarea în București, Ilfov, Iași și în alte județe din România. Costul și termenul de transport se confirmă în funcție de destinație, cantitate și disponibilitatea produselor.
     </p>
-
     <h3>Cum pot solicita o ofertă de preț?</h3>
     <p>
       Pentru o ofertă, transmiteți dimensiunile, culoarea, cantitatea și localitatea de livrare prin formularul de contact, pe WhatsApp sau la info@turcoaz.com. Echipa poate verifica disponibilitatea și condițiile comerciale pentru cerințele proiectului.
@@ -730,15 +716,62 @@ pdfUrl: "/pdf/iscb-140.pdf",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     ],
     description: `
-      <h2>Panouri Compozite Bond și Plăci Compozite pentru Fațade Ventilate</h2>
-      <p>Căutați <strong>panouri compozite bond</strong>, <strong>plăci compozite aluminiu</strong> sau <strong>fațade compozite</strong> de înaltă calitate în România? S.C. Turcoaz Aluminiu S.R.L. oferă soluții moderne pentru fațade arhitecturale ventilate, placări exterioare și interioare. Verificați gama noastră de produse la cel mai bun raport calitate-preț pentru <strong>alucobond preț</strong>, direct din depozitele noastre din Popești-Leordeni și Iași.</p>
+  <h2>Panouri Compozite Bond din Aluminiu pentru Fațade Ventilate</h2>
+  <p>
+    <strong>Panourile compozite din aluminiu Bond</strong> sunt utilizate pentru placarea fațadelor ventilate, finisaje arhitecturale și amenajări interioare sau exterioare. S.C. Turcoaz Aluminiu S.R.L. furnizează panouri compozite din aluminiu pentru proiecte rezidențiale, comerciale și industriale, cu posibilitatea verificării disponibilității, finisajelor și condițiilor de livrare.
+  </p>
+  <p>
+    Dacă sunteți în căutarea unor <strong>panouri compozite Bond</strong>, <strong>plăci compozite din aluminiu</strong> sau materiale pentru <strong>fațade ventilate</strong>, contactați echipa Turcoaz Aluminiu pentru informații despre gamele disponibile, specificațiile tehnice și o ofertă adaptată proiectului. Puteți solicita detalii despre livrarea din zona Popești-Leordeni, Ilfov, și Iași.
+  </p>
+  <h2>Ce avantaje oferă panourile compozite din aluminiu?</h2>
+  <ul>
+    <li>
+      <strong>Utilizare arhitecturală:</strong>
+      potrivite pentru placări de fațade, elemente decorative și diverse aplicații de amenajare, în funcție de specificațiile produsului.
+    </li>
+    <li>
+      <strong>Varietate de finisaje:</strong>
+      opțiunile de culoare și suprafață depind de gama, marca și disponibilitatea panourilor.
+    </li>
+    <li>
+      <strong>Specificații tehnice:</strong>
+      grosimea, structura panoului, tipul stratului de acoperire și utilizarea recomandată trebuie verificate în fișa tehnică a produsului ales.
+    </li>
+    <li>
+      <strong>Documentație pentru proiecte:</strong>
+      solicitați fișele tehnice și documentele de conformitate aplicabile mărcii și modelului selectat.
+    </li>
+    <li>
+      <strong>Ofertă și livrare:</strong>
+      prețul și termenul de livrare se confirmă în funcție de produs, cantitate, finisaj și destinație.
+    </li>
+  </ul>
+  <h2>Ce mărci de panouri compozite Bond sunt disponibile?</h2>
+  <p>
+    Pentru informații despre mărcile disponibile, inclusiv PrimeBond și alte game din portofoliu, contactați Turcoaz Aluminiu. Confirmarea mărcii, a compoziției, a finisajului și a documentației tehnice se face pentru produsul concret solicitat.
+  </p>
+  <h2>Întrebări frecvente despre panourile compozite din aluminiu</h2>
 
-      <h2>De ce să alegi panourile noastre compozit (Bond)?</h2>
-      <ul>
-        <li><strong>Agrement Tehnic în România:</strong> Produse certified oficial cu agrement tehnic complet pentru proiecte civile și industriale conforme cu standardele naționale.</li>
-        <li><strong>Primebond – Aluminiu Hydro Norvegia:</strong> Fabricate cu aluminiu premium importat din Norvegia (Hydro), oferind durabilitate maximă, stabilitate structurală și finisaje PVDF/HDP de top.</li>
-        <li><strong>Preț Avantajos & Stoc Permanent:</strong> Costuri competitive, livrare rapidă din stoc prin rețeaua noastră regională.</li>
-      </ul>
+  <h3>La ce se folosesc panourile compozite Bond?</h3>
+  <p>
+    Panourile compozite din aluminiu sunt folosite la placări de fațade, finisaje arhitecturale și amenajări interioare sau exterioare. Alegerea produsului trebuie făcută în funcție de aplicație și de cerințele tehnice ale proiectului.
+  </p>
+  <h3>Ce trebuie verificat înainte de alegerea panourilor ACP?</h3>
+  <p>
+    Verificați grosimea totală, structura panoului, tipul finisajului, utilizarea recomandată, cerințele de reacție la foc și documentele tehnice aplicabile. Specificațiile diferă între mărci și modele.
+  </p>
+  <h3>Panourile compozite sunt potrivite pentru fațade ventilate?</h3>
+  <p>
+    Unele panouri compozite sunt destinate placărilor de fațade ventilate. Potrivirea pentru proiectul dumneavoastră depinde de modelul ales, de sistemul de montaj și de cerințele tehnice și de siguranță aplicabile.
+  </p>
+  <h3>Unde pot solicita prețul panourilor Bond?</h3>
+  <p>
+    Pentru o ofertă, transmiteți marca sau gama dorită, dimensiunile, finisajul, cantitatea și localitatea de livrare prin formularul de contact, pe WhatsApp sau la info@turcoaz.com.
+  </p>
+  <h3>Pot solicita fișa tehnică și documentele de conformitate?</h3>
+  <p>
+    Da, puteți solicita documentația disponibilă pentru marca și modelul de interes. Documentele aplicabile trebuie confirmate pentru produsul concret înainte de specificarea acestuia într-un proiect.
+  </p>
     `,
     products: [
       {
