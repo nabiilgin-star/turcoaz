@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import CategoriesSection from "./components/Categories/CategoriesSection";
 import TrustSection from "./components/TrustSection/TrustSection";
-import FAQSection from "./components/FAQSection/FAQSection"; // FAQ bileşeni eklendi
+import FAQSection from "./components/FAQSection/FAQSection";
 import ContactForm from "./components/Contact/ContactForm";
 import Footer from "./components/Footer/Footer";
 import styles from "./page.css";
