@@ -239,7 +239,12 @@ home: {
 export function buildMetadata(page) {
   if (!page) return {};
 
-  const url = `${siteConfig.domain}${page.path}`;
+  const domain = siteConfig.domain.replace(/\/$/, "");
+  const path = page.path.startsWith("/")
+    ? page.path
+    : `/${page.path}`;
+
+  const url = `${domain}${path}`;
   const image = page.ogImage || siteConfig.ogImage;
 
   return {
@@ -266,7 +271,14 @@ export function buildMetadata(page) {
       description: page.description,
       url,
       siteName: siteConfig.companyName,
-      images: [{ url: image, width: 1200, height: 630, alt: page.title }],
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
       locale: siteConfig.locale,
       type: "website",
     },

@@ -4,11 +4,30 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 import "../components/LegalLayout.css";
 
 export const metadata = {
-  title: "Termeni și Condiții - Turcoaz",
+  title: "Termeni și Condiții | Turcoaz Aluminiu",
   description:
-    "Citește regulile și condițiile de utilizare ale site-ului Turcoaz Aluminiu.",
-    alternates: { canonical: "https://turcoaz.com/termeni-si-conditii" },
+    "Citește termenii și condițiile de utilizare ale site-ului Turcoaz Aluminiu.",
+
+  alternates: {
+    canonical: "https://turcoaz.com/termeni-si-conditii",
+  },
+
+  openGraph: {
+    title: "Termeni și Condiții | Turcoaz Aluminiu",
+    description:
+      "Citește termenii și condițiile de utilizare ale site-ului Turcoaz Aluminiu.",
+    url: "https://turcoaz.com/termeni-si-conditii",
+    siteName: "Turcoaz Aluminiu",
+    locale: "ro_RO",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
 
 export default async function TermsAndConditionsPage() {
   const { categories, products, announcement, topProducts } =

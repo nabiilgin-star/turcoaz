@@ -5,24 +5,36 @@ import "../components/LegalLayout.css";
 
 export const metadata = {
   title: "Politica de Confidențialitate | Turcoaz Aluminiu",
-  description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+  description:
+    "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+
   alternates: {
-    canonical: 'https://turcoaz.com/politica-confidentialitate',
+    canonical: "https://turcoaz.com/politica-confidentialitate",
   },
+
   openGraph: {
     title: "Politica de Confidențialitate | Turcoaz Aluminiu",
-    description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
-    url: 'https://turcoaz.com/politica-confidentialitate',
+    description:
+      "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+    url: "https://turcoaz.com/politica-confidentialitate",
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
   },
+
   twitter: {
-    card: 'summary_large_image',
+    card: "summary",
     title: "Politica de Confidențialitate | Turcoaz Aluminiu",
-    description: "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+    description:
+      "Află cum S.C. Turcoaz Aluminiu S.R.L. colectează, utilizează și protejează datele tale personale în conformitate cu GDPR.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
+
 
 export default async function PrivacyPolicyPage() {
   const { categories, products, announcement, topProducts } =

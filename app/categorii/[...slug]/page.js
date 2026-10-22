@@ -63,23 +63,41 @@ export async function generateMetadata({ params }) {
     pathSegments && pathSegments.length > 0
       ? `${baseUrl}/categorii/${pathSegments.join("/")}`
       : `${baseUrl}/categorii`;
+ 
+ // 1. Ana /categorii sayfası
+if (!pathSegments || pathSegments.length === 0) {
+  return {
+    title: "Categorii Produse | Turcoaz Aluminiu",
+    description:
+      "Profile aluminiu, glafuri exterioare, balustrade din sticlă, panouri compozite și profile PVC. Livrare rapidă în toată România.",
 
-  // 1. Ana /categorii sayfası
-  if (!pathSegments || pathSegments.length === 0) {
-    return {
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        "ro-RO": canonicalUrl,
+        "x-default": canonicalUrl,
+      },
+    },
+
+    openGraph: {
       title: "Categorii Produse | Turcoaz Aluminiu",
       description:
         "Profile aluminiu, glafuri exterioare, balustrade din sticlă, panouri compozite și profile PVC. Livrare rapidă în toată România.",
-      alternates: { canonical: canonicalUrl },
-      openGraph: {
-        url: canonicalUrl,
-        siteName: "Turcoaz Aluminiu",
-        locale: "ro_RO",
-        type: "website",
-      },
-      robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
-    };
-  }
+      url: canonicalUrl,
+      siteName: "Turcoaz Aluminiu",
+      locale: "ro_RO",
+      type: "website",
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  };
+}
+
 
   // 2. seo.config.js'te bu yol için yazılmış metin var mı (öncelikli kaynak)
   const seoPath = `/categorii/${pathSegments.join("/")}`;
@@ -109,15 +127,35 @@ export async function generateMetadata({ params }) {
     currentItem = findItemBySlug(localCategories, lastSlug);
   }
 
-  // 4. Ne seo.config.js'te ne veride bulunduysa yedek
-  if (!currentItem && !seoEntry) {
-    return {
+ // 4. Fallback: ne seo.config.js'te ne de katalogda veri varsa
+if (!currentItem && !seoEntry) {
+  return {
+    title: "Produs | Turcoaz Aluminiu",
+    description:
+      "Sisteme din aluminiu și PVC premium în România.",
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
       title: "Produs | Turcoaz Aluminiu",
-      description: "Sisteme din aluminiu și PVC premium în România.",
-      alternates: { canonical: canonicalUrl },
-      robots: { index: false, follow: true },
-    };
-  }
+      description:
+        "Sisteme din aluminiu și PVC premium în România.",
+      url: canonicalUrl,
+      siteName: "Turcoaz Aluminiu",
+      locale: "ro_RO",
+      type: "website",
+    },
+
+    robots: {
+      index: false,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  };
+}
+
 
   // 5. Metinleri birleştir: seo.config.js > ürünün seo bloğu > otomatik
   const item = currentItem || {};
@@ -150,33 +188,51 @@ export async function generateMetadata({ params }) {
   const indexable = seoEntry?.indexable ?? item.seo?.indexable !== false;
   const image = item.image || item.detailImage;
 
-  return {
+return {
+  title,
+  description,
+
+  alternates: {
+    canonical: canonicalUrl,
+  },
+
+  openGraph: {
     title,
     description,
-    alternates: { canonical: canonicalUrl },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "Turcoaz Aluminiu",
-      locale: "ro_RO",
-      type: "website",
-      images: image ? [{ url: image }] : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: image ? [image] : [],
-    },
-    robots: {
-      index: indexable,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  };
+    url: canonicalUrl,
+    siteName: "Turcoaz Aluminiu",
+    locale: "ro_RO",
+    type: "website",
+    ...(image
+      ? {
+          images: [
+            {
+              url: image,
+              width: 1200,
+              height: 630,
+              alt: title,
+            },
+          ],
+        }
+      : {}),
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    ...(image ? { images: [image] } : {}),
+  },
+
+  robots: {
+    index: indexable,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+};
 }
+
 // ----------------------------------------------------------------------
 // 2. STATİK SAYFA VE DİNAMİK PARAMETRE YAPILANDIRMASI
 // ----------------------------------------------------------------------

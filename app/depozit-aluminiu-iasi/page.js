@@ -6,13 +6,16 @@ import { getNavbarData } from "@/app/lib/get-nav-data";
 // ----------------------------------------------------------------------
 // 1. REGIONAL B2B SEO METADATA - IAȘI / ALUFAB
 // ----------------------------------------------------------------------
+
 export const metadata = {
   title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
   description:
     "Alufab Iași, companie afiliată Turcoaz Aluminiu: depozit de profile din aluminiu AKPA, glafuri exterioare, panouri compozite ACP Bond și accesorii tâmplărie în Iași și regiunea Moldova.",
+
   alternates: {
     canonical: "https://turcoaz.com/depozit-aluminiu-iasi",
   },
+
   openGraph: {
     title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
     description:
@@ -21,16 +24,31 @@ export const metadata = {
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
-    images: [{ url: "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg", alt: "Depozit Alufab Iași, partener Turcoaz Aluminiu" }],
+    images: [
+      {
+        url: "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
+        alt: "Depozit Alufab Iași, partener Turcoaz Aluminiu",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Depozit Profile Aluminiu Iași — Alufab | Turcoaz",
     description:
       "Distribuitor de profile din aluminiu, glafuri, accesorii ferestre și panouri compozite ACP în Iași. Stoc permanent și livrare rapidă în toată regiunea Moldova.",
-    images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg"],
+    images: [
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1784416492/Turcoaz_fatade_s7zdev.jpg",
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
   },
 };
+
 
 // ----------------------------------------------------------------------
 // 2. LOCAL BUSINESS & WAREHOUSE JSON-LD SCHEMA - IAȘI
