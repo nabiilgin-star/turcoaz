@@ -54,13 +54,13 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Profile din Aluminiu AKPA – Distribuitor Unic în România</h3>
 <p>
-  Suntem importator și distribuitor unic de profile din aluminiu marca AKPA, 
-  cu vânzări lunare de peste 150 de tone și un stoc permanent de peste 200 de tone 
-  în depozitele noastre. Oferim o gamă completă de glafuri și pervaze din aluminiu 
-  extrudat, sisteme pentru ferestre și ușile din aluminiu, panouri compozite (Bond) 
-  și accesorii pentru tâmplărie. Asigurăm calitate, precizie și livrare rapidă 
-  pentru proiecte rezidențiale, comerciale și industriale.
+  Suntem importator și distribuitor de profile din aluminiu marca AKPA.
+  Oferim o gamă completă de glafuri și pervaze din aluminiu extrudat,
+  sisteme pentru ferestre și uși din aluminiu, panouri compozite (Bond)
+  și accesorii pentru tâmplărie. Asigurăm calitate, precizie și livrare
+  rapidă pentru proiecte rezidențiale, comerciale și industriale.
 </p>
+
                 </div>
                 <div className="split-image">
                   <Image src={imgAkpa} alt="Profile din Aluminiu AKPA" fill className="premium-img" />
@@ -81,7 +81,7 @@ const TrustSection = () => {
                     <li><span>Lățimi: 75 mm - 380 mm</span></li>
                     <li><span>RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe </span></li>
                     <li><span>Debitare la Dimensiune</span></li>
-                    <li><span>Stoc permanent de peste 200 de tone pentru livrare imediată</span></li>
+                    <li><span>Disponibilitate pentru livrare rapidă</span></li>
                   </ul>
                 </div>
                 <div className="split-image">
@@ -242,7 +242,7 @@ const TrustSection = () => {
           <div className="features-box-dark">
             <h3 className="box-title">Ce Oferim</h3>
             <ul className="box-list">
-              <li><CheckCircle2 size={16} /> Stoc permanent de peste 200 de tone pentru livrare imediată</li>
+              <li><CheckCircle2 size={16} /> Gamă variată de produse disponibile pentru livrare</li>
               <li><CheckCircle2 size={16} /> Soluții personalizate pentru fiecare proiect</li>
               <li><CheckCircle2 size={16} /> Consultanță tehnică de specialitate</li>
               <li><CheckCircle2 size={16} /> Transport la cerere</li>

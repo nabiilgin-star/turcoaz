@@ -45,12 +45,12 @@ const faqItems = [
     answer:
       "Da, expediem comenzi din depozitele noastre din Ilfov (Popești-Leordeni) și Iași către destinații din toată România. Disponibilitatea, termenul exact de livrare și costul transportului se confirmă la momentul ofertei.",
   },
-  {
-    id: "stoc-produse",
-    question: "Cum pot verifica stocul pentru profile și accesorii?",
-    answer:
-      "Deși menținem un stoc permanent de peste 200 de tone pentru a asigura continuitatea, disponibilitatea variază. Pentru confirmare, transmiteți denumirea produsului și cantitatea necesară către echipa Turcoaz Aluminiu înainte de comandă.",
-  },
+ {
+  id: "stoc-produse",
+  question: "Cum pot verifica stocul pentru profile și accesorii?",
+  answer:
+    "Menținem un stoc permanent de peste 200 de tone de profile și accesorii pentru a susține continuitatea livrărilor. Disponibilitatea fiecărui produs variază în funcție de tip și cantitate. Pentru confirmare, transmiteți denumirea produsului și cantitatea necesară echipei Turcoaz Aluminiu înainte de comandă.",
+},
   {
     id: "documentatie-tehnica",
     question: "Unde pot solicita fișe tehnice și documente de conformitate?",

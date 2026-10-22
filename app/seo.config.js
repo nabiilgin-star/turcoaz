@@ -9,13 +9,15 @@ export const siteConfig = {
 
 export const pages = {
   // --- PAGINI CORPORATIVE ---
-  home: {
-    path: "/",
-    title: "Turcoaz Aluminiu – Profile Aluminiu, Tâmplărie și Garduri",
-    description:
-      "Importator și distribuitor unic AKPA în România: peste 150 t vândute lunar, stoc permanent de 200 t. Glafuri, balustrade, sticlă, profile PVC.",
-    indexable: true,
-  },
+  
+home: {
+  path: "/",
+  title: "Turcoaz Aluminiu – Profile Aluminiu, Tâmplărie și Garduri",
+  description:
+    "Importator și distribuitor de profile și sisteme din aluminiu AKPA. Glafuri din aluminiu, balustrade, panouri compozite din aluminiu tip Bond, sticlă și profile PVC. Cere o ofertă!",
+  indexable: true,
+},
+
 
   categorii: {
     path: "/categorii",
@@ -244,30 +246,27 @@ export function buildMetadata(page) {
     title: page.title,
     description: page.description,
 
-   
-alternates: {
-  canonical: url,
-},
+    alternates: {
+      canonical: url,
+      languages: {
+        "ro-RO": url,
+        "x-default": url,
+      },
+    },
 
-
-   robots: {
-  index: page.indexable !== false,
-  follow: true,
-},
+    robots: {
+      index: page.indexable !== false,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
 
     openGraph: {
       title: page.title,
       description: page.description,
       url,
       siteName: siteConfig.companyName,
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: page.title,
-        },
-      ],
+      images: [{ url: image, width: 1200, height: 630, alt: page.title }],
       locale: siteConfig.locale,
       type: "website",
     },

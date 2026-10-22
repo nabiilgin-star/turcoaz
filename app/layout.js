@@ -2,30 +2,37 @@ import { Poppins } from "next/font/google";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import "./globals.css";
 
+// Romence karakterler (ă, â, î, ș, ț) için latin-ext gerekli.
+// Sadece gerçekten kullanılan ağırlıkları bırakın (300/500/700 kullanımını sitede arayın).
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600"],
   variable: "--font-poppins",
-  display: "swap", // Font yüklenirken metnin görünmesini sağlar, gecikmeyi önler
+  display: "swap",
 });
 
+const SITE_URL = "https://turcoaz.com";
+
+// Logo, 1200x630 beyaz zeminli (kırpılmadan) paylaşım görseli.
+// Mümkünse ürün fotoğraflı gerçek bir banner ile değiştirin.
+const OG_IMAGE =
+  "https://res.cloudinary.com/oivvupgw/image/upload/c_pad,w_1200,h_630,b_white/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png";
+
+const LOGO_URL =
+  "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png";
+
 // ----------------------------------------------------------------------
-// SEO GÜNCELLEMELERİ YAPILMIŞ METADATA OBJESİ
+// METADATA
+// NOT: canonical, alternates ve openGraph.url BİLEREK burada yok.
+// Next.js metadata'yı sığ birleştirir; root'ta "canonical: /" olursa
+// kendi canonical'ını vermeyen tüm sayfalar ana sayfayı canonical gösterir.
+// Bunlar sayfa bazında buildMetadata() / generateMetadata() ile verilmeli.
 // ----------------------------------------------------------------------
 export const metadata = {
-  metadataBase: new URL("https://turcoaz.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
   description:
-    "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
-  
-  alternates: {
-    canonical: "/",
-    languages: {
-      "ro-RO": "/",
-      "ro": "/",
-    },
-  },
-  
+  "Importator și distribuitor de profile din aluminiu și sisteme din aluminiu AKPA în România. Glafuri din aluminiu, balustrade, panouri compozite din aluminiu tip Bond, sticlă și profile PVC. Cere o ofertă pentru proiectul tău.",
   robots: {
     index: true,
     follow: true,
@@ -35,18 +42,17 @@ export const metadata = {
 
   openGraph: {
     title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
-    description:
-      "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
-    url: "https://turcoaz.com",
+   description:
+  "Importator și distribuitor de profile și sisteme din aluminiu AKPA. Glafuri din aluminiu, balustrade, panouri compozite din aluminiu tip Bond, sticlă și profile PVC. Cere o ofertă!",
     siteName: "Turcoaz Aluminiu",
     locale: "ro_RO",
     type: "website",
     images: [
       {
-        url: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png", // 1200x630 boyutlarında kurumsal banner görselinizle değiştirebilirsiniz
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Turcoaz Aluminiu - Sisteme Profesionale",
+        alt: "Turcoaz Aluminiu – profile și sisteme din aluminiu",
       },
     ],
   },
@@ -54,9 +60,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sisteme Tâmplărie Aluminiu, Glafuri & Balustrade | Turcoaz",
-    description:
-      "Distribuitor de profile și sisteme din aluminiu, glafuri exterioare, balustrade din sticlă și panouri compozite. Livrare rapidă în toată România.",
-    images: ["https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png"],
+description:
+  "Importator și distribuitor de profile și sisteme din aluminiu AKPA. Glafuri din aluminiu, balustrade, panouri compozite din aluminiu tip Bond, sticlă și profile PVC. Cere o ofertă!",
+    images: [OG_IMAGE],
   },
 
   verification: {
@@ -64,32 +70,27 @@ export const metadata = {
   },
 };
 
-// ----------------------------------------------------------------------
-// STATİK VERİLER (Performans için fonksiyon dışında tanımlandı)
-// ----------------------------------------------------------------------
+// Tarayıcı çubuğu rengi (kontrol aracındaki theme-color maddesi). Rengi markanıza göre değiştirin.
+export const viewport = {
+  themeColor: "#0e7c86",
+};
 
-const allRomanianCounties = [
-  "București", "Ilfov", "Iași", "Alba", "Arad", "Argeș", "Bacău", "Bihor",
-  "Bistrița-Năsăud", "Botoșani", "Brașov", "Brăila", "Buzău", "Caraș-Severin",
-  "Călărași", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați",
-  "Giurgiu", "Gorj", "Harghita", "Hunedoara", "Ialomița", "Maramureș",
-  "Mehedinți", "Mureș", "Neamț", "Olt", "Prahova", "Satu Mare", "Sălaj",
-  "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vaslui", "Vâlcea",
-  "Vrancea", "România"
-];
-
+// ----------------------------------------------------------------------
+// STRUCTURED DATA
+// ----------------------------------------------------------------------
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://turcoaz.com/#organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "Turcoaz Aluminiu SRL",
   legalName: "Turcoaz Aluminiu S.R.L.",
-  alternateName: "Turcoaz Trading S.R.L.",
+description:
+  "Importator și distribuitor de profile și sisteme din aluminiu AKPA. Glafuri din aluminiu, balustrade, panouri compozite din aluminiu tip Bond, sticlă și profile PVC. Cere o ofertă!",
   foundingDate: "2011",
-  url: "https://turcoaz.com",
+  url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png",
+    url: LOGO_URL,
   },
   email: "info@turcoaz.com",
   telephone: "+40730630063",
@@ -102,7 +103,7 @@ const organizationJsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "Str. Taberei nr. 6",
-    addressLocality: "Pope\u0219ti-Leordeni",
+    addressLocality: "Popești-Leordeni",
     addressRegion: "Ilfov",
     addressCountry: "RO",
   },
@@ -118,32 +119,41 @@ const organizationJsonLd = {
   ],
   sameAs: [
     "https://www.google.com/maps/place/Turcoaz+Aluminiu+SRL/@44.3765673,26.1882932,17z/data=!4m6!3m5!1s0x40b1fdf5e63c6ee5:0x2c86dbb15c0eb27c!8m2!3d44.3765673!4d26.1882932",
+    // Adăugați când există: LinkedIn, Facebook, pagina de distribuitor de pe site-ul AKPA
   ],
-  areaServed: { "@type": "Country", name: "Rom\u00E2nia" },
+  areaServed: { "@type": "Country", name: "România" },
+  knowsAbout: [
+    "profile din aluminiu",
+    "glafuri din aluminiu",
+    "balustrade din sticlă și aluminiu",
+    "panouri compozite din aluminiu (ACP)",
+    "profile PVC",
+    "sisteme de tâmplărie din aluminiu",
+    "sisteme din sticlă",
+  ],
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://turcoaz.com/#website",
-  url: "https://turcoaz.com",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
   name: "Turcoaz Aluminiu",
   inLanguage: "ro-RO",
-  publisher: { "@id": "https://turcoaz.com/#organization" },
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const locationsJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "@id": "https://turcoaz.com/#popesti-leordeni",
+    "@id": `${SITE_URL}/#popesti-leordeni`,
     name: "Turcoaz Aluminiu SRL - Depozit Central",
-    parentOrganization: { "@id": "https://turcoaz.com/#organization" },
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1792179034/Turcoaz_Aluminum_Logo_hnffft.png",
-    url: "https://turcoaz.com",
+    parentOrganization: { "@id": `${SITE_URL}/#organization` },
+    image: LOGO_URL,
+    url: SITE_URL,
     telephone: "+40730630063",
     email: "info@turcoaz.com",
-    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Str. Taberei nr. 6",
@@ -162,22 +172,25 @@ const locationsJsonLd = [
       opens: "08:00",
       closes: "17:00",
     },
-    areaServed: allRomanianCounties,
+    areaServed: { "@type": "Country", name: "România" },
   },
   {
     "@context": "https://schema.org",
     "@type": "Store",
-    "@id": "https://turcoaz.com/#sector4",
-    name: "Turcoaz Aluminiu SRL - Magazin Șos. Giurgiului",
-    parentOrganization: { "@id": "https://turcoaz.com/#organization" },
-    url: "https://turcoaz.com",
+    "@id": `${SITE_URL}/#sector4`,
+    // Verificați numele: adresa este Str. Orăștie, nu Șos. Giurgiului
+    name: "Turcoaz Aluminiu SRL - Magazin București Sector 4",
+    parentOrganization: { "@id": `${SITE_URL}/#organization` },
+    image: LOGO_URL,
+    url: SITE_URL,
     telephone: "+40720097224",
     email: "info@turcoaz.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Str. Orăștie",
-      addressLocality: "Sector 4, București",
+      addressLocality: "București",
       addressRegion: "București",
+      // postalCode: "0xxxxx", // adăugați codul poștal real
       addressCountry: "RO",
     },
     openingHoursSpecification: {
@@ -186,15 +199,17 @@ const locationsJsonLd = [
       opens: "08:00",
       closes: "17:00",
     },
-    areaServed: ["București", "Ilfov", "România"],
+    areaServed: ["București", "Ilfov"],
   },
   {
     "@context": "https://schema.org",
     "@type": "Store",
-    "@id": "https://turcoaz.com/#iasi",
+    "@id": `${SITE_URL}/#iasi`,
+    // Depozitul din Iași aparține Alufab SRL; păstrat separat, legat prin affiliation
     name: "Alufab SRL - Depozit Iași",
-    affiliation: { "@id": "https://turcoaz.com/#organization" },
-    url: "https://turcoaz.com",
+    affiliation: { "@id": `${SITE_URL}/#organization` },
+    image: LOGO_URL,
+    url: SITE_URL,
     telephone: "+40746921162",
     email: "alufab.iasi@gmail.com",
     address: {
@@ -204,29 +219,32 @@ const locationsJsonLd = [
       addressRegion: "Iași",
       addressCountry: "RO",
     },
-    areaServed: ["Iași", "Moldova", "România"],
+    areaServed: ["Iași", "Moldova"],
   },
 ];
 
+// "<" karakterini kaçırır (script enjeksiyonuna karşı güvenli JSON-LD)
+function JsonLd({ data }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
 // ----------------------------------------------------------------------
-// ANA LAYOUT BİLEŞENİ
+// ROOT LAYOUT
 // ----------------------------------------------------------------------
 export default function RootLayout({ children }) {
   return (
     <html lang="ro" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={locationsJsonLd} />
+        <JsonLd data={websiteJsonLd} />
       </head>
       <body className={poppins.className}>
         {children}
