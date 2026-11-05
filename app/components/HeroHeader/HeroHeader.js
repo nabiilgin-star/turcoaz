@@ -55,7 +55,7 @@ const HeroHeader = ({ heroSettings = [] }) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                zIndex: -2,
+                zIndex: 0,
               }}
             />
           </picture>

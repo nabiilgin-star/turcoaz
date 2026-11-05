@@ -1,4 +1,5 @@
 import React from "react";
+import "./FAQ.css";
 
 // Tek kaynak: Görünen FAQ ve JSON-LD aynı veriyi kullanır.
 // GEO Optimizasyonu: Yapay zekanın alıntılayabilmesi pentru adres, marka, RAL kodları ve sertifikalar metne dahil edildi.
@@ -96,16 +97,32 @@ export default function FAQSection() {
               <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-4 text-gray-900 font-medium">
                 <span>{item.question}</span>
 
-                <span
-                  aria-hidden="true"
-                  className="shrink-0 transition duration-300 group-open:-rotate-180"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
+              <span
+  aria-hidden="true"
+  className="shrink-0 transition duration-300 group-open:-rotate-180"
+  style={{
+    display: "flex",
+    width: "20px",
+    height: "20px",
+    minWidth: "20px",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+                 <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  style={{
+    display: "block",
+    width: "20px",
+    height: "20px",
+    minWidth: "20px",
+    maxWidth: "20px",
+  }}
+>
                     <path
                       fillRule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
