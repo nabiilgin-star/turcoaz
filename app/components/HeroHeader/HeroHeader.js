@@ -1,3 +1,4 @@
+
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import Button from "../Button/Button";
@@ -7,16 +8,17 @@ const HeroHeader = ({ heroSettings = [] }) => {
   const desktopImg =
     heroSettings.find((s) => s.device_type === "desktop")?.image_url ||
     "https://res.cloudinary.com/dfyvfexhc/image/upload/v1770277619/njm3k2qxmvo7fhnatut7.png";
+
   const mobileImg =
     heroSettings.find((s) => s.device_type === "mobile")?.image_url ||
     desktopImg ||
     "https://res.cloudinary.com/dfyvfexhc/image/upload/v1770277620/a3hkjryojkwt0bqvrgta.png";
 
   const common = {
-    alt: "Sisteme de feronerie și sticlă",
+    alt: "Turcoaz Aluminiu – profile din aluminiu, sisteme AKPA și soluții pentru construcții",
     fill: true,
     priority: true,
-    quality: 90,
+    quality: 85,
     sizes: "100vw",
   };
 
@@ -58,23 +60,22 @@ const HeroHeader = ({ heroSettings = [] }) => {
             />
           </picture>
 
-          {}
           <div className="hero-overlay"></div>
 
-          {}
           <div className="hero-content">
             <span className="hero-badge">
-              Soluții profesionale pentru construcții
+              Importator și distribuitor AKPA în România
             </span>
 
             <h1 className="hero-title">
-              Distribuitor Premium de Profile Aluminiu, PVC, Glafuri și Sisteme de Sticlă
+              Profile din Aluminiu, PVC, Glafuri și Sisteme din Sticlă
             </h1>
 
             <p className="hero-description">
-              Oferim o gamă completă de produse de înaltă calitate pentru
-              proiecte rezidențiale și comerciale. Experiență de peste 24 de ani în
-              domeniu.
+              Distribuitor unic al profilelor din aluminiu AKPA, cu un stoc
+              permanent de peste 200 de tone și livrări în toată România.
+              Activăm din 2011, iar acționariatul nostru are peste 24 de ani
+              de experiență în industria aluminiului.
             </p>
 
             <div className="hero-actions">

@@ -12,12 +12,14 @@ import { getNavbarData, getHeroSettings } from "@/app/lib/get-nav-data";
 import { buildMetadata } from "@/app/lib/utils"; // Yolun projenizdeki yerine gÃ¶re gÃ¼ncelleyin
 
 // 1. GEO/SEO MÃ¼kemmelliÄŸi: TÃ¼m hreflang, canonical ve OG etiketleri buradan basÄ±lÄ±r
+
 export const metadata = buildMetadata({
-  title: "Profile Aluminiu, Glafuri È™i Sisteme din SticlÄƒ | Turcoaz",
+  title: "Profile Aluminiu, PVC și Glafuri | Turcoaz Aluminiu",
   description:
-    "DescoperÄƒ profile din aluminiu, glafuri exterioare, balustrade din sticlÄƒ È™i sisteme pentru construcÈ›ii. Turcoaz Aluminiu â€” BucureÈ™ti, PopeÈ™ti-Leordeni È™i IaÈ™i.",
+    "Distribuitor unic AKPA în România: profile din aluminiu, PVC, glafuri, panouri Bond și sticlă. Peste 150 t vândute lunar, stoc de peste 200 t, livrare națională.",
   path: "/",
 });
+
 
 export default async function Home() {
   const [navData, heroSettings] = await Promise.all([
