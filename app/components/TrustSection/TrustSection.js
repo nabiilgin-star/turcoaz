@@ -25,8 +25,8 @@ const TrustSection = () => {
             <span className="section-badge">Prezentare Companie</span>
             <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
             <p className="paragraph-lead">
-  Turcoaz Aluminiu SRL activează din 2011 în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționariatul companiei are peste 24 de ani de experiență în domeniul sistemelor de tâmplărie din aluminiu și PVC.
-</p>
+  Turcoaz Aluminiu SRL activează din 2011 în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționarii companiei au peste 24 de ani de experiență în domeniul sistemelor de tâmplărie din aluminiu și PVC.
+  </p>
 
 <p className="paragraph-normal">
   Suntem importator și distribuitor unic al profilelor din aluminiu AKPA în România, precum și distribuitor unic al profilelor PVC EXENplast și BlancoPlast. Comercializăm profile din aluminiu, glafuri exterioare, panouri compozite Bond, sisteme de balustrade, profile PVC, feronerie și sisteme din sticlă KAHE. Comercializăm peste 150 de tone lunar și menținem un stoc permanent de peste 200 de tone.
@@ -55,7 +55,7 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Profile din Aluminiu AKPA – Distribuitor Unic în România</h3>
 <p>
-  Turcoaz Aluminiu este importator și distribuitor unic al profilelor din aluminiu AKPA în România, cu vânzări de peste 150 de tone lunar și un stoc permanent de peste 200 de tone. Din portofoliul AKPA oferim sisteme de tâmplărie pentru uși și ferestre, sisteme glisante, pereți cortină, garduri, sisteme de închidere a teraselor, profile standard din aluminiu extrudat, glafuri exterioare și panouri compozite Bond, destinate proiectelor rezidențiale, comerciale și industriale.
+  Turcoaz Aluminiu este importator și distribuitor unic al profilelor din aluminiu AKPA în România. La nivelul companiei, vindem peste 150 de tone lunar și menținem un stoc permanent de peste 200 de tone. Din portofoliul AKPA oferim sisteme de tâmplărie pentru uși și ferestre, sisteme glisante, pereți cortină, garduri, sisteme de închidere a teraselor, profile standard din aluminiu extrudat, glafuri exterioare și panouri compozite Bond, destinate proiectelor rezidențiale, comerciale și industriale.
 </p>
 
                 </div>
@@ -71,7 +71,7 @@ const TrustSection = () => {
                 <div className="split-text">
                  <h3>Glafuri exterior premium din aluminiu pentru ferestre</h3>
                   <p>
-                    Glafurile exterioare AKPA din aluminiu extrudat protejează fațada de infiltrații și evacuează apa departe de fereastră. Sunt disponibile în lățimi de 75–380 mm, în culorile RAL 9016, RAL 8014 și RAL 7016, precum și în finisajele Stejar Auriu, Nuc și Wenghe. Se debitează la dimensiunea cerută și se livrează din stoc în toată România.
+                    Glafurile exterioare AKPA din aluminiu extrudat protejează fațada împotriva infiltrațiilor și evacuează apa departe de fereastră. Sunt disponibile în lățimi de 75–380 mm, în culorile RAL 9016, RAL 8014 și RAL 7016, precum și în finisajele Stejar Auriu, Nuc și Wenghe. Se debitează la dimensiunea solicitată și se livrează din stoc în toată România.
                   </p>
                   <ul className="premium-bullet-list row-layout margin-top-sm">
                     <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
@@ -93,7 +93,7 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Panouri Compozite din Aluminiu (Bond)</h3>
 <p>
- Comercializăm panourile compozite din aluminiu AKPA Bond, PrimeBond, DuraBond și RallBond, însoțite de Agrement Tehnic. Panourile PrimeBond sunt fabricate cu tablă de aluminiu Hydro din Norvegia. Menținem produsele în stoc permanent, în mai multe culori și finisaje, pentru fațade ventilate, placări exterioare, reclame și amenajări comerciale.
+ Comercializăm panouri compozite din aluminiu AKPA Bond, PrimeBond, PrimeBond Plus, DuraBond și RallBond, disponibile într-o gamă variată de culori și finisaje. Panourile PrimeBond sunt fabricate cu tablă de aluminiu Hydro din Norvegia. Produsele sunt potrivite pentru fațade ventilate, placări exterioare, reclame și amenajări comerciale.
 </p>
                   <ul className="premium-bullet-list row-layout">
                     <li><span>AKPA Bond</span></li>
@@ -137,10 +137,9 @@ const TrustSection = () => {
     <div className="split-text">
       <h3>Profile PVC – Distribuitor Unic EXENplast & BlancoPlast în România</h3>
       <p>
-        Suntem distribuitor autorizat și unic în România pentru brandurile de top 
+        Suntem distribuitor autorizat și unic în România pentru brandurile 
         <strong> EXENplast</strong> și <strong>BlancoPlast</strong>. Oferim profile PVC 
-        pentru ferestre și uși termopan, fabricate la standarde europene, 
-        cu izolație termică și fonică excelentă.
+        pentru ferestre și uși PVC, fabricate la standarde europene.
       </p>
     </div>
     <div className="split-image">
@@ -175,11 +174,7 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Sisteme și Balustrade din Aluminiu & Sticlă</h3>
 <p>
-  Comercializăm sisteme complete de balustrade din aluminiu, însoțite de Agrement 
-  Tehnic și toate accesoriile necesare pentru un montaj sigur. Deținem în stoc 
-  permanent finisajele premium cele mai solicitate: Eloxat Argintiu, Eloxat Maro 
-  și Gri Antracit (RAL 7016), oferind și posibilitatea executării de culori speciale 
-  la comandă. Asigurăm livrare rapidă în toată România direct din depozitele noastre.
+ Comercializăm sisteme de balustrade din aluminiu și sticlă, însoțite de Agrement Tehnic și de toate accesoriile necesare montajului. Din stoc permanent livrăm finisajele Eloxat Argintiu, Eloxat Maro și Gri Antracit (RAL 7016), iar culorile speciale se execută la comandă. Oferim modele cu profile pătrate și rotunde, balustrade modulare și balustrade din sticlă, cu livrare în toată România.
 </p>
                 </div>
                 <div className="split-image">
