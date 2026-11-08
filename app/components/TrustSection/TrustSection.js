@@ -64,28 +64,38 @@ const TrustSection = () => {
                 </div>
               </div>
             </div>
-
-{/* 2. YENİ: Glafuri din Aluminiu (AKPA Altı - PrimeBond Üstü) */}
-            <div className="portfolio-card span-2">
-              <div className="card-split">
-                <div className="split-text">
-                 <h3>Glafuri exterior premium din aluminiu pentru ferestre</h3>
-                  <p>
-                    Glafurile exterioare AKPA din aluminiu extrudat protejează fațada împotriva infiltrațiilor și evacuează apa departe de fereastră. Sunt disponibile în lățimi de 75–380 mm, în culorile RAL 9016, RAL 8014 și RAL 7016, precum și în finisajele Stejar Auriu, Nuc și Wenghe. Se debitează la dimensiunea solicitată și se livrează din stoc în toată România.
-                  </p>
-                  <ul className="premium-bullet-list row-layout margin-top-sm">
-                    <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
-                    <li><span>Lățimi: 75 mm - 380 mm</span></li>
-                    <li><span>RAL 9016 / 8014 / 7016 / Stejar Auriu/ Nuc / Wenghe </span></li>
-                    <li><span>Debitare la Dimensiune</span></li>
-                    <li><span>Disponibilitate pentru livrare rapidă</span></li>
-                  </ul>
-                </div>
-                <div className="split-image">
-                  <Image src={imgGlaf} alt="Glafuri din Aluminiu" fill className="premium-img" />
-                </div>
-              </div>
-            </div>
+{/* Glafuri din aluminiu AKPA */}
+<div className="portfolio-card span-2">
+  <div className="card-split">
+    <div className="split-text">
+      <h3>Glafuri exterioare AKPA din aluminiu pentru ferestre</h3>
+      <p>
+        Glafurile exterioare AKPA din aluminiu extrudat protejează fațada
+        împotriva infiltrațiilor și evacuează apa departe de fereastră. Sunt
+        disponibile în lățimi de 75–380 mm, în culorile RAL 9016, RAL 8014 și
+        RAL 7016, precum și în finisajele Stejar Auriu, Nuc și Wenghe. Se
+        debitează la dimensiunea solicitată și se livrează din stoc în toată
+        România.
+      </p>
+      <ul className="premium-bullet-list row-layout margin-top-sm">
+        <li><span>Lățimi: 75–380 mm</span></li>
+        <li><span>RAL 9016, 8014, 7016</span></li>
+        <li><span>Stejar Auriu, Nuc, Wenghe</span></li>
+        <li><span>Debitare la dimensiune</span></li>
+        <li><span>Livrare din stoc în toată România</span></li>
+      </ul>
+    </div>
+    <div className="split-image">
+      <Image
+        src={imgGlaf}
+        alt="Glaf exterior din aluminiu AKPA montat sub fereastră"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="premium-img"
+      />
+    </div>
+  </div>
+</div>
 
             {/* 3. Panouri Compozite */}
             <div className="portfolio-card span-2">
