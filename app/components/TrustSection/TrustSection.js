@@ -19,28 +19,43 @@ const TrustSection = () => {
     <section className="about-premium-section">
       <div className="container-max">
         
-        {/* SECȚIUNEA 1: Despre Turcoaz Aluminiu SRL */}
-        <div className="section-block grid-2col">
-          <div className="block-content">
-            <span className="section-badge">Prezentare Companie</span>
-            <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
-            <p className="paragraph-lead">
-  Turcoaz Aluminiu SRL activează din 2011 în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționarii companiei au peste 24 de ani de experiență în domeniul sistemelor de tâmplărie din aluminiu și PVC.
-  </p>
+      {/* SECȚIUNEA 1: Despre Turcoaz Aluminiu SRL */}
+<div className="section-block grid-2col">
+  <div className="block-content">
+    <span className="section-badge">Prezentare Companie</span>
+    <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
 
-<p className="paragraph-normal">
-  Suntem importator și distribuitor unic al profilelor din aluminiu AKPA în România, precum și distribuitor unic al profilelor PVC EXENplast și BlancoPlast. Comercializăm profile din aluminiu, glafuri exterioare, panouri compozite Bond, sisteme de balustrade, profile PVC, feronerie și sisteme din sticlă KAHE. Comercializăm peste 150 de tone lunar și menținem un stoc permanent de peste 200 de tone.
-</p>
-          </div>
-          <div className="block-image-wrapper">
-            <div className="premium-image-container">
-              <Image src={imgAbout} alt="Turcoaz Aluminiu" fill className="premium-img" />
-            </div>
-          </div>
-        </div>
+    <p className="paragraph-lead">
+      Turcoaz Aluminiu SRL activează din 2011 în distribuția de profile și
+      sisteme din aluminiu și PVC pentru construcții. Acționarii companiei
+      au peste 24 de ani de experiență în domeniul sistemelor de tâmplărie
+      din aluminiu și PVC.
+    </p>
 
-        <hr className="premium-divider" />
+    <p className="paragraph-normal">
+      Suntem importator și distribuitor unic al profilelor din aluminiu AKPA
+      în România, precum și distribuitor unic al profilelor PVC EXENplast și
+      BlancoPlast. Comercializăm profile din aluminiu, glafuri exterioare,
+      panouri compozite Bond, sisteme de balustrade, profile PVC, feronerie
+      și sisteme din sticlă KAHE. Vindem peste 150 de tone lunar și
+      menținem un stoc permanent de peste 200 de tone.
+    </p>
+  </div>
 
+  <div className="block-image-wrapper">
+    <div className="premium-image-container">
+      <Image
+        src={imgAbout}
+        alt="Fațadă și depozit Turcoaz Aluminiu"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="premium-img"
+      />
+    </div>
+  </div>
+</div>
+
+<hr className="premium-divider" />
 
         {/* SECȚIUNEA 3: Portofoliul Nostru de Produse */}
         <div className="section-block">
@@ -198,22 +213,35 @@ const TrustSection = () => {
 
         <hr className="premium-divider" />
 
-        {/* SECȚIUNEA 3: Certificări & Misiune */}
-        <div className="section-block grid-2col alignment-top">
-          
-          {/* Stânga: Certificări */}
-          <div className="info-block-wrapper">
-            <span className="section-badge">Standarde</span>
-            <h2 className="section-title">Certificări și Atestări</h2>
-<p>Activitatea noastră respectă cerințele și standardele aplicabile:</p>
-            <ul className="premium-bullet-list margin-y-sm">
-              <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>Agrement Tehnic</strong>– Conformitate și siguranță în construcții</span></li>
-              <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>ISO 9001:2015</strong> – Managementul calității</span></li>
-              <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>ISO 14001:2015</strong> – Managementul mediului</span></li>
-            </ul>
-            <p className="text-muted">Aceste standarde confirmă angajamentul nostru pentru calitate, siguranță și responsabilitate față de mediu.</p>
-          </div>
+ {/* SECȚIUNEA 3: Certificări & Misiune */}
+<div className="section-block grid-2col alignment-top">
 
+  {/* Stânga: Certificări */}
+  <div className="info-block-wrapper">
+    <span className="section-badge">Standarde</span>
+    <h2 className="section-title">Certificări și Atestări</h2>
+
+    <h3>Certificări ale companiei</h3>
+    <ul className="premium-bullet-list margin-y-sm">
+      <li className="with-icon">
+        <ShieldCheck size={18} className="icon-teal" />
+        <span><strong>ISO 9001:2015</strong> – Managementul calității</span>
+      </li>
+      <li className="with-icon">
+        <ShieldCheck size={18} className="icon-teal" />
+        <span><strong>ISO 14001:2015</strong> – Managementul mediului</span>
+      </li>
+    </ul>
+
+    <h3>Agrement Tehnic pentru produse</h3>
+    <p className="text-muted">
+      Sistemele de balustrade din aluminiu și panourile compozite Bond sunt
+      livrate cu Agrement Tehnic, document care atestă conformitatea lor
+      pentru utilizarea în construcții în România. La cerere, transmitem
+      fișele tehnice și documentele de conformitate pentru produsul
+      achiziționat.
+    </p>
+  </div>
           {/* Dreapta: Misiune */}
           <div className="info-block-wrapper">
             <span className="section-badge">Strategie</span>
