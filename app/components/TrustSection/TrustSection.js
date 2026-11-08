@@ -25,11 +25,12 @@ const TrustSection = () => {
             <span className="section-badge">Prezentare Companie</span>
             <h2 className="section-title">Despre Turcoaz Aluminiu SRL</h2>
             <p className="paragraph-lead">
-              Turcoaz Aluminiu SRL activează din 2011 și face parte dintr-un grup de companii afiliate, cu activitate în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționariatul are peste 24 de ani de experiență în industria aluminiului, pe care a construit o reputație solidă bazată pe profesionalism, inovație și parteneriate durabile.
-            </p>
-            <p className="paragraph-normal">
-              Astăzi, compania este un furnizor de referință pe piața materialelor pentru fațade, tâmplărie, sisteme din sticlă și soluții arhitecturale premium, oferind clienților o gamă completă de produse certificate și servicii specializate.
-            </p>
+  Turcoaz Aluminiu SRL activează din 2011 în distribuția de profile și sisteme din aluminiu și PVC pentru construcții. Acționariatul companiei are peste 24 de ani de experiență în domeniul sistemelor de tâmplărie din aluminiu și PVC.
+</p>
+
+<p className="paragraph-normal">
+  Suntem importator și distribuitor unic al profilelor din aluminiu AKPA în România, precum și distribuitor unic al profilelor PVC EXENplast și BlancoPlast. Comercializăm profile din aluminiu, glafuri exterioare, panouri compozite Bond, sisteme de balustrade, profile PVC, feronerie și sisteme din sticlă KAHE. Comercializăm peste 150 de tone lunar și menținem un stoc permanent de peste 200 de tone.
+</p>
           </div>
           <div className="block-image-wrapper">
             <div className="premium-image-container">
@@ -54,11 +55,7 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Profile din Aluminiu AKPA – Distribuitor Unic în România</h3>
 <p>
-  Suntem importator și distribuitor de profile din aluminiu marca AKPA.
-  Oferim o gamă completă de glafuri și pervaze din aluminiu extrudat,
-  sisteme pentru ferestre și uși din aluminiu, panouri compozite (Bond)
-  și accesorii pentru tâmplărie. Asigurăm calitate, precizie și livrare
-  rapidă pentru proiecte rezidențiale, comerciale și industriale.
+  Turcoaz Aluminiu este importator și distribuitor unic al profilelor din aluminiu AKPA în România, cu vânzări de peste 150 de tone lunar și un stoc permanent de peste 200 de tone. Din portofoliul AKPA oferim sisteme de tâmplărie pentru uși și ferestre, sisteme glisante, pereți cortină, garduri, sisteme de închidere a teraselor, profile standard din aluminiu extrudat, glafuri exterioare și panouri compozite Bond, destinate proiectelor rezidențiale, comerciale și industriale.
 </p>
 
                 </div>
@@ -74,7 +71,7 @@ const TrustSection = () => {
                 <div className="split-text">
                  <h3>Glafuri exterior premium din aluminiu pentru ferestre</h3>
                   <p>
-                    Oferim sisteme profesionale de glafuri exterioare din aluminiu extrudat, concepute pentru a asigura o protecție optimă a fațadei împotriva infiltrațiilor, intemperiilor și razelor UV. Produsele noastre asigură o estetică premium și sunt compatibile cu orice tip de tâmplărie termoizolantă.
+                    Glafurile exterioare AKPA din aluminiu extrudat protejează fațada de infiltrații și evacuează apa departe de fereastră. Sunt disponibile în lățimi de 75–380 mm, în culorile RAL 9016, RAL 8014 și RAL 7016, precum și în finisajele Stejar Auriu, Nuc și Wenghe. Se debitează la dimensiunea cerută și se livrează din stoc în toată România.
                   </p>
                   <ul className="premium-bullet-list row-layout margin-top-sm">
                     <li><span>Glafuri din Aluminiu Extrudate Premium</span></li>
@@ -96,11 +93,7 @@ const TrustSection = () => {
                 <div className="split-text">
                   <h3>Panouri Compozite din Aluminiu (Bond)</h3>
 <p>
-  Pentru proiecte arhitecturale moderne, punem la dispoziție panouri compozite 
-  premium (AKPA Bond, Primebond, Durabond) fabricate cu tablă din aluminiu de înaltă 
-  calitate Hydro Norvegia. Deținem stocuri permanente într-o gamă variată de 
-  culori și finisaje, toate produsele fiind însoțite de Agrement Tehnic pentru 
-  conformitate și siguranță în construcții.
+ Comercializăm panourile compozite din aluminiu AKPA Bond, PrimeBond, DuraBond și RallBond, însoțite de Agrement Tehnic. Panourile PrimeBond sunt fabricate cu tablă de aluminiu Hydro din Norvegia. Menținem produsele în stoc permanent, în mai multe culori și finisaje, pentru fațade ventilate, placări exterioare, reclame și amenajări comerciale.
 </p>
                   <ul className="premium-bullet-list row-layout">
                     <li><span>AKPA Bond</span></li>
@@ -146,7 +139,7 @@ const TrustSection = () => {
       <p>
         Suntem distribuitor autorizat și unic în România pentru brandurile de top 
         <strong> EXENplast</strong> și <strong>BlancoPlast</strong>. Oferim profile PVC 
-        premium pentru ferestre și uși termopan, fabricate la standarde europene, 
+        pentru ferestre și uși termopan, fabricate la standarde europene, 
         cu izolație termică și fonică excelentă.
       </p>
     </div>
@@ -166,7 +159,9 @@ const TrustSection = () => {
               <div className="card-split">
                 <div className="split-text">
                   <h3>Feronerie și Accesorii pentru Tâmplărie</h3>
-                  <p>Oferim feronerie, accesorii și soluții de etanșare pentru realizarea geamului termopan, asigurând compatibilitate completă cu sistemele din aluminiu și PVC.</p>
+                  <p>
+  Comercializăm feronerie, accesorii și soluții de etanșare pentru tâmplăria din aluminiu și PVC, destinate producției și montajului de ferestre și uși.
+</p>
                 </div>
                 <div className="split-image">
                   <Image src={imgFeronerie} alt="Feronerie și Accesorii" fill className="premium-img" />
@@ -204,8 +199,8 @@ const TrustSection = () => {
           {/* Stânga: Certificări */}
           <div className="info-block-wrapper">
             <span className="section-badge">Standarde</span>
-            <h2 className="section-title">Certificări Internaționale</h2>
-            <p>Deținem certificările:</p>
+            <h2 className="section-title">Certificări și Atestări</h2>
+<p>Activitatea noastră respectă cerințele și standardele aplicabile:</p>
             <ul className="premium-bullet-list margin-y-sm">
               <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>Agrement Tehnic</strong>– Conformitate și siguranță în construcții</span></li>
               <li className="with-icon"><ShieldCheck size={18} className="icon-teal" /> <span><strong>ISO 9001:2015</strong> – Managementul calității</span></li>
@@ -218,14 +213,16 @@ const TrustSection = () => {
           <div className="info-block-wrapper">
             <span className="section-badge">Strategie</span>
             <h2 className="section-title">Misiunea Noastră</h2>
-            <p>Ne propunem ca în următorii ani să:</p>
-            <ul className="premium-bullet-list variant-clean">
-              <li><span>• Dezvoltăm colaborări cu parteneri din România și din străinătate.</span></li>
-              <li><span>• Extindem rețeaua de puncte de lucru pentru a fi mai aproape de clienți.</span></li>
-              <li><span>• Investim în instruirea echipei pentru a crește calitatea serviciilor.</span></li>
-              <li><span>• Oferim servicii excelente, adaptate fiecărui proiect.</span></li>
-              <li><span>• Construim o afacere durabilă, profitabilă și orientată spre viitor.</span></li>
-            </ul>
+<p>
+  Misiunea noastră este să oferim partenerilor soluții complete și produse de calitate pentru proiecte din domeniul construcțiilor, printr-un portofoliu diversificat, stocuri permanente și suport tehnic de specialitate.
+</p>
+<ul className="premium-bullet-list variant-clean">
+  <li><span>• Dezvoltăm parteneriate durabile în România și pe piețele internaționale.</span></li>
+  <li><span>• Extindem rețeaua de distribuție pentru a fi mai aproape de clienții noștri.</span></li>
+  <li><span>• Investim în pregătirea echipei și în îmbunătățirea serviciilor.</span></li>
+  <li><span>• Oferim soluții adaptate cerințelor fiecărui proiect.</span></li>
+  <li><span>• Urmărim o dezvoltare sustenabilă, bazată pe încredere și profesionalism.</span></li>
+</ul>
             <p className="margin-top-sm border-left-box">
               Turcoaz Aluminiu SRL urmărește să atingă competențe de top în coordonarea și execuția lucrărilor de construcții civile și industriale, finalizând proiectele rapid, eficient și la cele mai avantajoase condiții pentru clienți.
             </p>

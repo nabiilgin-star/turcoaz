@@ -64,29 +64,29 @@ const HeroHeader = ({ heroSettings = [] }) => {
 
           <div className="hero-content">
             <span className="hero-badge">
-              Importator și distribuitor AKPA în România
+              Distribuitor unic AKPA în România
             </span>
 
             <h1 className="hero-title">
-              Profile din Aluminiu, PVC, Glafuri și Sisteme din Sticlă
+               Profile din aluminiu și PVC, glafuri, panouri compozite Bond și sticlă 
             </h1>
 
             <p className="hero-description">
-              Distribuitor unic al profilelor din aluminiu AKPA, cu un stoc
-              permanent de peste 200 de tone și livrări în toată România.
-              Activăm din 2011, iar acționariatul nostru are peste 24 de ani
-              de experiență în industria aluminiului.
-            </p>
+  Vindem peste 150 de tone lunar și menținem un stoc permanent de peste
+  200 de tone de profile din aluminiu și PVC, glafuri, panouri compozite
+  Bond și sisteme din sticlă. Activăm din 2011, iar acționariatul nostru
+  are peste 24 de ani de experiență în domeniul sistemelor de tâmplărie
+  din aluminiu și PVC. Livrăm în toată România.
+</p>
+<div className="hero-actions">
+  <Button href="/contact" variant="primary">
+    Solicită ofertă →
+  </Button>
 
-            <div className="hero-actions">
-              <Link href="/contact" tabIndex={-1}>
-                <Button variant="primary">Solicită ofertă →</Button>
-              </Link>
-
-              <Link href="/categorii" tabIndex={-1}>
-                <Button variant="secondary">Vezi categoriile</Button>
-              </Link>
-            </div>
+  <Button href="/categorii" variant="secondary">
+    Vezi categoriile
+  </Button>
+</div>
           </div>
         </div>
       </div>
