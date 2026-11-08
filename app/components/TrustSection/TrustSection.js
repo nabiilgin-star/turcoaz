@@ -116,16 +116,21 @@ const TrustSection = () => {
             <div className="portfolio-card span-2">
               <div className="card-split">
                 <div className="split-text">
-                  <h3>Panouri Compozite din Aluminiu (Bond)</h3>
+                <h3>Panouri Compozite din Aluminiu (Bond)</h3>
 <p>
- Comercializăm panouri compozite din aluminiu AKPA Bond, PrimeBond, PrimeBond Plus, DuraBond și RallBond, disponibile într-o gamă variată de culori și finisaje. Panourile PrimeBond sunt fabricate cu tablă de aluminiu Hydro din Norvegia. Produsele sunt potrivite pentru fațade ventilate, placări exterioare, reclame și amenajări comerciale.
+  Comercializăm panouri compozite din aluminiu AKPA Bond, PrimeBond,
+  PrimeBond Plus, DuraBond și RallBond, livrate cu Agrement Tehnic, în mai
+  multe culori și finisaje. Panourile PrimeBond sunt fabricate cu tablă de
+  aluminiu Hydro din Norvegia. Produsele sunt potrivite pentru fațade
+  ventilate, placări exterioare, reclame și amenajări comerciale.
 </p>
-                  <ul className="premium-bullet-list row-layout">
-                    <li><span>AKPA Bond</span></li>
-                    <li><span>PrimeBond</span></li>
-                    <li><span>DuraBond</span></li>
-                    <li><span>RallBond</span></li>
-                  </ul>
+<ul className="premium-bullet-list row-layout">
+  <li><span>AKPA Bond</span></li>
+  <li><span>PrimeBond</span></li>
+  <li><span>PrimeBond Plus</span></li>
+  <li><span>DuraBond</span></li>
+  <li><span>RallBond</span></li>
+</ul>
                   <p className="margin-top-sm italic-text">Acestea sunt ideale pentru fațade ventilate, placări decorative și proiecte comerciale de mare impact vizual.</p>
                 </div>
                 <div className="split-image">
@@ -134,28 +139,40 @@ const TrustSection = () => {
               </div>
             </div>
 
-            {/* 4. KAHE Sticlă */}
-            <div className="portfolio-card span-2">
-              <div className="card-split">
-                <div className="split-text">
-                  <h3>Sisteme din Sticlă – KAHE</h3>
-                  <p>Distribuim componente și sisteme complete pentru proiecte din sticlă:</p>
-                  <ul className="premium-bullet-list grid-2col-list">
-                    <li><ArrowRight size={14} /> <span>Uși din sticlă</span></li>
-                    <li><ArrowRight size={14} /> <span>Cabine de duș</span></li>
-                    <li><ArrowRight size={14} /> <span>Sisteme de compartimentare</span></li>
-                    <li><ArrowRight size={14} /> <span>Feronerie și accesorii</span></li>
-                    <li><ArrowRight size={14} /> <span>Sisteme glisante</span></li>
-                    <li><ArrowRight size={14} /> <span>Balustrade din sticlă</span></li>
-                  </ul>
-                  <p className="margin-top-md text-highlight">Produsele KAHE sunt concepute pentru proiecte premium, unde estetica și funcționalitatea trebuie să se îmbine perfect.</p>
-                </div>
-                <div className="split-image">
-                  <Image src={imgProducts} alt="KAHE Glass Systems" fill className="premium-img" />
-                </div>
-              </div>
-            </div>
-
+           {/* 4. KAHE Sticlă */}
+<div className="portfolio-card span-2">
+  <div className="card-split">
+    <div className="split-text">
+      <h3>Sisteme din Sticlă – KAHE</h3>
+      <p>
+        Distribuim sisteme și accesorii KAHE pentru proiecte din sticlă,
+        de la uși și cabine de duș până la compartimentări, sisteme
+        glisante și balustrade din sticlă:
+      </p>
+      <ul className="premium-bullet-list grid-2col-list">
+        <li><ArrowRight size={14} /> <span>Uși din sticlă</span></li>
+        <li><ArrowRight size={14} /> <span>Cabine de duș</span></li>
+        <li><ArrowRight size={14} /> <span>Sisteme de compartimentare</span></li>
+        <li><ArrowRight size={14} /> <span>Feronerie și accesorii</span></li>
+        <li><ArrowRight size={14} /> <span>Sisteme glisante</span></li>
+        <li><ArrowRight size={14} /> <span>Balustrade din sticlă</span></li>
+      </ul>
+      <p className="margin-top-md text-highlight">
+        Livrăm și sticlă securizată curbată și sticlă laminată securizată,
+        tăiată la dimensiune.
+      </p>
+    </div>
+    <div className="split-image">
+      <Image
+        src={imgProducts}
+        alt="Accesorii și sisteme KAHE pentru uși și compartimentări din sticlă"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="premium-img"
+      />
+    </div>
+  </div>
+</div>
            {/* 5. Profile PVC */}
 <div className="portfolio-card span-2">
   <div className="card-split">
