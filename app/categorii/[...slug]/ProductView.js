@@ -99,9 +99,17 @@ export default function ProductView({ product }) {
   if (isAcpBond) {
     return (
       <section style={{ padding: "0 0 60px 0", backgroundColor: "#fff", width: "100%" }}>
+        {/* Görsel esnetilip sayfanın sağına/soluna tam oturtuldu */}
         {product.image && (
-          <div style={{ width: "100%", height: "300px", position: "relative", marginBottom: "40px", backgroundColor: "#fcfcfc" }}>
-            <Image src={product.image} alt={product.title} fill style={{ objectFit: "contain" }} priority />
+          <div style={{ width: "100%", height: "auto", position: "relative", marginBottom: "40px" }}>
+            <Image 
+              src={product.image} 
+              alt={`Gama noastră de produse ${product.title}`} 
+              width={1200}  // Orijinal görselin genişliği
+              height={800}  // Orijinal görselin yüksekliği (otomatik oranlanacak)
+              style={{ width: "100%", height: "auto", display: "block" }} // fill yerine responsive height
+              priority 
+            />
           </div>
         )}
         
@@ -165,9 +173,15 @@ export default function ProductView({ product }) {
                       <h3 style={{ fontSize: "1.3rem", fontWeight: "600", color: "#222", marginBottom: "8px" }}>
                         {brand.title || brand.name}
                       </h3>
-                      <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.6", margin: 0, whiteSpace: "pre-line" }}>
-                        {brand.description}
-                      </p>
+                     <div
+  style={{
+    fontSize: "0.9rem",
+    color: "#555",
+    lineHeight: "1.8",
+    margin: 0,
+  }}
+  dangerouslySetInnerHTML={{ __html: brand.description || "" }}
+/>
                     </div>
                     {brand.pdfUrl && (
                       <a href={brand.pdfUrl} target="_blank" rel="noopener noreferrer" style={buttonStyle}>

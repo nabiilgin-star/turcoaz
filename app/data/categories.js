@@ -730,11 +730,11 @@ description: `
     title: "ACP Aluminiu Compozit Panel (Bond)",
     slug: "acp-aluminiu-compozit-panel-bond",
     icon: Layers,
-    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
+    image: "https://res.cloudinary.com/oivvupgw/image/upload/v1794344087/Panou_Compozit_ACP_Gama_de_Produse_epaurg.png",
     detailImage: "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     pdfUrl: "/pdf/primebond.pdf",
     gallery: [
-      "https://res.cloudinary.com/oivvupgw/image/upload/v1789252957/bond_banner_detali_pr16om.jpg",
+      "https://res.cloudinary.com/oivvupgw/image/upload/v1794344087/Panou_Compozit_ACP_Gama_de_Produse_epaurg.png",
       "https://res.cloudinary.com/oivvupgw/image/upload/v1789249202/bond_tehnic_skj3yu.jpg",
     ],
     description: `
